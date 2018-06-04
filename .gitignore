@@ -1,0 +1,13 @@
+# Misc
+.*
+!.editorconfig
+!.gitignore
+
+# Private stuff
+secret.*
+
+# Generated stuff
+packer_compiled.lua
+
+# Work stuff
+Justfile

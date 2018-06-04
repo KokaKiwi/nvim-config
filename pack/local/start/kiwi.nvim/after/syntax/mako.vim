@@ -1,0 +1,1 @@
+call kiwi#syntax#yamlFrontmatter()
