@@ -266,9 +266,6 @@ return packer.startup {
     use { 'folke/which-key.nvim',
       config = util.setup.rc('which_key'),
     }
-    use { 'code-biscuits/nvim-biscuits',
-      config = util.setup.rc('biscuits'),
-    }
     use { 'rcarriga/nvim-notify',
       config = util.setup.rc_mod('notify'),
       after = { 'onedarkpro.nvim', 'nvim-bufferline.lua' },

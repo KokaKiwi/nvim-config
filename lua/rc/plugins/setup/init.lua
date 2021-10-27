@@ -1,14 +1,5 @@
 local M = {}
 
-function M.setup_biscuits()
-  require('nvim-biscuits').setup {
-    default_config = {
-      min_distance = 8,
-      max_length = 120,
-    },
-  }
-end
-
 function M.setup_blankline()
   require('indent_blankline').setup {
     buftype_exclude = { 'terminal', 'alpha', 'help' },
@@ -184,7 +175,7 @@ function M.setup_fterm()
     },
     neofetch = FTerm:new {
       cmd = 'neofetch && read',
-      -- auto_close = false,
+      blend = 75,
       dimensions = {
         width = 0.5,
         height = 0.55,
