@@ -98,8 +98,8 @@ return packer.startup {
     use 'inkarkat/vim-ingo-library'
     use 'LucHermitte/lh-vim-lib'
 
-    use { 'rafcamlet/nvim-luapad' }
-    use { 'tjdevries/nlua.nvim' }
+    use 'rafcamlet/nvim-luapad'
+    use 'tjdevries/nlua.nvim'
 
     use { 'iamcco/markdown-preview.nvim',
       ft = { 'markdown', 'pandoc.markdown', 'rmd' },
@@ -228,7 +228,7 @@ return packer.startup {
     use 'ripxorip/aerojump.nvim'
     use { 'numToStr/FTerm.nvim',
       config = util.setup.rc('fterm'),
-      cmd = { 'FTerm', 'Gitui', 'Top' },
+      cmd = { 'FTerm', 'Gitui', 'Top', 'Neofetch' },
     }
 
     use { 'mbbill/undotree',
