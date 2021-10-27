@@ -1,6 +1,10 @@
 -- vim.autocmd
 vim.autocmd_table = {}
 
+---@param events string | string[]
+---@param pattern string | string[]
+---@param cmd string | function
+---@param opts table
 function vim.autocmd(events, pattern, cmd, opts)
   opts = opts or {}
 
@@ -44,10 +48,13 @@ end
 -- vim.command
 vim.command_table = {}
 
+---@param name string
+---@param repl string | function
+---@param opts table
 function vim.command(name, repl, opts)
   opts = opts or {}
 
-  local command = { 'command!' }
+  local command = { 'command!', '-nargs=*' }
 
   if opts.complete ~= nil then
     table.insert(command, string.format('-complete=%s', opts.complete))
@@ -68,7 +75,7 @@ function vim.command(name, repl, opts)
   if type(repl) == 'function' then
     local index = #vim.command_table + 1
     vim.command_table[index] = repl
-    repl = string.format('lua vim.command_table[%d]()', index)
+    repl = string.format('lua vim.command_table[%d](<f-args>)', index)
   end
   table.insert(command, repl)
 
