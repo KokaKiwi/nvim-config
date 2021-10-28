@@ -130,18 +130,24 @@ return packer.startup {
       requires = { 'hrsh7th/vim-vsnip', 'onsails/lspkind-nvim' },
       config = util.setup.rc('cmp'),
     }
-    local CMP_BASE_SOURCES = {
-      'nvim-lsp', 'nvim-lua', 'vsnip', 'buffer',
-      'path', 'emoji', 'cmdline',
+    local CMP_SOURCES = {
+      'nvim-lsp', 'nvim-lua', 'vsnip',
+      'buffer', 'path', 'emoji', 'cmdline', 'calc',
+      'ray-x/cmp-treesitter', 'David-Kunz/cmp-npm', 'kdheepak/cmp-latex-symbols',
     }
-    for _, name in ipairs(CMP_BASE_SOURCES) do
-      use { 'hrsh7th/cmp-' .. name,
-        after = { 'nvim-cmp' },
-      }
+    for _, spec in ipairs(CMP_SOURCES) do
+      if type(spec) == 'string' then
+        if spec:find('/') == nil then
+          spec = 'hrsh7th/cmp-' .. spec
+        end
+        spec = { spec }
+      end
+
+      spec.after = spec.after or {}
+      table.insert(spec.after, 'nvim-cmp')
+
+      use(spec)
     end
-    use { 'ray-x/cmp-treesitter',
-      after = { 'nvim-cmp' },
-    }
 
     use { 'simrat39/rust-tools.nvim',
       config = util.setup.rc('rust_tools'),

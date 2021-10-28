@@ -62,18 +62,20 @@ function M.setup_cmp()
   local cmp = require('cmp')
   local lspkind = require('lspkind')
 
+  local BASE_SOURCES = {
+    { name = 'path' },
+    { name = 'buffer' },
+    { name = 'emoji' },
+    { name = 'latex_symbols' },
+  }
+
   cmp.setup {
     sources = cmp.config.sources(
       {
         { name = 'nvim_lsp' },
-        { name = 'nvim_lua' },
         { name = 'vsnip' },
       },
-      {
-        { name = 'path' },
-        { name = 'buffer' },
-        { name = 'emoji' },
-      }
+      BASE_SOURCES
     ),
     snippet = {
       expand = function(args)
@@ -125,7 +127,47 @@ function M.setup_cmp()
 
   vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'noselect', 'preview' }
 
-  vim.autocmd('BufRead', 'Cargo.toml', 'lua require("cmp").setup.buffer { sources = { { name = "crates" } } }')
+  vim.aufiletype('lua', function()
+    cmp.setup.buffer {
+      sources = cmp.config.sources(
+        {
+          { name = 'nvim_lsp' },
+          { name = 'nvim_lua' },
+          { name = 'vsnip' },
+        },
+        BASE_SOURCES
+      ),
+    }
+  end)
+
+  vim.autocmd('BufRead', 'Cargo.toml', function()
+    cmp.setup.buffer {
+      sources = cmp.config.sources(
+        {
+          { name = 'crates' },
+        },
+        BASE_SOURCES
+      ),
+    }
+  end)
+  vim.autocmd('BufRead', 'package.json', function()
+    cmp.setup.buffer {
+      sources = cmp.config.sources(
+        {
+          { name = 'npm' },
+        },
+        BASE_SOURCES
+      )
+    }
+  end)
+end
+
+function M.setup_committia()
+  prefixed(vim.g, 'committia') {
+    open_only_vim_starting = 0,
+    edit_window_width = 120,
+    min_window_width = 240,
+  }
 end
 
 function M.setup_crates()
@@ -298,6 +340,19 @@ function M.setup_rust_tools()
         highlight = 'NonText',
       },
     },
+
+    server = {
+      settings = {
+        ['rust-analyzer'] = {
+          cargo = {
+            allFeatures = true,
+          },
+          checkOnSave = {
+            command = 'clippy',
+          },
+        },
+      },
+    },
   }
 end
 
@@ -338,7 +393,18 @@ function M.setup_treesitter()
 end
 
 function M.setup_treesitter_context()
-  require('treesitter-context').setup {}
+  require('treesitter-context').setup {
+    patterns = {
+      default = {
+        'class',
+        'function',
+        'method',
+      },
+      rust = {
+        'impl_item',
+      },
+    },
+  }
 end
 
 function M.setup_trouble()

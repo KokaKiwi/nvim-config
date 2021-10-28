@@ -19,7 +19,7 @@ function lsp.setup()
     update_in_insert = false,
   })
 
-  vim.command('LspRestart', function ()
+  vim.command('LspRestart', function()
     local posix = require('posix')
     local configs = require('lspconfig/configs')
 
@@ -40,6 +40,10 @@ function lsp.setup()
         end
       end
     end
+  end)
+
+  vim.command('LspFormat', function()
+    vim.lsp.buf.formatting()
   end)
 end
 

@@ -41,6 +41,9 @@ function vim.autocmd(events, pattern, cmd, opts)
   vim.cmd(table.concat(command, ' '))
 end
 
+---@param filetype string | string[]
+---@param cmd string | function
+---@param opts table
 function vim.aufiletype(filetype, cmd, opts)
   vim.autocmd('FileType', filetype, cmd, opts)
 end

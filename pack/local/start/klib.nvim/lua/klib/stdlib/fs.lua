@@ -36,3 +36,9 @@ function fs.readfile(path, dest)
 
   return result
 end
+
+---@param path string
+---@return boolean
+function fs.is_executable(path)
+  return vim.fn.executable(path) == 1
+end

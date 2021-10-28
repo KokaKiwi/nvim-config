@@ -1,25 +1,15 @@
-local configs = require('lspconfig.configs')
+local configs = require('lspconfig/configs')
 
 -- Import custom LSP clients
-local function addconfig(name, config)
-  local _addconfig = getmetatable(configs).__newindex
-
-  return _addconfig(configs, name, config)
-end
-
 local LANGUAGES = {}
 for name, mod in pairs(LANGUAGES) do
   if type(mod) == 'string' then
-    mod = {
-      mod = mod,
-    }
+    mod = { mod = mod }
   end
   mod.name = name
 
-  if not configs[mod.name] or mod.force then
-    local config = require('kiwi.lsp.langs.' .. mod.mod)
-
-    addconfig(mod.name, config)
+  if mod.force or configs[mod.name] == nil then
+    require('kiwi.lsp.langs.' .. mod.mod)
   end
 end
 
@@ -32,8 +22,9 @@ local function get_lua_runtime_paths()
 end
 
 -- Setup Language Servers
-local util = require('lspconfig.util')
-local lsp = require('kiwi.lsp.langs.util')
+require('kiwi.lsp.langs.hack')
+local lsp = require('lspconfig')
+local util = require('lspconfig/util')
 local lsp_status = require('lsp-status')
 
 local schemastore = require('schemastore')
@@ -85,18 +76,6 @@ lsp.sumneko_lua.setup {
 lsp.phpactor.setup {}
 lsp.pyright.setup {}
 lsp.rnix.setup {}
-lsp.rust_analyzer.setup {
-  settings = {
-    ['rust-analyzer'] = {
-      cargo = {
-        allFeatures = true,
-      },
-      checkOnSave = {
-        command = 'clippy',
-      },
-    },
-  },
-}
 lsp.scry.setup {}
 lsp.solargraph.setup {}
 lsp.sqlls.setup {
