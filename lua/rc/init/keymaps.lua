@@ -67,5 +67,8 @@ nest.applyKeymaps {
   { '<Leader>t', Cmd 'TroubleToggle' },
 
   -- code-action-menu
-  { 'com', Cmd 'CodeActionMenu' }
+  { 'com', Cmd 'CodeActionMenu' },
+
+  -- nvim-tree
+  { '<C-e>', Cmd 'NvimTreeToggle' },
 }

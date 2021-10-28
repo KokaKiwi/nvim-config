@@ -1,8 +1,17 @@
 local M = {}
 
+function M.setup_better_whitespace()
+  prefixed(vim.g, 'better_whitespace') {
+    filetypes_blacklist = {
+      'dashboard', 'NvimTree', 'packer', 'alpha',
+      'diff', 'git', 'gitcommit', 'unite', 'qf', 'help', 'markdown', 'fugitive',
+    },
+  }
+end
+
 function M.setup_blankline()
   require('indent_blankline').setup {
-    buftype_exclude = { 'terminal', 'alpha', 'help' },
+    buftype_exclude = { 'terminal', 'alpha', 'help', 'packer' },
     show_current_context = true,
   }
 end
@@ -45,6 +54,7 @@ function M.setup_catppuccino()
     Constant = { fg = colors.orange, style = 'italic' },
 
     TSBoolean = { fg = colors.orange, style = 'italic' },
+    TSConstBuiltin = { fg = colors.orange, style = 'italic' },
   })
 end
 
@@ -182,6 +192,14 @@ function M.setup_crates()
   end)
 end
 
+function M.setup_ctrlp()
+  prefixed(vim.g, 'ctrlp') {
+    custom_ignore = {
+      dir = '\\v[\\/](target|node_modules|_build)$',
+    },
+  }
+end
+
 function M.setup_devicons()
   require('nvim-web-devicons').setup {
     default = true,
@@ -241,6 +259,22 @@ function M.setup_gitsigns()
   require('gitsigns').setup {}
 end
 
+function M.setup_glow()
+  prefixed(vim.g, 'glow') {
+    binary_path = '/usr/bin',
+  }
+end
+
+function M.setup_gnupg()
+  vim.g.GPGDefaultRecipients = { 'kokakiwi@kokakiwi.net' }
+end
+
+function M.setup_illuminate()
+  prefixed(vim.g, 'Illuminate') {
+    ftblacklist = { 'NvimTree' },
+  }
+end
+
 function M.setup_kommentary()
   local config = require('kommentary.config')
 
@@ -281,7 +315,18 @@ function M.setup_navigator()
   require('navigator').setup {
     lsp = {
       disable_lsp = 'all',
+      format_on_save = false,
+      disply_diagnostic_qf = false,
+      diagnostic_scroll_bar_sign = nil,
     },
+  }
+end
+
+function M.setup_neoformat()
+  prefixed(vim.g, 'neoformat') {
+    enabled_c = { 'clang-format' },
+    enabled_cpp = { 'clang-format' },
+    enabled_python = { 'yapf', 'isort' },
   }
 end
 
@@ -311,6 +356,45 @@ function M.setup_nvim_tree()
       width = 40,
     },
   }
+
+  prefixed(vim.g, 'nvim_tree') {
+    auto_ignore_ft = { 'startify' },
+    ignore = {
+      '.git', '.hg', '.svn', '.bzr', '.pijul',
+      '.pyc', '.pyd', '.egg-infos', '__pycache__',
+      '.class',
+      '.swp',
+    },
+    special_files = {
+      ['README.md'] = 1,
+      ['Makefile'] = 1,
+      ['Justfile'] = 1,
+    },
+    quit_on_open = 1,
+    show_icons = {
+      git = 0,
+      folders = 1,
+      files = 1,
+      folder_arrows = 1,
+    },
+    icons = {
+      default = '',
+      symlink = '',
+      folder = {
+        arrow_open = '',
+        arrow_closed = '',
+        default = '',
+        open = '',
+        empty = '',
+        empty_open = '',
+        symlink = '',
+        symlink_open = '',
+      },
+    },
+    group_empty = 1,
+    add_trailing = 1,
+    disable_window_picker = 1,
+  }
 end
 
 function M.setup_onedark()
@@ -324,6 +408,12 @@ function M.setup_onedark()
     hlgroups = {
       Constant = { style = 'italic' },
     },
+  }
+end
+
+function M.setup_polyglot()
+  prefixed(vim.g, 'polyglot') {
+    disabled = { 'systemd' },
   }
 end
 
@@ -362,7 +452,7 @@ end
 
 function M.setup_telescope()
   local function map(seq, fname)
-    local cmd = string.format([[<cmd>lua require('telescope.builtin').%s()<cr>]], fname)
+    local cmd = string.format([[<Cmd>lua require('telescope.builtin').%s()<cr>]], fname)
     vim.api.nvim_set_keymap('n', '<Leader>'..seq, cmd, {})
   end
 
@@ -414,11 +504,26 @@ function M.setup_trouble()
   }
 end
 
+function M.setup_undotree()
+  prefixed(vim.g, 'undotree') {
+    SetFocusWhenToggle = true,
+  }
+end
+
 function M.setup_vgit()
   local vgit = require('vgit')
   vgit.setup {
     hls = vgit.themes.monokai,
   }
+end
+
+function M.setup_vista()
+  prefixed(vim.g, 'vista') {
+    default_executive = 'nvim_lsp',
+    finder_alternative_executives = { 'ctags' },
+    width = 40,
+  }
+  vim.g['vista#renderer#enable_icon'] = 1
 end
 
 function M.setup_which_key()

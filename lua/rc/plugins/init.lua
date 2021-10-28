@@ -13,11 +13,7 @@ packer.set_handler('colorscheme', function(_, plugin, value)
   if type(plugin.config) == 'string' then
     plugin.config = string.format('%s\nvim.cmd [[colorscheme %s]]', plugin.config, value)
   else
-    local old_config = plugin.config
-    plugin.config = function()
-      old_config()
-      vim.cmd(string.format('colorscheme %s', value))
-    end
+    error('Cannot handle function-type config')
   end
 
   has_colorscheme = value
@@ -48,14 +44,18 @@ return packer.startup {
       }
     }
     use 'hynek/vim-python-pep8-indent'
-    use 'jamessan/vim-gnupg'
+    use { 'jamessan/vim-gnupg',
+      config = util.setup.rc('gnupg'),
+    }
     use 'justinmk/vim-sneak'
     use 'mattn/emmet-vim'
     use { 'mattn/vim-gist',
       requires = { 'mattn/webapi-vim' },
       cmd = { 'Gist' },
     }
-    use 'ntpeters/vim-better-whitespace'
+    use { 'ntpeters/vim-better-whitespace',
+      config = util.setup.rc('better_whitespace'),
+    }
     use { 'nvim-lua/plenary.nvim',
       module = { 'plenary' },
     }
@@ -106,6 +106,7 @@ return packer.startup {
       run = util.action.call('mkdp#util#install'),
     }
     use { 'ellisonleao/glow.nvim',
+      config = util.setup.rc('glow'),
       cmd = { 'Glow' },
     }
     use { 'nvim-neorg/neorg',
@@ -116,7 +117,10 @@ return packer.startup {
     use 'lewis6991/impatient.nvim'
 
     -- Helpers (autocomplete, lint, format, snippets)
-    use { 'liuchengxu/vista.vim', cmd = { 'Vista' } }
+    use { 'liuchengxu/vista.vim',
+      config = util.setup.rc('vista'),
+      cmd = { 'Vista' },
+    }
     use 'mhinz/vim-mix-format'
 
     use { 'saecki/crates.nvim',
@@ -184,6 +188,7 @@ return packer.startup {
     use 'hrsh7th/vim-vsnip-integ'
 
     use { 'sbdchd/neoformat',
+      config = util.setup.rc('neoformat'),
       cmd = { 'Neoformat' },
     }
 
@@ -207,6 +212,7 @@ return packer.startup {
 
     -- UI > Misc
     use { 'RRethy/vim-illuminate',
+      config = util.setup.rc('illuminate'),
       module = { 'illuminate' },
     }
     use { 'norcalli/nvim-colorizer.lua',
@@ -226,6 +232,7 @@ return packer.startup {
     }
 
     use { 'ctrlpvim/ctrlp.vim',
+      config = util.setup.rc('ctrlp'),
       cmd = { 'ctrlp' },
       keys = {
         { 'n', '<C-p>' },
@@ -238,6 +245,7 @@ return packer.startup {
     }
 
     use { 'mbbill/undotree',
+      config = util.setup.rc('undotree'),
       cmd = { 'UndotreeToggle' },
     }
 
@@ -301,7 +309,10 @@ return packer.startup {
       },
       after = { 'nvim-lspconfig' },
     }
-    use 'rhysd/committia.vim'
+    use { 'rhysd/committia.vim',
+      config = util.setup.rc('committia'),
+      event = { 'BufReadPost COMMIT_EDITMSG,MERGE_MSG' },
+    }
     use { 'tanvirtin/vgit.nvim',
       requires = { 'nvim-lua/plenary.nvim' },
       config = util.setup.rc('vgit'),

@@ -1,2 +1,2 @@
 -- Some useful abbreviations
-vim.cmd('cabbr <expr> %% expand("%:p:h")')
+vim.cmd [[cabbr <expr> %% expand("%:p:h")]]
