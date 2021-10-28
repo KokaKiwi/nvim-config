@@ -9,6 +9,20 @@ function table.map(t, fn)
   return result
 end
 
+-- table.dmap
+---@param t table
+---@param fn function
+function table.dmap(t, fn)
+  local result = {}
+
+  for key, value in pairs(t) do
+    local new_key, new_value = fn(key, value)
+    result[new_key] = new_value
+  end
+
+  return result
+end
+
 -- table.reducemap
 function table.reducemap(t, fn)
   local result = {}

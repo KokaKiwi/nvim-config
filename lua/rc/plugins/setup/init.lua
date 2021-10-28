@@ -60,55 +60,6 @@ function M.setup_devicons()
   }
 end
 
-function M.setup_fterm()
-  local FTerm = require('FTerm')
-
-  _G.fterm = {
-    term = FTerm:new {
-      border = 'double',
-      dimensions = {
-        width = 0.9,
-        height = 0.9,
-      },
-    },
-    gitui = FTerm:new {
-      cmd = 'gitui',
-      border = 'double',
-      dimensions = {
-        width = 0.9,
-        height = 0.9,
-      },
-    },
-    top = FTerm:new {
-      cmd = 'bpytop',
-      border = 'double',
-      dimensions = {
-        width = 0.9,
-        height = 0.9,
-      },
-    },
-    neofetch = FTerm:new {
-      cmd = 'neofetch && read',
-      blend = 75,
-      dimensions = {
-        width = 0.5,
-        height = 0.55,
-        x = 1,
-        y = 0.9,
-      },
-    },
-  }
-
-  local function toggle(term)
-    return function() term:toggle() end
-  end
-
-  vim.command('FTerm', toggle(fterm.term))
-  vim.command('Gitui', toggle(fterm.gitui))
-  vim.command('Top', toggle(fterm.top))
-  vim.command('Neofetch', toggle(fterm.neofetch))
-end
-
 function M.setup_gitsigns()
   require('gitsigns').setup {}
 end

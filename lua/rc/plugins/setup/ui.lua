@@ -1,5 +1,55 @@
 local M = {}
 
+function M.setup_fterm()
+  local FTerm = require('FTerm')
+
+  _G.fterm = {
+    term = FTerm:new {
+      border = 'double',
+      dimensions = {
+        width = 0.9,
+        height = 0.9,
+      },
+    },
+    gitui = FTerm:new {
+      cmd = 'gitui',
+      border = 'double',
+      dimensions = {
+        width = 0.9,
+        height = 0.9,
+      },
+    },
+    top = FTerm:new {
+      cmd = 'btop',
+      border = 'double',
+      dimensions = {
+        width = 0.9,
+        height = 0.9,
+      },
+    },
+    neofetch = FTerm:new {
+      cmd = 'neofetch',
+      auto_close = false,
+      blend = 75,
+      dimensions = {
+        width = 0.5,
+        height = 0.55,
+        x = 1,
+        y = 0.9,
+      },
+    },
+  }
+
+  local function toggle(term)
+    return function() term:toggle() end
+  end
+
+  vim.command('FTerm', toggle(fterm.term))
+  vim.command('Gitui', toggle(fterm.gitui))
+  vim.command('Top', toggle(fterm.top))
+  vim.command('Neofetch', toggle(fterm.neofetch))
+end
+
 function M.setup_nvim_tree()
   require('nvim-tree').setup {
     hijack_cursor = true,
@@ -14,19 +64,23 @@ function M.setup_nvim_tree()
     },
   }
 
+  local SPECIAL_FILES = {
+    'README', 'README.md',
+    'Makefile', 'Justfile',
+    'LICENSE',
+  }
+
   prefixed(vim.g, 'nvim_tree') {
-    auto_ignore_ft = { 'startify' },
+    auto_ignore_ft = { 'startify', 'alpha' },
     ignore = {
       '.git', '.hg', '.svn', '.bzr', '.pijul',
       '.pyc', '.pyd', '.egg-infos', '__pycache__',
       '.class',
       '.swp',
     },
-    special_files = {
-      ['README.md'] = 1,
-      ['Makefile'] = 1,
-      ['Justfile'] = 1,
-    },
+    special_files = table.dmap(SPECIAL_FILES, function(_, fname)
+      return fname, 1
+    end),
     quit_on_open = 1,
     show_icons = {
       git = 0,

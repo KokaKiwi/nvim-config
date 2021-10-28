@@ -240,7 +240,7 @@ return packer.startup {
     }
     use 'ripxorip/aerojump.nvim'
     use { 'numToStr/FTerm.nvim',
-      config = util.setup.rc('fterm'),
+      config = util.setup.rc('fterm', 'ui'),
       cmd = { 'FTerm', 'Gitui', 'Top', 'Neofetch' },
     }
 
