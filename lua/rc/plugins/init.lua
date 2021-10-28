@@ -86,7 +86,7 @@ return packer.startup {
         module = { 'popup' },
       }
       use 'prabirshrestha/async.vim'
-      use 'terryma/vim-multiple-cursors'
+      use 'mg979/vim-visual-multi'
       use 'tpope/vim-repeat'
       use 'tpope/vim-sensible'
       use 'tpope/vim-surround'
