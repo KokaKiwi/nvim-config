@@ -16,48 +16,6 @@ function M.setup_blankline()
   }
 end
 
-function M.setup_catppuccino()
-  local catppuccino = require('catppuccino')
-  -- local util = require('catppuccino.utils.util')
-
-  local colorscheme = 'dark_catppuccino'
-  local err, colors = require('catppuccino.api.colors').get_colors(colorscheme)
-  if not err.status then
-    error(string.format('Unknown colorscheme: %s', colorscheme))
-  end
-
-  catppuccino.setup {
-    colorscheme = colorscheme,
-    term_colors = true,
-    styles = {
-      functions = 'bold,italic',
-      keywords = 'italic',
-    },
-    integrations = {
-      lsp_trouble = true,
-      gitsigns = true,
-      telescope = true,
-      nvimtree = {
-        enabled = true,
-        show_root = true,
-      },
-      which_key = true,
-      indent_blankline = {
-        enabled = true,
-      },
-      dashboard = true,
-      bufferline = true,
-    },
-  }
-
-  catppuccino.remap(colors, {
-    Constant = { fg = colors.orange, style = 'italic' },
-
-    TSBoolean = { fg = colors.orange, style = 'italic' },
-    TSConstBuiltin = { fg = colors.orange, style = 'italic' },
-  })
-end
-
 function M.setup_colorizer()
   require('colorizer').setup({
     'css', 'lua';
@@ -66,110 +24,6 @@ function M.setup_colorizer()
     rgb_fn = true,
     hsl_fn = true,
   })
-end
-
-function M.setup_cmp()
-  local cmp = require('cmp')
-  local lspkind = require('lspkind')
-
-  local BASE_SOURCES = {
-    { name = 'path' },
-    { name = 'buffer' },
-    { name = 'emoji' },
-    { name = 'latex_symbols' },
-  }
-
-  cmp.setup {
-    sources = cmp.config.sources(
-      {
-        { name = 'nvim_lsp' },
-        { name = 'vsnip' },
-      },
-      BASE_SOURCES
-    ),
-    snippet = {
-      expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body)
-      end,
-    },
-    mapping = {
-      ['<Tab>'] = cmp.mapping {
-        i = cmp.mapping.confirm { select = true },
-      },
-      ['<CR>'] = cmp.mapping {
-        -- i = cmp.mapping.confirm { select = true },
-        c = cmp.mapping.confirm { select = false },
-      },
-      ['<C-e>'] = cmp.mapping {
-        i = cmp.mapping.abort(),
-        c = cmp.mapping.close(),
-      },
-      ['<C-Up>'] = cmp.mapping {
-        c = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
-      },
-      ['<C-Down>'] = cmp.mapping {
-        c = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
-      },
-    },
-    formatting = {
-      format = lspkind.cmp_format {},
-    }
-  }
-
-  cmp.setup.cmdline('/', {
-    sources = {
-      { name = 'buffer' },
-    },
-  })
-  cmp.setup.cmdline(':', {
-    sources = cmp.config.sources(
-      {
-        { name = 'path' },
-      },
-      {
-        { name = 'cmdline' },
-      }
-    ),
-    completion = {
-      keyword_length = 2,
-    },
-  })
-
-  vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'noselect', 'preview' }
-
-  vim.aufiletype('lua', function()
-    cmp.setup.buffer {
-      sources = cmp.config.sources(
-        {
-          { name = 'nvim_lsp' },
-          { name = 'nvim_lua' },
-          { name = 'vsnip' },
-        },
-        BASE_SOURCES
-      ),
-    }
-  end)
-
-  vim.autocmd('BufRead', 'Cargo.toml', function()
-    cmp.setup.buffer {
-      sources = cmp.config.sources(
-        {
-          { name = 'crates' },
-        },
-        BASE_SOURCES
-      ),
-    }
-  end)
-  vim.autocmd('BufRead', 'package.json', function()
-    cmp.setup.buffer {
-      sources = cmp.config.sources(
-        {
-          { name = 'npm' },
-        },
-        BASE_SOURCES
-      )
-    }
-  end)
 end
 
 function M.setup_committia()
@@ -327,6 +181,7 @@ function M.setup_neoformat()
     enabled_c = { 'clang-format' },
     enabled_cpp = { 'clang-format' },
     enabled_python = { 'yapf', 'isort' },
+    enabled_lua = { 'stylua' },
   }
 end
 
@@ -340,74 +195,6 @@ function M.setup_nvim_startup()
       })
       return message
     end,
-  }
-end
-
-function M.setup_nvim_tree()
-  require('nvim-tree').setup {
-    hijack_cursor = true,
-    update_focused_file = {
-      enable = true,
-    },
-    diagnostics = {
-      enable = true,
-    },
-    view = {
-      width = 40,
-    },
-  }
-
-  prefixed(vim.g, 'nvim_tree') {
-    auto_ignore_ft = { 'startify' },
-    ignore = {
-      '.git', '.hg', '.svn', '.bzr', '.pijul',
-      '.pyc', '.pyd', '.egg-infos', '__pycache__',
-      '.class',
-      '.swp',
-    },
-    special_files = {
-      ['README.md'] = 1,
-      ['Makefile'] = 1,
-      ['Justfile'] = 1,
-    },
-    quit_on_open = 1,
-    show_icons = {
-      git = 0,
-      folders = 1,
-      files = 1,
-      folder_arrows = 1,
-    },
-    icons = {
-      default = '',
-      symlink = '',
-      folder = {
-        arrow_open = '',
-        arrow_closed = '',
-        default = '',
-        open = '',
-        empty = '',
-        empty_open = '',
-        symlink = '',
-        symlink_open = '',
-      },
-    },
-    group_empty = 1,
-    add_trailing = 1,
-    disable_window_picker = 1,
-  }
-end
-
-function M.setup_onedark()
-  local onedark = require('onedarkpro')
-
-  onedark.setup {
-    styles = {
-      functions = 'bold,italic',
-      keywords = 'italic',
-    },
-    hlgroups = {
-      Constant = { style = 'italic' },
-    },
   }
 end
 

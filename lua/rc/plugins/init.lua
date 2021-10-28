@@ -110,7 +110,7 @@ return packer.startup {
       cmd = { 'Glow' },
     }
     use { 'nvim-neorg/neorg',
-      config = util.setup.rc_mod('neorg'),
+      config = util.setup.rc('neorg', 'utils'),
       requires = { 'nvim-lua/plenary.nvim' },
     }
 
@@ -132,7 +132,7 @@ return packer.startup {
 
     use { 'hrsh7th/nvim-cmp',
       requires = { 'hrsh7th/vim-vsnip', 'onsails/lspkind-nvim' },
-      config = util.setup.rc('cmp'),
+      config = util.setup.rc_mod_call('cmp'),
     }
     local CMP_SOURCES = {
       'nvim-lsp', 'nvim-lua', 'vsnip',
@@ -202,11 +202,11 @@ return packer.startup {
     }
 
     use { 'olimorris/onedarkpro.nvim',
-      config = util.setup.rc('onedark'),
+      config = util.setup.rc('onedark', 'colorscheme'),
       -- colorscheme = 'onedark',
     }
     use { 'Pocco81/Catppuccino.nvim',
-      config = util.setup.rc('catppuccino'),
+      config = util.setup.rc('catppuccino', 'colorscheme'),
       colorscheme = 'catppuccino',
     }
 
@@ -251,7 +251,7 @@ return packer.startup {
 
     use { 'kyazdani42/nvim-tree.lua',
       requires = { 'kyazdani42/nvim-web-devicons' },
-      config = util.setup.rc('nvim_tree'),
+      config = util.setup.rc('nvim_tree', 'ui'),
       cmd = { 'NvimTreeToggle', 'NvimTreeOpen', 'NvimTreeFocus' },
     }
     use 'tpope/vim-fugitive'
@@ -281,7 +281,7 @@ return packer.startup {
       config = util.setup.rc('which_key'),
     }
     use { 'rcarriga/nvim-notify',
-      config = util.setup.rc_mod('notify'),
+      config = util.setup.rc('notify', 'ui'),
       after = { 'onedarkpro.nvim', 'nvim-bufferline.lua' },
     }
     use { 'chentau/marks.nvim',

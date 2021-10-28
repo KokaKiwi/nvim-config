@@ -67,6 +67,9 @@ util.setup = {
   mod_setup = function(name)
     return string.format([[require('%s').setup()]], name)
   end,
+  mod_call = function(name)
+    return string.format([[require('%s')()]], name)
+  end,
   rc = function(name, modname)
     local fullmodname = 'rc.plugins.setup'
     if modname ~= nil then
@@ -80,6 +83,9 @@ util.setup = {
   end,
   rc_mod_setup = function(name)
     return util.setup.mod_setup(string.format('rc.plugins.setup.%s', name))
+  end,
+  rc_mod_call = function(name)
+    return util.setup.mod_call(string.format('rc.plugins.setup.%s', name))
   end,
 }
 

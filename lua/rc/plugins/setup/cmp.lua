@@ -1,0 +1,103 @@
+local BASE_SOURCES = {
+  { name = 'path' },
+  { name = 'buffer' },
+  { name = 'emoji' },
+  { name = 'latex_symbols' },
+}
+
+return function()
+  local cmp = require('cmp')
+  local lspkind = require('lspkind')
+
+  cmp.setup {
+    sources = cmp.config.sources(
+      {
+        { name = 'nvim_lsp' },
+        { name = 'vsnip' },
+      },
+      BASE_SOURCES
+    ),
+    snippet = {
+      expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body)
+      end,
+    },
+    mapping = {
+      ['<Tab>'] = cmp.mapping {
+        i = cmp.mapping.confirm { select = true },
+      },
+      ['<CR>'] = cmp.mapping {
+        -- i = cmp.mapping.confirm { select = true },
+        c = cmp.mapping.confirm { select = false },
+      },
+      ['<C-e>'] = cmp.mapping {
+        i = cmp.mapping.abort(),
+        c = cmp.mapping.close(),
+      },
+      ['<C-Up>'] = cmp.mapping {
+        c = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
+      },
+      ['<C-Down>'] = cmp.mapping {
+        c = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
+      },
+    },
+    formatting = {
+      format = lspkind.cmp_format {},
+    }
+  }
+
+  cmp.setup.cmdline('/', {
+    sources = {
+      { name = 'buffer' },
+    },
+  })
+  cmp.setup.cmdline(':', {
+    sources = cmp.config.sources(
+      {
+        { name = 'path' },
+      },
+      {
+        { name = 'cmdline' },
+      }
+    ),
+    completion = {
+      keyword_length = 2,
+    },
+  })
+
+  vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'noselect', 'preview' }
+
+  vim.aufiletype('lua', function()
+    cmp.setup.buffer {
+      sources = cmp.config.sources(
+        {
+          { name = 'nvim_lsp' },
+          { name = 'nvim_lua' },
+          { name = 'vsnip' },
+        },
+        BASE_SOURCES
+      ),
+    }
+  end)
+
+  vim.autocmd('BufRead', 'Cargo.toml', function()
+    cmp.setup.buffer {
+      sources = cmp.config.sources(
+        {
+          { name = 'crates' },
+        },
+        BASE_SOURCES
+      ),
+    }
+  end)
+  vim.autocmd('BufRead', 'package.json', function()
+    cmp.setup.buffer {
+      sources = cmp.config.sources(
+        {
+          { name = 'npm' },
+        },
+        BASE_SOURCES
+      )
+    }
+  end)
+end
