@@ -130,8 +130,11 @@
 
 ### Uncategorized
 
+- [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)
+
+### Third-party dependencies
+
 - [glts/vim-magnum](https://github.com/glts/vim-magnum)
 - [mattn/webapi-vim](https://github.com/mattn/webapi-vim)
 - [onsails/lspkind-nvim](https://github.com/onsails/lspkind-nvim)
 - [ray-x/guihua.lua](https://github.com/ray-x/guihua.lua)
-- [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim)

@@ -18,6 +18,7 @@ local template = liluat.compile(README_TEMPLATE)
 local DEFAULT_GROUP = 'uncategorized'
 local GROUP_NAMES = {
   [DEFAULT_GROUP] = 'Uncategorized',
+  ['deps'] = 'Third-party dependencies',
   ['ui'] = 'UI',
   ['colorscheme'] = 'Colorscheme',
   ['util'] = 'Utilities',
@@ -37,6 +38,10 @@ packer.__manage_all()
 local groups = {}
 for _, plugin in pairs(plugins) do
   local group_name = plugin.group or DEFAULT_GROUP
+  if plugin.from_requires then
+    group_name = 'deps'
+  end
+
   if GROUP_NAMES[group_name] == nil then
     error("Unknown group name: " .. group_name)
   end
@@ -52,15 +57,18 @@ for _, group_plugins in pairs(groups) do
   table.sort(group_plugins, plugin_compare)
 end
 
+local last_keys = { DEFAULT_GROUP, 'deps' }
 local group_keys = {}
 for key, _ in pairs(groups) do
-  if key ~= DEFAULT_GROUP then
+  if not table.contains(last_keys, key) then
     table.insert(group_keys, key)
   end
 end
 table.sort(group_keys)
-if groups[DEFAULT_GROUP] ~= nil then
-  table.insert(group_keys, DEFAULT_GROUP)
+for _, key in ipairs(last_keys) do
+  if groups[key] ~= nil then
+    table.insert(group_keys, key)
+  end
 end
 
 local template_data = {
