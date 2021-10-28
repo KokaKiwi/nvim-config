@@ -1,6 +1,11 @@
 -- Load Lua helpers
 require('klib')
 
+-- Don't do full boostrap if NO_BOOSTRAP env var is 1
+if os.getenv('NO_BOOSTRAP') == 1 then
+  return
+end
+
 -- Load plugins
 require('rc.plugins')
 
