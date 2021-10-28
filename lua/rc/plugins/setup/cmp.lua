@@ -27,7 +27,7 @@ return function()
         i = cmp.mapping.confirm { select = true },
       },
       ['<CR>'] = cmp.mapping {
-        -- i = cmp.mapping.confirm { select = true },
+        i = cmp.mapping.confirm { select = true },
         c = cmp.mapping.confirm { select = false },
       },
       ['<C-e>'] = cmp.mapping {
@@ -57,7 +57,10 @@ return function()
         { name = 'path' },
       },
       {
-        { name = 'cmdline' },
+        {
+          name = 'cmdline',
+          max_item_count = 25,
+        },
       }
     ),
     completion = {
