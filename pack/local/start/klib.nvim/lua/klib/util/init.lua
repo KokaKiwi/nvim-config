@@ -14,3 +14,7 @@ _G.prefixed = klib.prefixed
 function klib.is_nvim_headless()
   return #vim.api.nvim_list_uis() == 0
 end
+
+require_prefix('klib.util') {
+  'unicode',
+}

@@ -34,6 +34,7 @@ lsp.clangd.setup {
   handlers = lsp_status.extensions.clangd.setup(),
 }
 lsp.cmake.setup {}
+lsp.dhall_lsp_server.setup {}
 lsp.dockerls.setup {}
 lsp.elixirls.setup {
   cmd = { 'elixir-ls' },
