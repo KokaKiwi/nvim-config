@@ -28,9 +28,7 @@ local function infos()
   }
 end
 
-local M = {}
-
-function M.setup()
+return function()
   ---@class _NvimVersion
   ---@field major integer
   ---@field minor integer
@@ -99,5 +97,3 @@ function M.setup()
     },
   }
 end
-
-return M

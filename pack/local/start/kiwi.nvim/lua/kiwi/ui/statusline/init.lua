@@ -149,10 +149,10 @@ end
 
 -- See: https://www.nerdfonts.com/cheat-sheet
 local icons = {
-    vim   = u 'e62b',
-    dos   = u 'e70f',
-    unix  = u 'f17c',
-    mac   = u 'f179',
+    vim   = u'e62b',
+    dos   = u'e70f',
+    unix  = u'f17c',
+    mac   = u'f179',
 }
 -- }}}2
 
@@ -187,12 +187,11 @@ end
 
 -- }}}1
 
-local M = {}
-
-function M.setup()
+return function()
   local gl = require('galaxyline')
   local gls = gl.section
   local condition = require('galaxyline.condition')
+  local providers = require('kiwi.ui.statusline.providers')
 
   -- Left {{{1
   gls.left = {}
@@ -200,7 +199,7 @@ function M.setup()
   -- Edit mode {{{2
   table.insert(gls.left, {
     ViModeSpaceOnFarLeft = {
-      provider = function() return " " end,
+      provider = providers.fixed_string(' '),
       highlight = { colors.giticon, colors.bg },
     }
   })
@@ -239,7 +238,7 @@ function M.setup()
   -- Git Branch Name {{{3
   table.insert(gls.left, {
     GitStart = {
-      provider = function() return leftbracket end,
+      provider = providers.fixed_string(leftbracket),
       condition = condition.check_git_workspace,
       highlight = { colors.giticon, colors.bg }
     }
@@ -257,7 +256,7 @@ function M.setup()
   })
   table.insert(gls.left, {
     GitMid = {
-      provider = function() return rightbracket .. ' ' end,
+      provider = providers.fixed_string(rightbracket .. ' '),
       condition = condition.check_git_workspace,
       highlight = { colors.giticon, colors.gitbg }
     }
@@ -321,7 +320,7 @@ function M.setup()
   -- Lsp Client {{{3
   table.insert(gls.left, {
     LspStart = {
-      provider = function() return leftbracket end,
+      provider = providers.fixed_string(leftbracket),
       highlight = {colors.lspicon, colors.bg}
     }
   })
@@ -351,9 +350,15 @@ function M.setup()
   })
   table.insert(gls.left, {
     LspSpace = {
-      provider = function() return ' ' end,
+      provider = providers.space(),
       highlight = { colors.lspicon, colors.lspbg }
     }
+  })
+  table.insert(gls.left, {
+    LspStatus = {
+      provider = providers.lsp_status(),
+      highlight = { colors.textbg, colors.lspbg }
+    },
   })
   -- }}}3
 
@@ -389,7 +394,7 @@ function M.setup()
   })
   table.insert(gls.left, {
     LspSectionEnd = {
-      provider = function() return rightbracket .. " " end,
+      provider = providers.fixed_string(rightbracket, ' '),
       highlight = { colors.lspbg, colors.bg }
     }
   })
@@ -645,5 +650,3 @@ function M.setup()
   })
   -- }}}1
 end
-
-return M

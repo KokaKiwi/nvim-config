@@ -289,13 +289,13 @@ return packer.startup {
 
       use { 'akinsho/nvim-bufferline.lua',
         requires = { 'kyazdani42/nvim-web-devicons' },
-        config = util.setup.mod_setup('kiwi.ui.tabline'),
+        config = util.setup.mod_call('kiwi.ui.tabline'),
         event = { 'VimEnter' },
       }
       use { 'glepnir/galaxyline.nvim',
         branch = 'main',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-        config = util.setup.mod_setup('kiwi.ui.statusline'),
+        config = util.setup.mod_call('kiwi.ui.statusline'),
       }
       use { 'nvim-lua/lsp-status.nvim',
         config = util.setup.rc('lsp_status'),
@@ -348,7 +348,7 @@ return packer.startup {
       }
 
       use { 'goolord/alpha-nvim',
-        config = util.setup.mod_setup('kiwi.ui.dashboard'),
+        config = util.setup.mod_call('kiwi.ui.dashboard'),
         event = { 'VimEnter' },
       }
 
