@@ -6,6 +6,7 @@ return function()
     return string.format('%s/%s', logos_basedir, entry.name)
   end)
   local logo_file = math.randomchoice(logos_files)
+  local logo = fs.readfile(logo_file, {})
 
-  return fs.readfile(logo_file, {})
+  return logo
 end
