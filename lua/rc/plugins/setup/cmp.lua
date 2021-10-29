@@ -27,7 +27,7 @@ return function()
         i = cmp.mapping.confirm { select = true },
       },
       ['<CR>'] = cmp.mapping {
-        i = cmp.mapping.confirm { select = true },
+        i = cmp.mapping.confirm {},
         c = cmp.mapping.confirm { select = false },
       },
       ['<C-e>'] = cmp.mapping {
@@ -43,7 +43,8 @@ return function()
     },
     formatting = {
       format = lspkind.cmp_format {},
-    }
+    },
+    preselect = cmp.PreselectMode.None,
   }
 
   cmp.setup.cmdline('/', {
