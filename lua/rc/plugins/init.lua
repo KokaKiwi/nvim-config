@@ -314,6 +314,11 @@ return packer.startup {
       use { 'chentau/marks.nvim',
         config = util.setup.rc('marks'),
       }
+      use { 'wfxr/minimap.vim',
+        config = util.setup.rc('minimap', 'ui'),
+        cond = util.cond.is_executable('code-minimap'),
+        cmd = { 'Minimap', 'MinimapToggle' },
+      }
 
       use { 'nvim-telescope/telescope.nvim',
         requires = { 'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'},

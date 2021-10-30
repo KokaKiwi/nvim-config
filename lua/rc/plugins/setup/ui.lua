@@ -50,6 +50,13 @@ function M.setup_fterm()
   vim.command('Neofetch', toggle(fterm.neofetch))
 end
 
+function M.setup_minimap()
+  prefixed(vim.g, 'minimap') {
+    block_filetypes = { 'NvimTree', 'vista_kind' },
+    close_filetypes = { 'alpha', 'packer' },
+  }
+end
+
 function M.setup_nvim_tree()
   require('nvim-tree').setup {
     hijack_cursor = true,
