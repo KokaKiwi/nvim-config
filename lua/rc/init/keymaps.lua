@@ -32,10 +32,8 @@ nest.applyKeymaps {
 
   -- Tabs
   { '<C-', {
-      { 'PageDown>',  Cmd 'bnext' },
-      { 'PageUp>',    Cmd 'bprev' },
-      { 't>',         Cmd 'tabnew' },
-      { 'x>',         Cmd 'bwipe' },
+      { 't>', Cmd 'tabnew' },
+      { 'x>', Cmd 'bwipe' },
   } },
 
   -- neosnippet

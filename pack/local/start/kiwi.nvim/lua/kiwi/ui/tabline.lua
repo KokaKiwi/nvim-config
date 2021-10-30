@@ -1,4 +1,6 @@
 return function()
+  local nest = require('nest')
+
   vim.opt.termguicolors = true
 
   require('bufferline').setup {
@@ -20,5 +22,16 @@ return function()
         },
       },
     },
+  }
+
+  nest.applyKeymaps {
+    { '<C-', {
+      { 'PageDown>',  nest.Cmd 'BufferLineCycleNext' },
+      { 'PageUp>',    nest.Cmd 'BufferLineCyclePrev' },
+    } },
+    { '<Leader>b', {
+      { '<',    nest.Cmd 'BufferLineMovePrev' },
+      { '>',    nest.Cmd 'BufferLineMoveNext' },
+    } },
   }
 end
