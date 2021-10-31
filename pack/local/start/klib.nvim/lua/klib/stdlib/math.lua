@@ -1,4 +1,4 @@
-math.randomseed(os.clock())
+math.randomseed(os.clock() * os.time())
 
 function math.randomchoice(t)
   local keys = {}
