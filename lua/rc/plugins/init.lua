@@ -216,7 +216,9 @@ return packer.startup {
       }
 
       use 'jiangmiao/auto-pairs'
-      use 'junegunn/vim-easy-align'
+      use { 'junegunn/vim-easy-align',
+        cmd = { 'EasyAlign' },
+      }
     end }
 
     -- UI
@@ -282,9 +284,8 @@ return packer.startup {
         cmd = { 'NvimTreeToggle', 'NvimTreeOpen', 'NvimTreeFocus' },
       }
       use 'tpope/vim-fugitive'
-      use 'ryanoasis/vim-devicons'
       use { 'kyazdani42/nvim-web-devicons',
-        config = util.setup.rc('devicons'),
+        config = util.setup.rc('devicons', 'ui'),
       }
 
       use { 'akinsho/nvim-bufferline.lua',

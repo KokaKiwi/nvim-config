@@ -10,10 +10,10 @@ local function highlight(group, fg, bg, gui)
   vim.hi(group, opts)
 end
 
-local lineLengthWarning = 80
-local lineLengthError = 120
-local leftbracket = u'e0b2' -- Angle filled.
-local rightbracket = u'e0b0' -- Angle filled.
+local lineLengthWarning = 100
+local lineLengthError   = 120
+local leftbracket       = u'e0b2' -- Angle filled.
+local rightbracket      = u'e0b0' -- Angle filled.
 
 local colors = {
   bg              = '#333333',
@@ -109,10 +109,10 @@ end
 
 -- See: https://www.nerdfonts.com/cheat-sheet
 local icons = {
-  vim   = u'e62b',
-  dos   = u'e70f',
-  unix  = u'f17c',
-  mac   = u'f179',
+  vim   = u'E6C5',
+  dos   = u'E70F',
+  unix  = u'F11A',
+  mac   = u'F102',
 }
 
 local function setLineWidthColours()
@@ -202,7 +202,7 @@ return function()
     },
     {
       GitIcon = {
-        provider = providers.fixed_string(' '),
+        provider = providers.fixed_string(' ', ''),
         condition = condition.check_git_workspace,
         separator = '',
         separator_highlight = { 'NONE', colors.giticon },

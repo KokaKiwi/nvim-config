@@ -1,5 +1,33 @@
 local M = {}
 
+function M.setup_devicons()
+  local devicons = require('nvim-web-devicons')
+
+  devicons.setup {
+    default = true,
+  }
+
+  local OVERRIDES = {
+    ['.gitignore']     = u'E602',
+    ['COMMIT_EDITMSG'] = u'E602',
+    ['ex']             = u'E997',
+    ['exs']            = u'E997',
+    ['hs']             = u'E95F',
+    ['lua']            = u'E9A7',
+    ['nix']            = u'E9B2',
+    ['py']             = u'E63C',
+    ['toml']           = u'E6B2',
+    ['vim']            = u'E6C5',
+    ['yaml']           = u'E699',
+    ['yml']            = u'E699',
+  }
+
+  local icons = devicons.get_icons()
+  for key, icon in pairs(OVERRIDES) do
+    icons[key].icon = icon
+  end
+end
+
 function M.setup_fterm()
   local FTerm = require('FTerm')
 
@@ -33,7 +61,7 @@ function M.setup_fterm()
       blend = 75,
       dimensions = {
         width = 0.5,
-        height = 0.55,
+        height = 0.6,
         x = 1,
         y = 0.9,
       },

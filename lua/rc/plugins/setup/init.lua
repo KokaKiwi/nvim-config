@@ -54,12 +54,6 @@ function M.setup_ctrlp()
   }
 end
 
-function M.setup_devicons()
-  require('nvim-web-devicons').setup {
-    default = true,
-  }
-end
-
 function M.setup_gitsigns()
   require('gitsigns').setup {}
 end

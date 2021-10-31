@@ -43,10 +43,6 @@ nest.applyKeymaps {
       { 'k>', Plug 'neosnippet_expand_target',  mode = 'x' },
   } },
 
-  -- vim-easy-align
-  { 'ga', Plug 'EasyAlign' },
-  { 'ga', Plug 'EasyAlign', mode = 'x' },
-
   -- UndoTree
   { '<C-u>', Cmd 'UndotreeToggle' },
 
