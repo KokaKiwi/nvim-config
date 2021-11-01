@@ -17,7 +17,9 @@ end
 
 ---@return function(): string
 function providers.lsp_status()
-  return lsp_status.status
+  return function()
+    return lsp_status.status():gsub('%%%%', '%%')
+  end
 end
 
 return providers
