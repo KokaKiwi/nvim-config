@@ -68,6 +68,7 @@
 ### UI
 
 - [akinsho/nvim-bufferline.lua](https://github.com/akinsho/nvim-bufferline.lua)
+- [beauwilliams/focus.nvim](https://github.com/beauwilliams/focus.nvim)
 - [chentau/marks.nvim](https://github.com/chentau/marks.nvim)
 - [ctrlpvim/ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
 - [folke/todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
@@ -90,10 +91,10 @@
 - [ripxorip/aerojump.nvim](https://github.com/ripxorip/aerojump.nvim)
 - [romgrk/nvim-treesitter-context](https://github.com/romgrk/nvim-treesitter-context)
 - [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
-- [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons)
 - [tanvirtin/vgit.nvim](https://github.com/tanvirtin/vgit.nvim)
 - [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [weilbith/nvim-code-action-menu](https://github.com/weilbith/nvim-code-action-menu)
+- [wfxr/minimap.vim](https://github.com/wfxr/minimap.vim)
 
 ### Utilities
 
