@@ -320,6 +320,9 @@ return packer.startup {
         cond = util.cond.is_executable('code-minimap'),
         cmd = { 'Minimap', 'MinimapToggle' },
       }
+      use { 'beauwilliams/focus.nvim',
+        config = util.setup.rc('focus', 'ui'),
+      }
 
       use { 'nvim-telescope/telescope.nvim',
         requires = { 'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'},

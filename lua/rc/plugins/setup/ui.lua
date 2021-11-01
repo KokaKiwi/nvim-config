@@ -28,6 +28,10 @@ function M.setup_devicons()
   end
 end
 
+function M.setup_focus()
+  require('focus').setup {}
+end
+
 function M.setup_fterm()
   local FTerm = require('FTerm')
 
