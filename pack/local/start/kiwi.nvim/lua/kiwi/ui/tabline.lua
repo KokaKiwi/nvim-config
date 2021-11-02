@@ -14,24 +14,18 @@ return function()
           highlight = 'Directory',
           text_align = 'center',
         },
-        {
-          filetype = 'vista_kind',
-          text = 'Symbols',
-          highlight = 'Directory',
-          text_align = 'center',
-        },
       },
     },
   }
 
   nkey.register {
     { '<C-', {
-      { 'PageDown>',  nkey.Cmd 'BufferLineCycleNext' },
-      { 'PageUp>',    nkey.Cmd 'BufferLineCyclePrev' },
+      { 'PageDown>',  nkey.Cmd 'BufferLineCycleNext', help = 'Go to next tab' },
+      { 'PageUp>',    nkey.Cmd 'BufferLineCyclePrev', help = 'Go to previous tab' },
     } },
     { '<Leader>b', {
-      { '<',    nkey.Cmd 'BufferLineMovePrev' },
-      { '>',    nkey.Cmd 'BufferLineMoveNext' },
-    } },
+      { '<',    nkey.Cmd 'BufferLineMovePrev', help = 'Move tab left' },
+      { '>',    nkey.Cmd 'BufferLineMoveNext', help = 'Move tab right' },
+    }, help = '+buffers' },
   }
 end
