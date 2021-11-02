@@ -1,16 +1,5 @@
 local M = {}
 
-function M.setup_aerial()
-  vim.g.aerial = {
-    default_direction = 'right',
-
-    min_width = 40,
-    max_width = 50,
-  }
-
-  require('telescope').load_extension('aerial')
-end
-
 function M.setup_devicons()
   local devicons = require('nvim-web-devicons')
 

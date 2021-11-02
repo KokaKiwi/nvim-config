@@ -272,11 +272,6 @@ return packer.startup {
         config = util.setup.rc('undotree'),
         cmd = { 'UndotreeToggle' },
       }
-      use { 'stevearc/aerial.nvim',
-        config = util.setup.rc('aerial', 'ui'),
-        cmd = { 'AerialToggle', 'AerialTreeToggle' },
-        after = { 'telescope.nvim' },
-      }
 
       use { 'kyazdani42/nvim-tree.lua',
         requires = { 'kyazdani42/nvim-web-devicons' },

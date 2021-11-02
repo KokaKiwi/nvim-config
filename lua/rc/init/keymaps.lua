@@ -29,9 +29,6 @@ nkey.register {
   -- UndoTree
   { '<C-u>', nkey.Cmd 'UndotreeToggle' },
 
-  -- Symbols
-  { '<S-t>', nkey.Cmd 'AerialToggle' },
-
   -- AeroJump
   { '<Leader>', {
       { 'aa', nkey.Plug 'AerojumpFromCursorBolt' },
