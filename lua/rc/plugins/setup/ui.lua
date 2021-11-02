@@ -82,6 +82,10 @@ function M.setup_fterm()
   vim.command('Neofetch', toggle(fterm.neofetch))
 end
 
+function M.setup_lsp_signature()
+  require('lsp_signature').setup {}
+end
+
 function M.setup_minimap()
   prefixed(vim.g, 'minimap') {
     block_filetypes = { 'NvimTree', 'vista_kind' },

@@ -1,3 +1,4 @@
+---@diagnostic disable: redefined-local
 local util = require('rc.plugins.util')
 
 -- Setup
@@ -298,6 +299,9 @@ return packer.startup {
       use { 'nvim-lua/lsp-status.nvim',
         config = util.setup.rc('lsp_status'),
         module = { 'lsp-status' },
+      }
+      use { 'ray-x/lsp_signature.nvim',
+        config = util.setup.rc('lsp_signature', 'ui'),
       }
       use { 'weilbith/nvim-code-action-menu',
         cmd = { 'CodeActionMenu' },
