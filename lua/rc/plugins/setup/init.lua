@@ -249,15 +249,6 @@ function M.setup_vgit()
   }
 end
 
-function M.setup_vista()
-  prefixed(vim.g, 'vista') {
-    default_executive = 'nvim_lsp',
-    finder_alternative_executives = { 'ctags' },
-    width = 40,
-  }
-  vim.g['vista#renderer#enable_icon'] = 1
-end
-
 function M.setup_which_key()
   require('which-key').setup {
     icons = {

@@ -137,9 +137,9 @@ return packer.startup {
 
     -- Helpers (autocomplete, lint, format, snippets)
     group { group = 'helpers', function(use)
-      use { 'liuchengxu/vista.vim',
-        config = util.setup.rc('vista'),
-        cmd = { 'Vista' },
+      use { 'simrat39/symbols-outline.nvim',
+        config = util.setup.rc('symbols_outline', 'ui'),
+        cmd = { 'SymbolsOutline' },
       }
       use 'mhinz/vim-mix-format'
 

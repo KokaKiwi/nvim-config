@@ -173,4 +173,10 @@ function M.setup_notify()
   })
 end
 
+function M.setup_symbols_outline()
+  vim.g.symbols_outline = {
+    width = 40,
+  }
+end
+
 return M

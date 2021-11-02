@@ -29,8 +29,8 @@ nkey.register {
   -- UndoTree
   { '<C-u>', nkey.Cmd 'UndotreeToggle' },
 
-  -- Vista.vim
-  { '<S-t>', nkey.Cmd('Vista', 'focus') },
+  -- Symbols
+  { '<S-t>', nkey.Cmd 'SymbolsOutline' },
 
   -- AeroJump
   { '<Leader>', {
