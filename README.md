@@ -12,6 +12,7 @@
 
 - [b0o/SchemaStore.nvim](https://github.com/b0o/SchemaStore.nvim)
 - [David-Kunz/cmp-npm](https://github.com/David-Kunz/cmp-npm)
+- [folke/lua-dev.nvim](https://github.com/folke/lua-dev.nvim)
 - [folke/trouble.nvim](https://github.com/folke/trouble.nvim)
 - [hrsh7th/cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
 - [hrsh7th/cmp-calc](https://github.com/hrsh7th/cmp-calc)

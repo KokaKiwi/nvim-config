@@ -179,10 +179,11 @@ return packer.startup {
         after = { 'nvim-lspconfig' },
       }
       use 'b0o/SchemaStore.nvim'
+      use 'folke/lua-dev.nvim'
 
       use { 'neovim/nvim-lspconfig',
         config = util.setup.mod_setup('kiwi.lsp'),
-        after = { 'cmp-nvim-lsp', 'SchemaStore.nvim' },
+        after = { 'cmp-nvim-lsp', 'SchemaStore.nvim', 'lua-dev.nvim' },
       }
       use { 'folke/trouble.nvim',
         requires = { 'kyazdani42/nvim-web-devicons' },

@@ -25,9 +25,10 @@ end
 require('kiwi.lsp.langs.hack')
 local lsp = require('lspconfig')
 local util = require('lspconfig/util')
-local lsp_status = require('lsp-status')
 
+local lsp_status = require('lsp-status')
 local schemastore = require('schemastore')
+local luadev = require('lua-dev')
 
 lsp.bashls.setup {}
 lsp.clangd.setup {
@@ -51,29 +52,11 @@ lsp.jsonls.setup {
     },
   },
 }
-lsp.sumneko_lua.setup {
-  cmd = { 'lua-language-server' },
-  settings = {
-    Lua = {
-      hint = {
-        enable = true,
-      },
-      runtime = {
-        version = 'LuaJIT',
-        path = get_lua_runtime_paths(),
-      },
-      diagnostics = {
-        globals = { 'vim' },
-      },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file('', true),
-      },
-      telemetry = {
-        enable = false,
-      },
+lsp.sumneko_lua.setup(luadev.setup {
+    lspconfig = {
+      cmd = { 'lua-language-server' },
     },
-  },
-}
+})
 lsp.phpactor.setup {}
 lsp.pyright.setup {}
 lsp.rnix.setup {}
