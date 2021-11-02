@@ -12,6 +12,7 @@ end
 ---table.dmap
 ---@param t table
 ---@param fn function
+---@return table
 function table.dmap(t, fn, to_list)
   if to_list == nil then
     to_list = false
@@ -36,7 +37,52 @@ function table.dmap(t, fn, to_list)
   return result
 end
 
----table.reducemap
+---table.filter
+---@param t table
+---@param fn function
+---@return any[]
+function table.filter(t, fn)
+  local result = {}
+
+  for _, item in ipairs(t) do
+    if fn(item) then
+      table.insert(result, item)
+    end
+  end
+
+  return result
+end
+
+---table.dfilter
+---@param t table
+---@param fn function
+---@return table
+function table.dfilter(t, fn)
+  local result = {}
+
+  for key, value in pairs(t) do
+    if fn(key, value) then
+      result[key] = value
+    end
+  end
+
+  return result
+end
+
+---table.filterkeys
+---@param t table
+---@param keys string[]
+---@return table
+function table.filterkeys(t, keys)
+  return table.dfilter(t, function(key, _)
+    return table.contains(keys, key)
+  end)
+end
+
+---table.filtermap
+---@param t table
+---@param fn function
+---@return table
 function table.filtermap(t, fn)
   local result = {}
 
@@ -103,4 +149,47 @@ function table.extends(t, items)
   end
 
   return t
+end
+
+
+---@param t table
+---@param deep boolean | nil
+---@return table
+function table.copy(t, deep)
+  if deep == nil then
+    deep = true
+  end
+
+  local seen = {}
+  local function _copy(tbl)
+    if seen[tbl] ~= nil then
+      return seen[tbl]
+    else
+      local copy = {}
+      seen[tbl] = copy
+
+      for k, v in pairs(tbl) do
+        if type(v) == 'table' then
+          v = _copy(v)
+        end
+        copy[k] = v
+      end
+
+      return setmetatable(copy, getmetatable(tbl))
+    end
+  end
+
+  return _copy(t)
+end
+
+---@param t table
+---@return string[]
+function table.keys(t)
+  local keys = {}
+
+  for key, _ in pairs(t) do
+    table.insert(keys, key)
+  end
+
+  return keys
 end

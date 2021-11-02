@@ -1,68 +1,51 @@
----@diagnostic disable: unused-local
-local nest = require('nest')
-local wk = require('which-key')
+local nkey = require('nkey')
 
-function nest.Cmd(name, ...)
-  local command = { name, ... }
+nkey.setup {
+  integrations = { 'which_key' },
+}
 
-  return string.format('<Cmd>%s<CR>', table.concat(command, ' '))
-end
-local Cmd = nest.Cmd
-
-function nest.Plug(name)
-  return string.format('<Plug>(%s)', name)
-end
-local Plug = nest.Plug
-
-function nest.Plugr(name)
-  return string.format('<Plug>%s', name)
-end
-local Plugr = nest.Plugr
-
-nest.applyKeymaps {
+nkey.register {
   -- Utils
-  { '<Leader><Leader>s', Cmd('syntax', 'sync', 'fromstart'), options = { silent = false } },
+  { '<Leader><Leader>s', nkey.Cmd('syntax', 'sync', 'fromstart'), options = { silent = false } },
 
   -- LSP
-  -- { '<C-]>',  vim.lsp.buf.definition },
   { 'K',      vim.lsp.buf.hover },
   { 'gD',     vim.lsp.buf.implementation },
   { '<C-K>',  vim.lsp.buf.signature_help },
-  { 'gr',     vim.lsp.buf.references },
+  { 'gr',     vim.lsp.buf.references, help = 'Find references [LSP]' },
 
   -- Tabs
   { '<C-', {
-      { 't>', Cmd 'tabnew' },
-      { 'x>', Cmd 'bwipe' },
+      { 't>', nkey.Cmd 'tabnew' },
+      { 'x>', nkey.Cmd 'bwipe' },
   } },
 
   -- neosnippet
   { '<C-', {
-      { 'k>', Plug 'neosnippet_expand_or_jump', mode = 'i' },
-      { 'k>', Plug 'neosnippet_expand_or_jump', mode = 's' },
-      { 'k>', Plug 'neosnippet_expand_target',  mode = 'x' },
+      { 'k>', nkey.Plug 'neosnippet_expand_or_jump', mode = { 'i', 's' } },
+      { 'k>', nkey.Plug 'neosnippet_expand_target',  mode = 'x' },
   } },
 
   -- UndoTree
-  { '<C-u>', Cmd 'UndotreeToggle' },
+  { '<C-u>', nkey.Cmd 'UndotreeToggle' },
 
   -- Vista.vim
-  { '<S-t>', Cmd('Vista', 'focus') },
+  { '<S-t>', nkey.Cmd('Vista', 'focus') },
 
   -- AeroJump
   { '<Leader>', {
-      { 'aa', Plug 'AerojumpFromCursorBolt' },
-      { 'ab', Plug 'AerojumpBolt' },
-      { 'ad', Plug 'AerojumpDefault' },
-      { 'as', Plug 'AerojumpSpace' },
+      { 'aa', nkey.Plug 'AerojumpFromCursorBolt' },
+      { 'ab', nkey.Plug 'AerojumpBolt' },
+      { 'ad', nkey.Plug 'AerojumpDefault' },
+      { 'as', nkey.Plug 'AerojumpSpace' },
   } },
 
   -- Trouble
-  { '<Leader>t', Cmd 'TroubleToggle' },
+  { '<Leader>t', nkey.Cmd 'TroubleToggle' },
 
   -- code-action-menu
-  { 'com', Cmd 'CodeActionMenu' },
+  { 'com', nkey.Cmd 'CodeActionMenu', help = 'Code Action Menu' },
 
   -- nvim-tree
-  { '<C-e>', Cmd 'NvimTreeToggle' },
+  { '<C-e>', nkey.Cmd 'NvimTreeToggle', help = 'Open file tree' },
 }

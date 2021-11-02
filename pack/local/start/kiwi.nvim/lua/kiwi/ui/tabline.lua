@@ -1,5 +1,5 @@
 return function()
-  local nest = require('nest')
+  local nkey = require('nkey')
 
   vim.opt.termguicolors = true
 
@@ -24,14 +24,14 @@ return function()
     },
   }
 
-  nest.applyKeymaps {
+  nkey.register {
     { '<C-', {
-      { 'PageDown>',  nest.Cmd 'BufferLineCycleNext' },
-      { 'PageUp>',    nest.Cmd 'BufferLineCyclePrev' },
+      { 'PageDown>',  nkey.Cmd 'BufferLineCycleNext' },
+      { 'PageUp>',    nkey.Cmd 'BufferLineCyclePrev' },
     } },
     { '<Leader>b', {
-      { '<',    nest.Cmd 'BufferLineMovePrev' },
-      { '>',    nest.Cmd 'BufferLineMoveNext' },
+      { '<',    nkey.Cmd 'BufferLineMovePrev' },
+      { '>',    nkey.Cmd 'BufferLineMoveNext' },
     } },
   }
 end

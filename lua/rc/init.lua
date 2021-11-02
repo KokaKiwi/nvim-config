@@ -38,5 +38,5 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_python_provider = 0
 vim.g.loaded_ruby_provider = 0
 
-require_prefix('rc.init', 'format', 'input', 'ui')
+require_prefix('rc.init', 'format', 'input', 'keymaps', 'ui')
 pcall(require, 'rc.secret')

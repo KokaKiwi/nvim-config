@@ -105,9 +105,6 @@ return packer.startup {
           { 'x', '<leader>c' },
         },
       }
-      use { 'LionC/nest.nvim',
-        config = util.setup.mod('rc.init.keymaps'),
-      }
       use { 'henriquehbr/nvim-startup.lua',
         config = util.setup.rc('nvim_startup'),
         after = { 'nvim-notify' },
