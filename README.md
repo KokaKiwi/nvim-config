@@ -38,7 +38,6 @@
 - [saecki/crates.nvim](https://github.com/saecki/crates.nvim)
 - [sbdchd/neoformat](https://github.com/sbdchd/neoformat)
 - [simrat39/rust-tools.nvim](https://github.com/simrat39/rust-tools.nvim)
-- [simrat39/symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
 
 ### Syntax / Languages
 
@@ -69,7 +68,6 @@
 ### UI
 
 - [akinsho/nvim-bufferline.lua](https://github.com/akinsho/nvim-bufferline.lua)
-- [beauwilliams/focus.nvim](https://github.com/beauwilliams/focus.nvim)
 - [chentau/marks.nvim](https://github.com/chentau/marks.nvim)
 - [ctrlpvim/ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
 - [folke/todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
@@ -93,6 +91,7 @@
 - [ripxorip/aerojump.nvim](https://github.com/ripxorip/aerojump.nvim)
 - [romgrk/nvim-treesitter-context](https://github.com/romgrk/nvim-treesitter-context)
 - [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
+- [stevearc/aerial.nvim](https://github.com/stevearc/aerial.nvim)
 - [tanvirtin/vgit.nvim](https://github.com/tanvirtin/vgit.nvim)
 - [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [weilbith/nvim-code-action-menu](https://github.com/weilbith/nvim-code-action-menu)

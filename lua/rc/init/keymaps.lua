@@ -30,7 +30,7 @@ nkey.register {
   { '<C-u>', nkey.Cmd 'UndotreeToggle' },
 
   -- Symbols
-  { '<S-t>', nkey.Cmd 'SymbolsOutline' },
+  { '<S-t>', nkey.Cmd 'AerialToggle' },
 
   -- AeroJump
   { '<Leader>', {

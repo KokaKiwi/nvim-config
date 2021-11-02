@@ -70,6 +70,9 @@ util.setup = {
   mod_call = function(name)
     return string.format([[require('%s')()]], name)
   end,
+  ---@param name string
+  ---@param modname string
+  ---@return string
   rc = function(name, modname)
     local fullmodname = 'rc.plugins.setup'
     if modname ~= nil then

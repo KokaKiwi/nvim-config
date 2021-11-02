@@ -138,10 +138,6 @@ return packer.startup {
 
     -- Helpers (autocomplete, lint, format, snippets)
     group { group = 'helpers', function(use)
-      use { 'simrat39/symbols-outline.nvim',
-        config = util.setup.rc('symbols_outline', 'ui'),
-        cmd = { 'SymbolsOutline' },
-      }
       use 'mhinz/vim-mix-format'
 
       use { 'saecki/crates.nvim',
@@ -276,6 +272,11 @@ return packer.startup {
         config = util.setup.rc('undotree'),
         cmd = { 'UndotreeToggle' },
       }
+      use { 'stevearc/aerial.nvim',
+        config = util.setup.rc('aerial', 'ui'),
+        cmd = { 'AerialToggle', 'AerialTreeToggle' },
+        after = { 'telescope.nvim' },
+      }
 
       use { 'kyazdani42/nvim-tree.lua',
         requires = { 'kyazdani42/nvim-web-devicons' },
@@ -321,9 +322,6 @@ return packer.startup {
         config = util.setup.rc('minimap', 'ui'),
         cond = util.cond.is_executable('code-minimap'),
         cmd = { 'Minimap', 'MinimapToggle' },
-      }
-      use { 'beauwilliams/focus.nvim',
-        config = util.setup.rc('focus', 'ui'),
       }
 
       use { 'nvim-telescope/telescope.nvim',

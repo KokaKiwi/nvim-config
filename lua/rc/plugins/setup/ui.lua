@@ -1,5 +1,16 @@
 local M = {}
 
+function M.setup_aerial()
+  vim.g.aerial = {
+    default_direction = 'right',
+
+    min_width = 40,
+    max_width = 50,
+  }
+
+  require('telescope').load_extension('aerial')
+end
+
 function M.setup_devicons()
   local devicons = require('nvim-web-devicons')
 
@@ -26,10 +37,6 @@ function M.setup_devicons()
   for key, icon in pairs(OVERRIDES) do
     icons[key].icon = icon
   end
-end
-
-function M.setup_focus()
-  require('focus').setup {}
 end
 
 function M.setup_fterm()
