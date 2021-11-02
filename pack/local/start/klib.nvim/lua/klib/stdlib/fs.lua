@@ -1,9 +1,6 @@
 _G.fs = {}
 
 ---@class DirEntry
----@field name string
----@field type string
-local DirEntry
 
 ---@param path string
 ---@return DirEntry[]

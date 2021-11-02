@@ -1,5 +1,5 @@
 local Integration = require('nkey.integration')
-local wk = require('which-key')
+local has_wk, wk = pcall(require, 'which-key')
 
 local function register_keymap(mode, prefix, spec, preset, make_mapping)
   local help = spec.help
@@ -50,6 +50,10 @@ end
 
 ---@param nkey NKey
 return Integration.new(function(nkey)
+  if not has_wk then
+    return
+  end
+
   nkey.hooks.on_map:register(on_map)
   nkey.hooks.on_group:register(on_group)
 end)
