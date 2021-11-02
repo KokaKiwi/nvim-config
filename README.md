@@ -28,7 +28,6 @@
 - [Julian/lean.nvim](https://github.com/Julian/lean.nvim)
 - [junegunn/vim-easy-align](https://github.com/junegunn/vim-easy-align)
 - [kdheepak/cmp-latex-symbols](https://github.com/kdheepak/cmp-latex-symbols)
-- [liuchengxu/vista.vim](https://github.com/liuchengxu/vista.vim)
 - [mfussenegger/nvim-lint](https://github.com/mfussenegger/nvim-lint)
 - [mhinz/vim-mix-format](https://github.com/mhinz/vim-mix-format)
 - [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
@@ -38,6 +37,7 @@
 - [saecki/crates.nvim](https://github.com/saecki/crates.nvim)
 - [sbdchd/neoformat](https://github.com/sbdchd/neoformat)
 - [simrat39/rust-tools.nvim](https://github.com/simrat39/rust-tools.nvim)
+- [simrat39/symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
 
 ### Syntax / Languages
 
@@ -85,6 +85,7 @@
 - [numToStr/FTerm.nvim](https://github.com/numToStr/FTerm.nvim)
 - [nvim-lua/lsp-status.nvim](https://github.com/nvim-lua/lsp-status.nvim)
 - [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- [ray-x/lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim)
 - [ray-x/navigator.lua](https://github.com/ray-x/navigator.lua)
 - [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)
 - [rhysd/committia.vim](https://github.com/rhysd/committia.vim)
@@ -112,7 +113,6 @@
 - [jghauser/mkdir.nvim](https://github.com/jghauser/mkdir.nvim)
 - [justinmk/vim-sneak](https://github.com/justinmk/vim-sneak)
 - [lewis6991/impatient.nvim](https://github.com/lewis6991/impatient.nvim)
-- [LionC/nest.nvim](https://github.com/LionC/nest.nvim)
 - [LucHermitte/lh-vim-lib](https://github.com/LucHermitte/lh-vim-lib)
 - [mattn/emmet-vim](https://github.com/mattn/emmet-vim)
 - [mattn/vim-gist](https://github.com/mattn/vim-gist)
