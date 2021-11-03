@@ -42,13 +42,11 @@ util.action = {
 
     return function() vim.call(name, unpack(args)) end
   end,
-
   cmd = function(name, ...)
     local cmd = { name, ... }
 
     return function() vim.cmd(table.concat(cmd, ' ')) end
   end,
-
   all = function(...)
     local actions = {...}
 
@@ -58,6 +56,16 @@ util.action = {
       end
     end
   end,
+  shell = {
+    make = function(path)
+      local command = { 'make' }
+      if path ~= nil then
+        table.extends(command, { '-C', path })
+      end
+
+      return table.concat(command, ' ')
+    end,
+  },
 }
 
 util.setup = {

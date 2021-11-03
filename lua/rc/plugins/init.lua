@@ -117,8 +117,12 @@ return packer.startup {
       use 'inkarkat/vim-ingo-library'
       use 'LucHermitte/lh-vim-lib'
 
-      use 'rafcamlet/nvim-luapad'
-      use 'tjdevries/nlua.nvim'
+      use { 'rafcamlet/nvim-luapad',
+        cmd = { 'Luapad', 'Luarun' },
+      }
+      use { 'metakirby5/codi.vim',
+        cmd = { 'Codi' },
+      }
 
       use { 'iamcco/markdown-preview.nvim',
         ft = { 'markdown', 'pandoc.markdown', 'rmd' },
@@ -334,7 +338,7 @@ return packer.startup {
         config = util.setup.rc('navigator'),
         requires = {
           { 'ray-x/guihua.lua',
-            run = 'cd lua/fzy && make',
+            run = util.action.shell.make('lua/fzy'),
           },
           'neovim/nvim-lspconfig',
         },
@@ -385,7 +389,6 @@ return packer.startup {
       use { 'kelwin/vim-smali', ft = 'smali' }
       use { 'killphi/vim-ebnf', ft = 'ebnf' }
       use { 'leanprover/lean.vim', ft = 'lean' }
-      use { 'metakirby5/codi.vim' }
       use { 'moon-musick/vim-logrotate', ft = 'logrotate' }
       use { 'niklasl/vim-rdf', ft = 'rdf' }
       use { 'nikvdp/ejs-syntax', ft = { 'ejs' } }
