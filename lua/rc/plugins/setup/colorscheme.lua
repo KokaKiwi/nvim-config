@@ -34,11 +34,16 @@ function M.setup_catppuccino()
     },
   }
 
+  colors.diff.add = colors.green
+
   catppuccino.remap(colors, {
     Constant = { fg = colors.orange, style = 'italic' },
 
     TSBoolean = { fg = colors.orange, style = 'italic' },
     TSConstBuiltin = { fg = colors.orange, style = 'italic' },
+
+    diffAdded = { fg = colors.diff.add },
+    diffRemoved = { fg = colors.diff.delete },
   })
 end
 
