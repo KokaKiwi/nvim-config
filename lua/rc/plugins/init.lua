@@ -71,12 +71,7 @@ return packer.startup {
       use { 'jamessan/vim-gnupg',
         config = util.setup.rc('gnupg'),
       }
-      use 'justinmk/vim-sneak'
       use 'mattn/emmet-vim'
-      use { 'mattn/vim-gist',
-        requires = { 'mattn/webapi-vim' },
-        cmd = { 'Gist' },
-      }
       use { 'ntpeters/vim-better-whitespace',
         config = util.setup.rc('better_whitespace'),
       }
@@ -399,7 +394,7 @@ return packer.startup {
     end }
 
     -- LuaRocks
-    use_rocks { 'luasocket', 'luaposix' }
+    use_rocks { 'luasocket', 'luaposix', 'http' }
 
     -- Automatically setup config after bootstraping packer.nvim
     if packer._bootstrap then

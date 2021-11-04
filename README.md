@@ -109,11 +109,9 @@
 - [inkarkat/vim-ingo-library](https://github.com/inkarkat/vim-ingo-library)
 - [jamessan/vim-gnupg](https://github.com/jamessan/vim-gnupg)
 - [jghauser/mkdir.nvim](https://github.com/jghauser/mkdir.nvim)
-- [justinmk/vim-sneak](https://github.com/justinmk/vim-sneak)
 - [lewis6991/impatient.nvim](https://github.com/lewis6991/impatient.nvim)
 - [LucHermitte/lh-vim-lib](https://github.com/LucHermitte/lh-vim-lib)
 - [mattn/emmet-vim](https://github.com/mattn/emmet-vim)
-- [mattn/vim-gist](https://github.com/mattn/vim-gist)
 - [metakirby5/codi.vim](https://github.com/metakirby5/codi.vim)
 - [mg979/vim-visual-multi](https://github.com/mg979/vim-visual-multi)
 - [ntpeters/vim-better-whitespace](https://github.com/ntpeters/vim-better-whitespace)
@@ -134,6 +132,5 @@
 ### Third-party dependencies
 
 - [glts/vim-magnum](https://github.com/glts/vim-magnum)
-- [mattn/webapi-vim](https://github.com/mattn/webapi-vim)
 - [onsails/lspkind-nvim](https://github.com/onsails/lspkind-nvim)
 - [ray-x/guihua.lua](https://github.com/ray-x/guihua.lua)

@@ -1,19 +1,13 @@
 -- Load Lua helpers
 require('klib')
 
--- Don't do full boostrap if NO_BOOSTRAP env var is 1
-if os.getenv('NO_BOOSTRAP') == 1 then
+-- Don't do full boostrap if NO_BOOTSTRAP env var is 1
+if os.getenv('NO_BOOTSTRAP') == '1' then
   return
 end
 
 -- Load plugins
 require('rc.plugins')
-
-local luarocks = require('packer.luarocks')
-luarocks.install_commands()
-vim.after.register(function()
-  luarocks.setup_paths()
-end)
 
 -- Basic init
 vim.opt.shell = '/bin/bash'
