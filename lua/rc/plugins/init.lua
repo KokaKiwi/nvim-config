@@ -322,12 +322,7 @@ return packer.startup {
         requires = { 'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'},
         module = { 'telescope' },
         cmd = { 'Telescope' },
-        config = util.setup.rc('telescope'),
-        keys = {
-          { 'n', '<leader>ff' },
-          { 'n', '<leader>fg' },
-          { 'n', '<leader>fh' },
-        }
+        config = util.setup.rc('telescope', 'ui'),
       }
       use { 'ray-x/navigator.lua',
         config = util.setup.rc('navigator'),

@@ -182,19 +182,6 @@ function M.setup_shade()
   require('shade').setup {}
 end
 
-function M.setup_telescope()
-  local function map(seq, fname)
-    local cmd = string.format([[<Cmd>lua require('telescope.builtin').%s()<cr>]], fname)
-    vim.api.nvim_set_keymap('n', '<Leader>'..seq, cmd, {})
-  end
-
-  require('telescope').setup {}
-
-  map('ff', 'find_files')
-  map('fg', 'live_grep')
-  map('fh', 'help_tags')
-end
-
 function M.setup_todo_comments()
   require('todo-comments').setup {}
 end

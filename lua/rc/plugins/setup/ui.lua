@@ -179,4 +179,8 @@ function M.setup_symbols_outline()
   }
 end
 
+function M.setup_telescope()
+  require('telescope').setup {}
+end
+
 return M

@@ -4,6 +4,10 @@ nkey.setup {
   integrations = { 'which_key' },
 }
 
+local function Telescope(name)
+  return nkey.Cmd('Telescope', name)
+end
+
 nkey.register {
   -- Utils
   { '<Leader><Leader>s', nkey.Cmd('syntax', 'sync', 'fromstart'), options = { silent = false } },
@@ -45,4 +49,12 @@ nkey.register {
 
   -- nvim-tree
   { '<C-e>', nkey.Cmd 'NvimTreeToggle', help = 'Open file tree' },
+
+  -- telescope.nvim
+  { '<Leader>f', {
+    { 'e', Telescope 'file_browser', help = 'File explorer' },
+    { 'f', Telescope 'find_files', help = 'Find files' },
+    { 'g', Telescope 'live_grep',  help = 'Live grep' },
+    { 'h', Telescope 'help_tags',  help = 'Help tags' },
+  }, help = '+telescope' },
 }
