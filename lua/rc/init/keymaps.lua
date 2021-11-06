@@ -63,6 +63,10 @@ nkey.register {
   { '<Leader>T', nkey.Cmd 'Telescope' },
 
   -- doc
-  { '<Leader>c', help = 'Toggle comment' },
+  { '<Leader>', {
+    { 'c', help = 'Toggle comment' },
+    { 'k', help = 'Toggle variable highlight' },
+    { 's', help = 'Strip whitespaces' },
+  } },
   { '<C-p>', help = 'Find file' },
 }
