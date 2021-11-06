@@ -106,30 +106,31 @@ function nkey.register(spec, preset)
     modes = { modes }
   end
 
-  if type(spec[2]) == 'table' then
+  local rhs = spec[2]
+  if type(rhs) == 'table' then
     preset.prefix = prefix
-    nkey.register(spec[2], preset)
+    nkey.register(rhs, preset)
 
     nkey.hooks.on_group:run(modes, preset.prefix, spec, preset)
 
     return
   end
-
-  local rhs = spec[2]
   if type(rhs) == 'function' then
     rhs = register_callback(rhs, preset.options.expr)
   end
 
-  for _, mode in ipairs(modes) do
-    if preset.buffer then
-      local buffer = preset.buffer
-      if buffer == true then
-        buffer = 0
-      end
+  if rhs ~= nil then
+    for _, mode in ipairs(modes) do
+      if preset.buffer then
+        local buffer = preset.buffer
+        if buffer == true then
+          buffer = 0
+        end
 
-      vim.api.nvim_buf_set_keymap(buffer, mode, prefix, rhs, preset.options)
-    else
-      vim.api.nvim_set_keymap(mode, prefix, rhs, preset.options)
+        vim.api.nvim_buf_set_keymap(buffer, mode, prefix, rhs, preset.options)
+      else
+        vim.api.nvim_set_keymap(mode, prefix, rhs, preset.options)
+      end
     end
   end
 

@@ -10,18 +10,21 @@ end
 
 nkey.register {
   -- Utils
-  { '<Leader><Leader>s', nkey.Cmd('syntax', 'sync', 'fromstart'), options = { silent = false } },
+  { '<Leader><Leader>s', nkey.Cmd('syntax', 'sync', 'fromstart'),
+    options = { silent = false },
+    help = 'Reload syntax coloring',
+  },
 
   -- LSP
-  { 'K',      vim.lsp.buf.hover },
-  { 'gD',     vim.lsp.buf.implementation },
-  { '<C-K>',  vim.lsp.buf.signature_help },
+  { 'gd',     vim.lsp.buf.definition, help = 'Go to definition [LSP]' },
+  { 'gD',     vim.lsp.buf.declaration, help = 'Go to declaration [LSP]' },
+  { 'gI',     vim.lsp.buf.implementation, help = 'Go to implementation [LSP]' },
   { 'gr',     vim.lsp.buf.references, help = 'Find references [LSP]' },
 
   -- Tabs
   { '<C-', {
-      { 't>', nkey.Cmd 'tabnew' },
-      { 'x>', nkey.Cmd 'bwipe' },
+      { 't>', nkey.Cmd 'tabnew', help = 'Open new tab' },
+      { 'x>', nkey.Cmd 'bwipe', help = 'Close tab' },
   } },
 
   -- neosnippet
@@ -31,7 +34,7 @@ nkey.register {
   } },
 
   -- UndoTree
-  { '<C-u>', nkey.Cmd 'UndotreeToggle' },
+  { '<C-u>', nkey.Cmd 'UndotreeToggle', help = 'Toggle Undo tree' },
 
   -- AeroJump
   { '<Leader>', {
@@ -57,4 +60,9 @@ nkey.register {
     { 'g', Telescope 'live_grep',  help = 'Live grep' },
     { 'h', Telescope 'help_tags',  help = 'Help tags' },
   }, help = '+telescope' },
+  { '<Leader>T', nkey.Cmd 'Telescope' },
+
+  -- doc
+  { '<Leader>c', help = 'Toggle comment' },
+  { '<C-p>', help = 'Find file' },
 }
