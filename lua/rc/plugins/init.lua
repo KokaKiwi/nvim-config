@@ -206,6 +206,10 @@ return packer.startup {
         config = util.setup.rc('lean'),
         after = { 'nvim-lspconfig' },
       }
+      use { 'lukas-reineke/headlines.nvim',
+        config = util.setup.rc('headlines', 'helpers'),
+        ft = { 'markdown', 'rmd', 'vimwiki', 'org' },
+      }
 
       use 'hrsh7th/vim-vsnip'
       use 'hrsh7th/vim-vsnip-integ'

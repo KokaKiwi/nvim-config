@@ -4,8 +4,8 @@
 
 ### Colorscheme
 
+- [catppuccin/nvim](https://github.com/catppuccin/nvim)
 - [olimorris/onedarkpro.nvim](https://github.com/olimorris/onedarkpro.nvim)
-- [Pocco81/Catppuccino.nvim](https://github.com/Pocco81/Catppuccino.nvim)
 - [rktjmp/lush.nvim](https://github.com/rktjmp/lush.nvim)
 
 ### Helpers
@@ -29,6 +29,7 @@
 - [Julian/lean.nvim](https://github.com/Julian/lean.nvim)
 - [junegunn/vim-easy-align](https://github.com/junegunn/vim-easy-align)
 - [kdheepak/cmp-latex-symbols](https://github.com/kdheepak/cmp-latex-symbols)
+- [lukas-reineke/headlines.nvim](https://github.com/lukas-reineke/headlines.nvim)
 - [mfussenegger/nvim-lint](https://github.com/mfussenegger/nvim-lint)
 - [mhinz/vim-mix-format](https://github.com/mhinz/vim-mix-format)
 - [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
