@@ -64,7 +64,6 @@ nkey.register {
 
   -- doc
   { '<Leader>', {
-    { 'c', help = 'Toggle comment' },
     { 'k', help = 'Toggle variable highlight' },
     { 's', help = 'Strip whitespaces' },
   } },

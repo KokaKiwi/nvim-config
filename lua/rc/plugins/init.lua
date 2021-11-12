@@ -100,12 +100,8 @@ return packer.startup {
       use { 'jghauser/mkdir.nvim',
         config = util.setup.mod('mkdir'),
       }
-      use { 'b3nj5m1n/kommentary',
-        config = util.setup.rc('kommentary'),
-        keys = {
-          { 'n', '<leader>c' },
-          { 'x', '<leader>c' },
-        },
+      use { 'numToStr/Comment.nvim',
+        config = util.setup.rc('Comment', 'utils'),
       }
       use { 'henriquehbr/nvim-startup.lua',
         config = util.setup.rc('nvim_startup'),

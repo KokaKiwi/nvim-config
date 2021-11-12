@@ -27,6 +27,11 @@ nkey.hooks = {
   ---@param prefix string
   ---@param spec table
   ---@param preset table
+  on_unmap = Hook.new(),
+  ---@param modes string[]
+  ---@param prefix string
+  ---@param spec table
+  ---@param preset table
   on_group = Hook.new(),
 }
 
@@ -92,6 +97,9 @@ function nkey.register(spec, preset)
   preset = merge_spec(nkey.config.defaults, preset or {})
   preset = merge_spec(preset, spec)
 
+  if #spec == 0 then
+    return
+  end
   if type(spec[1]) == 'table' then
     for _, item in ipairs(spec) do
       nkey.register(item, preset)
@@ -127,14 +135,26 @@ function nkey.register(spec, preset)
           buffer = 0
         end
 
-        vim.api.nvim_buf_set_keymap(buffer, mode, prefix, rhs, preset.options)
+        if rhs == 'none' then
+          vim.api.nvim_buf_del_keymap(buffer, mode, prefix)
+        else
+          vim.api.nvim_buf_set_keymap(buffer, mode, prefix, rhs, preset.options)
+        end
       else
-        vim.api.nvim_set_keymap(mode, prefix, rhs, preset.options)
+        if rhs == 'none' then
+          vim.api.nvim_del_keymap(mode, prefix)
+        else
+          vim.api.nvim_set_keymap(mode, prefix, rhs, preset.options)
+        end
       end
     end
   end
 
-  nkey.hooks.on_map:run(modes, prefix, spec[2], spec, preset)
+  if rhs == 'none' then
+    nkey.hooks.on_unmap:run(modes, prefix, spec, preset)
+  else
+    nkey.hooks.on_map:run(modes, prefix, spec[2], spec, preset)
+  end
 end
 
 ---@param name string

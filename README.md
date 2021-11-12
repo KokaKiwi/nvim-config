@@ -100,7 +100,6 @@
 ### Utilities
 
 - [andweeb/presence.nvim](https://github.com/andweeb/presence.nvim)
-- [b3nj5m1n/kommentary](https://github.com/b3nj5m1n/kommentary)
 - [editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim)
 - [ellisonleao/glow.nvim](https://github.com/ellisonleao/glow.nvim)
 - [famiu/bufdelete.nvim](https://github.com/famiu/bufdelete.nvim)
@@ -117,6 +116,7 @@
 - [metakirby5/codi.vim](https://github.com/metakirby5/codi.vim)
 - [mg979/vim-visual-multi](https://github.com/mg979/vim-visual-multi)
 - [ntpeters/vim-better-whitespace](https://github.com/ntpeters/vim-better-whitespace)
+- [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim)
 - [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 - [nvim-lua/popup.nvim](https://github.com/nvim-lua/popup.nvim)
 - [nvim-neorg/neorg](https://github.com/nvim-neorg/neorg)
