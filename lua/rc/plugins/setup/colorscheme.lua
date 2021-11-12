@@ -1,18 +1,15 @@
 local M = {}
 
-function M.setup_catppuccino()
-  local catppuccino = require('catppuccino')
+function M.setup_catppuccin()
+  local catppuccin = require('catppuccin')
   -- local util = require('catppuccino.utils.util')
 
-  local colorscheme = 'dark_catppuccino'
-  local err, colors = require('catppuccino.api.colors').get_colors(colorscheme)
-  if not err.status then
-    error(string.format('Unknown colorscheme: %s', colorscheme))
-  end
+  local colors = require('catppuccin.api.colors').get_colors()
 
-  catppuccino.setup {
-    colorscheme = colorscheme,
-    term_colors = true,
+  catppuccin.setup {
+    -- term_colors = true,
+    transparent_background = true,
+    transparency = true,
     styles = {
       functions = 'bold,italic',
       keywords = 'italic',
@@ -34,17 +31,12 @@ function M.setup_catppuccino()
     },
   }
 
-  colors.diff.add = colors.green
+  catppuccin.remap {
+    Constant = { fg = colors.catppuccin6, style = 'italic' },
 
-  catppuccino.remap(colors, {
-    Constant = { fg = colors.orange, style = 'italic' },
-
-    TSBoolean = { fg = colors.orange, style = 'italic' },
-    TSConstBuiltin = { fg = colors.orange, style = 'italic' },
-
-    diffAdded = { fg = colors.diff.add },
-    diffRemoved = { fg = colors.diff.delete },
-  })
+    TSBoolean = { fg = colors.catppuccin6, style = 'italic' },
+    TSConstBuiltin = { fg = colors.catppuccin6, style = 'italic' },
+  }
 end
 
 function M.setup_onedark()

@@ -232,9 +232,10 @@ return packer.startup {
         config = util.setup.rc('onedark', 'colorscheme'),
         -- colorscheme = 'onedark',
       }
-      use { 'Pocco81/Catppuccino.nvim',
-        config = util.setup.rc('catppuccino', 'colorscheme'),
-        colorscheme = 'catppuccino',
+      use { 'catppuccin/nvim',
+        as = 'catppuccin',
+        config = util.setup.rc('catppuccin', 'colorscheme'),
+        colorscheme = 'catppuccin',
       }
     end }
 
