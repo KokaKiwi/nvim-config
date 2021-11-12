@@ -23,6 +23,12 @@ end)
 return packer.startup {
   config = {
     max_jobs = 8,
+    git = {
+      subcommands = {
+        update = 'pull --progress --rebase',
+        update_branch = 'merge @{u}',
+      },
+    },
     display = {
       open_fn = function()
         return require('packer.util').float {}
