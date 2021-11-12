@@ -2,14 +2,18 @@ local M = {}
 
 function M.setup_catppuccin()
   local catppuccin = require('catppuccin')
-  -- local util = require('catppuccino.utils.util')
+  local util = require('catppuccin.utils.util')
 
   local colors = require('catppuccin.api.colors').get_colors()
+  local term_colors = false
+  local transparent_background = false
+
+  colors.catppuccin1 = util.darken(colors.catppuccin1, 0.7)
 
   catppuccin.setup {
-    -- term_colors = true,
-    transparent_background = true,
-    transparency = true,
+    term_colors = term_colors,
+    transparent_background = transparent_background,
+    transparency = transparent_background,
     styles = {
       functions = 'bold,italic',
       keywords = 'italic',
@@ -36,6 +40,8 @@ function M.setup_catppuccin()
 
     TSBoolean = { fg = colors.catppuccin6, style = 'italic' },
     TSConstBuiltin = { fg = colors.catppuccin6, style = 'italic' },
+
+    diffAdded = { fg = colors.catppuccin7 },
   }
 end
 

@@ -89,6 +89,34 @@ function M.setup_minimap()
   }
 end
 
+function M.setup_notify()
+  local notify = require('notify')
+  local colors = require('catppuccin.api.colors').get_colors()
+
+  notify.setup {
+    stages = 'fade',
+    background_colour = colors.catppuccin1,
+  }
+
+  local function create_notifier(level)
+    return function(msg, opts)
+      return notify(msg, level, opts)
+    end
+  end
+  vim.notify = {
+    trace = create_notifier('trace'),
+    debug = create_notifier('debug'),
+    info = create_notifier('info'),
+    warn = create_notifier('warn'),
+    error = create_notifier('error'),
+  }
+  setmetatable(vim.notify, {
+    __call = function(_, msg, level, opts)
+      return notify(msg, level, opts)
+    end,
+  })
+end
+
 function M.setup_nvim_tree()
   require('nvim-tree').setup {
     hijack_cursor = true,
@@ -145,32 +173,6 @@ function M.setup_nvim_tree()
     add_trailing = 1,
     disable_window_picker = 1,
   }
-end
-
-function M.setup_notify()
-  local notify = require('notify')
-
-  notify.setup {
-    stages = 'fade',
-  }
-
-  local function create_notifier(level)
-    return function(msg, opts)
-      return notify(msg, level, opts)
-    end
-  end
-  vim.notify = {
-    trace = create_notifier('trace'),
-    debug = create_notifier('debug'),
-    info = create_notifier('info'),
-    warn = create_notifier('warn'),
-    error = create_notifier('error'),
-  }
-  setmetatable(vim.notify, {
-    __call = function(_, msg, level, opts)
-      return notify(msg, level, opts)
-    end,
-  })
 end
 
 function M.setup_symbols_outline()
