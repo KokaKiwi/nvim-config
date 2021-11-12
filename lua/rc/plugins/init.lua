@@ -288,6 +288,12 @@ return packer.startup {
         config = util.setup.rc('nvim_tree', 'ui'),
         cmd = { 'NvimTreeToggle', 'NvimTreeOpen', 'NvimTreeFocus' },
       }
+      use { 'luukvbaal/nnn.nvim',
+        config = util.setup.rc('nnn', 'ui'),
+        condition = util.cond.is_executable('nnn'),
+        cmd = { 'NnnExplorer', 'NnnPicker' },
+      }
+
       use 'tpope/vim-fugitive'
       use { 'kyazdani42/nvim-web-devicons',
         config = util.setup.rc('devicons', 'ui'),

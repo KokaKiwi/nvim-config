@@ -89,6 +89,10 @@ function M.setup_minimap()
   }
 end
 
+function M.setup_nnn()
+  require('nnn').setup {}
+end
+
 function M.setup_notify()
   local notify = require('notify')
   local colors = require('catppuccin.api.colors').get_colors()
