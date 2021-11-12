@@ -4,7 +4,7 @@ if os.getenv('NVIM_DEBUG') ~= '1' then
 end
 
 -- Set a base colorscheme so that in case something goes wrong
--- neovim doesn't destroy my eyes with its default colorscheme.
+-- neovim won't destroy my eyes with its default colorscheme.
 vim.cmd [[colorscheme uwu]]
 
 require('rc')

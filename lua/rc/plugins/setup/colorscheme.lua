@@ -8,7 +8,10 @@ function M.setup_catppuccin()
   local term_colors = false
   local transparent_background = false
 
-  colors.catppuccin1 = util.darken(colors.catppuccin1, 0.7)
+  if colors._base == nil then
+    colors._base = table.copy(colors)
+  end
+  colors.catppuccin1 = util.darken(colors._base.catppuccin1, 0.7)
 
   catppuccin.setup {
     term_colors = term_colors,
