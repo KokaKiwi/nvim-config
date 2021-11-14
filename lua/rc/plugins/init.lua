@@ -193,7 +193,8 @@ return packer.startup {
 
       use { 'nvim-treesitter/nvim-treesitter',
         run = util.action.cmd('TSUpdate'),
-        config = util.setup.rc('treesitter'),
+        config = util.setup.rc('treesitter', 'helpers'),
+        requires = { 'JoosepAlviste/nvim-ts-context-commentstring' },
       }
       use { 'nvim-treesitter/playground',
         requires = { 'nvim-treesitter/nvim-treesitter' },

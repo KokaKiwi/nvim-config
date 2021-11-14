@@ -18,7 +18,7 @@ end
 
 function M.setup_colorizer()
   require('colorizer').setup({
-    'css', 'lua';
+    'css', 'lua', 'vim',
     css = { css = true },
   }, {
     rgb_fn = true,
@@ -184,21 +184,6 @@ end
 
 function M.setup_todo_comments()
   require('todo-comments').setup {}
-end
-
-function M.setup_treesitter()
-  require('nvim-treesitter.configs').setup {
-    ensure_installed = 'maintained',
-    highlight = {
-      enable = true,
-    },
-    playground = {
-      enable = true,
-    }
-  }
-
-  vim.opt.foldmethod = 'expr'
-  vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 end
 
 function M.setup_treesitter_context()

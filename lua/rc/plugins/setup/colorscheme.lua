@@ -5,18 +5,15 @@ function M.setup_catppuccin()
   local util = require('catppuccin.utils.util')
 
   local colors = require('catppuccin.api.colors').get_colors()
-  local term_colors = false
-  local transparent_background = false
-
   if colors._base == nil then
     colors._base = table.copy(colors)
   end
+
   colors.catppuccin1 = util.darken(colors._base.catppuccin1, 0.7)
 
   catppuccin.setup {
-    term_colors = term_colors,
-    transparent_background = transparent_background,
-    transparency = transparent_background,
+    term_colors = true,
+    transparent_background = false,
     styles = {
       functions = 'bold,italic',
       keywords = 'italic',

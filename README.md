@@ -134,5 +134,6 @@
 ### Third-party dependencies
 
 - [glts/vim-magnum](https://github.com/glts/vim-magnum)
+- [JoosepAlviste/nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring)
 - [onsails/lspkind-nvim](https://github.com/onsails/lspkind-nvim)
 - [ray-x/guihua.lua](https://github.com/ray-x/guihua.lua)
