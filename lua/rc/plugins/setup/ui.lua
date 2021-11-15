@@ -180,7 +180,7 @@ function M.setup_nvim_tree()
 end
 
 function M.setup_symbols_outline()
-  vim.g.symbols_outline = {
+  require('symbols-outline').setup {
     width = 40,
   }
 end

@@ -14,6 +14,12 @@ return function()
           highlight = 'Directory',
           text_align = 'center',
         },
+        {
+          filetype = 'Outline',
+          text = 'Symbols',
+          highlight = 'Directory',
+          text_align = 'center',
+        },
       },
     },
   }
