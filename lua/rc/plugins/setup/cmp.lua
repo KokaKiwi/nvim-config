@@ -13,7 +13,7 @@ return function()
     sources = cmp.config.sources(
       {
         { name = 'nvim_lsp' },
-        { name = 'vsnip' },
+        { name = 'snippy' },
       },
       BASE_SOURCES
     ),
@@ -77,7 +77,7 @@ return function()
         {
           { name = 'nvim_lsp' },
           { name = 'nvim_lua' },
-          { name = 'vsnip' },
+          { name = 'snippy' },
         },
         BASE_SOURCES
       ),

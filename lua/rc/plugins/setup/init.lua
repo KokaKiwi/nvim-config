@@ -74,21 +74,6 @@ function M.setup_illuminate()
   }
 end
 
-function M.setup_kommentary()
-  local config = require('kommentary.config')
-
-  vim.g.kommentary_create_default_mappings = false
-
-  config.configure_language('rust', {
-    single_line_comment_string = '//',
-    multi_line_comment_strings = {'/*', '*/'},
-    prefer_single_line_comments = true,
-  })
-
-  vim.api.nvim_set_keymap('n', '<Leader>c', '<Plug>kommentary_line_default', {})
-  vim.api.nvim_set_keymap('x', '<Leader>c', '<Plug>kommentary_visual_default', {})
-end
-
 function M.setup_lean()
   require('lean').setup {}
 end
@@ -151,31 +136,6 @@ end
 
 function M.setup_presence()
   require('presence'):setup {}
-end
-
-function M.setup_rust_tools()
-  require('rust-tools').setup {
-    tools = {
-      hover_with_actions = false,
-      inlay_hints = {
-        other_hints_prefix = '» ',
-        highlight = 'NonText',
-      },
-    },
-
-    server = {
-      settings = {
-        ['rust-analyzer'] = {
-          cargo = {
-            allFeatures = true,
-          },
-          checkOnSave = {
-            command = 'clippy',
-          },
-        },
-      },
-    },
-  }
 end
 
 function M.setup_shade()

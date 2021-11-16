@@ -149,13 +149,14 @@ return packer.startup {
       }
 
       use { 'hrsh7th/nvim-cmp',
-        requires = { 'hrsh7th/vim-vsnip', 'onsails/lspkind-nvim' },
+        requires = { 'onsails/lspkind-nvim' },
         config = util.setup.rc_mod_call('cmp'),
       }
       local CMP_SOURCES = {
-        'nvim-lsp', 'nvim-lua', 'vsnip',
+        'nvim-lsp', 'nvim-lua',
         'buffer', 'path', 'emoji', 'cmdline', 'calc',
         'ray-x/cmp-treesitter', 'David-Kunz/cmp-npm', 'kdheepak/cmp-latex-symbols',
+        'dcampos/cmp-snippy',
       }
       for _, spec in ipairs(CMP_SOURCES) do
         if type(spec) == 'string' then
@@ -172,7 +173,7 @@ return packer.startup {
       end
 
       use { 'simrat39/rust-tools.nvim',
-        config = util.setup.rc('rust_tools'),
+        config = util.setup.rc('rust_tools', 'helpers'),
         after = { 'nvim-lspconfig' },
       }
       use 'b0o/SchemaStore.nvim'
@@ -208,8 +209,9 @@ return packer.startup {
         ft = { 'markdown', 'rmd', 'vimwiki', 'org' },
       }
 
-      use 'hrsh7th/vim-vsnip'
-      use 'hrsh7th/vim-vsnip-integ'
+      use { 'dcampos/nvim-snippy',
+        config = util.setup.rc('snippy', 'helpers'),
+      }
 
       use { 'sbdchd/neoformat',
         config = util.setup.rc('neoformat'),
