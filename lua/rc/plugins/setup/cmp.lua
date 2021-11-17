@@ -19,7 +19,7 @@ return function()
     ),
     snippet = {
       expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body)
+        require('snippy').expand_snippet(args.body)
       end,
     },
     mapping = {

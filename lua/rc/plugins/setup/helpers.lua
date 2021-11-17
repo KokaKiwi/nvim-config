@@ -30,7 +30,14 @@ function M.setup_rust_tools()
 end
 
 function M.setup_snippy()
-  require('snippy').setup {}
+  require('snippy').setup {
+    mappings = {
+      is = {
+        ['<Tab>'] = 'expand_or_advance',
+        ['<S-Tab>'] = 'previous',
+      },
+    },
+  }
 end
 
 function M.setup_treesitter()

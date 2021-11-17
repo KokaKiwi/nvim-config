@@ -20,6 +20,7 @@ nkey.register {
   { 'gD',     vim.lsp.buf.declaration, help = 'Go to declaration [LSP]' },
   { 'gI',     vim.lsp.buf.implementation, help = 'Go to implementation [LSP]' },
   { 'gr',     vim.lsp.buf.references, help = 'Find references [LSP]' },
+  { 'gR',     vim.lsp.buf.rename, help = 'Rename symbol [LSP]' },
 
   -- Tabs
   { '<C-', {
