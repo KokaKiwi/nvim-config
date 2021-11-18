@@ -44,7 +44,6 @@
 - [bytecodealliance/cranelift.vim](https://github.com/bytecodealliance/cranelift.vim)
 - [cstrahan/vim-capnp](https://github.com/cstrahan/vim-capnp)
 - [eiginn/iptables-vim](https://github.com/eiginn/iptables-vim)
-- [fedorenchik/qt-support.vim](https://github.com/fedorenchik/qt-support.vim)
 - [gisphm/vim-gitignore](https://github.com/gisphm/vim-gitignore)
 - [gleam-lang/gleam.vim](https://github.com/gleam-lang/gleam.vim)
 - [godlygeek/tabular](https://github.com/godlygeek/tabular)

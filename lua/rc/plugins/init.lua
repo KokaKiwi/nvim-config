@@ -389,7 +389,6 @@ return packer.startup {
       use { 'PProvost/vim-ps1', ft = { 'ps1', 'ps1xml' } }
       use { 'bytecodealliance/cranelift.vim', ft = 'clif', branch = 'main' }
       use { 'eiginn/iptables-vim', ft = 'iptables' }
-      use { 'fedorenchik/qt-support.vim' }
       use { 'gisphm/vim-gitignore', ft = 'gitignore'}
       use { 'gleam-lang/gleam.vim', ft = 'gleam' }
       use { 'hail2u/vim-css3-syntax', ft = 'css' }
