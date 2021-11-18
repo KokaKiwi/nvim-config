@@ -147,6 +147,11 @@ return packer.startup {
         event = { 'BufRead Cargo.toml' },
         config = util.setup.rc('crates'),
       }
+      use { 'vuki656/package-info.nvim',
+        requires = { 'MunifTanjim/nui.nvim' },
+        config = util.setup.rc('package_info', 'helpers'),
+        event = { 'BufRead package.json' },
+      }
 
       use { 'hrsh7th/nvim-cmp',
         requires = { 'onsails/lspkind-nvim' },

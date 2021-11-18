@@ -4,6 +4,10 @@ function M.setup_headlines()
   require('headlines').setup {}
 end
 
+function M.setup_package_info()
+  require('package-info').setup {}
+end
+
 function M.setup_rust_tools()
   require('rust-tools').setup {
     tools = {

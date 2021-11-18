@@ -38,6 +38,7 @@
 - [saecki/crates.nvim](https://github.com/saecki/crates.nvim)
 - [sbdchd/neoformat](https://github.com/sbdchd/neoformat)
 - [simrat39/rust-tools.nvim](https://github.com/simrat39/rust-tools.nvim)
+- [vuki656/package-info.nvim](https://github.com/vuki656/package-info.nvim)
 
 ### Syntax / Languages
 
@@ -134,5 +135,6 @@
 
 - [glts/vim-magnum](https://github.com/glts/vim-magnum)
 - [JoosepAlviste/nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring)
+- [MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim)
 - [onsails/lspkind-nvim](https://github.com/onsails/lspkind-nvim)
 - [ray-x/guihua.lua](https://github.com/ray-x/guihua.lua)
