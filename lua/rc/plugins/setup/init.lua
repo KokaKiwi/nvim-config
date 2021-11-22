@@ -54,10 +54,6 @@ function M.setup_ctrlp()
   }
 end
 
-function M.setup_gitsigns()
-  require('gitsigns').setup {}
-end
-
 function M.setup_glow()
   prefixed(vim.g, 'glow') {
     binary_path = '/usr/bin',

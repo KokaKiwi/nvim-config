@@ -78,13 +78,17 @@ function M.setup_fterm()
   vim.command('Neofetch', toggle(fterm.neofetch))
 end
 
+function M.setup_gitsigns()
+  require('gitsigns').setup {}
+end
+
 function M.setup_lsp_signature()
   require('lsp_signature').setup {}
 end
 
 function M.setup_minimap()
   prefixed(vim.g, 'minimap') {
-    block_filetypes = { 'NvimTree', 'vista_kind' },
+    block_filetypes = { 'NvimTree', 'Outline' },
     close_filetypes = { 'alpha', 'packer' },
   }
 end
@@ -181,7 +185,7 @@ end
 
 function M.setup_symbols_outline()
   require('symbols-outline').setup {
-    width = 40,
+    width = 30,
   }
 end
 

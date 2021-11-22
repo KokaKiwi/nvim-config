@@ -1,6 +1,8 @@
 _G.func = {}
 
--- func.partial
+---func.partial
+---@param fn function
+---@return function
 function func.partial(fn, ...)
   local pargs = {...}
 

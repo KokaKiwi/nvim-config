@@ -377,7 +377,7 @@ return packer.startup {
 
       use { 'lewis6991/gitsigns.nvim',
         requires = { 'nvim-lua/plenary.nvim' },
-        config = util.setup.rc('gitsigns'),
+        config = util.setup.rc('gitsigns', 'ui'),
       }
       use { 'romgrk/nvim-treesitter-context',
         config = util.setup.rc('treesitter_context'),

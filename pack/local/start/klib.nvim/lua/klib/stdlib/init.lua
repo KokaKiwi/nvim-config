@@ -4,6 +4,7 @@ require_prefix('klib.stdlib') {
   'func',
   'fs',
   'highlight',
+  'lens',
   'math',
   'table',
   'string',
