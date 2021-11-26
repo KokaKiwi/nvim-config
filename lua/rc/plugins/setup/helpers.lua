@@ -45,6 +45,16 @@ function M.setup_snippy()
 end
 
 function M.setup_treesitter()
+  local configs = require('nvim-treesitter.parsers').get_parser_configs()
+
+  configs.make = {
+    install_info = {
+      url = 'https://github.com/alemuller/tree-sitter-make',
+      branch = 'main',
+      files = { 'src/parser.c' },
+    },
+  }
+
   require('nvim-treesitter.configs').setup {
     ensure_installed = 'maintained',
     highlight = {
