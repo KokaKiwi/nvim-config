@@ -149,7 +149,7 @@ return function()
   local condition = require('galaxyline.condition')
   local providers = require('kiwi.ui.statusline.providers')
 
-  gl.short_line_list = { 'NvimTree', 'packer', 'vista_kind', 'alpha' }
+  gl.short_line_list = { 'NvimTree', 'alpha', 'Outline', 'packer' }
 
   -- Left
   gls.left = {}

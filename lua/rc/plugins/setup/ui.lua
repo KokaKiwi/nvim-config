@@ -134,6 +134,9 @@ function M.setup_nvim_tree()
     diagnostics = {
       enable = true,
     },
+    git = {
+      enable = false,
+    },
     view = {
       width = 40,
     },
@@ -185,7 +188,7 @@ end
 
 function M.setup_symbols_outline()
   require('symbols-outline').setup {
-    width = 30,
+    width = 40,
   }
 end
 
