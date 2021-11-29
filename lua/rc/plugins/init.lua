@@ -133,6 +133,10 @@ return packer.startup {
         config = util.setup.rc('neorg', 'utils'),
         requires = { 'nvim-lua/plenary.nvim' },
       }
+      use { 'thazelart/figban.nvim',
+        cmd = { 'Figban' },
+        cond = util.cond.is_executable('figlet'),
+      }
 
       use 'lewis6991/impatient.nvim'
     end }
