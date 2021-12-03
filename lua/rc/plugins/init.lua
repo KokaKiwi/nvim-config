@@ -137,6 +137,10 @@ return packer.startup {
         cmd = { 'Figban' },
         cond = util.cond.is_executable('figlet'),
       }
+      use { 'filipdutescu/renamer.nvim',
+        config = util.setup.rc('renamer', 'utils'),
+        requires = { 'nvim-lua/plenary.nvim' },
+      }
 
       use 'lewis6991/impatient.nvim'
     end }

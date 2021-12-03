@@ -19,12 +19,9 @@ function M.setup_Comment()
       }, help = 'comment' },
       { 'c', {
         { 'c', help = 'Toggle comment (linewise)' },
-
-        { 'A', ___comment_norm_A, help = 'Insert comment to end of the current line' },
-        { 'o', ___comment_norm_o, help = 'Insert comment to the next line' },
-        { 'O', ___comment_norm_O, help = 'Insert comment to the previous line' },
       }, help = 'comment' },
     }, mode = 'n' },
+
     { '<Leader>', {
       { 'c', help = 'Toggle comment (linewise)' },
       { 'b', help = 'Toggle comment (blockwise)' },
@@ -46,6 +43,20 @@ function M.setup_neorg()
       ['core.norg.concealer'] = {},
       ['core.norg.dirman'] = {},
     },
+  }
+end
+
+function M.setup_renamer()
+  local nkey = require('nkey')
+
+  local renamer = require('renamer')
+
+  renamer.setup {}
+
+  nkey.register {
+    { 'g', {
+      { 'R',  renamer.rename, help = 'Rename symbol [LSP]' },
+    } },
   }
 end
 

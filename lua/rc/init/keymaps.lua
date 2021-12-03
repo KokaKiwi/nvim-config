@@ -16,11 +16,12 @@ nkey.register {
   },
 
   -- LSP
-  { 'gd',     vim.lsp.buf.definition, help = 'Go to definition [LSP]' },
-  { 'gD',     vim.lsp.buf.declaration, help = 'Go to declaration [LSP]' },
-  { 'gI',     vim.lsp.buf.implementation, help = 'Go to implementation [LSP]' },
-  { 'gr',     vim.lsp.buf.references, help = 'Find references [LSP]' },
-  { 'gR',     vim.lsp.buf.rename, help = 'Rename symbol [LSP]' },
+  { 'g', {
+    { 'd',     vim.lsp.buf.definition, help = 'Go to definition [LSP]' },
+    { 'D',     vim.lsp.buf.declaration, help = 'Go to declaration [LSP]' },
+    { 'I',     vim.lsp.buf.implementation, help = 'Go to implementation [LSP]' },
+    { 'r',     vim.lsp.buf.references, help = 'Find references [LSP]' },
+  } },
 
   -- Tabs
   { '<C-', {

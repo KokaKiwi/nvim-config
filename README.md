@@ -104,6 +104,7 @@
 - [editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim)
 - [ellisonleao/glow.nvim](https://github.com/ellisonleao/glow.nvim)
 - [famiu/bufdelete.nvim](https://github.com/famiu/bufdelete.nvim)
+- [filipdutescu/renamer.nvim](https://github.com/filipdutescu/renamer.nvim)
 - [glts/vim-radical](https://github.com/glts/vim-radical)
 - [henriquehbr/nvim-startup.lua](https://github.com/henriquehbr/nvim-startup.lua)
 - [hynek/vim-python-pep8-indent](https://github.com/hynek/vim-python-pep8-indent)
