@@ -126,7 +126,7 @@ end
 
 function M.setup_polyglot()
   prefixed(vim.g, 'polyglot') {
-    disabled = { 'systemd' },
+    disabled = { 'fish', 'systemd' },
   }
 end
 

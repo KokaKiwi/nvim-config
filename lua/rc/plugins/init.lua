@@ -393,11 +393,15 @@ return packer.startup {
     group { group = 'syntax', function(use)
       use 'godlygeek/tabular'
 
-      use 'sheerun/vim-polyglot'
+      use { 'sheerun/vim-polyglot',
+        config = util.setup.rc('polyglot'),
+      }
 
       use { 'PProvost/vim-ps1', ft = { 'ps1', 'ps1xml' } }
       use { 'bytecodealliance/cranelift.vim', ft = 'clif', branch = 'main' }
+      use { 'cstrahan/vim-capnp', ft = 'capnp' }
       use { 'eiginn/iptables-vim', ft = 'iptables' }
+      use { 'ericvw/vim-fish', ft = { 'fish' } }
       use { 'gisphm/vim-gitignore', ft = 'gitignore'}
       use { 'gleam-lang/gleam.vim', ft = 'gleam' }
       use { 'hail2u/vim-css3-syntax', ft = 'css' }
@@ -413,7 +417,6 @@ return packer.startup {
       use { 'projectfluent/fluent.vim', ft = 'fluent' }
       use { 'ron-rs/ron.vim', ft = 'ron' }
       use { 'thyrgle/vim-dyon', ft = 'dyon' }
-      use { 'cstrahan/vim-capnp', ft = 'capnp' }
     end }
 
     -- LuaRocks
