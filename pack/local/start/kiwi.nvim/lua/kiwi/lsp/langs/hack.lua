@@ -1,5 +1,5 @@
-local configs = require('lspconfig/configs')
-local util = require('lspconfig/util')
+local configs = require('lspconfig.configs')
+local util = require('lspconfig.util')
 
 local meta = getmetatable(configs)
 local meta_newindex = meta.__newindex

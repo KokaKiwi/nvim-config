@@ -1,4 +1,4 @@
-local configs = require('lspconfig/configs')
+local configs = require('lspconfig.configs')
 
 -- Import custom LSP clients
 local LANGUAGES = {}
@@ -13,18 +13,10 @@ for name, mod in pairs(LANGUAGES) do
   end
 end
 
--- Utils
-local function get_lua_runtime_paths()
-  local runtime_paths = vim.split(package.path, ';')
-  table.insert(runtime_paths, 'lua/?.lua')
-  table.insert(runtime_paths, 'lua/?/init.lua')
-  return runtime_paths
-end
-
 -- Setup Language Servers
 require('kiwi.lsp.langs.hack')
 local lsp = require('lspconfig')
-local util = require('lspconfig/util')
+local util = require('lspconfig.util')
 
 local lsp_status = require('lsp-status')
 local schemastore = require('schemastore')
