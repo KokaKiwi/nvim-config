@@ -137,10 +137,6 @@ return packer.startup {
         cmd = { 'Figban' },
         cond = util.cond.is_executable('figlet'),
       }
-      use { 'filipdutescu/renamer.nvim',
-        config = util.setup.rc('renamer', 'utils'),
-        requires = { 'nvim-lua/plenary.nvim' },
-      }
       use { 'tonyfettes/fcitx5.nvim',
         disable = true,
         config = util.setup.rc('fcitx5', 'utils'),
@@ -406,7 +402,7 @@ return packer.startup {
       use 'godlygeek/tabular'
 
       use { 'sheerun/vim-polyglot',
-        config = util.setup.rc('polyglot'),
+        setup = util.setup.rc('polyglot'),
       }
 
       use { 'PProvost/vim-ps1', ft = { 'ps1', 'ps1xml' } }

@@ -50,18 +50,4 @@ function M.setup_neorg()
   }
 end
 
-function M.setup_renamer()
-  local nkey = require('nkey')
-
-  local renamer = require('renamer')
-
-  renamer.setup {}
-
-  nkey.register {
-    { 'g', {
-      { 'R',  renamer.rename, help = 'Rename symbol [LSP]' },
-    } },
-  }
-end
-
 return M
