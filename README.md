@@ -93,6 +93,7 @@
 - [romgrk/nvim-treesitter-context](https://github.com/romgrk/nvim-treesitter-context)
 - [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
 - [simrat39/symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
+- [stevearc/dressing.nvim](https://github.com/stevearc/dressing.nvim)
 - [tanvirtin/vgit.nvim](https://github.com/tanvirtin/vgit.nvim)
 - [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [weilbith/nvim-code-action-menu](https://github.com/weilbith/nvim-code-action-menu)

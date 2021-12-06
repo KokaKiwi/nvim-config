@@ -28,6 +28,10 @@ function M.setup_devicons()
   end
 end
 
+function M.setup_dressing()
+  require('dressing').setup {}
+end
+
 function M.setup_fterm()
   local FTerm = require('FTerm')
 

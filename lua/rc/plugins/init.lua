@@ -61,7 +61,7 @@ return packer.startup {
     use 'wbthomason/packer.nvim'
 
     -- Utils
-    group { group = 'util', function(use)
+    group { group = 'utils', function(use)
       use 'editorconfig/editorconfig-vim'
       use { 'glts/vim-radical',
         requires = { 'glts/vim-magnum' },
@@ -140,6 +140,11 @@ return packer.startup {
       use { 'filipdutescu/renamer.nvim',
         config = util.setup.rc('renamer', 'utils'),
         requires = { 'nvim-lua/plenary.nvim' },
+      }
+      use { 'tonyfettes/fcitx5.nvim',
+        disable = true,
+        config = util.setup.rc('fcitx5', 'utils'),
+        -- rocks = { 'dbus_proxy', 'lgi' },
       }
 
       use 'lewis6991/impatient.nvim'
@@ -365,6 +370,9 @@ return packer.startup {
       }
       use { 'simrat39/symbols-outline.nvim',
         config = util.setup.rc('symbols_outline', 'ui'),
+      }
+      use { 'stevearc/dressing.nvim',
+        config = util.setup.rc('dressing', 'ui'),
       }
 
       use { 'rhysd/committia.vim',

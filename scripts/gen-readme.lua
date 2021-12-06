@@ -21,7 +21,7 @@ local GROUP_NAMES = {
   ['deps'] = 'Third-party dependencies',
   ['ui'] = 'UI',
   ['colorscheme'] = 'Colorscheme',
-  ['util'] = 'Utilities',
+  ['utils'] = 'Utilities',
   ['helpers'] = 'Helpers',
   ['syntax'] = 'Syntax / Languages',
 }
@@ -37,17 +37,19 @@ packer.__manage_all()
 
 local groups = {}
 for _, plugin in pairs(plugins) do
-  local group_name = plugin.group or DEFAULT_GROUP
-  if plugin.from_requires then
-    group_name = 'deps'
-  end
+  if not plugin.disable then
+    local group_name = plugin.group or DEFAULT_GROUP
+    if plugin.from_requires then
+      group_name = 'deps'
+    end
 
-  if GROUP_NAMES[group_name] == nil then
-    error("Unknown group name: " .. group_name)
-  end
+    if GROUP_NAMES[group_name] == nil then
+      error("Unknown group name: " .. group_name)
+    end
 
-  groups[group_name] = groups[group_name] or {}
-  table.insert(groups[group_name], plugin)
+    groups[group_name] = groups[group_name] or {}
+    table.insert(groups[group_name], plugin)
+  end
 end
 
 local function plugin_compare(lhs, rhs)

@@ -36,6 +36,10 @@ function M.setup_Comment()
   }
 end
 
+function M.setup_fcitx5()
+  require('fcitx5').setup {}
+end
+
 function M.setup_neorg()
   require('neorg').setup {
     load = {
