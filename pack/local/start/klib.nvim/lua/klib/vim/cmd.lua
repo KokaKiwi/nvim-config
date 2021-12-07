@@ -48,6 +48,22 @@ function vim.aufiletype(filetype, cmd, opts)
   vim.autocmd('FileType', filetype, cmd, opts)
 end
 
+---@param pattern string | string[]
+---@param cmd string | function | table
+---@param opts table
+function vim.aubufread(pattern, cmd, opts)
+  if type(cmd) == 'table' then
+    opts = cmd
+
+    cmd = nil
+    if opts.ft ~= nil then
+      cmd = string.format('setf %s', opts.ft)
+    end
+  end
+
+  vim.autocmd({ 'BufRead', 'BufNewFile' }, pattern, cmd, opts)
+end
+
 -- vim.command
 vim.command_table = {}
 
