@@ -120,6 +120,10 @@ return packer.startup {
       use { 'metakirby5/codi.vim',
         cmd = { 'Codi' },
       }
+      use { 'sQVe/sort.nvim',
+        config = util.setup.rc('sort', 'utils'),
+        cmd = { 'Sort' },
+      }
 
       use { 'iamcco/markdown-preview.nvim',
         ft = { 'markdown', 'pandoc.markdown', 'rmd' },

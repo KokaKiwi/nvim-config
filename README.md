@@ -124,6 +124,7 @@
 - [nvim-neorg/neorg](https://github.com/nvim-neorg/neorg)
 - [prabirshrestha/async.vim](https://github.com/prabirshrestha/async.vim)
 - [rafcamlet/nvim-luapad](https://github.com/rafcamlet/nvim-luapad)
+- [sQVe/sort.nvim](https://github.com/sQVe/sort.nvim)
 - [stsewd/isort.nvim](https://github.com/stsewd/isort.nvim)
 - [thazelart/figban.nvim](https://github.com/thazelart/figban.nvim)
 - [tpope/vim-repeat](https://github.com/tpope/vim-repeat)

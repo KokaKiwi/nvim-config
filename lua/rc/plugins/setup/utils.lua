@@ -50,4 +50,8 @@ function M.setup_neorg()
   }
 end
 
+function M.setup_sort()
+  require('sort').setup {}
+end
+
 return M
