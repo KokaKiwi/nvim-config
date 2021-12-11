@@ -44,6 +44,7 @@ lsp.jsonls.setup {
     },
   },
 }
+lsp.lemminx.setup {}
 lsp.sumneko_lua.setup(luadev.setup {
     lspconfig = {
       cmd = { 'lua-language-server' },

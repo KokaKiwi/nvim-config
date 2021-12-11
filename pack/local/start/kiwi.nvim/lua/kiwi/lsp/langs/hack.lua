@@ -22,7 +22,7 @@ meta.__newindex = function(t, config_name, config_def)
     capabilities = vim.tbl_extend('keep', capabilities, require('lsp-status').capabilities)
     capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
     if config.capabilities ~= nil then
-      capabilities = vim.tbl_extend('keep', capabilities, config.capabilities)
+      capabilities = vim.tbl_extend('force', capabilities, config.capabilities)
     end
     config.capabilities = capabilities
 
@@ -31,6 +31,7 @@ meta.__newindex = function(t, config_name, config_def)
       require('lsp-status').on_attach(client)
       require('illuminate').on_attach(client)
       require('navigator.lspclient.attach').on_attach(client, bufnr)
+      require('kiwi.lsp.fixups').on_attach(client, bufnr)
 
       -- Lastly, let user config setup
       if on_attach ~= nil then
