@@ -54,6 +54,13 @@ function M.setup_treesitter()
       files = { 'src/parser.c' },
     },
   }
+  configs.norg = {
+    install_info = {
+      url = 'https://github.com/nvim-neorg/tree-sitter-norg',
+      branch = 'main',
+      files = { 'src/scanner.cc', 'src/parser.c' },
+    },
+  }
 
   require('nvim-treesitter.configs').setup {
     ensure_installed = 'maintained',

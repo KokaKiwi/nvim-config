@@ -136,6 +136,7 @@ return packer.startup {
       use { 'nvim-neorg/neorg',
         config = util.setup.rc('neorg', 'utils'),
         requires = { 'nvim-lua/plenary.nvim' },
+        ft = { 'norg' },
       }
       use { 'thazelart/figban.nvim',
         cmd = { 'Figban' },
