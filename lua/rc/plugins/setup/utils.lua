@@ -44,14 +44,31 @@ function M.setup_neorg()
   require('neorg').setup {
     load = {
       ['core.defaults'] = {},
+      ['core.keybinds'] = {
+        config = {
+          default_keybinds = true,
+          neorg_leader = '<Leader>o',
+        },
+      },
       ['core.norg.concealer'] = {},
       ['core.norg.dirman'] = {},
+      ['core.norg.completion'] = {
+        config = {
+          engine = 'nvim-cmp',
+        },
+      },
     },
   }
 end
 
 function M.setup_sort()
-  require('sort').setup {}
+  require('sort').setup {
+    debug = false,
+  }
+end
+
+function M.setup_viewdoc()
+  require('viewdoc').setup {}
 end
 
 return M

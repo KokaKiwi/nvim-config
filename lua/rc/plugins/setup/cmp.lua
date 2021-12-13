@@ -83,6 +83,16 @@ return function()
       ),
     }
   end)
+  vim.aufiletype('norg', function()
+    cmp.setup.buffer {
+      sources = cmp.config.sources(
+        {
+          { name = 'neorg' },
+        },
+        BASE_SOURCES
+      ),
+    }
+  end)
 
   vim.autocmd('BufRead', 'Cargo.toml', function()
     cmp.setup.buffer {

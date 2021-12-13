@@ -132,6 +132,16 @@ return packer.startup {
       use { 'ellisonleao/glow.nvim',
         config = util.setup.rc('glow'),
         cmd = { 'Glow' },
+        cond = util.cond.is_executable('glow'),
+      }
+      use { 'ray-x/viewdoc.nvim',
+        requires = { 'ray-x/guihua.lua' },
+        config = util.setup.rc('viewdoc', 'utils'),
+        cmd = { 'Viewdoc' },
+        cond = util.cond.all(
+          util.cond.is_executable('fd'),
+          util.cond.is_executable('glow')
+        ),
       }
       use { 'nvim-neorg/neorg',
         config = util.setup.rc('neorg', 'utils'),
