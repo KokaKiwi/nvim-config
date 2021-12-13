@@ -39,6 +39,27 @@ meta.__newindex = function(t, config_name, config_def)
       end
     end
 
+    local on_new_config = config.on_new_config
+    function config.on_new_config(new_config, root_dir)
+      local local_config_file = root_dir .. '/.nvim-lspconfig.json'
+      local file = io.open(local_config_file)
+      if file ~= nil then
+        local data = file:read('*a')
+        file:close()
+
+        local local_config = vim.fn.json_decode(data)
+        local local_settings = local_config[config_name]
+
+        if local_settings ~= nil then
+          new_config.settings = vim.tbl_deep_extend('force', new_config.settings, local_settings)
+        end
+      end
+
+      if on_new_config ~= nil then
+        on_new_config(new_config, root_dir)
+      end
+    end
+
     setup(config)
   end
 
