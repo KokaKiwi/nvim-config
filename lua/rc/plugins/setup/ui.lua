@@ -1,5 +1,9 @@
 local M = {}
 
+function M.setup_cosmic()
+  require('cosmic-ui').setup {}
+end
+
 function M.setup_devicons()
   local devicons = require('nvim-web-devicons')
 

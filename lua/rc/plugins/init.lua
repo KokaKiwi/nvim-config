@@ -385,6 +385,11 @@ return packer.startup {
       use { 'stevearc/dressing.nvim',
         config = util.setup.rc('dressing', 'ui'),
       }
+      use { 'CosmicNvim/cosmic-ui',
+        config = util.setup.rc('cosmic', 'ui'),
+        requires = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim', 'ray-x/lsp_signature.nvim' },
+        after = { 'nvim-lspconfig' },
+      }
 
       use { 'rhysd/committia.vim',
         config = util.setup.rc('committia'),

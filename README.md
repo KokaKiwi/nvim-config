@@ -69,6 +69,7 @@
 
 - [akinsho/nvim-bufferline.lua](https://github.com/akinsho/nvim-bufferline.lua)
 - [chentau/marks.nvim](https://github.com/chentau/marks.nvim)
+- [CosmicNvim/cosmic-ui](https://github.com/CosmicNvim/cosmic-ui)
 - [ctrlpvim/ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)
 - [folke/todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 - [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
