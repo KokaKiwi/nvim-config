@@ -3,6 +3,8 @@ local liluat = require('liluat')
 local README_TEMPLATE = [[
 # nvim-config
 
+![My beautiful config](./.assets/screenshot.jpg)
+
 ## Plugins
 {{ for _, group_name in ipairs(group_keys) do }}
 

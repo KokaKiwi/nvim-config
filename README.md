@@ -1,5 +1,7 @@
 # nvim-config
 
+![My beautiful config](./.assets/screenshot.jpg)
+
 ## Plugins
 
 ### Colorscheme
