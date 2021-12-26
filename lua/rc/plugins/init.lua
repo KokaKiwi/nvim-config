@@ -207,6 +207,11 @@ return packer.startup {
       }
       use 'b0o/SchemaStore.nvim'
       use 'folke/lua-dev.nvim'
+      use { 'jose-elias-alvarez/null-ls.nvim',
+        config = util.setup.rc('null_ls', 'helpers'),
+        requires = { 'nvim-lua/plenary.nvim' },
+        module = { 'null-ls' },
+      }
 
       use { 'neovim/nvim-lspconfig',
         config = util.setup.mod_setup('kiwi.lsp'),
@@ -236,6 +241,9 @@ return packer.startup {
       use { 'lukas-reineke/headlines.nvim',
         config = util.setup.rc('headlines', 'helpers'),
         ft = { 'markdown', 'rmd', 'vimwiki', 'org' },
+      }
+      use { 'klen/nvim-config-local',
+        config = util.setup.rc('config_local', 'helpers'),
       }
 
       use { 'dcampos/nvim-snippy',
