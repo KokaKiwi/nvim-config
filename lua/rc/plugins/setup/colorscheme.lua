@@ -9,7 +9,7 @@ function M.setup_catppuccin()
     colors._base = table.copy(colors)
   end
 
-  colors.catppuccin1 = util.darken(colors._base.catppuccin1, 0.7)
+  colors.catppuccin1 = util.darken(colors._base.black2, 0.7)
 
   catppuccin.setup {
     term_colors = true,
@@ -36,12 +36,12 @@ function M.setup_catppuccin()
   }
 
   catppuccin.remap {
-    Constant = { fg = colors.catppuccin6, style = 'italic' },
+    Constant = { fg = colors.peach, style = 'italic' },
 
-    TSBoolean = { fg = colors.catppuccin6, style = 'italic' },
-    TSConstBuiltin = { fg = colors.catppuccin6, style = 'italic' },
+    TSBoolean = { fg = colors.peach, style = 'italic' },
+    TSConstBuiltin = { fg = colors.peach, style = 'italic' },
 
-    diffAdded = { fg = colors.catppuccin7 },
+    diffAdded = { fg = colors.teal },
   }
 end
 

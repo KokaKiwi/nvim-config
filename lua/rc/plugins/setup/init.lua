@@ -171,10 +171,7 @@ function M.setup_undotree()
 end
 
 function M.setup_vgit()
-  local vgit = require('vgit')
-  vgit.setup {
-    hls = vgit.themes.monokai,
-  }
+  require('vgit').setup {}
 end
 
 function M.setup_which_key()
