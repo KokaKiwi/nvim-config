@@ -423,6 +423,9 @@ return packer.startup {
         config = util.setup.rc('treesitter_context'),
         requires = { 'nvim-treesitter/nvim-treesitter' },
       }
+      use { 'lukas-reineke/virt-column.nvim',
+        config = util.setup.rc('virt_column', 'ui'),
+      }
     end }
 
     -- Syntax / Languages

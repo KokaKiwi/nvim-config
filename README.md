@@ -84,6 +84,7 @@
 - [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - [lotabout/skim.vim](https://github.com/lotabout/skim.vim)
 - [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
+- [lukas-reineke/virt-column.nvim](https://github.com/lukas-reineke/virt-column.nvim)
 - [luukvbaal/nnn.nvim](https://github.com/luukvbaal/nnn.nvim)
 - [mbbill/undotree](https://github.com/mbbill/undotree)
 - [norcalli/nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)

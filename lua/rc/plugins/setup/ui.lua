@@ -204,4 +204,8 @@ function M.setup_telescope()
   require('telescope').setup {}
 end
 
+function M.setup_virt_column()
+  require('virt-column').setup()
+end
+
 return M
