@@ -91,6 +91,7 @@
 - [numToStr/FTerm.nvim](https://github.com/numToStr/FTerm.nvim)
 - [nvim-lua/lsp-status.nvim](https://github.com/nvim-lua/lsp-status.nvim)
 - [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+- [petertriho/nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar)
 - [ray-x/lsp_signature.nvim](https://github.com/ray-x/lsp_signature.nvim)
 - [ray-x/navigator.lua](https://github.com/ray-x/navigator.lua)
 - [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)

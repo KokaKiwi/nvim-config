@@ -1,6 +1,8 @@
 ---@diagnostic disable: unused-local
 local lsp = {}
 
+local AUTO_FORMAT_PATTERNS = { '*.rs', '*.ex', '*.exs' }
+
 function lsp.setup()
   require('kiwi.lsp.langs')
 
@@ -46,7 +48,6 @@ function lsp.setup()
     vim.lsp.buf.formatting()
   end)
 
-  local AUTO_FORMAT_PATTERNS = { '*.rs' }
   vim.augroup('KiwiLsp', function()
     vim.autocmd('BufWritePre', AUTO_FORMAT_PATTERNS, vim.lsp.buf.formatting)
   end)

@@ -194,6 +194,15 @@ function M.setup_nvim_tree()
   }
 end
 
+function M.setup_scrollbar()
+  require('scrollbar').setup {
+    excluded_filetypes = {
+      '', 'prompt', 'TelescopePrompt',
+      'alpha', 'NvimTree', 'packer',
+    }
+  }
+end
+
 function M.setup_symbols_outline()
   require('symbols-outline').setup {
     width = 40,
@@ -205,7 +214,7 @@ function M.setup_telescope()
 end
 
 function M.setup_virt_column()
-  require('virt-column').setup()
+  require('virt-column').setup {}
 end
 
 return M

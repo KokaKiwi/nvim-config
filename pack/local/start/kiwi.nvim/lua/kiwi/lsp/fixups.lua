@@ -11,9 +11,7 @@ local function fixup_document_highlight()
   end
 end
 
----@param client any
----@param bufnr any
-local function on_attach(client, bufnr)
+local function on_attach(_, _)
   fixup_document_highlight()
 end
 

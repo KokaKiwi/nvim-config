@@ -426,6 +426,9 @@ return packer.startup {
       use { 'lukas-reineke/virt-column.nvim',
         config = util.setup.rc('virt_column', 'ui'),
       }
+      use { 'petertriho/nvim-scrollbar',
+        config = util.setup.rc('scrollbar', 'ui'),
+      }
     end }
 
     -- Syntax / Languages
