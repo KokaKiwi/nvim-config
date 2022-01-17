@@ -27,6 +27,9 @@ lsp.clangd.setup {
   handlers = lsp_status.extensions.clangd.setup(),
 }
 lsp.cmake.setup {}
+lsp.cssls.setup {
+  cmd = { 'vscode-css-languageserver', '--stdio' },
+}
 lsp.dhall_lsp_server.setup {}
 lsp.dockerls.setup {}
 lsp.elixirls.setup {

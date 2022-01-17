@@ -55,9 +55,19 @@ function vim.aubufread(pattern, cmd, opts)
   if type(cmd) == 'table' then
     opts = cmd
 
+    local opt = vim.tbl_extend('force', {}, opts.opt)
+
     cmd = nil
     if opts.ft ~= nil then
-      cmd = string.format('setf %s', opts.ft)
+      opt.ft = opts.ft
+    end
+
+    if vim.tbl_count(opt) == 1 and opts.ft ~= nil then
+      cmd = string.format('setf %s', opt.ft)
+    elseif vim.tbl_count(opt) > 0 then
+      cmd = string.format('set %s', string.join(' ', table.dmap(opt, function(key, value)
+        return string.format('%s=\'%s\'', key, value)
+      end, true)))
     end
   end
 

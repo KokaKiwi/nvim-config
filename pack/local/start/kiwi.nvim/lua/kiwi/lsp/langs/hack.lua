@@ -19,10 +19,10 @@ meta.__newindex = function(t, config_name, config_def)
     end
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = vim.tbl_extend('keep', capabilities, require('lsp-status').capabilities)
+    capabilities = vim.tbl_deep_extend('keep', capabilities, require('lsp-status').capabilities)
     capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
     if config.capabilities ~= nil then
-      capabilities = vim.tbl_extend('force', capabilities, config.capabilities)
+      capabilities = vim.tbl_deep_extend('force', capabilities, config.capabilities)
     end
     config.capabilities = capabilities
 
