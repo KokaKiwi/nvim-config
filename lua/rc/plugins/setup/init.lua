@@ -159,8 +159,8 @@ end
 
 function M.setup_trouble()
   require('trouble').setup {
-    mode = 'lsp_document_diagnostics',
-    use_lsp_diagnostic_signs = true,
+    mode = 'document_diagnostics',
+    use_diagnostic_signs = true,
   }
 end
 

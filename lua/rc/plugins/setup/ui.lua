@@ -11,24 +11,42 @@ function M.setup_devicons()
     default = true,
   }
 
+  local icons = devicons.get_icons()
+
+  local function copy(key, icon, name)
+    local value = icons[key]
+    if name ~= nil then
+      value.name = name
+    end
+    value.icon = icon
+    return value
+  end
+
   local OVERRIDES = {
-    ['.gitignore']     = u'E602',
-    ['COMMIT_EDITMSG'] = u'E602',
-    ['ex']             = u'E997',
-    ['exs']            = u'E997',
-    ['hs']             = u'E95F',
-    ['lua']            = u'E9A7',
-    ['nix']            = u'E9B2',
-    ['py']             = u'E63C',
-    ['toml']           = u'E6B2',
-    ['vim']            = u'E6C5',
-    ['yaml']           = u'E699',
-    ['yml']            = u'E699',
+    ['.gitignore']      = u'E7A8',
+    ['COMMIT_EDITMSG']  = u'E7A8',
+    ['cjs']             = copy('js', u'E64E', 'CommonJS'),
+    ['css']             = u'E649',
+    ['ex']              = u'E997',
+    ['exs']             = u'E997',
+    ['hs']              = u'E95F',
+    ['js']              = u'E64E',
+    ['lua']             = u'E9A7',
+    ['nix']             = u'E9B2',
+    ['py']              = u'E63C',
+    ['rs']              = u'E959',
+    ['toml']            = u'E699',
+    ['vim']             = u'E6C5',
+    ['yaml']            = u'E699',
+    ['yml']             = u'E699',
   }
 
-  local icons = devicons.get_icons()
   for key, icon in pairs(OVERRIDES) do
-    icons[key].icon = icon
+    if type(icon) == 'table' then
+      icons[key] = icon
+    else
+      icons[key].icon = icon
+    end
   end
 end
 
