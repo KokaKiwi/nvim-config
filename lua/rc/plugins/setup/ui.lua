@@ -125,11 +125,9 @@ end
 
 function M.setup_notify()
   local notify = require('notify')
-  local colors = require('catppuccin.api.colors').get_colors()
 
   notify.setup {
     stages = 'fade',
-    background_colour = colors.catppuccin1,
   }
 
   local function create_notifier(level)

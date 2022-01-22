@@ -4,22 +4,6 @@ local util = require('rc.plugins.util')
 -- Setup
 local packer = util.require_packer()
 
-local has_colorscheme = nil
-packer.set_handler('colorscheme', function(_, plugin, value)
-  if value == nil then
-    return
-  end
-  assert(has_colorscheme == nil, 'Colorscheme is already set')
-
-  if type(plugin.config) == 'string' then
-    plugin.config = string.format('%s\nvim.cmd [[colorscheme %s]]', plugin.config, value)
-  else
-    error('Cannot handle function-type config')
-  end
-
-  has_colorscheme = value
-end)
-
 return packer.startup {
   config = {
     max_jobs = 8,
@@ -267,15 +251,9 @@ return packer.startup {
       use { 'rktjmp/lush.nvim',
         module = { 'lush' },
       }
-
-      use { 'olimorris/onedarkpro.nvim',
-        config = util.setup.rc('onedark', 'colorscheme'),
-        -- colorscheme = 'onedark',
-      }
-      use { 'catppuccin/nvim',
-        as = 'catppuccin',
-        config = util.setup.rc('catppuccin', 'colorscheme'),
-        colorscheme = 'catppuccin',
+      use { 'KokaKiwi/themer.lua',
+        branch = 'kiwi',
+        config = util.setup.mod_call('kiwi.ui.colorscheme'),
       }
     end }
 
@@ -360,7 +338,7 @@ return packer.startup {
       }
       use { 'rcarriga/nvim-notify',
         config = util.setup.rc('notify', 'ui'),
-        after = { 'onedarkpro.nvim', 'nvim-bufferline.lua' },
+        after = { 'nvim-bufferline.lua' },
       }
       use { 'chentau/marks.nvim',
         config = util.setup.rc('marks'),

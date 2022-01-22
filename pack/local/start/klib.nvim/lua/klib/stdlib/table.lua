@@ -1,9 +1,18 @@
 -- table.map
-function table.map(t, fn)
+function table.map(t, fn, to_map)
   local result = {}
 
   for _, item in ipairs(t) do
-    table.insert(result, fn(item))
+    local left, right = fn(item)
+
+    if to_map then
+      if left ~= nil then
+        result[left] = right
+      end
+    else
+      table.insert(result, fn(item))
+    end
+
   end
 
   return result
@@ -127,6 +136,19 @@ function table.join(...)
   return result
 end
 
+function table.djoin(...)
+  local tables = {...}
+  local result = {}
+
+  for _, t in ipairs(tables) do
+    for key, value in pairs(t) do
+      result[key] = value
+    end
+  end
+
+  return result
+end
+
 ---table.append
 ---@param t table
 ---@return table
@@ -150,7 +172,6 @@ function table.extends(t, items)
 
   return t
 end
-
 
 ---@param t table
 ---@param deep boolean | nil

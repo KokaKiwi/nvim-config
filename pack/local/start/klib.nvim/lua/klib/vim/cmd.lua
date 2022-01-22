@@ -83,10 +83,25 @@ vim.command_table = {}
 function vim.command(name, repl, opts)
   opts = opts or {}
 
-  local command = { 'command!', '-nargs=*' }
+  local command = { 'command!' }
+
+  table.insert(command, string.format('-nargs=%s', opts.nargs or '*'))
 
   if opts.complete ~= nil then
-    table.insert(command, string.format('-complete=%s', opts.complete))
+    local complete = opts.complete
+    if type(complete) == 'table' then
+      local complete_items = complete
+      complete = function()
+        return complete_items
+      end
+    end
+    if type(complete) == 'function' then
+      local complete_func_name = string.format('_complete_%s', name)
+      vim.func[complete_func_name] = complete
+      complete = string.format('customlist,%s', complete_func_name)
+    end
+
+    table.insert(command, string.format('-complete=%s', complete))
   end
   if opts.range ~= nil then
     if type(opts.range) == 'boolean' and opts.range then

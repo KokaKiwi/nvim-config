@@ -6,8 +6,7 @@
 
 ### Colorscheme
 
-- [catppuccin/nvim](https://github.com/catppuccin/nvim)
-- [olimorris/onedarkpro.nvim](https://github.com/olimorris/onedarkpro.nvim)
+- [KokaKiwi/themer.lua](https://github.com/KokaKiwi/themer.lua)
 - [rktjmp/lush.nvim](https://github.com/rktjmp/lush.nvim)
 
 ### Helpers
