@@ -82,6 +82,7 @@
 - [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
 - [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim)
 - [lotabout/skim.vim](https://github.com/lotabout/skim.vim)
+- [LudoPinelli/comment-box.nvim](https://github.com/LudoPinelli/comment-box.nvim)
 - [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [lukas-reineke/virt-column.nvim](https://github.com/lukas-reineke/virt-column.nvim)
 - [luukvbaal/nnn.nvim](https://github.com/luukvbaal/nnn.nvim)

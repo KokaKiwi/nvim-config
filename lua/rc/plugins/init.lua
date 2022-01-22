@@ -307,6 +307,9 @@ return packer.startup {
         condition = util.cond.is_executable('nnn'),
         cmd = { 'NnnExplorer', 'NnnPicker' },
       }
+      use { 'LudoPinelli/comment-box.nvim',
+        config = util.setup.rc('comment_box', 'ui'),
+      }
 
       use 'tpope/vim-fugitive'
       use { 'kyazdani42/nvim-web-devicons',

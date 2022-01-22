@@ -1,5 +1,9 @@
 local M = {}
 
+function M.setup_comment_box()
+  require('comment-box').setup {}
+end
+
 function M.setup_cosmic()
   require('cosmic-ui').setup {}
 end
