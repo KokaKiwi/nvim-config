@@ -60,7 +60,6 @@ return function()
     type = 'group',
     val = {
       util.button { 'e', 'New file', util.action.cmd('ene') },
-      util.button { 'f', 'Explore',  util.action.cmd('Telescope file_browser') }
     },
     opts = {
       spacing = 1,

@@ -2,10 +2,11 @@ local logos_basedir = string.format('%s/pack/local/start/kiwi.nvim/assets/dashbo
 
 ---@return string
 return function()
-  local logos_files = table.map(fs.readdir(logos_basedir), function(entry)
-    return string.format('%s/%s', logos_basedir, entry.name)
+  local logo_filenames = table.map(fs.readdir(logos_basedir), function(entry)
+    return entry.name
   end)
-  local logo_file = math.randomchoice(logos_files)
+  local logo_filename = math.randomchoice(logo_filenames)
+  local logo_file = string.format('%s/%s', logos_basedir, logo_filename)
   local logo = fs.readfile(logo_file, {})
 
   return logo
