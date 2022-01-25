@@ -44,6 +44,14 @@ local function extends_palette(cp)
   }
 end
 
+local function extends_highlights(cp)
+  return {
+    diffAdded = { fg = cp.diff.add },
+    diffRemoved = { fg = cp.diff.remove or cp.diff.delete },
+    diffChanged = { fg = cp.diff.change },
+  }
+end
+
 return function()
   local themer = require('themer')
 
@@ -71,6 +79,7 @@ return function()
         {
           globals = function(cp)
             return {
+              base = extends_highlights(cp),
               plugins = table.map(INTEGRATIONS, function(name)
                 local integration = require('kiwi.ui.colorscheme.integrations.' .. name)
                 return name, integration(cp)
