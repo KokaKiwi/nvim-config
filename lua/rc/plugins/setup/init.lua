@@ -131,7 +131,11 @@ function M.setup_polyglot()
 end
 
 function M.setup_presence()
-  require('presence'):setup {}
+  require('presence'):setup {
+    file_assets = {
+      ['Justfile'] = { 'Justfile', 'code' },
+    },
+  }
 end
 
 function M.setup_shade()

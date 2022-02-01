@@ -43,6 +43,10 @@ function M.setup_rust_tools()
           checkOnSave = {
             command = 'clippy',
           },
+          completion = {
+            addCallArgumentSnippets = false,
+            autoimport = { enable = false },
+          },
         },
       },
     },
