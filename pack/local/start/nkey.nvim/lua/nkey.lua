@@ -50,30 +50,6 @@ function nkey.setup(opts)
   end
 end
 
----@param cb function
----@param expr boolean | nil
----@return string
-local function register_callback(cb, expr)
-  if expr then
-    local _cb = cb
-    cb = function()
-      local keys = _cb()
-      return vim.api.nvim_replace_termcodes(keys, true, true, true)
-    end
-  end
-
-  table.insert(nkey.callbacks, cb)
-
-  local index = #nkey.callbacks
-  local value = string.format('package.loaded.nkey.callbacks[%i]', index)
-
-  if expr then
-    return string.format('v:lua.%s()', value)
-  else
-    return string.format('<Cmd>lua %s()<CR>', value)
-  end
-end
-
 ---@param lhs table
 ---@param rhs table
 ---@return table
@@ -123,30 +99,17 @@ function nkey.register(spec, preset)
 
     return
   end
-  if type(rhs) == 'function' then
-    rhs = register_callback(rhs, preset.options.expr)
-  end
 
   if rhs ~= nil then
-    for _, mode in ipairs(modes) do
-      if preset.buffer then
-        local buffer = preset.buffer
-        if buffer == true then
-          buffer = 0
-        end
+    local opts = vim.tbl_deep_extend('force', {}, preset.options)
+    if preset.buffer then
+      opts.buffer = preset.buffer
+    end
 
-        if rhs == 'none' then
-          vim.api.nvim_buf_del_keymap(buffer, mode, prefix)
-        else
-          vim.api.nvim_buf_set_keymap(buffer, mode, prefix, rhs, preset.options)
-        end
-      else
-        if rhs == 'none' then
-          vim.api.nvim_del_keymap(mode, prefix)
-        else
-          vim.api.nvim_set_keymap(mode, prefix, rhs, preset.options)
-        end
-      end
+    if rhs ~= 'none' then
+      vim.keymap.set(modes, prefix, rhs, opts)
+    else
+      vim.keymap.del(modes, prefix, opts)
     end
   end
 
