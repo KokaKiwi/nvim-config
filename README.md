@@ -105,6 +105,7 @@
 - [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [weilbith/nvim-code-action-menu](https://github.com/weilbith/nvim-code-action-menu)
 - [wfxr/minimap.vim](https://github.com/wfxr/minimap.vim)
+- [xeluxee/competitest.nvim](https://github.com/xeluxee/competitest.nvim)
 
 ### Utilities
 

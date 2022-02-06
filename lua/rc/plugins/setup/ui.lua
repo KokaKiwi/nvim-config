@@ -4,6 +4,10 @@ function M.setup_comment_box()
   require('comment-box').setup {}
 end
 
+function M.setup_competitest()
+  require('competitest').setup {}
+end
+
 function M.setup_cosmic()
   require('cosmic-ui').setup {}
 end
@@ -167,6 +171,11 @@ function M.setup_nvim_tree()
     },
     view = {
       width = 40,
+    },
+    actions = {
+      open_file = {
+        quit_on_open = true,
+      },
     },
   }
 

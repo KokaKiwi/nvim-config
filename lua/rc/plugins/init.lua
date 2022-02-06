@@ -352,6 +352,11 @@ return packer.startup {
         cmd = { 'Minimap', 'MinimapToggle' },
       }
 
+      use { 'xeluxee/competitest.nvim',
+        requires = { 'MunifTanjim/nui.nvim' },
+        config = util.setup.rc('competitest', 'ui'),
+      }
+
       use { 'nvim-telescope/telescope.nvim',
         requires = { 'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'},
         module = { 'telescope' },
