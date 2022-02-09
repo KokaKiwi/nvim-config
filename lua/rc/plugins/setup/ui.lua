@@ -166,6 +166,14 @@ function M.setup_nvim_tree()
     diagnostics = {
       enable = true,
     },
+    filters = {
+      custom = {
+        '.git', '.hg', '.svn', '.bzr', '.pijul',
+        '.pyc', '.pyd', '.egg-infos', '__pycache__',
+        '.class',
+        '.swp',
+      },
+    },
     git = {
       enable = false,
     },
@@ -187,12 +195,6 @@ function M.setup_nvim_tree()
 
   prefixed(vim.g, 'nvim_tree') {
     auto_ignore_ft = { 'startify', 'alpha' },
-    ignore = {
-      '.git', '.hg', '.svn', '.bzr', '.pijul',
-      '.pyc', '.pyd', '.egg-infos', '__pycache__',
-      '.class',
-      '.swp',
-    },
     special_files = table.dmap(SPECIAL_FILES, function(_, fname)
       return fname, 1
     end),
