@@ -97,7 +97,7 @@ function M.setup_navigator()
       disable_lsp = 'all',
       format_on_save = false,
       disply_diagnostic_qf = false,
-      diagnostic_scroll_bar_sign = nil,
+      diagnostic_scrollbar_sign = false,
     },
   }
 end
