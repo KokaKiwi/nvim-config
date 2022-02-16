@@ -372,7 +372,7 @@ return packer.startup {
         },
         after = { 'nvim-lspconfig' },
       }
-      use { 'mathjiajia/symbols-outline.nvim',
+      use { 'simrat39/symbols-outline.nvim',
         config = util.setup.rc('symbols_outline', 'ui'),
       }
       use { 'stevearc/dressing.nvim',
