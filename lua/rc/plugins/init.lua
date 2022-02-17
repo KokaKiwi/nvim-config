@@ -372,9 +372,6 @@ return packer.startup {
         },
         after = { 'nvim-lspconfig' },
       }
-      use { 'simrat39/symbols-outline.nvim',
-        config = util.setup.rc('symbols_outline', 'ui'),
-      }
       use { 'stevearc/dressing.nvim',
         config = util.setup.rc('dressing', 'ui'),
       }
