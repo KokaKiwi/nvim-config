@@ -3,6 +3,7 @@
 " Maintainer:   KokaKiwi <kokakiwi+dev@kokakiwi.net>
 " Last Change:  2020 April
 
+finish
 if exists('b:current_syntax')
   finish
 endif

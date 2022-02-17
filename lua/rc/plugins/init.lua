@@ -419,6 +419,7 @@ return packer.startup {
 
       use { 'sheerun/vim-polyglot',
         setup = util.setup.rc('polyglot'),
+        commit = '2c5af8f89d3e61e04e761c07a1f043b0f35203c6',
       }
 
       use { 'PProvost/vim-ps1', ft = { 'ps1', 'ps1xml' } }
