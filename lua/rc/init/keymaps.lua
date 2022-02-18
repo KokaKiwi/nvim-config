@@ -65,8 +65,8 @@ nkey.register {
   }, help = '+telescope' },
   { '<Leader>T', nkey.Cmd 'Telescope' },
 
-  -- symbols-outline
-  { '<S-t>', nkey.Cmd 'SymbolsOutline', help = 'Open Symbols Outline' },
+  -- Aerial
+  { '<S-t>', nkey.Cmd 'AerialToggle', help = 'Open symbols outline' },
 
   -- doc
   { '<Leader>', {

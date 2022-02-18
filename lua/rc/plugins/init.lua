@@ -350,6 +350,9 @@ return packer.startup {
         cond = util.cond.is_executable('code-minimap'),
         cmd = { 'Minimap', 'MinimapToggle' },
       }
+      use { 'stevearc/aerial.nvim',
+        config = util.setup.rc('aerial', 'ui'),
+      }
 
       use { 'xeluxee/competitest.nvim',
         requires = { 'MunifTanjim/nui.nvim' },
@@ -361,6 +364,7 @@ return packer.startup {
         module = { 'telescope' },
         cmd = { 'Telescope' },
         config = util.setup.rc('telescope', 'ui'),
+        after = { 'aerial.nvim', 'nvim-notify' },
       }
       use { 'ray-x/navigator.lua',
         config = util.setup.rc('navigator'),

@@ -1,5 +1,12 @@
 local M = {}
 
+function M.setup_aerial()
+  require('aerial').setup {
+    min_width = 30,
+    max_width = 50,
+  }
+end
+
 function M.setup_comment_box()
   require('comment-box').setup {}
 end
@@ -122,7 +129,7 @@ end
 
 function M.setup_minimap()
   prefixed(vim.g, 'minimap') {
-    block_filetypes = { 'NvimTree', 'Outline' },
+    block_filetypes = { 'NvimTree', 'aerial' },
     close_filetypes = { 'alpha', 'packer' },
   }
 end
@@ -234,14 +241,11 @@ function M.setup_scrollbar()
   }
 end
 
-function M.setup_symbols_outline()
-  require('symbols-outline').setup {
-    width = 40,
-  }
-end
-
 function M.setup_telescope()
   require('telescope').setup {}
+
+  require('telescope').load_extension('aerial')
+  require('telescope').load_extension('notify')
 end
 
 function M.setup_virt_column()

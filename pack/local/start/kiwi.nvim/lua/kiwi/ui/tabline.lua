@@ -15,7 +15,7 @@ return function()
           text_align = 'center',
         },
         {
-          filetype = 'Outline',
+          filetype = 'aerial',
           text = 'Symbols',
           highlight = 'Directory',
           text_align = 'center',

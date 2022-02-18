@@ -28,8 +28,9 @@ meta.__newindex = function(t, config_name, config_def)
 
     local on_attach = config.on_attach
     function config.on_attach(client, bufnr)
-      require('lsp-status').on_attach(client)
+      require('aerial').on_attach(client, bufnr)
       require('illuminate').on_attach(client)
+      require('lsp-status').on_attach(client)
       require('navigator.lspclient.attach').on_attach(client, bufnr)
       require('kiwi.lsp.fixups').on_attach(client, bufnr)
 

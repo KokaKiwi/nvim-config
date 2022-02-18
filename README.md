@@ -99,6 +99,7 @@
 - [ripxorip/aerojump.nvim](https://github.com/ripxorip/aerojump.nvim)
 - [romgrk/nvim-treesitter-context](https://github.com/romgrk/nvim-treesitter-context)
 - [RRethy/vim-illuminate](https://github.com/RRethy/vim-illuminate)
+- [stevearc/aerial.nvim](https://github.com/stevearc/aerial.nvim)
 - [stevearc/dressing.nvim](https://github.com/stevearc/dressing.nvim)
 - [tanvirtin/vgit.nvim](https://github.com/tanvirtin/vgit.nvim)
 - [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
