@@ -245,6 +245,7 @@ function M.setup_telescope()
   require('telescope').setup {}
 
   require('telescope').load_extension('aerial')
+  require('telescope').load_extension('gradle')
   require('telescope').load_extension('notify')
 end
 

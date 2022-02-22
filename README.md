@@ -71,6 +71,7 @@
 ### UI
 
 - [akinsho/nvim-bufferline.lua](https://github.com/akinsho/nvim-bufferline.lua)
+- [aloussase/telescope-gradle.nvim](https://github.com/aloussase/telescope-gradle.nvim)
 - [chentau/marks.nvim](https://github.com/chentau/marks.nvim)
 - [CosmicNvim/cosmic-ui](https://github.com/CosmicNvim/cosmic-ui)
 - [ctrlpvim/ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim)

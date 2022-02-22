@@ -364,7 +364,7 @@ return packer.startup {
         module = { 'telescope' },
         cmd = { 'Telescope' },
         config = util.setup.rc('telescope', 'ui'),
-        after = { 'aerial.nvim', 'nvim-notify' },
+        after = { 'aerial.nvim', 'nvim-notify', 'telescope-gradle.nvim' },
       }
       use { 'ray-x/navigator.lua',
         config = util.setup.rc('navigator'),
@@ -384,6 +384,7 @@ return packer.startup {
         requires = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim', 'ray-x/lsp_signature.nvim' },
         after = { 'nvim-lspconfig' },
       }
+      use { 'aloussase/telescope-gradle.nvim' }
 
       use { 'rhysd/committia.vim',
         config = util.setup.rc('committia'),
