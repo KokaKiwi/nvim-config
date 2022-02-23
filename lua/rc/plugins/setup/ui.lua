@@ -186,6 +186,11 @@ function M.setup_nvim_tree()
     },
     view = {
       width = 40,
+      mappings = {
+        list = {
+          { key = '<C-e>', action = 'close' },
+        },
+      },
     },
     actions = {
       open_file = {
