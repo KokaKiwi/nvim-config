@@ -6,7 +6,7 @@
 
 ### Colorscheme
 
-- [KokaKiwi/themer.lua](https://github.com/KokaKiwi/themer.lua)
+- [/home/kokakiwi/.local/share/nvim/local/themer.lua](https://github.com//home/kokakiwi/.local/share/nvim/local/themer.lua)
 - [rktjmp/lush.nvim](https://github.com/rktjmp/lush.nvim)
 
 ### Helpers
@@ -115,7 +115,6 @@
 - [ellisonleao/glow.nvim](https://github.com/ellisonleao/glow.nvim)
 - [famiu/bufdelete.nvim](https://github.com/famiu/bufdelete.nvim)
 - [glts/vim-radical](https://github.com/glts/vim-radical)
-- [henriquehbr/nvim-startup.lua](https://github.com/henriquehbr/nvim-startup.lua)
 - [hynek/vim-python-pep8-indent](https://github.com/hynek/vim-python-pep8-indent)
 - [iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
 - [inkarkat/vim-ingo-library](https://github.com/inkarkat/vim-ingo-library)

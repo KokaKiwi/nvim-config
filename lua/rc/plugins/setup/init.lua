@@ -111,19 +111,6 @@ function M.setup_neoformat()
   }
 end
 
-function M.setup_nvim_startup()
-  require('nvim-startup').setup {
-    startup_file = string.format('/tmp/nvim-startuptime-%s', os.getenv('USER')),
-    message = function(time)
-      local message = string.format('neovim started in %s ms', time)
-      vim.notify.info(message, {
-        title = 'nvim-startup',
-      })
-      return message
-    end,
-  }
-end
-
 function M.setup_polyglot()
   prefixed(vim.g, 'polyglot') {
     disabled = { 'fish', 'systemd' },

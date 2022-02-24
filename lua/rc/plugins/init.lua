@@ -87,10 +87,6 @@ return packer.startup {
       use { 'numToStr/Comment.nvim',
         config = util.setup.rc('Comment', 'utils'),
       }
-      use { 'henriquehbr/nvim-startup.lua',
-        config = util.setup.rc('nvim_startup'),
-        after = { 'nvim-notify' },
-      }
       use { 'andweeb/presence.nvim',
         config = util.setup.rc('presence'),
       }
