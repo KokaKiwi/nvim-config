@@ -19,7 +19,22 @@ return packer.startup {
       end,
     },
   },
-  function(use, use_rocks)
+  function(use_plugin, use_rocks)
+    local function use(plugin_spec)
+      if type(plugin_spec) == 'string' then
+        plugin_spec = { plugin_spec }
+      end
+
+      local name = util.plugin_name(plugin_spec)
+      local local_plugin_path = string.format('%s/local/%s', vim.fn.stdpath('data'), name)
+
+      if vim.loop.fs_stat(local_plugin_path) then
+        plugin_spec[1] = local_plugin_path
+      end
+
+      use_plugin(plugin_spec)
+    end
+
     local function group(spec)
       local block = spec[1]
 

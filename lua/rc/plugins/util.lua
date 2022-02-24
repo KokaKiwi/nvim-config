@@ -19,6 +19,24 @@ function util.require_packer()
   return packer
 end
 
+-- https://github.com/wbthomason/packer.nvim/blob/963cb58c3dd15699c801baf3e64393c6795b62e9/lua/packer.lua#L184-L191
+function util.plugin_name(plugin_spec)
+  if type(plugin_spec) == 'string' then
+    plugin_spec = { plugin_spec }
+  end
+
+  local path = vim.fn.expand(plugin_spec[1])
+  local name_segments = vim.split(path, '/')
+  local segment_index = #name_segments
+  local name = plugin_spec.as or name_segments[segment_index]
+  while name == '' and segment_index > 0 do
+    name = name_segments[segment_index]
+    segment_index = segment_index - 1
+  end
+
+  return name
+end
+
 util.cond = {
   is_executable = function(name)
     return string.format([[vim.fn.executable('%s') == 1]], name)
