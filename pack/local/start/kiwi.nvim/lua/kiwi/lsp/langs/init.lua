@@ -72,3 +72,4 @@ lsp.tsserver.setup {
 }
 lsp.vimls.setup {}
 lsp.yamlls.setup {}
+lsp.zls.setup {}
