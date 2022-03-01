@@ -1,7 +1,7 @@
 local nkey = require('nkey')
 
 nkey.setup {
-  integrations = { 'which_key' },
+  integrations = { 'legendary', 'which_key' },
 }
 
 local function Telescope(name)
@@ -58,7 +58,6 @@ nkey.register {
 
   -- telescope.nvim
   { '<Leader>f', {
-    { 'e', Telescope 'file_browser', help = 'File explorer' },
     { 'f', Telescope 'find_files', help = 'Find files' },
     { 'g', Telescope 'live_grep',  help = 'Live grep' },
     { 'h', Telescope 'help_tags',  help = 'Help tags' },

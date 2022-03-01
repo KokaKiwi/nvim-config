@@ -1,4 +1,4 @@
-bool = {}
+_G.bool = {}
 
 -- bool.select
 function bool.select(expr, then_expr, else_expr)

@@ -165,15 +165,4 @@ function M.setup_vgit()
   require('vgit').setup {}
 end
 
-function M.setup_which_key()
-  require('which-key').setup {
-    icons = {
-      separator = '->',
-    },
-    window = {
-      border = 'single',
-    },
-  }
-end
-
 return M

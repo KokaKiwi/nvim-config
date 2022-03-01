@@ -37,6 +37,33 @@ function util.plugin_name(plugin_spec)
   return name
 end
 
+util.handlers = {
+  _global = {},
+  _handlers = {},
+
+  register = function(name, handler)
+    if name ~= nil then
+      util.handlers._handlers[name] = handler
+    else
+      table.append(util.handlers._global, handler)
+    end
+
+  end,
+
+  handle = function(plugin_spec)
+    for _, handler in ipairs(util.handlers._global) do
+      handler(plugin_spec)
+    end
+
+    for k, v in pairs(plugin_spec) do
+      local handler = util.handlers._handlers[k]
+      if handler ~= nil then
+        handler(plugin_spec, v)
+      end
+    end
+  end,
+}
+
 util.cond = {
   is_executable = function(name)
     return string.format([[vim.fn.executable('%s') == 1]], name)

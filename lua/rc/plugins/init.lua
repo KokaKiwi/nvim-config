@@ -4,6 +4,24 @@ local util = require('rc.plugins.util')
 -- Setup
 local packer = util.require_packer()
 
+util.handlers.register(nil, function(plugin_spec)
+  local name = util.plugin_name(plugin_spec)
+  local local_plugin_path = string.format('%s/local/%s', vim.fn.stdpath('data'), name)
+
+  if vim.loop.fs_stat(local_plugin_path) then
+    plugin_spec[1] = local_plugin_path
+  end
+end)
+
+util.handlers.register('git_host', function(plugin_spec, host)
+  local path = plugin_spec[1]
+  if vim.fn.isdirectory(path) then
+    return
+  end
+
+  plugin_spec[1] = string.format('https://%s/%s', host, path)
+end)
+
 return packer.startup {
   config = {
     max_jobs = 8,
@@ -25,13 +43,7 @@ return packer.startup {
         plugin_spec = { plugin_spec }
       end
 
-      local name = util.plugin_name(plugin_spec)
-      local local_plugin_path = string.format('%s/local/%s', vim.fn.stdpath('data'), name)
-
-      if vim.loop.fs_stat(local_plugin_path) then
-        plugin_spec[1] = local_plugin_path
-      end
-
+      util.handlers.handle(plugin_spec)
       use_plugin(plugin_spec)
     end
 
@@ -262,8 +274,9 @@ return packer.startup {
       use { 'rktjmp/lush.nvim',
         module = { 'lush' },
       }
-      use { 'KokaKiwi/themer.lua',
+      use { 'kokakiwi/themer.lua',
         branch = 'kiwi',
+        git_host = 'gitlab.kokakiwi.net',
         config = util.setup.mod_call('kiwi.ui.colorscheme'),
       }
     end }
@@ -346,9 +359,8 @@ return packer.startup {
       use { 'weilbith/nvim-code-action-menu',
         cmd = { 'CodeActionMenu' },
       }
-      use { 'folke/which-key.nvim',
-        config = util.setup.rc('which_key'),
-      }
+      use { 'folke/which-key.nvim' }
+      use { 'mrjones2014/legendary.nvim' }
       use { 'rcarriga/nvim-notify',
         config = util.setup.rc('notify', 'ui'),
         after = { 'nvim-bufferline.lua' },

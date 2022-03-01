@@ -88,6 +88,7 @@
 - [lukas-reineke/virt-column.nvim](https://github.com/lukas-reineke/virt-column.nvim)
 - [luukvbaal/nnn.nvim](https://github.com/luukvbaal/nnn.nvim)
 - [mbbill/undotree](https://github.com/mbbill/undotree)
+- [mrjones2014/legendary.nvim](https://github.com/mrjones2014/legendary.nvim)
 - [norcalli/nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
 - [numToStr/FTerm.nvim](https://github.com/numToStr/FTerm.nvim)
 - [nvim-lua/lsp-status.nvim](https://github.com/nvim-lua/lsp-status.nvim)

@@ -4,5 +4,6 @@ require_prefix('klib.vim') {
   'cmd',
   'config',
   'func',
+  'path',
   'syntax',
 }

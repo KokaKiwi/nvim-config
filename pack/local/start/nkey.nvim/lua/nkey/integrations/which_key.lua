@@ -31,7 +31,7 @@ local function on_group(modes, prefix, spec, preset)
 
   for _, mode in ipairs(modes) do
     register_keymap(mode, prefix, spec, preset, function(help)
-      return { name = help.desc }
+      return { name = help.desc, group = help.desc }
     end)
   end
 end
@@ -53,6 +53,15 @@ return Integration.new(function(nkey)
   if not has_wk then
     return
   end
+
+  wk.setup {
+    icons = {
+      separator = '->',
+    },
+    window = {
+      border = 'single',
+    },
+  }
 
   nkey.hooks.on_map:register(on_map)
   nkey.hooks.on_group:register(on_group)
