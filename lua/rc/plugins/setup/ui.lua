@@ -195,6 +195,9 @@ function M.setup_nvim_tree()
     actions = {
       open_file = {
         quit_on_open = true,
+        window_picker = {
+          enable = false,
+        },
       },
     },
   }
@@ -210,7 +213,6 @@ function M.setup_nvim_tree()
     special_files = table.dmap(SPECIAL_FILES, function(_, fname)
       return fname, 1
     end),
-    quit_on_open = 1,
     show_icons = {
       git = 0,
       folders = 1,
@@ -233,7 +235,6 @@ function M.setup_nvim_tree()
     },
     group_empty = 1,
     add_trailing = 1,
-    disable_window_picker = 1,
   }
 end
 
