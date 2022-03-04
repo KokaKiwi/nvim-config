@@ -1,6 +1,3 @@
--- vim.autocmd
-vim.autocmd_table = {}
-
 ---@param events string | string[]
 ---@param pattern string | string[]
 ---@param cmd string | function
@@ -8,37 +5,22 @@ vim.autocmd_table = {}
 function vim.autocmd(events, pattern, cmd, opts)
   opts = opts or {}
 
-  if vim.tbl_islist(events) then
-    events = table.concat(events, ',')
-  end
-  if vim.tbl_islist(pattern) then
-    pattern = table.concat(pattern, ',')
-  end
+  local options = {
+    pattern = pattern,
 
-  local command = { 'autocmd' }
-
-  if opts.group ~= nil then
-    table.insert(command, opts.group)
-  end
-
-  table.insert(command, events)
-  table.insert(command, pattern)
-
-  if opts.once ~= nil then
-    table.insert(command, '++once')
-  end
-  if opts.nested ~= nil then
-    table.insert(command, '++nested')
-  end
+    group = opts.group,
+    once = opts.once,
+    nested = opts.nested,
+    desc = opts.desc,
+  }
 
   if type(cmd) == 'function' then
-    local index = #vim.autocmd_table + 1
-    vim.autocmd_table[index] = cmd
-    cmd = string.format('lua vim.autocmd_table[%d]()', index)
+    options.callback = cmd
+  else
+    options.command = cmd
   end
-  table.insert(command, cmd)
 
-  vim.cmd(table.concat(command, ' '))
+  vim.api.nvim_create_autocmd(events, options)
 end
 
 ---@param filetype string | string[]
@@ -74,56 +56,32 @@ function vim.aubufread(pattern, cmd, opts)
   vim.autocmd({ 'BufRead', 'BufNewFile' }, pattern, cmd, opts)
 end
 
--- vim.command
-vim.command_table = {}
-
 ---@param name string
 ---@param repl string | function
 ---@param opts table
 function vim.command(name, repl, opts)
   opts = opts or {}
 
-  local command = { 'command!' }
-
-  table.insert(command, string.format('-nargs=%s', opts.nargs or '*'))
-
-  if opts.complete ~= nil then
-    local complete = opts.complete
-    if type(complete) == 'table' then
-      local complete_items = complete
-      complete = function()
-        return complete_items
-      end
-    end
-    if type(complete) == 'function' then
-      local complete_func_name = string.format('_complete_%s', name)
-      vim.func[complete_func_name] = complete
-      complete = string.format('customlist,%s', complete_func_name)
-    end
-
-    table.insert(command, string.format('-complete=%s', complete))
-  end
-  if opts.range ~= nil then
-    if type(opts.range) == 'boolean' and opts.range then
-      table.insert(command, '-range')
-    else
-      table.insert(command, string.format('-range=%s', opts.range))
+  local complete = opts.complete
+  if type(complete) == 'table' then
+    complete = function()
+      return opts.complete
     end
   end
-  if opts.addr ~= nil then
-    table.insert(command, string.format('-addr=%s', opts.addr))
+
+  local options = {
+    range = opts.range,
+    addr = opts.addr,
+    nargs = opts.nargs or '*',
+
+    complete = complete,
+  }
+
+  local callback = function(data)
+    repl(unpack(data.fargs))
   end
 
-  table.insert(command, name)
-
-  if type(repl) == 'function' then
-    local index = #vim.command_table + 1
-    vim.command_table[index] = repl
-    repl = string.format('lua vim.command_table[%d](<f-args>)', index)
-  end
-  table.insert(command, repl)
-
-  vim.cmd(table.concat(command, ' '))
+  vim.api.nvim_add_user_command(name, callback, options)
 end
 
 -- vim.augroup
