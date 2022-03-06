@@ -15,7 +15,7 @@ function vim.autocmd(events, pattern, cmd, opts)
   }
 
   if type(cmd) == 'function' then
-    options.callback = cmd
+    options.callback = function() cmd() end
   else
     options.command = cmd
   end
