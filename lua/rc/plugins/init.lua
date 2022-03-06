@@ -211,6 +211,7 @@ return packer.startup {
       use { 'simrat39/rust-tools.nvim',
         config = util.setup.rc('rust_tools', 'helpers'),
         after = { 'nvim-lspconfig' },
+        ft = { 'rust' },
       }
       use 'b0o/SchemaStore.nvim'
       use 'folke/lua-dev.nvim'

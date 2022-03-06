@@ -25,6 +25,19 @@ function M.setup_package_info()
 end
 
 function M.setup_rust_tools()
+  local config = kiwi.config.run('rust-tools', {
+    cargo = {
+      allFeatures = true,
+    },
+    checkOnSave = {
+      command = 'clippy',
+    },
+    completion = {
+      addCallArgumentSnippets = false,
+      autoimport = { enable = false },
+    },
+  })
+
   require('rust-tools').setup {
     tools = {
       hover_with_actions = false,
@@ -36,18 +49,7 @@ function M.setup_rust_tools()
 
     server = {
       settings = {
-        ['rust-analyzer'] = {
-          cargo = {
-            allFeatures = true,
-          },
-          checkOnSave = {
-            command = 'clippy',
-          },
-          completion = {
-            addCallArgumentSnippets = false,
-            autoimport = { enable = false },
-          },
-        },
+        ['rust-analyzer'] = config,
       },
     },
   }
