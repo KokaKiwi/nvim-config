@@ -82,6 +82,14 @@ function M.setup_treesitter()
       branch = 'main',
       files = { 'src/scanner.cc', 'src/parser.c' },
     },
+    maintainers = { '@IndianBoy42' },
+  }
+  configs.just = {
+    install_info = {
+      url = 'https://github.com/IndianBoy42/tree-sitter-just',
+      branch = 'main',
+      files = { 'src/scanner.cc', 'src/parser.c' },
+    },
   }
 
   require('nvim-treesitter.configs').setup {
