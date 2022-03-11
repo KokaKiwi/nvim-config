@@ -5,6 +5,10 @@ local util = require('rc.plugins.util')
 local packer = util.require_packer()
 
 util.handlers.register(nil, function(plugin_spec)
+  plugin_spec.plugin_path = plugin_spec[1]
+end)
+
+util.handlers.register(nil, function(plugin_spec)
   local name = util.plugin_name(plugin_spec)
   local local_plugin_path = string.format('%s/local/%s', vim.fn.stdpath('data'), name)
 
@@ -279,6 +283,9 @@ return packer.startup {
         branch = 'kiwi',
         git_host = 'gitlab.kokakiwi.net',
         config = util.setup.mod_call('kiwi.ui.colorscheme'),
+      }
+      use { 'contrib/vim/cooler.nvim',
+        git_host = 'gitlab.kokakiwi.net',
       }
     end }
 

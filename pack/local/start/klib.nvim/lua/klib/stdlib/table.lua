@@ -10,7 +10,8 @@ function table.map(t, fn, to_map)
         result[left] = right
       end
     else
-      table.insert(result, fn(item))
+      local res = fn(item)
+      table.insert(result, res)
     end
 
   end

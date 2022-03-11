@@ -253,6 +253,7 @@ function M.setup_telescope()
   require('telescope').load_extension('aerial')
   require('telescope').load_extension('gradle')
   require('telescope').load_extension('notify')
+  require('telescope').load_extension('themes')
 end
 
 function M.setup_virt_column()

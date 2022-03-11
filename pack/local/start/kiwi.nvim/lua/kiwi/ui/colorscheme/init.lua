@@ -1,28 +1,6 @@
-local THEMES = {
-  'ayu',
-  'ayu_dark',
-  'ayu_mirage',
-  'catppuccin',
-  'darknight',
-  'doom_one',
-  'dracula',
-  'everforest',
-  'gruvbox',
-  'javacafe',
-  'kanagawa',
-  'kurai',
-  'monokai',
-  'monokai_pro',
-  'nord',
-  'onedark',
-  'papa_dark',
-  'rose_pine',
-  'rose_pine_dawn',
-  'rose_pine_moon',
-  'shado',
-  'tokyodark',
-  'tokyonight',
-}
+local THEMES = table.map(vim.fn.getcompletion('themer_', 'color'), function(name)
+  return name:gsub('themer_', '')
+end)
 
 local INTEGRATIONS = {
   'dashboard',

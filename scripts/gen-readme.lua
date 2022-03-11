@@ -11,7 +11,7 @@ local README_TEMPLATE = [[
 ### {{= GROUP_NAMES[group_name]}}
 
 {{ for _, plugin in ipairs(groups[group_name]) do }}
-- [{{= plugin.name}}](https://github.com/{{= plugin.path}})
+- [{{= plugin.short_name}}](https://{{= plugin.git_host}}/{{= plugin.plugin_path or plugin.path}})
 {{ end }}
 {{ end }}
 ]]
@@ -39,23 +39,31 @@ packer.__manage_all()
 
 local groups = {}
 for _, plugin in pairs(plugins) do
-  if not plugin.disable then
-    local group_name = plugin.group or DEFAULT_GROUP
-    if plugin.from_requires then
-      group_name = 'deps'
-    end
-
-    if GROUP_NAMES[group_name] == nil then
-      error("Unknown group name: " .. group_name)
-    end
-
-    groups[group_name] = groups[group_name] or {}
-    table.insert(groups[group_name], plugin)
+  if plugin.disable then
+    goto continue
   end
+
+  local group_name = plugin.group or DEFAULT_GROUP
+  if plugin.from_requires then
+    group_name = 'deps'
+  end
+
+  if plugin.git_host == nil then
+    plugin.git_host = 'github.com'
+  end
+
+  if GROUP_NAMES[group_name] == nil then
+    error("Unknown group name: " .. group_name)
+  end
+
+  groups[group_name] = groups[group_name] or {}
+  table.insert(groups[group_name], plugin)
+
+  ::continue::
 end
 
 local function plugin_compare(lhs, rhs)
-  return string.lower(lhs.name) < string.lower(rhs.name)
+  return string.lower(lhs.short_name) < string.lower(rhs.short_name)
 end
 for _, group_plugins in pairs(groups) do
   table.sort(group_plugins, plugin_compare)

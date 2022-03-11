@@ -45,6 +45,11 @@ util.handlers = {
     if name ~= nil then
       util.handlers._handlers[name] = handler
     else
+      if type(handler) ~= 'table' then
+        handler = {
+          handler = handler,
+        }
+      end
       table.append(util.handlers._global, handler)
     end
 
@@ -52,7 +57,7 @@ util.handlers = {
 
   handle = function(plugin_spec)
     for _, handler in ipairs(util.handlers._global) do
-      handler(plugin_spec)
+      handler.handler(plugin_spec)
     end
 
     for k, v in pairs(plugin_spec) do
