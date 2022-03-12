@@ -284,7 +284,7 @@ return packer.startup {
         git_host = 'gitlab.kokakiwi.net',
         config = util.setup.mod_call('kiwi.ui.colorscheme'),
       }
-      use { 'contrib/vim/cooler.nvim',
+      use { 'contrib/neovim/cooler.nvim',
         git_host = 'gitlab.kokakiwi.net',
       }
     end }
