@@ -5,7 +5,18 @@ local util = require('rc.plugins.util')
 local packer = util.require_packer()
 
 util.handlers.register(nil, function(plugin_spec)
-  plugin_spec.plugin_path = plugin_spec[1]
+  local path = plugin_spec[1]
+  local url
+  if vim.loop.fs_stat(path) then
+    url = string.format("file://%s", path)
+    plugin_spec.plugin_local = true
+  else
+    local git_host = plugin_spec.git_host or 'github.com'
+    url = string.format('https://%s/%s', git_host, path)
+  end
+
+  plugin_spec.plugin_path = path
+  plugin_spec.plugin_url = url
 end)
 
 util.handlers.register(nil, function(plugin_spec)
@@ -19,7 +30,7 @@ end)
 
 util.handlers.register('git_host', function(plugin_spec, host)
   local path = plugin_spec[1]
-  if vim.fn.isdirectory(path) then
+  if vim.loop.fs_stat(path) then
     return
   end
 
