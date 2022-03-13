@@ -291,7 +291,6 @@ return packer.startup {
         module = { 'lush' },
       }
       use { 'kokakiwi/themer.lua',
-        branch = 'kiwi',
         git_host = 'gitlab.kokakiwi.net',
         config = util.setup.mod_call('kiwi.ui.colorscheme'),
       }
