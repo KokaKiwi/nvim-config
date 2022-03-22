@@ -126,6 +126,7 @@
 - [markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim)
 - [mkdir.nvim](https://github.com/jghauser/mkdir.nvim)
 - [neorg](https://github.com/nvim-neorg/neorg)
+- [nvim-gomove](https://github.com/booperlv/nvim-gomove)
 - [nvim-luapad](https://github.com/rafcamlet/nvim-luapad)
 - [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 - [popup.nvim](https://github.com/nvim-lua/popup.nvim)

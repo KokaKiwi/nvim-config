@@ -146,6 +146,9 @@ return packer.startup {
         config = util.setup.rc('sort', 'utils'),
         cmd = { 'Sort' },
       }
+      use { 'booperlv/nvim-gomove',
+        config = util.setup.rc('gomove', 'utils'),
+      }
 
       use { 'iamcco/markdown-preview.nvim',
         ft = { 'markdown', 'pandoc.markdown', 'rmd' },
