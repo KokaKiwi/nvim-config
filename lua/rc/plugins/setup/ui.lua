@@ -175,10 +175,10 @@ function M.setup_nvim_tree()
     },
     filters = {
       custom = {
-        '.git', '.hg', '.svn', '.bzr', '.pijul',
-        '.pyc', '.pyd', '.egg-infos', '__pycache__',
-        '.class',
-        '.swp',
+        '^\\.git', '^\\.hg', '^\\.svn', '^\\.bzr', '^\\.pijul',
+        '\\.pyc$', '\\.pyd$', '\\.egg-infos', '__pycache__',
+        '\\.class$',
+        '\\.swp$',
       },
     },
     git = {
