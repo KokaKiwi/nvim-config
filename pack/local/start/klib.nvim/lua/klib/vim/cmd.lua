@@ -56,6 +56,8 @@ function vim.aubufread(pattern, cmd, opts)
   vim.autocmd({ 'BufRead', 'BufNewFile' }, pattern, cmd, opts)
 end
 
+vim.api.nvim_add_user_command = vim.api.nvim_create_user_command
+
 ---@param name string
 ---@param repl string | function
 ---@param opts table

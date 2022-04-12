@@ -93,7 +93,7 @@ function M.setup_treesitter()
   }
 
   require('nvim-treesitter.configs').setup {
-    ensure_installed = 'maintained',
+    ensure_installed = 'all',
     ignore_install = { 'ocamllex' },
     highlight = {
       enable = true,
