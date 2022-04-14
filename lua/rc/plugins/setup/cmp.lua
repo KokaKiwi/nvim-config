@@ -22,7 +22,7 @@ return function()
         require('snippy').expand_snippet(args.body)
       end,
     },
-    mapping = {
+    mapping = cmp.mapping.preset.insert {
       ['<Tab>'] = cmp.mapping {
         i = cmp.mapping.confirm { select = true },
       },
@@ -48,11 +48,13 @@ return function()
   }
 
   cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
     sources = {
       { name = 'buffer' },
     },
   })
   cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources(
       {
         { name = 'path' },
