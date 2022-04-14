@@ -13,6 +13,8 @@ return function()
     sources = cmp.config.sources(
       {
         { name = 'nvim_lsp' },
+        { name = 'nvim_lsp_document_symbol' },
+        { name = 'nvim_lsp_signature_help' },
         { name = 'snippy' },
       },
       BASE_SOURCES
@@ -45,6 +47,9 @@ return function()
       format = lspkind.cmp_format {},
     },
     preselect = cmp.PreselectMode.None,
+    view = {
+      entries = 'native',
+    },
   }
 
   cmp.setup.cmdline('/', {

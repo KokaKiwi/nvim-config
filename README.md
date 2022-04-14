@@ -20,6 +20,8 @@
 - [cmp-latex-symbols](https://github.com/kdheepak/cmp-latex-symbols)
 - [cmp-npm](https://github.com/David-Kunz/cmp-npm)
 - [cmp-nvim-lsp](https://github.com/hrsh7th/cmp-nvim-lsp)
+- [cmp-nvim-lsp-document-symbol](https://github.com/hrsh7th/cmp-nvim-lsp-document-symbol)
+- [cmp-nvim-lsp-signature-help](https://github.com/hrsh7th/cmp-nvim-lsp-signature-help)
 - [cmp-nvim-lua](https://github.com/hrsh7th/cmp-nvim-lua)
 - [cmp-path](https://github.com/hrsh7th/cmp-path)
 - [cmp-snippy](https://github.com/dcampos/cmp-snippy)

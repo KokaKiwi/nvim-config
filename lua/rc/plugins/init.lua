@@ -209,6 +209,7 @@ return packer.startup {
       local CMP_SOURCES = {
         'nvim-lsp', 'nvim-lua',
         'buffer', 'path', 'emoji', 'cmdline', 'calc',
+        'nvim-lsp-document-symbol', 'nvim-lsp-signature-help',
         'ray-x/cmp-treesitter', 'David-Kunz/cmp-npm', 'kdheepak/cmp-latex-symbols',
         'dcampos/cmp-snippy',
       }
