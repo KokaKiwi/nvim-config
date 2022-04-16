@@ -31,9 +31,6 @@ meta.__newindex = function(t, config_name, config_def)
       require('aerial').on_attach(client, bufnr)
       require('illuminate').on_attach(client)
       require('lsp-status').on_attach(client)
-      require('lsp_signature').on_attach({
-        bind = false,
-      }, bufnr)
       require('navigator.lspclient.attach').on_attach(client, bufnr)
       require('kiwi.lsp.fixups').on_attach(client, bufnr)
 

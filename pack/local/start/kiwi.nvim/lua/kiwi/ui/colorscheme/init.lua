@@ -23,11 +23,7 @@ local function extends_palette(cp)
 end
 
 local function extends_highlights(cp)
-  return {
-    diffAdded = { fg = cp.diff.add },
-    diffRemoved = { fg = cp.diff.remove or cp.diff.delete },
-    diffChanged = { fg = cp.diff.change },
-  }
+  return {}
 end
 
 return function()
