@@ -123,12 +123,6 @@ function M.setup_gitsigns()
   require('gitsigns').setup {}
 end
 
-function M.setup_lsp_signature()
-  require('lsp_signature').setup {
-    floating_window_above_cur_line = false,
-  }
-end
-
 function M.setup_minimap()
   prefixed(vim.g, 'minimap') {
     block_filetypes = { 'NvimTree', 'aerial' },

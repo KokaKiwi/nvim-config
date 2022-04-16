@@ -375,9 +375,6 @@ return packer.startup {
         config = util.setup.rc('lsp_status'),
         module = { 'lsp-status' },
       }
-      use { 'ray-x/lsp_signature.nvim',
-        config = util.setup.rc('lsp_signature', 'ui'),
-      }
       use { 'weilbith/nvim-code-action-menu',
         cmd = { 'CodeActionMenu' },
       }
@@ -426,7 +423,7 @@ return packer.startup {
       }
       use { 'CosmicNvim/cosmic-ui',
         config = util.setup.rc('cosmic', 'ui'),
-        requires = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim', 'ray-x/lsp_signature.nvim' },
+        requires = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
         after = { 'nvim-lspconfig' },
       }
       use { 'aloussase/telescope-gradle.nvim' }
