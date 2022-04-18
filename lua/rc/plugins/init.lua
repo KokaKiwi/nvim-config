@@ -291,15 +291,9 @@ return packer.startup {
     -- UI
     -- UI > Colorschemes
     group { group = 'colorscheme', function(use)
-      use { 'rktjmp/lush.nvim',
-        module = { 'lush' },
-      }
-      use { 'kokakiwi/themer.lua',
-        git_host = 'gitlab.kokakiwi.net',
+      use { 'catppuccin/nvim',
+        as = 'catppuccin',
         config = util.setup.mod_call('kiwi.ui.colorscheme'),
-      }
-      use { 'contrib/neovim/cooler.nvim',
-        git_host = 'gitlab.kokakiwi.net',
       }
     end }
 

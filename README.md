@@ -6,9 +6,7 @@
 
 ### Colorscheme
 
-- [cooler.nvim](https://gitlab.kokakiwi.net/contrib/neovim/cooler.nvim)
-- [lush.nvim](https://github.com/rktjmp/lush.nvim)
-- [themer.lua](https://gitlab.kokakiwi.net/kokakiwi/themer.lua)
+- [catppuccin](https://github.com/catppuccin/nvim)
 
 ### Helpers
 

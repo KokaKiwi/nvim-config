@@ -171,7 +171,7 @@ function M.setup_nvim_tree()
     },
     filters = {
       custom = {
-        '^\\.git', '^\\.hg', '^\\.svn', '^\\.bzr', '^\\.pijul',
+        '^\\.git$', '^\\.hg$', '^\\.svn$', '^\\.bzr$', '^\\.pijul$',
         '\\.pyc$', '\\.pyd$', '\\.egg-infos', '__pycache__',
         '\\.class$',
         '\\.swp$',
@@ -249,7 +249,6 @@ function M.setup_telescope()
   require('telescope').load_extension('aerial')
   require('telescope').load_extension('gradle')
   require('telescope').load_extension('notify')
-  require('telescope').load_extension('themes')
 end
 
 function M.setup_virt_column()
