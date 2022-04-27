@@ -1,7 +1,16 @@
 local nkey = require('nkey')
+local wk = require('which-key')
 
 nkey.setup {
   integrations = { 'legendary', 'which_key' },
+}
+
+wk.setup {
+  plugins = {
+    presets = {
+      operators = false,
+    },
+  },
 }
 
 local function Telescope(name)

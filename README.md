@@ -88,6 +88,7 @@
 - [lsp-status.nvim](https://github.com/nvim-lua/lsp-status.nvim)
 - [marks.nvim](https://github.com/chentau/marks.nvim)
 - [minimap.vim](https://github.com/wfxr/minimap.vim)
+- [modes.nvim](https://github.com/mvllow/modes.nvim)
 - [navigator.lua](https://github.com/ray-x/navigator.lua)
 - [nnn.nvim](https://github.com/luukvbaal/nnn.nvim)
 - [nvim-bufferline.lua](https://github.com/akinsho/nvim-bufferline.lua)

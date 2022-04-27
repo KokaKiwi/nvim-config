@@ -130,6 +130,12 @@ function M.setup_minimap()
   }
 end
 
+function M.setup_modes()
+  require('modes').setup {
+    ignore_filetypes = { 'NvimTree', 'TelescopePrompt', 'aerial' },
+  }
+end
+
 function M.setup_nnn()
   require('nnn').setup {}
 end

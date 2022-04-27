@@ -390,6 +390,10 @@ return packer.startup {
         config = util.setup.rc('aerial', 'ui'),
       }
 
+      use { 'mvllow/modes.nvim',
+        config = util.setup.rc('modes', 'ui'),
+      }
+
       use { 'xeluxee/competitest.nvim',
         requires = { 'MunifTanjim/nui.nvim' },
         config = util.setup.rc('competitest', 'ui'),
