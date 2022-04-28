@@ -132,7 +132,7 @@ end
 
 function M.setup_modes()
   require('modes').setup {
-    ignore_filetypes = { 'NvimTree', 'TelescopePrompt', 'aerial' },
+    ignore_filetypes = { 'NvimTree', 'TelescopePrompt', 'aerial', 'packer' },
   }
 end
 
