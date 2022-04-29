@@ -132,6 +132,7 @@ end
 
 function M.setup_modes()
   require('modes').setup {
+    line_opacity = 0.25,
     ignore_filetypes = { 'NvimTree', 'TelescopePrompt', 'aerial', 'packer' },
   }
 end

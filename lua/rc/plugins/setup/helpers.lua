@@ -21,7 +21,10 @@ function M.setup_null_ls()
 end
 
 function M.setup_package_info()
-  require('package-info').setup {}
+  require('package-info').setup {
+    hide_unstable_versions = true,
+    package_manager = 'yarn',
+  }
 end
 
 function M.setup_rust_tools()
