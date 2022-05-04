@@ -47,7 +47,7 @@ return function()
     },
     preselect = cmp.PreselectMode.None,
     view = {
-      entries = 'native',
+      -- entries = 'native',
     },
   }
 
