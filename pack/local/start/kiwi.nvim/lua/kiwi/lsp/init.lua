@@ -45,11 +45,13 @@ function lsp.setup()
   end)
 
   vim.command('LspFormat', function()
-    vim.lsp.buf.formatting()
+    vim.lsp.buf.format { async = true }
   end)
 
   vim.augroup('KiwiLsp', function()
-    vim.autocmd('BufWritePre', AUTO_FORMAT_PATTERNS, vim.lsp.buf.formatting)
+    vim.autocmd('BufWritePre', AUTO_FORMAT_PATTERNS, function()
+      vim.lsp.buf.format { async = true }
+    end)
   end)
 end
 

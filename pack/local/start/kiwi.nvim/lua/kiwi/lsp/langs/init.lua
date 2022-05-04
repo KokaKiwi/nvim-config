@@ -71,5 +71,6 @@ lsp.tsserver.setup {
   cmd = { 'javascript-typescript-stdio' },
 }
 lsp.vimls.setup {}
+lsp.vuels.setup {}
 lsp.yamlls.setup {}
 lsp.zls.setup {}
