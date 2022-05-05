@@ -26,6 +26,7 @@ local GROUP_NAMES = {
   ['utils'] = 'Utilities',
   ['helpers'] = 'Helpers',
   ['syntax'] = 'Syntax / Languages',
+  ['misc'] = 'Misc',
 }
 
 local packer = require('rc.plugins')

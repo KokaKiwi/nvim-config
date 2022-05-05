@@ -489,6 +489,13 @@ return packer.startup {
       use { 'thyrgle/vim-dyon', ft = 'dyon' }
     end }
 
+    -- Misc
+    group { group = 'misc', function(use)
+      use { 'ryoppippi/bad-apple.vim',
+        requires = { 'vim-denops/denops.vim' },
+      }
+    end }
+
     -- LuaRocks
     use_rocks { 'luasocket', 'luaposix', 'http' }
 

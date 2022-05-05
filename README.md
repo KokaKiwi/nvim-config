@@ -44,6 +44,10 @@
 - [vim-easy-align](https://github.com/junegunn/vim-easy-align)
 - [vim-mix-format](https://github.com/mhinz/vim-mix-format)
 
+### Misc
+
+- [bad-apple.vim](https://github.com/ryoppippi/bad-apple.vim)
+
 ### Syntax / Languages
 
 - [cranelift.vim](https://github.com/bytecodealliance/cranelift.vim)
@@ -149,6 +153,7 @@
 
 ### Third-party dependencies
 
+- [denops.vim](https://github.com/vim-denops/denops.vim)
 - [guihua.lua](https://github.com/ray-x/guihua.lua)
 - [lspkind-nvim](https://github.com/onsails/lspkind-nvim)
 - [nui.nvim](https://github.com/MunifTanjim/nui.nvim)
