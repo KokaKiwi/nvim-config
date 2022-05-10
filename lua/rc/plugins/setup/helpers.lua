@@ -28,7 +28,7 @@ function M.setup_package_info()
 end
 
 function M.setup_rust_tools()
-  local config = kiwi.config.run('rust-tools', {
+  local config = kiwi.config.run('rust-tools:config', {
     cargo = {
       allFeatures = true,
     },
@@ -41,6 +41,13 @@ function M.setup_rust_tools()
     },
   })
 
+  local server = kiwi.config.run('rust-tools:server', {
+    cmd_env = kiwi.config.run('rust-tools:env'),
+    settings = {
+      ['rust-analyzer'] = config,
+    },
+  })
+
   require('rust-tools').setup {
     tools = {
       hover_with_actions = false,
@@ -50,11 +57,7 @@ function M.setup_rust_tools()
       },
     },
 
-    server = {
-      settings = {
-        ['rust-analyzer'] = config,
-      },
-    },
+    server = server,
   }
 end
 

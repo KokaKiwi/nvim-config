@@ -18,7 +18,10 @@ function config.run(name, data)
   data = data or {}
 
   for _, handler in ipairs(handlers) do
-    handler(data)
+    local res = handler(data)
+    if res ~= nil then
+      data = res
+    end
   end
 
   return data
