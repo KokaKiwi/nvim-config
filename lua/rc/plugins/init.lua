@@ -491,8 +491,13 @@ return packer.startup {
 
     -- Misc
     group { group = 'misc', function(use)
+      use { 'vim-denops/denops.vim',
+        cond = util.cond.is_executable('deno'),
+      }
+
       use { 'ryoppippi/bad-apple.vim',
         requires = { 'vim-denops/denops.vim' },
+        cond = util.cond.is_executable('deno'),
       }
     end }
 
