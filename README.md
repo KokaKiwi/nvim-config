@@ -101,7 +101,7 @@
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - [nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar)
 - [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
-- [nvim-treesitter-context](https://github.com/romgrk/nvim-treesitter-context)
+- [nvim-treesitter-context](https://github.com/lewis6991/nvim-treesitter-context)
 - [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
 - [skim.vim](https://github.com/lotabout/skim.vim)
 - [telescope-gradle.nvim](https://github.com/aloussase/telescope-gradle.nvim)
