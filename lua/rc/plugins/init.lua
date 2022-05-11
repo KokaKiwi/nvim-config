@@ -132,6 +132,9 @@ return packer.startup {
       use { 'andweeb/presence.nvim',
         config = util.setup.rc('presence'),
       }
+      use { 'direnv/direnv.vim',
+        cond = util.cond.is_executable('direnv'),
+      }
 
       use 'inkarkat/vim-ingo-library'
       use 'LucHermitte/lh-vim-lib'

@@ -121,6 +121,7 @@
 - [bufdelete.nvim](https://github.com/famiu/bufdelete.nvim)
 - [codi.vim](https://github.com/metakirby5/codi.vim)
 - [Comment.nvim](https://github.com/numToStr/Comment.nvim)
+- [direnv.vim](https://github.com/direnv/direnv.vim)
 - [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim)
 - [emmet-vim](https://github.com/mattn/emmet-vim)
 - [figban.nvim](https://github.com/thazelart/figban.nvim)
