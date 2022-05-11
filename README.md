@@ -47,6 +47,7 @@
 ### Misc
 
 - [bad-apple.vim](https://github.com/ryoppippi/bad-apple.vim)
+- [denops.vim](https://github.com/vim-denops/denops.vim)
 
 ### Syntax / Languages
 
@@ -101,7 +102,7 @@
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
 - [nvim-scrollbar](https://github.com/petertriho/nvim-scrollbar)
 - [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
-- [nvim-treesitter-context](https://github.com/lewis6991/nvim-treesitter-context)
+- [nvim-treesitter-context](https://github.com/romgrk/nvim-treesitter-context)
 - [nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons)
 - [skim.vim](https://github.com/lotabout/skim.vim)
 - [telescope-gradle.nvim](https://github.com/aloussase/telescope-gradle.nvim)
@@ -153,7 +154,6 @@
 
 ### Third-party dependencies
 
-- [denops.vim](https://github.com/vim-denops/denops.vim)
 - [guihua.lua](https://github.com/ray-x/guihua.lua)
 - [lspkind-nvim](https://github.com/onsails/lspkind-nvim)
 - [nui.nvim](https://github.com/MunifTanjim/nui.nvim)
