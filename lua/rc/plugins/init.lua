@@ -381,7 +381,7 @@ return packer.startup {
         config = util.setup.rc('notify', 'ui'),
         after = { 'nvim-bufferline.lua' },
       }
-      use { 'chentau/marks.nvim',
+      use { 'chentoast/marks.nvim',
         config = util.setup.rc('marks'),
       }
       use { 'wfxr/minimap.vim',

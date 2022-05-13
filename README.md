@@ -91,7 +91,7 @@
 - [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [legendary.nvim](https://github.com/mrjones2014/legendary.nvim)
 - [lsp-status.nvim](https://github.com/nvim-lua/lsp-status.nvim)
-- [marks.nvim](https://github.com/chentau/marks.nvim)
+- [marks.nvim](https://github.com/chentoast/marks.nvim)
 - [minimap.vim](https://github.com/wfxr/minimap.vim)
 - [modes.nvim](https://github.com/mvllow/modes.nvim)
 - [navigator.lua](https://github.com/ray-x/navigator.lua)
