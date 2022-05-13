@@ -449,7 +449,7 @@ return packer.startup {
         requires = { 'nvim-lua/plenary.nvim' },
         config = util.setup.rc('gitsigns', 'ui'),
       }
-      use { 'romgrk/nvim-treesitter-context',
+      use { 'nvim-treesitter/nvim-treesitter-context',
         config = util.setup.rc('treesitter_context'),
         requires = { 'nvim-treesitter/nvim-treesitter' },
       }
