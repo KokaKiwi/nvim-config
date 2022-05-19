@@ -241,12 +241,12 @@ function M.setup_nvim_tree()
   }
 end
 
-function M.setup_scrollbar()
-  require('scrollbar').setup {
+function M.setup_satellite()
+  require('satellite').setup {
     excluded_filetypes = {
       '', 'prompt', 'TelescopePrompt',
       'alpha', 'NvimTree', 'packer',
-    }
+    },
   }
 end
 

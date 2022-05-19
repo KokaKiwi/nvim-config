@@ -456,8 +456,8 @@ return packer.startup {
       use { 'lukas-reineke/virt-column.nvim',
         config = util.setup.rc('virt_column', 'ui'),
       }
-      use { 'petertriho/nvim-scrollbar',
-        config = util.setup.rc('scrollbar', 'ui'),
+      use { 'lewis6991/satellite.nvim',
+        config = util.setup.rc('satellite', 'ui'),
       }
     end }
 
