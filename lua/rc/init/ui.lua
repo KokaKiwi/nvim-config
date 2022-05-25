@@ -23,6 +23,7 @@ vim.opt.scrolloff = 3
 vim.opt.foldenable = false
 vim.opt.shortmess:append('c')
 vim.opt.signcolumn = 'yes:1'
+vim.opt.redrawtime = 10000
 
 vim.g.tex_flavor = 'latex'
 vim.g.mapleader = ','
