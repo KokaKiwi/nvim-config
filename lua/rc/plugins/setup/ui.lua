@@ -194,6 +194,7 @@ function M.setup_nvim_tree()
           { key = '<C-e>', action = 'close' },
         },
       },
+      hide_root_folder = true,
     },
     actions = {
       open_file = {
