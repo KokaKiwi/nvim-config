@@ -10,14 +10,14 @@ local function build_theme()
     skyblue   = '#50B0F0',
     cyan      = '#009090',
     fg        = '#D0D0D0',
-    green     = '#60A040',
+    green     = colors.green,
     oceanblue = '#0066cc',
     magenta   = '#C26BDB',
     orange    = '#FF9000',
-    red       = '#D10000',
+    red       = colors.red,
     violet    = '#9E93E8',
     white     = '#FFFFFF',
-    yellow    = '#E1E120',
+    yellow    = colors.yellow,
   }
 end
 
@@ -91,7 +91,7 @@ return function()
       buftypes = { '^terminal$' },
     },
     disable = {
-      filetypes = { '^alpha$', '^NvimTree$', '^packer$', '^LspTrouble$' },
+      filetypes = { '^alpha$', '^NvimTree$', '^packer$', '^LspTrouble$', '^gitcommit$' },
     },
   }
 end
