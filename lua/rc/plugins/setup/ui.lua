@@ -170,6 +170,7 @@ end
 function M.setup_nvim_tree()
   require('nvim-tree').setup {
     hijack_cursor = true,
+    ignore_ft_on_setup = { 'alpha' },
     update_focused_file = {
       enable = true,
     },
@@ -179,7 +180,7 @@ function M.setup_nvim_tree()
     filters = {
       custom = {
         '^\\.git$', '^\\.hg$', '^\\.svn$', '^\\.bzr$', '^\\.pijul$',
-        '\\.pyc$', '\\.pyd$', '\\.egg-infos', '__pycache__',
+        '\\.pyc$', '\\.pyd$', '\\.egg-info', '^__pycache__$',
         '\\.class$',
         '\\.swp$',
       },
@@ -194,7 +195,38 @@ function M.setup_nvim_tree()
           { key = '<C-e>', action = 'close' },
         },
       },
-      hide_root_folder = true,
+      hide_root_folder = false,
+    },
+    renderer = {
+      add_trailing = true,
+      group_empty = true,
+      icons = {
+        show = {
+          git = false,
+          folder = true,
+          file = true,
+          folder_arrow = true,
+        },
+        glyphs = {
+          default = u'F1A0',
+          symlink = u'F1B4',
+          folder = {
+            arrow_closed = u'F144',
+            arrow_open = u'F140',
+            default = u'F1AC',
+            open = u'F1AC',
+            empty = u'F1AA',
+            empty_open = u'F1AA',
+            symlink = u'F1B4',
+            symlink_open = u'F1B4',
+          },
+        },
+      },
+      special_files = {
+        'README', 'README.md',
+        'Makefile', 'Justfile',
+        'LICENSE',
+      },
     },
     actions = {
       open_file = {
@@ -204,41 +236,6 @@ function M.setup_nvim_tree()
         },
       },
     },
-  }
-
-  local SPECIAL_FILES = {
-    'README', 'README.md',
-    'Makefile', 'Justfile',
-    'LICENSE',
-  }
-
-  prefixed(vim.g, 'nvim_tree') {
-    auto_ignore_ft = { 'startify', 'alpha' },
-    special_files = table.dmap(SPECIAL_FILES, function(_, fname)
-      return fname, 1
-    end),
-    show_icons = {
-      git = 0,
-      folders = 1,
-      files = 1,
-      folder_arrows = 1,
-    },
-    icons = {
-      default = u'F1A0',
-      symlink = u'F1B4',
-      folder = {
-        arrow_closed = u'F144',
-        arrow_open = u'F140',
-        default = u'F1AC',
-        open = u'F1AC',
-        empty = u'F1AA',
-        empty_open = u'F1AA',
-        symlink = u'F1B4',
-        symlink_open = u'F1B4',
-      },
-    },
-    group_empty = 1,
-    add_trailing = 1,
   }
 end
 

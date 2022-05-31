@@ -363,9 +363,10 @@ return packer.startup {
         config = util.setup.mod_call('kiwi.ui.tabline'),
         event = { 'VimEnter' },
       }
-      use { 'glepnir/galaxyline.nvim',
-        branch = 'main',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+      use { 'feline-nvim/feline.nvim',
+        require = {
+          { 'kyazdani42/nvim-web-devicons', opt = true },
+        },
         config = util.setup.mod_call('kiwi.ui.statusline'),
       }
       use { 'nvim-lua/lsp-status.nvim',

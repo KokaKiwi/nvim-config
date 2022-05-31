@@ -1,7 +1,7 @@
 vim.opt.background = 'dark'
 
 vim.opt.tabpagemax = 15
-vim.opt.showmode = true
+vim.opt.showmode = false
 vim.opt.cursorline = false
 vim.opt.termguicolors = true
 

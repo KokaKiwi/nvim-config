@@ -1,7 +1,7 @@
 ---@diagnostic disable: unused-local
 local lsp = {}
 
-local AUTO_FORMAT_PATTERNS = { '*.rs', '*.ex', '*.exs' }
+local AUTO_FORMAT_PATTERNS = { '*.rs', '*.ex', '*.exs', '*.hs' }
 
 function lsp.setup()
   require('kiwi.lsp.langs')
