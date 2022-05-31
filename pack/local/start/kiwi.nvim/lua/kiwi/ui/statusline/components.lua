@@ -75,6 +75,9 @@ return {
           'slant_right',
         }
       },
+      {
+        provider = 'empty',
+      },
     },
     -- Middle
     {

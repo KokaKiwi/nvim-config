@@ -7,7 +7,9 @@ function providers.empty()
 end
 
 function providers.lsp_status()
-  return tostring(lsp_status.status())
+  local status = lsp_status.status()
+
+  return tostring(status)
 end
 
 return providers
