@@ -13,8 +13,11 @@ for name, mod in pairs(LANGUAGES) do
   end
 end
 
+-- Setup LSP installer
+require('nvim-lsp-installer').setup {}
+
 -- Setup Language Servers
-require('kiwi.lsp.langs.hack')
+require('kiwi.lsp.langs.hook').register_hook()
 local lsp = require('lspconfig')
 local util = require('lspconfig.util')
 
@@ -53,6 +56,7 @@ lsp.jsonls.setup {
   },
 }
 lsp.lemminx.setup {}
+lsp.nimls.setup {}
 lsp.sumneko_lua.setup(luadev.setup {
     lspconfig = {
       cmd = { 'lua-language-server' },

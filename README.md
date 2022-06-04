@@ -33,6 +33,7 @@
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [nvim-config-local](https://github.com/klen/nvim-config-local)
 - [nvim-lint](https://github.com/mfussenegger/nvim-lint)
+- [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [nvim-snippy](https://github.com/dcampos/nvim-snippy)
 - [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)

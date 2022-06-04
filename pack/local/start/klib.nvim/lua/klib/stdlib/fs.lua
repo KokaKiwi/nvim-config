@@ -1,4 +1,3 @@
----@diagnostic disable: duplicate-doc-class
 _G.fs = {}
 
 ---@class DirEntry

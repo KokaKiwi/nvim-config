@@ -247,6 +247,7 @@ return packer.startup {
         config = util.setup.mod_setup('kiwi.lsp'),
         after = { 'cmp-nvim-lsp', 'SchemaStore.nvim', 'lua-dev.nvim' },
       }
+      use 'williamboman/nvim-lsp-installer'
       use { 'folke/trouble.nvim',
         requires = { 'kyazdani42/nvim-web-devicons' },
         config = util.setup.rc('trouble'),
