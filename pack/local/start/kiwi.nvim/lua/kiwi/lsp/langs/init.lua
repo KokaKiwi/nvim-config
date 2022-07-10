@@ -25,7 +25,9 @@ local lsp_status = require('lsp-status')
 local schemastore = require('schemastore')
 local luadev = require('lua-dev')
 
-lsp.bashls.setup {}
+lsp.bashls.setup {
+  filetypes = {},
+}
 lsp.clangd.setup {
   handlers = lsp_status.extensions.clangd.setup(),
 }
@@ -49,6 +51,7 @@ lsp.elixirls.setup {
 lsp.gopls.setup {}
 lsp.hls.setup {}
 lsp.jsonls.setup {
+  cmd = { 'vscode-json-languageserver', '--stdio' },
   settings = {
     json = {
       schemas = schemastore.json.schemas(),

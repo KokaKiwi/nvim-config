@@ -28,9 +28,19 @@ function M.setup_package_info()
 end
 
 function M.setup_rust_tools()
+  local kiwi = require('kiwi')
+
+  local cargoFeatures = os.getenv('RUST_ANALYZER_FEATURES')
+  if cargoFeatures ~= nil then
+    cargoFeatures = string.split(cargoFeatures, ',')
+  else
+    cargoFeatures = 'all'
+  end
+
   local config = kiwi.config.run('rust-tools:config', {
     cargo = {
-      allFeatures = true,
+      features = cargoFeatures,
+      target = os.getenv('RUST_ANALYZER_TARGET'),
     },
     checkOnSave = {
       command = 'clippy',
@@ -47,6 +57,14 @@ function M.setup_rust_tools()
       ['rust-analyzer'] = config,
     },
   })
+
+  if vim.fn.executable('rustup') then
+    local channel = server.channel or os.getenv('RUST_ANALYZER_CHANNEL') or 'nightly'
+    server.channel = nil
+
+    local server_path = process.check_output({'rustup', 'which', '--toolchain', channel, 'rust-analyzer'})
+    server.cmd = { server_path }
+  end
 
   require('rust-tools').setup {
     tools = {

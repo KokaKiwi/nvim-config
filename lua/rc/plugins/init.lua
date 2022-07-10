@@ -266,6 +266,8 @@ return packer.startup {
         requires = { 'nvim-treesitter/nvim-treesitter' },
       }
       use { 'Julian/lean.nvim',
+        module = { 'lean' },
+        ft = { 'lean', 'lean3', 'leaninfo' },
         config = util.setup.rc('lean'),
         after = { 'nvim-lspconfig' },
       }
