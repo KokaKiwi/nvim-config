@@ -5,7 +5,7 @@ return function()
     term_colors = true,
 
     styles = {
-      functions = 'bold,italic',
+      functions = { 'bold', 'italic' },
     },
 
     integrations = {
