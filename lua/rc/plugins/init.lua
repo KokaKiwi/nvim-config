@@ -299,6 +299,7 @@ return packer.startup {
     group { group = 'colorscheme', function(use)
       use { 'catppuccin/nvim',
         as = 'catppuccin',
+        run = 'CatppuccinCompile',
         config = util.setup.mod_call('kiwi.ui.colorscheme'),
       }
     end }

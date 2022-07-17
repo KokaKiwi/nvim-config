@@ -2,7 +2,7 @@ local components = require('kiwi.ui.statusline.components')
 local providers = require('kiwi.ui.statusline.providers')
 
 local function build_theme()
-  local colors = require('catppuccin.api.colors').get_colors()
+  local colors = require('catppuccin.palettes').get_palette()
 
   return {
     bg        = '#1F1F23',

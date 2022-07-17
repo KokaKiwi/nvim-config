@@ -2,7 +2,7 @@ local kcolors = require('klib.util.colors')
 local lazy = require('klib.util.lazy')
 
 local cat = lazy.dict(function()
-  return require('catppuccin.api.colors').get_colors()
+  return require('catppuccin.palettes').get_palette()
 end, false)
 local vi_mode = lazy.require('feline.providers.vi_mode')
 

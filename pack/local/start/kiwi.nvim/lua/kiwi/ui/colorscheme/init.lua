@@ -12,6 +12,12 @@ return function()
       lsp_trouble = true,
       which_key = true,
     },
+
+    compile = {
+      enabled = true,
+    },
   }
+
+  vim.g.catppuccin_flavour = 'mocha'
   catppuccin.load()
 end
