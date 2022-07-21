@@ -1,1 +1,1 @@
-vim.cmd [[packadd klib.nvim]]
+vim.cmd.packadd('klib.nvim')

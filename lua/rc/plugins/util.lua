@@ -12,7 +12,7 @@ function util.require_packer()
     bootstrap = true
   end
 
-  vim.cmd [[packadd packer.nvim]]
+  vim.cmd.packadd('packer.nvim')
 
   local packer = require('packer')
   packer._bootstrap = bootstrap
@@ -93,9 +93,8 @@ util.action = {
     return function() vim.call(name, unpack(args)) end
   end,
   cmd = function(name, ...)
-    local cmd = { name, ... }
-
-    return function() vim.cmd(table.concat(cmd, ' ')) end
+    local args = { ... }
+    return function() vim.cmd { cmd = name, args = args } end
   end,
   all = function(...)
     local actions = {...}
