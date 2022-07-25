@@ -20,6 +20,10 @@ function M.setup_null_ls()
   }
 end
 
+function M.setup_overseer()
+  require('overseer').setup {}
+end
+
 function M.setup_package_info()
   require('package-info').setup {
     hide_unstable_versions = true,
@@ -65,6 +69,7 @@ function M.setup_rust_tools()
     local server_path = process.check_output({'rustup', 'which', '--toolchain', channel, 'rust-analyzer'})
     server.cmd = { server_path }
   end
+  server.cmd = { 'rust-analyzer' }
 
   require('rust-tools').setup {
     tools = {

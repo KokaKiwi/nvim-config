@@ -287,6 +287,9 @@ return packer.startup {
         config = util.setup.rc('neoformat'),
         cmd = { 'Neoformat' },
       }
+      use { 'stevearc/overseer.nvim',
+        config = util.setup.rc('overseer', 'helpers'),
+      }
 
       use 'jiangmiao/auto-pairs'
       use { 'junegunn/vim-easy-align',
@@ -412,7 +415,7 @@ return packer.startup {
         module = { 'telescope' },
         cmd = { 'Telescope' },
         config = util.setup.rc('telescope', 'ui'),
-        after = { 'aerial.nvim', 'nvim-notify', 'telescope-gradle.nvim' },
+        after = { 'aerial.nvim', 'nvim-notify' },
       }
       use { 'ray-x/navigator.lua',
         config = util.setup.rc('navigator'),
@@ -432,7 +435,6 @@ return packer.startup {
         requires = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim' },
         after = { 'nvim-lspconfig' },
       }
-      use { 'aloussase/telescope-gradle.nvim' }
 
       use { 'rhysd/committia.vim',
         config = util.setup.rc('committia'),
@@ -463,6 +465,9 @@ return packer.startup {
       }
       use { 'lewis6991/satellite.nvim',
         config = util.setup.rc('satellite', 'ui'),
+      }
+      use { 'anuvyklack/hydra.nvim',
+        config = util.setup.rc('hydra', 'ui'),
       }
     end }
 
