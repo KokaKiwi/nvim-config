@@ -8,6 +8,33 @@ function M.setup_headlines()
   require('headlines').setup {}
 end
 
+function M.setup_lspsaga()
+  local nkey = require('nkey')
+  local lspsaga = {
+    codeaction = require('lspsaga.codeaction'),
+    diagnostic = require('lspsaga.diagnostic'),
+    finder = require('lspsaga.finder'),
+    hover = require('lspsaga.hover'),
+    rename = require('lspsaga.rename'),
+    signaturehelp = require('lspsaga.signaturehelp'),
+  }
+
+  require('lspsaga').init_lsp_saga {}
+
+  nkey.register {
+    { '<Leader>', {
+      { 'ca', lspsaga.codeaction.code_action, help = 'Code Action [LSP]' },
+      { 'cd', lspsaga.diagnostic.show_line_diagnostics, help = 'Show diagnostics [LSP]' },
+    } },
+    { 'g', {
+      { 'h', lspsaga.finder.lsp_finder, help = 'Find references and definitions [LSP]' },
+      { 'K', lspsaga.hover.render_hover_doc, help = 'Display doc [LSP]' },
+      { 'R', lspsaga.rename.lsp_rename, help = 'Rename symbol [LSP]' },
+      { 's', lspsaga.signaturehelp.signature_help, help = 'Display signagure [LSP]' },
+    } },
+  }
+end
+
 function M.setup_null_ls()
   local null_ls = require('null-ls')
 

@@ -247,6 +247,10 @@ return packer.startup {
         config = util.setup.mod_setup('kiwi.lsp'),
         after = { 'cmp-nvim-lsp', 'SchemaStore.nvim', 'lua-dev.nvim' },
       }
+      use { 'glepnir/lspsaga.nvim',
+        config = util.setup.rc('lspsaga', 'helpers'),
+        after = { 'nvim-lspconfig' },
+      }
       use 'williamboman/nvim-lsp-installer'
       use { 'folke/trouble.nvim',
         requires = { 'kyazdani42/nvim-web-devicons' },
@@ -379,9 +383,6 @@ return packer.startup {
       use { 'nvim-lua/lsp-status.nvim',
         config = util.setup.rc('lsp_status'),
         module = { 'lsp-status' },
-      }
-      use { 'weilbith/nvim-code-action-menu',
-        cmd = { 'CodeActionMenu' },
       }
       use { 'folke/which-key.nvim' }
       use { 'mrjones2014/legendary.nvim' }

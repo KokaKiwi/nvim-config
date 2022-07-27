@@ -29,8 +29,6 @@ nkey.register {
     { 'd',  vim.lsp.buf.definition, help = 'Go to definition [LSP]' },
     { 'D',  vim.lsp.buf.declaration, help = 'Go to declaration [LSP]' },
     { 'I',  vim.lsp.buf.implementation, help = 'Go to implementation [LSP]' },
-    { 'r',  vim.lsp.buf.references, help = 'Find references [LSP]' },
-    { 'R',  vim.lsp.buf.rename, help = 'Rename symbol [LSP]' },
   } },
 
   -- Tabs
@@ -58,9 +56,6 @@ nkey.register {
 
   -- Trouble
   { '<Leader>t', nkey.Cmd 'TroubleToggle' },
-
-  -- code-action-menu
-  { 'com', nkey.Cmd 'CodeActionMenu', help = 'Code Action Menu' },
 
   -- nvim-tree
   { '<C-e>', nkey.Cmd 'NvimTreeToggle', help = 'Open file tree' },
