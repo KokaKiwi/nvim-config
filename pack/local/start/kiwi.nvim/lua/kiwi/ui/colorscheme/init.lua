@@ -11,6 +11,7 @@ return function()
     integrations = {
       lsp_trouble = true,
       which_key = true,
+      overseer = true,
     },
 
     compile = {
@@ -18,6 +19,5 @@ return function()
     },
   }
 
-  vim.g.catppuccin_flavour = 'mocha'
   catppuccin.load()
 end

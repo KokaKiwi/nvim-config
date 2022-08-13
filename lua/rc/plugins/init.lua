@@ -286,6 +286,10 @@ return packer.startup {
       use { 'dcampos/nvim-snippy',
         config = util.setup.rc('snippy', 'helpers'),
       }
+      use { 'olimorris/persisted.nvim',
+        config = util.setup.rc('persisted', 'helpers'),
+        after = { 'telescope.nvim' },
+      }
 
       use { 'sbdchd/neoformat',
         config = util.setup.rc('neoformat'),
@@ -367,6 +371,9 @@ return packer.startup {
       use 'tpope/vim-fugitive'
       use { 'kyazdani42/nvim-web-devicons',
         config = util.setup.rc('devicons', 'ui'),
+      }
+      use { 'robert-oleynik/git-blame-virt.nvim',
+        config = util.setup.rc('git_blame_virt', 'ui'),
       }
 
       use { 'akinsho/nvim-bufferline.lua',
@@ -516,7 +523,7 @@ return packer.startup {
     end }
 
     -- LuaRocks
-    use_rocks { 'luasocket', 'luaposix', 'http' }
+    use_rocks { 'luasocket', 'luaposix', 'http', 'utf8' }
 
     -- Automatically setup config after bootstraping packer.nvim
     if packer._bootstrap then

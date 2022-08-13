@@ -58,6 +58,15 @@ function M.setup_package_info()
   }
 end
 
+function M.setup_persisted()
+  require('persisted').setup {
+    save_dir = vim.fn.stdpath('state') .. '/sessions',
+    autosave = false,
+  }
+
+  require('telescope').load_extension('persisted')
+end
+
 function M.setup_rust_tools()
   local kiwi = require('kiwi')
 

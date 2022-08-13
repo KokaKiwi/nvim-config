@@ -119,6 +119,14 @@ function M.setup_fterm()
   vim.command('Neofetch', toggle(fterm.neofetch))
 end
 
+function M.setup_git_blame_virt()
+  require('git-blame-virt').setup {
+    ft = {
+      cpp = false,
+    }
+  }
+end
+
 function M.setup_gitsigns()
   require('gitsigns').setup {}
 end

@@ -30,3 +30,5 @@ vim.g.mapleader = ','
 vim.g.maplocalleader = ';'
 
 vim.g.do_filetype_lua = 1
+
+vim.g.catppuccin_flavour = 'mocha'
