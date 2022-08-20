@@ -242,6 +242,9 @@ return packer.startup {
         requires = { 'nvim-lua/plenary.nvim' },
         module = { 'null-ls' },
       }
+      use { 'mrshmllow/document-color.nvim',
+        config = util.setup.rc('document_color', 'helpers'),
+      }
 
       use { 'neovim/nvim-lspconfig',
         config = util.setup.mod_setup('kiwi.lsp'),

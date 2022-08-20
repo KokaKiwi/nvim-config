@@ -16,6 +16,11 @@ local function tweak_setup(config)
     require('illuminate').on_attach(client)
     require('lsp-status').on_attach(client)
     require('navigator.lspclient.attach').on_attach(client, bufnr)
+
+    if client.server_capabilities.colorProvider then
+      require('document-color').buf_attach(bufnr)
+    end
+
     require('kiwi.lsp.fixups').on_attach(client, bufnr)
   end)
 

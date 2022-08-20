@@ -4,6 +4,10 @@ function M.setup_config_local()
   require('config-local').setup {}
 end
 
+function M.setup_document_color()
+  require('document-color').setup {}
+end
+
 function M.setup_headlines()
   require('headlines').setup {}
 end
@@ -60,7 +64,7 @@ end
 
 function M.setup_persisted()
   require('persisted').setup {
-    save_dir = vim.fn.stdpath('state') .. '/sessions',
+    save_dir = vim.fn.stdpath('state') .. '/sessions/',
     autosave = false,
   }
 

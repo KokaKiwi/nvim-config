@@ -25,6 +25,7 @@
 - [cmp-snippy](https://github.com/dcampos/cmp-snippy)
 - [cmp-treesitter](https://github.com/ray-x/cmp-treesitter)
 - [crates.nvim](https://github.com/saecki/crates.nvim)
+- [document-color.nvim](https://github.com/mrshmllow/document-color.nvim)
 - [headlines.nvim](https://github.com/lukas-reineke/headlines.nvim)
 - [lean.nvim](https://github.com/Julian/lean.nvim)
 - [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim)
