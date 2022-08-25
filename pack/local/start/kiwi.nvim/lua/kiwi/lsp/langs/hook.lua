@@ -11,6 +11,11 @@ local function tweak_setup(config)
   end
   config.capabilities = capabilities
 
+  local cmd = config.cmd[1]
+  if vim.fn.executable(cmd) ~= 1 then
+    config.autostart = false
+  end
+
   config.on_attach = util.add_hook_before(config.on_attach, function(client, bufnr)
     require('aerial').on_attach(client, bufnr)
     require('illuminate').on_attach(client)

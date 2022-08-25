@@ -26,7 +26,7 @@ local schemastore = require('schemastore')
 local luadev = require('lua-dev')
 
 lsp.bashls.setup {
-  filetypes = {},
+  filetypes = { 'sh' },
 }
 lsp.clangd.setup {
   handlers = lsp_status.extensions.clangd.setup(),

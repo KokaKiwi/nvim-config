@@ -20,7 +20,6 @@ function M.setup_lspsaga()
     finder = require('lspsaga.finder'),
     hover = require('lspsaga.hover'),
     rename = require('lspsaga.rename'),
-    signaturehelp = require('lspsaga.signaturehelp'),
   }
 
   require('lspsaga').init_lsp_saga {}
@@ -34,7 +33,7 @@ function M.setup_lspsaga()
       { 'h', lspsaga.finder.lsp_finder, help = 'Find references and definitions [LSP]' },
       { 'K', lspsaga.hover.render_hover_doc, help = 'Display doc [LSP]' },
       { 'R', lspsaga.rename.lsp_rename, help = 'Rename symbol [LSP]' },
-      { 's', lspsaga.signaturehelp.signature_help, help = 'Display signagure [LSP]' },
+      -- { 's', lspsaga.signaturehelp.signature_help, help = 'Display signagure [LSP]' },
     } },
   }
 end
