@@ -254,7 +254,8 @@ return packer.startup {
         config = util.setup.rc('lspsaga', 'helpers'),
         after = { 'nvim-lspconfig' },
       }
-      use 'williamboman/nvim-lsp-installer'
+      use 'williamboman/mason.nvim'
+      use 'williamboman/mason-lspconfig.nvim'
       use { 'folke/trouble.nvim',
         requires = { 'kyazdani42/nvim-web-devicons' },
         config = util.setup.rc('trouble'),

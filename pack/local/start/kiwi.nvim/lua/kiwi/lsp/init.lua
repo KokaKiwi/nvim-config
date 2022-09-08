@@ -4,6 +4,8 @@ local lsp = {}
 local AUTO_FORMAT_PATTERNS = { '*.rs', '*.ex', '*.exs', '*.hs' }
 
 function lsp.setup()
+  require('mason').setup {}
+
   require('kiwi.lsp.langs')
 
   vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {

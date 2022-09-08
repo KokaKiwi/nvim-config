@@ -14,7 +14,7 @@ for name, mod in pairs(LANGUAGES) do
 end
 
 -- Setup LSP installer
-require('nvim-lsp-installer').setup {}
+require('mason-lspconfig').setup {}
 
 -- Setup Language Servers
 require('kiwi.lsp.langs.hook').register_hook()
@@ -74,9 +74,7 @@ lsp.sqlls.setup {
   cmd = { 'sql-language-server', 'up', '--method', 'stdio' }
 }
 lsp.texlab.setup {}
-lsp.tsserver.setup {
-  cmd = { 'javascript-typescript-stdio' },
-}
+lsp.tsserver.setup {}
 lsp.vimls.setup {}
 lsp.vuels.setup {}
 lsp.yamlls.setup {}
