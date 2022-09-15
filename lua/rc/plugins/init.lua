@@ -412,6 +412,9 @@ return packer.startup {
       use { 'stevearc/aerial.nvim',
         config = util.setup.rc('aerial', 'ui'),
       }
+      use { 'uga-rosa/ccc.nvim',
+        config = util.setup.rc('ccc', 'ui'),
+      }
 
       use { 'mvllow/modes.nvim',
         config = util.setup.rc('modes', 'ui'),

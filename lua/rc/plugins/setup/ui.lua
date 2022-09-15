@@ -7,6 +7,28 @@ function M.setup_aerial()
   }
 end
 
+function M.setup_ccc()
+  local nkey = require('nkey')
+
+  local ccc = require('ccc')
+
+  ccc.setup {
+    mappings = {
+      ['l'] = ccc.mapping.decrease1,
+      ['m'] = ccc.mapping.increase1,
+      ['n'] = ccc.mapping.decrease10,
+      [','] = ccc.mapping.increase10,
+    },
+  }
+
+  nkey.register {
+    { 'ccc', function()
+        require('ccc.ui'):open(false)
+      end,
+      help = 'Pick color' },
+  }
+end
+
 function M.setup_comment_box()
   require('comment-box').setup {}
 end
