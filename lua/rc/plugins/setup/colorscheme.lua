@@ -44,19 +44,3 @@ function M.setup_catppuccin()
     diffAdded = { fg = colors.teal },
   }
 end
-
-function M.setup_onedark()
-  local onedark = require('onedarkpro')
-
-  onedark.setup {
-    styles = {
-      functions = 'bold,italic',
-      keywords = 'italic',
-    },
-    hlgroups = {
-      Constant = { style = 'italic' },
-    },
-  }
-end
-
-return M

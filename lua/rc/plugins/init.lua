@@ -135,6 +135,9 @@ return packer.startup {
       use { 'direnv/direnv.vim',
         cond = util.cond.is_executable('direnv'),
       }
+      use { 'lkemitchll/kitty-runner.nvim',
+        config = util.setup.rc('kitty_runner', 'utils'),
+      }
 
       use 'inkarkat/vim-ingo-library'
       use 'LucHermitte/lh-vim-lib'
@@ -317,6 +320,10 @@ return packer.startup {
         run = 'CatppuccinCompile',
         config = util.setup.mod_call('kiwi.ui.colorscheme'),
       }
+
+      use { 'kartikp10/noctis.nvim',
+        requires = { 'rktjmp/lush.nvim' },
+      }
     end }
 
     -- UI > Misc
@@ -378,6 +385,16 @@ return packer.startup {
       }
       use { 'robert-oleynik/git-blame-virt.nvim',
         config = util.setup.rc('git_blame_virt', 'ui'),
+      }
+      use { 'tamton-aquib/zone.nvim',
+        disable = true,
+        config = util.setup.rc('zone', 'ui'),
+      }
+      use { 'folke/noice.nvim',
+        -- disable = true,
+        event = { 'VimEnter' },
+        config = util.setup.rc('noice', 'ui'),
+        requires = { 'MunifTanjim/nui.nvim' },
       }
 
       use { 'akinsho/nvim-bufferline.lua',

@@ -44,6 +44,10 @@ function M.setup_gomove()
   require('gomove').setup {}
 end
 
+function M.setup_kitty_runner()
+  require('kitty-runner').setup {}
+end
+
 function M.setup_neorg()
   require('neorg').setup {
     load = {
