@@ -73,6 +73,7 @@
 - [vim-fish](https://github.com/ericvw/vim-fish)
 - [vim-gitignore](https://github.com/gisphm/vim-gitignore)
 - [vim-hjson](https://github.com/hjson/vim-hjson)
+- [vim-kitty](https://github.com/fladson/vim-kitty)
 - [vim-logrotate](https://github.com/moon-musick/vim-logrotate)
 - [vim-orgmode](https://github.com/jceb/vim-orgmode)
 - [vim-pico8-syntax](https://github.com/justinj/vim-pico8-syntax)

@@ -519,6 +519,7 @@ return packer.startup {
       use { 'projectfluent/fluent.vim', ft = 'fluent' }
       use { 'ron-rs/ron.vim', ft = 'ron' }
       use { 'thyrgle/vim-dyon', ft = 'dyon' }
+      use { 'fladson/vim-kitty', ft = { 'kitty', 'kitty-session' } }
     end }
 
     -- Misc
