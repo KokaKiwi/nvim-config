@@ -29,6 +29,7 @@ nkey.register {
     { 'd',  vim.lsp.buf.definition, help = 'Go to definition [LSP]' },
     { 'D',  vim.lsp.buf.declaration, help = 'Go to declaration [LSP]' },
     { 'I',  vim.lsp.buf.implementation, help = 'Go to implementation [LSP]' },
+    { 'r',  vim.lsp.buf.references, help = 'Find references [LSP]'},
   } },
 
   -- Tabs

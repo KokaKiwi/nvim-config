@@ -30,7 +30,11 @@ function M.setup_lspsaga()
     preview_definition = saga_command('preview_definition'),
   }
 
-  require('lspsaga').init_lsp_saga {}
+  require('lspsaga').init_lsp_saga {
+    finder_action_keys = {
+      open = { '<CR>', 'o' },
+    },
+  }
 
   nkey.register {
     { '<Leader>', {
