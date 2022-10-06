@@ -165,8 +165,4 @@ function M.setup_undotree()
   }
 end
 
-function M.setup_vgit()
-  require('vgit').setup {}
-end
-
 return M

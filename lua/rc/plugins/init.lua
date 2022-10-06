@@ -390,12 +390,6 @@ return packer.startup {
         disable = true,
         config = util.setup.rc('zone', 'ui'),
       }
-      use { 'folke/noice.nvim',
-        -- disable = true,
-        event = { 'VimEnter' },
-        config = util.setup.rc('noice', 'ui'),
-        requires = { 'MunifTanjim/nui.nvim' },
-      }
 
       use { 'akinsho/nvim-bufferline.lua',
         requires = { 'kyazdani42/nvim-web-devicons' },
@@ -471,12 +465,6 @@ return packer.startup {
       use { 'rhysd/committia.vim',
         config = util.setup.rc('committia'),
         event = { 'BufReadPost COMMIT_EDITMSG,MERGE_MSG' },
-      }
-      use { 'tanvirtin/vgit.nvim',
-        requires = { 'nvim-lua/plenary.nvim' },
-        config = util.setup.rc('vgit'),
-        event = { 'BufWinEnter' },
-        cmd = { 'VGit' },
       }
 
       use { 'goolord/alpha-nvim',

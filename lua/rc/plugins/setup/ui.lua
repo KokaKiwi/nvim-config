@@ -175,44 +175,6 @@ function M.setup_nnn()
   require('nnn').setup {}
 end
 
-function M.setup_noice()
-  local function setup(options)
-    if vim.fn.has('nvim-0.8.0') ~= 1 then
-      require('noice.util').error("Noice needs Neovim >= 0.8.0")
-      return
-    end
-    if not pcall(require, 'notify') then
-      require('noice.util').error("Noice needs nvim-notify to work properly")
-      return
-    end
-
-    require('noice.config').setup(options)
-
-    require('noice.hacks').setup()
-    require('noice.commands').setup()
-    require('noice.router').setup()
-    require('noice.ui').setup()
-  end
-
-  local enabled = false
-  if enabled then
-    setup {
-      routes = {
-        {
-          view = 'fancy_cmdline',
-          filter = {
-            any = {
-              { event = 'cmdline' },
-              { event = 'msg_show', kind = 'confirm' },
-              { event = 'msg_show', kind = 'confirm_sub' },
-            },
-          },
-        },
-      },
-    }
-  end
-end
-
 function M.setup_notify()
   local notify = require('notify')
 
