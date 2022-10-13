@@ -138,6 +138,12 @@ return packer.startup {
       use { 'lkemitchll/kitty-runner.nvim',
         config = util.setup.rc('kitty_runner', 'utils'),
       }
+      use { 'krivahtoo/silicon.nvim',
+        config = util.setup.rc('silicon', 'utils'),
+        run = {
+          './install.sh',
+        },
+      }
 
       use 'inkarkat/vim-ingo-library'
       use 'LucHermitte/lh-vim-lib'

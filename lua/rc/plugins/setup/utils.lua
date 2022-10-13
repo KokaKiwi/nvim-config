@@ -69,6 +69,12 @@ function M.setup_neorg()
   }
 end
 
+function M.setup_silicon()
+  require('silicon').setup({
+      _ = 'dummy',
+    })
+end
+
 function M.setup_sort()
   require('sort').setup {
     debug = false,

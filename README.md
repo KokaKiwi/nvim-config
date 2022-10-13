@@ -146,6 +146,7 @@
 - [plenary.nvim](https://github.com/nvim-lua/plenary.nvim)
 - [popup.nvim](https://github.com/nvim-lua/popup.nvim)
 - [presence.nvim](https://github.com/andweeb/presence.nvim)
+- [silicon.nvim](https://github.com/krivahtoo/silicon.nvim)
 - [sort.nvim](https://github.com/sQVe/sort.nvim)
 - [viewdoc.nvim](https://github.com/ray-x/viewdoc.nvim)
 - [vim-better-whitespace](https://github.com/ntpeters/vim-better-whitespace)
