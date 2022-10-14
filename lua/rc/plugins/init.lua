@@ -245,7 +245,7 @@ return packer.startup {
         ft = { 'rust' },
       }
       use 'b0o/SchemaStore.nvim'
-      use 'folke/lua-dev.nvim'
+      use 'folke/neodev.nvim'
       use { 'jose-elias-alvarez/null-ls.nvim',
         config = util.setup.rc('null_ls', 'helpers'),
         requires = { 'nvim-lua/plenary.nvim' },
@@ -257,7 +257,7 @@ return packer.startup {
 
       use { 'neovim/nvim-lspconfig',
         config = util.setup.mod_setup('kiwi.lsp'),
-        after = { 'cmp-nvim-lsp', 'SchemaStore.nvim', 'lua-dev.nvim' },
+        after = { 'cmp-nvim-lsp', 'SchemaStore.nvim', 'neodev.nvim' },
       }
       use { 'glepnir/lspsaga.nvim',
         config = util.setup.rc('lspsaga', 'helpers'),

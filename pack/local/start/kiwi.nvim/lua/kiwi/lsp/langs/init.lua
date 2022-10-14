@@ -23,7 +23,8 @@ local util = require('lspconfig.util')
 
 local lsp_status = require('lsp-status')
 local schemastore = require('schemastore')
-local luadev = require('lua-dev')
+
+require('neodev').setup {}
 
 lsp.bashls.setup {
   filetypes = { 'sh' },
@@ -60,11 +61,9 @@ lsp.jsonls.setup {
 }
 lsp.lemminx.setup {}
 lsp.nimls.setup {}
-lsp.sumneko_lua.setup(luadev.setup {
-    lspconfig = {
-      cmd = { 'lua-language-server' },
-    },
-})
+lsp.sumneko_lua.setup {
+  cmd = { 'lua-language-server' },
+}
 lsp.phpactor.setup {}
 lsp.pyright.setup {}
 lsp.rnix.setup {}
