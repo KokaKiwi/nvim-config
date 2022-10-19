@@ -4,8 +4,8 @@ local M = {}
 
 local function tweak_setup(config)
   local capabilities = vim.lsp.protocol.make_client_capabilities()
-  capabilities = vim.tbl_deep_extend('keep', capabilities, require('lsp-status').capabilities)
-  capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+  capabilities = vim.tbl_deep_extend('force', capabilities, require('lsp-status').capabilities)
+  capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
   if config.capabilities ~= nil then
     capabilities = vim.tbl_deep_extend('force', capabilities, config.capabilities)
   end
