@@ -17,7 +17,6 @@ local function tweak_setup(config)
   end
 
   config.on_attach = util.add_hook_before(config.on_attach, function(client, bufnr)
-    require('aerial').on_attach(client, bufnr)
     require('illuminate').on_attach(client)
     require('lsp-status').on_attach(client)
     require('navigator.lspclient.attach').on_attach(client, bufnr)

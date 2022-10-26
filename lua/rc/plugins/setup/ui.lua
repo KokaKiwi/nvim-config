@@ -2,8 +2,10 @@ local M = {}
 
 function M.setup_aerial()
   require('aerial').setup {
-    min_width = 30,
-    max_width = 50,
+    layout = {
+      min_width = 30,
+      max_width = 50,
+    },
   }
 end
 
@@ -242,17 +244,17 @@ function M.setup_nvim_tree()
           folder_arrow = true,
         },
         glyphs = {
-          default = u'F1AA',
-          symlink = u'F1BE',
+          default = u'F1AE',
+          symlink = u'F1C2',
           folder = {
-            arrow_closed = u'F148',
-            arrow_open = u'F144',
-            default = u'F1B6',
-            open = u'F1B6',
-            empty = u'F1B4',
-            empty_open = u'F1B4',
-            symlink = u'F1BE',
-            symlink_open = u'F1BE',
+            arrow_closed = u'F14C',
+            arrow_open = u'F147',
+            default = u'F1BA',
+            open = u'F1BA',
+            empty = u'F1B8',
+            empty_open = u'F1B8',
+            symlink = u'F1C2',
+            symlink_open = u'F1C2',
           },
         },
       },

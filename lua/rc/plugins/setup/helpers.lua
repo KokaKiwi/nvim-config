@@ -77,6 +77,7 @@ function M.setup_persisted()
   require('persisted').setup {
     save_dir = vim.fn.stdpath('state') .. '/sessions/',
     autosave = false,
+    branch_separator = '@@',
   }
 
   require('telescope').load_extension('persisted')
