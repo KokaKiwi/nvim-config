@@ -172,6 +172,13 @@ function M.setup_treesitter()
       files = { 'src/scanner.cc', 'src/parser.c' },
     },
   }
+  configs.kwconfig = {
+    install_info = {
+      url = 'https://gitlab.kokakiwi.net/grape/tree-sitter-kwconfig.git',
+      branch = 'main',
+      files = { 'src/parser.c' },
+    },
+  }
 
   require('nvim-treesitter.configs').setup {
     ensure_installed = 'all',
