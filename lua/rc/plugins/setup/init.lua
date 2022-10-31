@@ -102,6 +102,9 @@ function M.setup_navigator()
       format_on_save = false,
       disply_diagnostic_qf = false,
       diagnostic_scrollbar_sign = false,
+      code_lens_action = {
+        enable = false,
+      },
     },
   }
 end

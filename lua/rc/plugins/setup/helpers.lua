@@ -179,6 +179,13 @@ function M.setup_treesitter()
       files = { 'src/parser.c' },
     },
   }
+  configs.witx = {
+    install_info = {
+      url = 'https://gitlab.kokakiwi.net/kokakiwi/tree-sitter-witx.git',
+      branch = 'main',
+      files = { 'src/parser.c' }
+    },
+  }
 
   require('nvim-treesitter.configs').setup {
     ensure_installed = 'all',
