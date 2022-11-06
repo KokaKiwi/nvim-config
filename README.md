@@ -88,6 +88,7 @@
 - [aerojump.nvim](https://github.com/ripxorip/aerojump.nvim)
 - [alpha-nvim](https://github.com/goolord/alpha-nvim)
 - [ccc.nvim](https://github.com/uga-rosa/ccc.nvim)
+- [colorful-winsep.nvim](https://github.com/nvim-zh/colorful-winsep.nvim)
 - [comment-box.nvim](https://github.com/LudoPinelli/comment-box.nvim)
 - [committia.vim](https://github.com/rhysd/committia.vim)
 - [competitest.nvim](https://github.com/xeluxee/competitest.nvim)

@@ -432,6 +432,9 @@ return packer.startup {
       use { 'uga-rosa/ccc.nvim',
         config = util.setup.rc('ccc', 'ui'),
       }
+      use { 'nvim-zh/colorful-winsep.nvim',
+        config = util.setup.rc('colorful_winsep', 'ui'),
+      }
 
       use { 'mvllow/modes.nvim',
         config = util.setup.rc('modes', 'ui'),
