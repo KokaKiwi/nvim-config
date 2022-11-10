@@ -86,11 +86,14 @@ end
 function M.setup_rust_tools()
   local kiwi = require('kiwi')
 
-  local cargoFeatures = os.getenv('RUST_ANALYZER_FEATURES')
-  if cargoFeatures ~= nil then
-    cargoFeatures = string.split(cargoFeatures, ',')
-  else
+  local cargoFeaturesEnv = os.getenv('RUST_ANALYZER_FEATURES')
+  local cargoAllFeaturesEnv = os.getenv('RUST_ANALYZER_ALL_FEATURES')
+
+  local cargoFeatures = nil
+  if cargoAllFeaturesEnv == '1' then
     cargoFeatures = 'all'
+  elseif cargoFeaturesEnv ~= nil then
+    cargoFeatures = string.split(cargoFeaturesEnv, ',')
   end
 
   local config = kiwi.config.run('rust-tools:config', {
@@ -164,6 +167,14 @@ function M.setup_treesitter()
       files = { 'src/scanner.cc', 'src/parser.c' },
     },
     maintainers = { '@IndianBoy42' },
+  }
+  configs.nu = {
+    install_info = {
+      url = 'https://github.com/LhKipp/tree-sitter-nu',
+      branch = 'main',
+      files = { 'src/scanner.c', 'src/parser.c' },
+    },
+    filetype = 'nu',
   }
   configs.just = {
     install_info = {
