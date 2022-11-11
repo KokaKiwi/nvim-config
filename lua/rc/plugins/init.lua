@@ -435,6 +435,10 @@ return packer.startup {
       use { 'nvim-zh/colorful-winsep.nvim',
         config = util.setup.rc('colorful_winsep', 'ui'),
       }
+      use { 'folke/noice.nvim',
+        config = util.setup.rc('noice', 'ui'),
+        requires = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' },
+      }
 
       use { 'mvllow/modes.nvim',
         config = util.setup.rc('modes', 'ui'),
@@ -450,7 +454,7 @@ return packer.startup {
         module = { 'telescope' },
         cmd = { 'Telescope' },
         config = util.setup.rc('telescope', 'ui'),
-        after = { 'aerial.nvim', 'nvim-notify' },
+        after = { 'aerial.nvim', 'nvim-notify', 'noice.nvim' },
       }
       use { 'ray-x/navigator.lua',
         config = util.setup.rc('navigator'),

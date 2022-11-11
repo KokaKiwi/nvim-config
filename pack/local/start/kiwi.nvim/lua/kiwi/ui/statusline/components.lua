@@ -63,17 +63,10 @@ return {
           'slant_left',
           { str = ' ', hl = { bg = colors.lsp, fg = 'NONE' } },
         },
-      },
-      {
-        provider = 'lsp_status',
-        hl = {
-          fg = cat.crust,
-          bg = colors.lsp,
-        },
         right_sep = {
           { str = ' ', hl = { bg = colors.lsp, fg = 'NONE' } },
           'slant_right',
-        }
+        },
       },
       {
         provider = 'empty',

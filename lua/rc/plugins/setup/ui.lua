@@ -181,30 +181,27 @@ function M.setup_nnn()
   require('nnn').setup {}
 end
 
+function M.setup_noice()
+  require('noice').setup {
+    cmdline = {
+      format = {
+      },
+    },
+    lsp = {
+      hover = { enabled = false },
+    },
+    presets = {
+      bottom_search = true,
+    },
+  }
+end
+
 function M.setup_notify()
   local notify = require('notify')
 
   notify.setup {
     stages = 'fade',
   }
-
-  local function create_notifier(level)
-    return function(msg, opts)
-      return notify(msg, level, opts)
-    end
-  end
-  vim.notify = {
-    trace = create_notifier('trace'),
-    debug = create_notifier('debug'),
-    info = create_notifier('info'),
-    warn = create_notifier('warn'),
-    error = create_notifier('error'),
-  }
-  setmetatable(vim.notify, {
-    __call = function(_, msg, level, opts)
-      return notify(msg, level, opts)
-    end,
-  })
 end
 
 function M.setup_nvim_tree()
@@ -292,6 +289,7 @@ function M.setup_telescope()
   require('telescope').setup {}
 
   require('telescope').load_extension('aerial')
+  require('telescope').load_extension('noice')
   require('telescope').load_extension('notify')
 end
 

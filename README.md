@@ -108,6 +108,7 @@
 - [modes.nvim](https://github.com/mvllow/modes.nvim)
 - [navigator.lua](https://github.com/ray-x/navigator.lua)
 - [nnn.nvim](https://github.com/luukvbaal/nnn.nvim)
+- [noice.nvim](https://github.com/folke/noice.nvim)
 - [nvim-bufferline.lua](https://github.com/akinsho/nvim-bufferline.lua)
 - [nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
 - [nvim-notify](https://github.com/rcarriga/nvim-notify)
