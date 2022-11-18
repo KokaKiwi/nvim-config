@@ -32,6 +32,7 @@
 - [lspsaga.nvim](https://github.com/glepnir/lspsaga.nvim)
 - [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
 - [mason.nvim](https://github.com/williamboman/mason.nvim)
+- [neoconf.nvim](https://github.com/folke/neoconf.nvim)
 - [neodev.nvim](https://github.com/folke/neodev.nvim)
 - [neoformat](https://github.com/sbdchd/neoformat)
 - [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)

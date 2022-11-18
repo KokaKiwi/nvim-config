@@ -25,6 +25,12 @@ local lsp_status = require('lsp-status')
 local schemastore = require('schemastore')
 
 require('neodev').setup {}
+require('neoconf').setup {
+  import = {
+    coc = false,
+    nlsp = false,
+  },
+}
 
 lsp.bashls.setup {
   filetypes = { 'sh' },
@@ -43,11 +49,6 @@ lsp.elixirls.setup {
   root_dir = function(fname)
     return util.root_pattern('.git')(fname) or util.root_pattern('mix.exs')(fname) or vim.loop.os_homedir()
   end,
-  settings = {
-    elixirLS = {
-      mixEnv = 'dev',
-    },
-  },
 }
 lsp.gopls.setup {}
 lsp.hls.setup {}

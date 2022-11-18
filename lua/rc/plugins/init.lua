@@ -246,6 +246,7 @@ return packer.startup {
       }
       use 'b0o/SchemaStore.nvim'
       use 'folke/neodev.nvim'
+      use 'folke/neoconf.nvim'
       use { 'jose-elias-alvarez/null-ls.nvim',
         config = util.setup.rc('null_ls', 'helpers'),
         requires = { 'nvim-lua/plenary.nvim' },
