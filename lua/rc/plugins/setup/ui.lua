@@ -185,8 +185,9 @@ function M.setup_noice()
   require('noice').setup {
     cmdline = {
       format = {
-        search_down = { icon = ' ⌄' },
-        search_up = { icon = ' ⌃' },
+        cmdline = { icon = u'F16F' .. ' ' },
+        search_down = { icon = u'F2A0' .. ' ' },
+        search_up = { icon = u'F2A0' .. ' ' },
       },
     },
     lsp = {
@@ -251,17 +252,17 @@ function M.setup_nvim_tree()
           folder_arrow = true,
         },
         glyphs = {
-          default = u'F1AE',
-          symlink = u'F1C2',
+          default = u'F1B5',
+          symlink = u'F1C9',
           folder = {
-            arrow_closed = u'F14C',
-            arrow_open = u'F147',
-            default = u'F1BA',
-            open = u'F1BA',
-            empty = u'F1B8',
-            empty_open = u'F1B8',
-            symlink = u'F1C2',
-            symlink_open = u'F1C2',
+            arrow_closed = u'F14E',
+            arrow_open = u'F149',
+            default = u'F1C1',
+            open = u'F1C3',
+            empty = u'F1BF',
+            empty_open = u'F1BF',
+            symlink = u'F1C9',
+            symlink_open = u'F1C9',
           },
         },
       },

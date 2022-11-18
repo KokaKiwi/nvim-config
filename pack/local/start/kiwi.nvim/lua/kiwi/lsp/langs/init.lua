@@ -28,7 +28,6 @@ require('neodev').setup {}
 require('neoconf').setup {
   import = {
     coc = false,
-    nlsp = false,
   },
 }
 
