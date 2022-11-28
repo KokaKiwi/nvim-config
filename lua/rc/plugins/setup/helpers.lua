@@ -50,6 +50,14 @@ function M.setup_lspsaga()
   }
 end
 
+function M.setup_neotest()
+  require('neotest').setup {
+    adapters = {
+      require('neotest-rust'),
+    },
+  }
+end
+
 function M.setup_null_ls()
   local null_ls = require('null-ls')
 

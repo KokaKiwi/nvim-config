@@ -313,6 +313,19 @@ return packer.startup {
         config = util.setup.rc('overseer', 'helpers'),
       }
 
+      use { 'nvim-neotest/neotest',
+        config = util.setup.rc('neotest', 'helpers'),
+        requires = {
+          -- Dependencies
+          'nvim-lua/plenary.nvim',
+          'nvim-treesitter/nvim-treesitter',
+          'antoinemadec/FixCursorHold.nvim',
+
+          -- Plugins
+          'rouge8/neotest-rust',
+        },
+      }
+
       use 'jiangmiao/auto-pairs'
       use { 'junegunn/vim-easy-align',
         cmd = { 'EasyAlign' },

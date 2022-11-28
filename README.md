@@ -35,6 +35,7 @@
 - [neoconf.nvim](https://github.com/folke/neoconf.nvim)
 - [neodev.nvim](https://github.com/folke/neodev.nvim)
 - [neoformat](https://github.com/sbdchd/neoformat)
+- [neotest](https://github.com/nvim-neotest/neotest)
 - [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [nvim-config-local](https://github.com/klen/nvim-config-local)
@@ -168,9 +169,11 @@
 
 ### Third-party dependencies
 
+- [FixCursorHold.nvim](https://github.com/antoinemadec/FixCursorHold.nvim)
 - [guihua.lua](https://github.com/ray-x/guihua.lua)
 - [lspkind-nvim](https://github.com/onsails/lspkind-nvim)
 - [lush.nvim](https://github.com/rktjmp/lush.nvim)
+- [neotest-rust](https://github.com/rouge8/neotest-rust)
 - [nui.nvim](https://github.com/MunifTanjim/nui.nvim)
 - [nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring)
 - [vim-magnum](https://github.com/glts/vim-magnum)
