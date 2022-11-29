@@ -13,8 +13,9 @@
 (depcall (expression) @parameter)
 (parameter) @parameter
 (variadic_parameters) @parameter
+(attribute (NAME) @parameter)
 
-["if" "else"] @conditional
+["if" "else" "else if"] @conditional
 
 (string) @string
 

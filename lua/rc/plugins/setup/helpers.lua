@@ -186,7 +186,7 @@ function M.setup_treesitter()
   }
   configs.just = {
     install_info = {
-      url = 'https://github.com/IndianBoy42/tree-sitter-just',
+      url = 'https://gitlab.kokakiwi.net/contrib/neovim/tree-sitter-just',
       branch = 'main',
       files = { 'src/scanner.cc', 'src/parser.c' },
     },
