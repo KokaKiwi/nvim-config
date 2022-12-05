@@ -1,7 +1,9 @@
 local configs = require('lspconfig.configs')
 
 -- Import custom LSP clients
-local LANGUAGES = {}
+local LANGUAGES = {
+  'rhai_lsp',
+}
 for name, mod in pairs(LANGUAGES) do
   if type(mod) == 'string' then
     mod = { mod = mod }
