@@ -13,7 +13,6 @@
 (depcall (expression) @parameter)
 (parameter) @parameter
 (variadic_parameters) @parameter
-(attribute (NAME) @parameter)
 
 ["if" "else" "else if"] @conditional
 
@@ -29,7 +28,7 @@
 
 ["export" "alias" "set"] @keyword
 
-["@" "==" "!=" "+" ":="] @operator
+["@" "==" "!=" "+" ":=" "&&"] @operator
 
 [ "(" ")" "[" "]" "{{" "}}" "{" "}"] @punctuation.bracket
 
