@@ -2,7 +2,7 @@ local configs = require('lspconfig.configs')
 
 -- Import custom LSP clients
 local LANGUAGES = {
-  'rhai_lsp',
+  rhai_lsp = 'rhai_lsp',
 }
 for name, mod in pairs(LANGUAGES) do
   if type(mod) == 'string' then
@@ -11,7 +11,7 @@ for name, mod in pairs(LANGUAGES) do
   mod.name = name
 
   if mod.force or configs[mod.name] == nil then
-    require('kiwi.lsp.langs.' .. mod.mod)
+    configs[mod.name] = require('kiwi.lsp.langs.' .. mod.mod)
   end
 end
 
@@ -68,6 +68,7 @@ lsp.sumneko_lua.setup {
 }
 lsp.phpactor.setup {}
 lsp.pyright.setup {}
+lsp.rhai_lsp.setup {}
 lsp.rnix.setup {}
 lsp.scry.setup {}
 lsp.solargraph.setup {}

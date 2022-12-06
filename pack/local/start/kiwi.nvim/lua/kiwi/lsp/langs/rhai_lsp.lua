@@ -10,4 +10,5 @@ return {
     settings = {},
     init_options = {},
   },
+  docs = {},
 }
