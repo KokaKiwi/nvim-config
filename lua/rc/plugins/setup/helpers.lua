@@ -161,6 +161,13 @@ end
 function M.setup_treesitter()
   local configs = require('nvim-treesitter.parsers').get_parser_configs()
 
+  configs.kdl = {
+    install_info = {
+      url = 'https://github.com/spaarmann/tree-sitter-kdl',
+      branch = 'main',
+      files = { 'src/parser.c', 'src/scanner.c' },
+    },
+  }
   configs.make = {
     install_info = {
       url = 'https://github.com/alemuller/tree-sitter-make',

@@ -1,4 +1,4 @@
-vim.augroup('kiwiJust', function()
+vim.augroup('kiwiRhai', function()
   local patterns = { '*.rhai' }
 
   vim.aubufread(patterns, function()

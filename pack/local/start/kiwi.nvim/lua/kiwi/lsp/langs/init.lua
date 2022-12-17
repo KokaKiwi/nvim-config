@@ -51,6 +51,7 @@ lsp.elixirls.setup {
     return util.root_pattern('.git')(fname) or util.root_pattern('mix.exs')(fname) or vim.loop.os_homedir()
   end,
 }
+lsp.gleam.setup {}
 lsp.gopls.setup {}
 lsp.hls.setup {}
 lsp.jsonls.setup {
