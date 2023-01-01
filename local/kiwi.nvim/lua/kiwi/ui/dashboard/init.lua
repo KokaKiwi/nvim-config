@@ -29,6 +29,8 @@ return function()
     nvim_version.api_level
   )
 
+  local plugins_stats = require('lazy').stats()
+
   local header = {
     type = 'group',
     val = {
@@ -57,9 +59,12 @@ return function()
         hl = 'DashboardFooter',
       },
       { type = 'padding', val = 4 },
-      -- util.text { string.format('Plugins: %i loaded / %i total', loaded_plugins, total_plugins),
-      --   hl = 'NonText',
-      -- },
+      util.text { function() return string.format('Started in %dms', plugins_stats.startuptime) end,
+        hl = 'NonText',
+      },
+      util.text { string.format('Plugins: %i loaded / %i total', plugins_stats.loaded, plugins_stats.count),
+        hl = 'NonText',
+      },
       util.text { string.format('neovim %s', nvim_version),
         hl = 'NonText',
       }

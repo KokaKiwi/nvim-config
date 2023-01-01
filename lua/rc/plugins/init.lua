@@ -6,4 +6,7 @@ lazy.setup('rc.plugins.spec', {
     checker = {
       enabled = true,
     },
+    install = {
+      colorscheme = { 'catppuccin', 'uwu' },
+    },
 })

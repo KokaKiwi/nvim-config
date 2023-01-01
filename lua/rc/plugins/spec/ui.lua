@@ -56,6 +56,7 @@ return util.module('ui', function(use)
     config = util.setup.rc('devicons', 'ui'),
   }
   use { 'robert-oleynik/git-blame-virt.nvim',
+    dependencies = { 'nvim-treesitter' },
     config = util.setup.rc('git_blame_virt', 'ui'),
   }
 
