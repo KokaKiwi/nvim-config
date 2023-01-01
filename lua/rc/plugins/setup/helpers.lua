@@ -116,6 +116,9 @@ function M.setup_rust_tools()
       addCallArgumentSnippets = false,
       autoimport = { enable = false },
     },
+    inlayHints = {
+      locationLinks = false,
+    },
   })
 
   local server = kiwi.config.run('rust-tools:server', {
