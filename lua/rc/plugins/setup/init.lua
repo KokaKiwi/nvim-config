@@ -30,7 +30,6 @@ function M.setup_committia()
   prefixed(vim.g, 'committia') {
     open_only_vim_starting = 0,
     edit_window_width = 120,
-    min_window_width = 240,
   }
 end
 

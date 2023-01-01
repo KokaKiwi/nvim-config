@@ -1,4 +1,4 @@
-local logos_basedir = string.format('%s/pack/local/start/kiwi.nvim/assets/dashboard/logos', vim.fn.stdpath('config'))
+local logos_basedir = string.format('%s/local/kiwi.nvim/assets/dashboard/logos', vim.fn.stdpath('config'))
 
 ---@return string
 return function()

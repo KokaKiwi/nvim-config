@@ -1,20 +1,6 @@
 local logo = require('kiwi.ui.dashboard.logo')
 local util = require('kiwi.ui.dashboard.util')
 
-local function count_plugins()
-  local loaded_plugins, total_plugins = 0, 0
-
-  ---@diagnostic disable-next-line
-  for _, plugin in pairs(packer_plugins) do
-    total_plugins = total_plugins + 1
-    if plugin.loaded then
-      loaded_plugins = loaded_plugins + 1
-    end
-  end
-
-  return loaded_plugins, total_plugins
-end
-
 local function infos()
   return {
     type = 'group',
@@ -42,8 +28,6 @@ return function()
     nvim_version.patch,
     nvim_version.api_level
   )
-
-  local loaded_plugins, total_plugins = count_plugins()
 
   local header = {
     type = 'group',
@@ -73,9 +57,9 @@ return function()
         hl = 'DashboardFooter',
       },
       { type = 'padding', val = 4 },
-      util.text { string.format('Plugins: %i loaded / %i total', loaded_plugins, total_plugins),
-        hl = 'NonText',
-      },
+      -- util.text { string.format('Plugins: %i loaded / %i total', loaded_plugins, total_plugins),
+      --   hl = 'NonText',
+      -- },
       util.text { string.format('neovim %s', nvim_version),
         hl = 'NonText',
       }

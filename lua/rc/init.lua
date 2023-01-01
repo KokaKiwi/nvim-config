@@ -1,12 +1,8 @@
 -- Load Lua helpers
 require('klib')
 
--- Don't do full boostrap if NO_BOOTSTRAP env var is 1
-if os.getenv('NO_BOOTSTRAP') == '1' then
-  return
-end
-
 -- Load plugins
+vim.g.mapleader = ','
 require('rc.plugins')
 
 -- Basic init

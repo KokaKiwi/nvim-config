@@ -1,88 +1,76 @@
 local util = {}
 
-function util.require_packer()
-  local packer_url = 'https://github.com/wbthomason/packer.nvim'
-  local packer_install_dir = string.format('%s/site/pack/packer/start', vim.fn.stdpath('data'))
-  local bootstrap = false
+function util.require_lazy()
+  local lazy_url = 'https://github.com/folke/lazy.nvim'
+  local lazy_install_dir = string.format('%s/lazy/lazy.nvim', vim.fn.stdpath('data'))
 
-  if not vim.loop.fs_stat(packer_install_dir) then
-    vim.fn.mkdir(packer_install_dir, 'p')
-    os.execute(string.format('git clone %s %s', packer_url, packer_install_dir .. '/packer.nvim'))
-
-    bootstrap = true
+  if not vim.loop.fs_stat(lazy_install_dir) then
+    vim.fn.system({
+      'git', 'clone',
+      '--filter=blob:none', '--branch=stable',
+      lazy_url,
+      lazy_install_dir,
+    })
   end
 
-  vim.cmd.packadd('packer.nvim')
+  vim.opt.rtp:prepend(lazy_install_dir)
 
-  local packer = require('packer')
-  packer._bootstrap = bootstrap
-  return packer
+  local lazy = require('lazy')
+  return lazy
 end
 
--- https://github.com/wbthomason/packer.nvim/blob/963cb58c3dd15699c801baf3e64393c6795b62e9/lua/packer.lua#L184-L191
-function util.plugin_name(plugin_spec)
-  if type(plugin_spec) == 'string' then
-    plugin_spec = { plugin_spec }
+function util.module(name, init_fn)
+  local plugins = {}
+
+  local function _use(spec)
+    if type(spec) == 'string' then
+      spec = { spec }
+    end
+
+    spec._module = name
+
+    table.insert(plugins, spec)
   end
 
-  local path = vim.fn.expand(plugin_spec[1])
-  local name_segments = vim.split(path, '/')
-  local segment_index = #name_segments
-  local name = plugin_spec.as or name_segments[segment_index]
-  while name == '' and segment_index > 0 do
-    name = name_segments[segment_index]
-    segment_index = segment_index - 1
-  end
+  init_fn(_use)
 
-  return name
+  return plugins
 end
-
-util.handlers = {
-  _global = {},
-  _handlers = {},
-
-  register = function(name, handler)
-    if name ~= nil then
-      util.handlers._handlers[name] = handler
-    else
-      if type(handler) ~= 'table' then
-        handler = {
-          handler = handler,
-        }
-      end
-      table.append(util.handlers._global, handler)
-    end
-
-  end,
-
-  handle = function(plugin_spec)
-    for _, handler in ipairs(util.handlers._global) do
-      handler.handler(plugin_spec)
-    end
-
-    for k, v in pairs(plugin_spec) do
-      local handler = util.handlers._handlers[k]
-      if handler ~= nil then
-        handler(plugin_spec, v)
-      end
-    end
-  end,
-}
 
 util.cond = {
   is_executable = function(name)
-    return string.format([[vim.fn.executable('%s') == 1]], name)
+    return vim.fn.executable(name) == 1
   end,
 
   all = function(...)
     local conds = {...}
 
-    return table.concat(table.map(conds, func.partial(string.format, '(%s)')), ' and ')
+    for _, cond in ipairs(conds) do
+      if type(cond) == 'functions' then
+        cond = cond()
+      end
+
+      if not cond then
+        return false
+      end
+    end
+
+    return true
   end,
   any = function(...)
     local conds = {...}
 
-    return table.concat(table.map(conds, func.partial(string.format, '(%s)')), ' or ')
+    for _, cond in ipairs(conds) do
+      if type(cond) == 'functions' then
+        cond = cond()
+      end
+
+      if cond then
+        return true
+      end
+    end
+
+    return false
   end,
 }
 
@@ -119,24 +107,31 @@ util.action = {
 
 util.setup = {
   mod = function(name)
-    return string.format([[require('%s')]], name)
+    return function()
+      require(name)
+    end
   end,
   mod_setup = function(name)
-    return string.format([[require('%s').setup()]], name)
+    return function(plugin)
+      require(name).setup(plugin)
+    end
   end,
   mod_call = function(name)
-    return string.format([[require('%s')()]], name)
+    return function(plugin)
+      require(name)(plugin)
+    end
   end,
-  ---@param name string
-  ---@param modname string
-  ---@return string
-  rc = function(name, modname)
-    local fullmodname = 'rc.plugins.setup'
-    if modname ~= nil then
-      fullmodname = string.format('%s.%s', fullmodname, modname)
+
+  rc = function(name, submod)
+    local modname = 'rc.plugins.setup'
+    if submod ~= nil then
+      modname = modname .. '.' .. submod
     end
 
-    return string.format([[require('%s').setup_%s()]], fullmodname, name)
+    local mod = require(modname)
+    local setup_name = string.format('setup_%s', name)
+
+    return mod[setup_name]
   end,
   rc_mod = function(name)
     return util.setup.mod(string.format('rc.plugins.setup.%s', name))
