@@ -21,6 +21,8 @@ vim.opt.modeline = true
 vim.opt.updatetime = 300
 vim.opt.timeoutlen = 500
 
+vim.o.exrc = true
+
 vim.g.python3_host_prog = '/usr/bin/python'
 
 vim.g.loaded_node_provider = 0

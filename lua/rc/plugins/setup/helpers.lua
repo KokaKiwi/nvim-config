@@ -1,9 +1,5 @@
 local M = {}
 
-function M.setup_config_local()
-  require('config-local').setup {}
-end
-
 function M.setup_document_color()
   require('document-color').setup {}
 end

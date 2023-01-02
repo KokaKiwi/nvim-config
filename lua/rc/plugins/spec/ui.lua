@@ -24,7 +24,7 @@ return util.module('ui', function(use)
     config = util.setup.rc('ctrlp'),
     cmd = { 'CtrlP' },
     keys = {
-      { 'n', '<C-p>' },
+      { '<C-p>', mode = 'n' },
     },
   }
   use 'ripxorip/aerojump.nvim'

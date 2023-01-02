@@ -21,18 +21,22 @@ return util.module('helpers', function(use)
   }
 
   local CMP_SOURCES = {
-    'nvim-lsp', 'nvim-lua',
-    'buffer', 'path', 'emoji', 'cmdline', 'calc',
+    { 'nvim-lsp',
+      dependencies = { 'nvim-lspconfig' },
+    },
     'nvim-lsp-document-symbol', 'nvim-lsp-signature-help',
+    'nvim-lua',
+    'buffer', 'path', 'emoji', 'cmdline', 'calc',
     'ray-x/cmp-treesitter', 'David-Kunz/cmp-npm', 'kdheepak/cmp-latex-symbols',
     'dcampos/cmp-snippy',
   }
   for _, spec in ipairs(CMP_SOURCES) do
     if type(spec) == 'string' then
-      if spec:find('/') == nil then
-        spec = 'hrsh7th/cmp-' .. spec
-      end
       spec = { spec }
+    end
+
+    if spec[1]:find('/') == nil then
+      spec[1] = 'hrsh7th/cmp-' .. spec[1]
     end
 
     table.insert(cmp.dependencies, spec)
@@ -58,13 +62,12 @@ return util.module('helpers', function(use)
   }
 
   use { 'neovim/nvim-lspconfig',
-    dependencies = { 'cmp-nvim-lsp', 'SchemaStore.nvim', 'neodev.nvim' },
+    dependencies = { 'SchemaStore.nvim', 'neodev.nvim' },
     config = util.setup.mod_setup('kiwi.lsp'),
   }
   use { 'glepnir/lspsaga.nvim',
     dependencies = { 'nvim-lspconfig' },
     config = util.setup.rc('lspsaga', 'helpers'),
-    lazy = true,
   }
   use { 'williamboman/mason.nvim' }
   use { 'williamboman/mason-lspconfig.nvim' }
@@ -79,7 +82,7 @@ return util.module('helpers', function(use)
 
   use { 'nvim-treesitter/nvim-treesitter',
     build = function()
-      if vim.api.nvim_list_uis() ~= 0 then
+      if not klib.is_nvim_headless() then
         vim.cmd('TSUpdate')
       end
     end,
@@ -97,9 +100,6 @@ return util.module('helpers', function(use)
   use { 'lukas-reineke/headlines.nvim',
     config = util.setup.rc('headlines', 'helpers'),
     ft = { 'markdown', 'rmd', 'vimwiki', 'org' },
-  }
-  use { 'klen/nvim-config-local',
-    config = util.setup.rc('config_local', 'helpers'),
   }
 
   use { 'dcampos/nvim-snippy',
