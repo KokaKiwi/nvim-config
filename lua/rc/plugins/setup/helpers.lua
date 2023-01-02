@@ -1,5 +1,9 @@
 local M = {}
 
+function M.setup_diffview()
+  require('diffview').setup {}
+end
+
 function M.setup_document_color()
   require('document-color').setup {}
 end

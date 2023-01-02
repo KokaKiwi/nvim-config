@@ -1,3 +1,5 @@
+local hack = require('rc.plugins.hack')
+
 local util = {}
 
 function util.require_lazy()
@@ -15,7 +17,9 @@ function util.require_lazy()
 
   vim.opt.rtp:prepend(lazy_install_dir)
 
-  return require('lazy')
+  local lazy = require('lazy')
+  hack.hack_lazy()
+  return lazy
 end
 
 function util.module(_, init_fn)

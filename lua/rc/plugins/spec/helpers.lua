@@ -79,6 +79,10 @@ return util.module('helpers', function(use)
     config = util.setup.rc('lint'),
   }
 
+  use { 'sindrets/diffview.nvim',
+    config = util.setup.rc('diffview', 'helpers'),
+  }
+
   use { 'nvim-treesitter/nvim-treesitter',
     build = function()
       if not klib.is_nvim_headless() then
