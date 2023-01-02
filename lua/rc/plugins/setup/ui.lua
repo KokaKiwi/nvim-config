@@ -293,11 +293,23 @@ function M.setup_satellite()
 end
 
 function M.setup_telescope()
-  require('telescope').setup {}
+  local telescope = require('telescope')
 
-  require('telescope').load_extension('aerial')
-  require('telescope').load_extension('noice')
-  require('telescope').load_extension('notify')
+  telescope.setup {
+    extensions = {
+      lazy = {
+        mappings = {
+          open_in_find_files = '<C-f>',
+          open_plugins_picker = '<C-b>',
+        },
+      },
+    },
+  }
+
+  telescope.load_extension('aerial')
+  telescope.load_extension('lazy')
+  telescope.load_extension('noice')
+  telescope.load_extension('notify')
 end
 
 function M.setup_virt_column()

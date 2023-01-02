@@ -115,6 +115,7 @@ return util.module('ui', function(use)
   use { 'nvim-telescope/telescope.nvim',
     dependencies = {
       'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim',
+      'tsakirist/telescope-lazy.nvim',
       'aerial.nvim', 'nvim-notify', 'noice.nvim',
     },
     cmd = { 'Telescope' },
