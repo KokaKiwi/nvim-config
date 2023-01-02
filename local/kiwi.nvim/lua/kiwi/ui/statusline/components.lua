@@ -1,6 +1,8 @@
 local kcolors = require('klib.util.colors')
 local lazy = require('klib.util.lazy')
 
+local lazy_status = require('lazy.status')
+
 local cat = lazy.dict(function()
   return require('catppuccin.palettes').get_palette()
 end, false)
@@ -12,6 +14,7 @@ local colors = lazy.dict(function()
     file_info = cat.green,
     file_meta = cat.peach,
     position = cat.teal,
+    lazy = cat.mauve,
   }
 end, false)
 
@@ -101,6 +104,28 @@ return {
     },
     -- Right
     {
+      -- Lazy.nvim
+      {
+        provider = lazy_status.updates,
+        enabled = lazy_status.has_updates,
+        update = { 'LazyCheck' },
+        hl = {
+          fg = cat.crust,
+          bg = colors.lazy,
+          style = 'bold',
+        },
+        left_sep = {
+          'slant_left',
+          { str = ' ', hl = { bg = colors.lazy, fg = 'NONE' } },
+        },
+        right_sep = {
+          { str = ' ', hl = { bg = colors.lazy, fg = 'NONE' } },
+          'slant_right_2',
+        },
+      },
+      {
+        provider = 'empty',
+      },
       -- File meta
       {
         provider = {
