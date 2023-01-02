@@ -78,12 +78,16 @@ return util.module('helpers', function(use)
   }
 
   use { 'nvim-treesitter/nvim-treesitter',
-    build = util.action.cmd('TSUpdate'),
+    build = function()
+      if vim.api.nvim_list_uis() ~= 0 then
+        vim.cmd('TSUpdate')
+      end
+    end,
     config = util.setup.rc('treesitter', 'helpers'),
     dependencies = { 'JoosepAlviste/nvim-ts-context-commentstring' },
   }
   use { 'nvim-treesitter/playground',
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    dependencies = { 'nvim-treesitter' },
   }
   use { 'Julian/lean.nvim',
     ft = { 'lean', 'lean3', 'leaninfo' },
