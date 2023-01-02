@@ -54,6 +54,7 @@ return util.module('ui', function(use)
   use 'tpope/vim-fugitive'
   use { 'kyazdani42/nvim-web-devicons',
     config = util.setup.rc('devicons', 'ui'),
+    lazy = true,
   }
   use { 'robert-oleynik/git-blame-virt.nvim',
     dependencies = { 'nvim-treesitter' },
@@ -76,7 +77,9 @@ return util.module('ui', function(use)
   use { 'folke/which-key.nvim',
     lazy = true,
   }
-  use { 'mrjones2014/legendary.nvim' }
+  use { 'mrjones2014/legendary.nvim',
+    lazy = true,
+  }
   use { 'rcarriga/nvim-notify',
     dependencies = { 'nvim-bufferline.lua' },
     config = util.setup.rc('notify', 'ui'),

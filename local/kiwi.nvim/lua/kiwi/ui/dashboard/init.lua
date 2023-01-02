@@ -59,13 +59,20 @@ return function()
         hl = 'DashboardFooter',
       },
       { type = 'padding', val = 4 },
-      util.text { function() return string.format('Started in %dms', plugins_stats.startuptime) end,
+      util.text {
+        function()
+          return string.format('Started in %ims', plugins_stats.startuptime)
+        end,
         hl = 'NonText',
       },
-      util.text { string.format('Plugins: %i loaded / %i total', plugins_stats.loaded, plugins_stats.count),
+      util.text {
+        function()
+          return string.format('Plugins: %i loaded / %i total', plugins_stats.loaded, plugins_stats.count)
+        end,
         hl = 'NonText',
       },
-      util.text { string.format('neovim %s', nvim_version),
+      util.text {
+        string.format('neovim %s', nvim_version),
         hl = 'NonText',
       }
     },

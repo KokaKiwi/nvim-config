@@ -17,7 +17,6 @@ return util.module('helpers', function(use)
   local cmp = { 'hrsh7th/nvim-cmp',
     dependencies = { 'onsails/lspkind-nvim' },
     config = util.setup.rc_mod_call('cmp'),
-    event = { 'InsertEnter' },
   }
 
   local CMP_SOURCES = {
