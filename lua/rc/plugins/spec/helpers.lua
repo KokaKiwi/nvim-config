@@ -5,7 +5,7 @@ return util.module('helpers', function(use)
 
   use { 'saecki/crates.nvim',
     branch = 'main',
-    requires = { 'plenary.nvim' },
+    dependencies = { 'plenary.nvim' },
     event = { 'BufRead Cargo.toml' },
     config = util.setup.rc('crates'),
   }
@@ -35,8 +35,8 @@ return util.module('helpers', function(use)
       spec = { spec }
     end
 
-    spec.after = spec.after or {}
-    table.insert(spec.after, 'nvim-cmp')
+    spec.dependencies = spec.dependencies or {}
+    table.insert(spec.dependencies, 'nvim-cmp')
 
     use(spec)
   end

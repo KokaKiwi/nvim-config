@@ -27,8 +27,6 @@ function util.module(name, init_fn)
       spec = { spec }
     end
 
-    spec._module = name
-
     table.insert(plugins, spec)
   end
 
