@@ -56,6 +56,11 @@ return util.module('helpers', function(use)
     dependencies = { 'plenary.nvim' },
     config = util.setup.rc('null_ls', 'helpers'),
   }
+  use { 'MrcJkb/haskell-tools.nvim',
+    dependencies = { 'nvim-lspconfig', 'plenary.nvim', 'telescope.nvim' },
+    config = util.setup.rc('haskell_tools', 'helpers'),
+    ft = { 'haskell' },
+  }
   use { 'mrshmllow/document-color.nvim',
     config = util.setup.rc('document_color', 'helpers'),
   }

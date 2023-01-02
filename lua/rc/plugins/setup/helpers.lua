@@ -8,6 +8,12 @@ function M.setup_document_color()
   require('document-color').setup {}
 end
 
+function M.setup_haskell_tools()
+  local ht = require('haskell-tools')
+
+  ht.setup {}
+end
+
 function M.setup_headlines()
   require('headlines').setup {}
 end

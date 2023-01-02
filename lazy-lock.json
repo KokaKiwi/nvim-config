@@ -50,6 +50,7 @@
   "gleam.vim": { "branch": "master", "commit": "847a5ef57c2faef2774242c87f711d1131b89fe6" },
   "glow.nvim": { "branch": "main", "commit": "20d1cd087f8728f21a048a3b6259f6177237b39e" },
   "guihua.lua": { "branch": "master", "commit": "4459ce73db68bb3ad5ef789d03e6ea4adeeafa86" },
+  "haskell-tools.nvim": { "branch": "master", "commit": "37684363cbab507f5069c2976f1232888734dc5b" },
   "headlines.nvim": { "branch": "master", "commit": "1cd93a641c03419bb255f8b3fe734451517763b1" },
   "hydra.nvim": { "branch": "master", "commit": "7e2aa29f88d534371c6b0263d3abbfac7c2376ce" },
   "indent-blankline.nvim": { "branch": "master", "commit": "c4c203c3e8a595bc333abaf168fcb10c13ed5fb7" },

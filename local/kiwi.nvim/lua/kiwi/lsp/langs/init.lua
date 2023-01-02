@@ -53,7 +53,6 @@ lsp.elixirls.setup {
 }
 lsp.gleam.setup {}
 lsp.gopls.setup {}
-lsp.hls.setup {}
 lsp.jsonls.setup {
   cmd = { 'vscode-json-languageserver', '--stdio' },
   settings = {
