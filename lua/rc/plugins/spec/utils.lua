@@ -23,8 +23,12 @@ return util.module('utils', function(use)
     config = util.setup.rc('better_whitespace'),
   }
 
-  use 'nvim-lua/plenary.nvim'
-  use 'nvim-lua/popup.nvim'
+  use { 'nvim-lua/plenary.nvim',
+    lazy = true,
+  }
+  use { 'nvim-lua/popup.nvim',
+    lazy = true,
+  }
 
   use 'prabirshrestha/async.vim'
   use 'mg979/vim-visual-multi'

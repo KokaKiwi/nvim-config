@@ -1,7 +1,7 @@
 local util = require('rc.plugins.util')
 
 return util.module('helpers', function(use)
-  use 'mhinz/vim-mix-format'
+  use { 'mhinz/vim-mix-format' }
 
   use { 'saecki/crates.nvim',
     branch = 'main',
@@ -15,9 +15,10 @@ return util.module('helpers', function(use)
     event = { 'BufRead package.json' },
   }
 
-  use { 'hrsh7th/nvim-cmp',
+  local cmp = { 'hrsh7th/nvim-cmp',
     dependencies = { 'onsails/lspkind-nvim' },
     config = util.setup.rc_mod_call('cmp'),
+    event = { 'InsertEnter' },
   }
 
   local CMP_SOURCES = {
@@ -35,20 +36,20 @@ return util.module('helpers', function(use)
       spec = { spec }
     end
 
-    spec.dependencies = spec.dependencies or {}
-    table.insert(spec.dependencies, 'nvim-cmp')
-
-    use(spec)
+    table.insert(cmp.dependencies, spec)
   end
+  use(cmp)
 
   use { 'simrat39/rust-tools.nvim',
     dependencies = { 'nvim-lspconfig' },
     config = util.setup.rc('rust_tools', 'helpers'),
     ft = { 'rust' },
   }
-  use 'b0o/SchemaStore.nvim'
-  use 'folke/neodev.nvim'
-  use 'folke/neoconf.nvim'
+  use { 'b0o/SchemaStore.nvim' }
+  use { 'folke/neodev.nvim',
+    lazy = true,
+  }
+  use { 'folke/neoconf.nvim' }
   use { 'jose-elias-alvarez/null-ls.nvim',
     dependencies = { 'plenary.nvim' },
     config = util.setup.rc('null_ls', 'helpers'),
@@ -64,9 +65,10 @@ return util.module('helpers', function(use)
   use { 'glepnir/lspsaga.nvim',
     dependencies = { 'nvim-lspconfig' },
     config = util.setup.rc('lspsaga', 'helpers'),
+    lazy = true,
   }
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
+  use { 'williamboman/mason.nvim' }
+  use { 'williamboman/mason-lspconfig.nvim' }
   use { 'folke/trouble.nvim',
     dependencies = { 'kyazdani42/nvim-web-devicons' },
     config = util.setup.rc('trouble'),
@@ -126,7 +128,7 @@ return util.module('helpers', function(use)
     },
   }
 
-  use 'jiangmiao/auto-pairs'
+  use { 'jiangmiao/auto-pairs' }
   use { 'junegunn/vim-easy-align',
     cmd = { 'EasyAlign' },
   }

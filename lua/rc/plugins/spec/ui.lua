@@ -71,8 +71,11 @@ return util.module('ui', function(use)
   }
   use { 'nvim-lua/lsp-status.nvim',
     config = util.setup.rc('lsp_status'),
+    lazy = true,
   }
-  use { 'folke/which-key.nvim' }
+  use { 'folke/which-key.nvim',
+    lazy = true,
+  }
   use { 'mrjones2014/legendary.nvim' }
   use { 'rcarriga/nvim-notify',
     dependencies = { 'nvim-bufferline.lua' },
@@ -128,10 +131,12 @@ return util.module('ui', function(use)
   }
   use { 'stevearc/dressing.nvim',
     config = util.setup.rc('dressing', 'ui'),
+    event = { 'VeryLazy' },
   }
   use { 'CosmicNvim/cosmic-ui',
     config = util.setup.rc('cosmic', 'ui'),
     dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim', 'nvim-lspconfig' },
+    lazy = true,
   }
 
   use { 'rhysd/committia.vim',
