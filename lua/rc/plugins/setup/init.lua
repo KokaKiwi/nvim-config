@@ -31,18 +31,25 @@ function M.setup_committia()
     open_only_vim_starting = 0,
     edit_window_width = 120,
   }
+
+  vim.fn['committia#open']('git')
 end
 
 function M.setup_crates()
-  require('crates').setup {}
+  local crates = require('crates')
+  crates.setup {
+    null_ls = {
+      enabled = true,
+      name = "crates.nvim",
+    },
+  }
+  crates.show()
 
-  vim.autocmd('BufRead', 'Cargo.toml', function()
-    require('cmp').setup.buffer {
-      sources = {
-        { name = 'crates' },
-      },
-    }
-  end)
+  require('cmp').setup.buffer {
+    sources = {
+      { name = 'crates' },
+    },
+  }
 end
 
 function M.setup_ctrlp()

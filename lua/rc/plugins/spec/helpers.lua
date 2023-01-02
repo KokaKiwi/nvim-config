@@ -4,8 +4,7 @@ return util.module('helpers', function(use)
   use { 'mhinz/vim-mix-format' }
 
   use { 'saecki/crates.nvim',
-    branch = 'main',
-    dependencies = { 'plenary.nvim' },
+    dependencies = { 'plenary.nvim', 'nvim-cmp' },
     event = { 'BufRead Cargo.toml' },
     config = util.setup.rc('crates'),
   }
