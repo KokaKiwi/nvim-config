@@ -32,7 +32,7 @@
   "competitest.nvim": { "branch": "master", "commit": "459cadd512c1f2514b0e69a4e691ab5383b15cf1" },
   "cosmic-ui": { "branch": "main", "commit": "c0b14531999f2bfef3d927c4dcd57a1a8fed5ee9" },
   "cranelift.vim": { "branch": "main", "commit": "9fb80156f59c92399ce085445bd701ea87864456" },
-  "crates.nvim": { "branch": "main", "commit": "a70328ae638e20548bcfc64eb9561101104b3008" },
+  "crates.nvim": { "branch": "main", "commit": "5223265d1e4329a79be9d36febe963463d6a5433" },
   "ctrlp.vim": { "branch": "master", "commit": "8b4a9523632049b3b373de1233bef346073b8982" },
   "denops.vim": { "branch": "main", "commit": "4839ef4e283f8551286c826e44366ac6174cfc71" },
   "direnv.vim": { "branch": "master", "commit": "4c858b8cd8cbfac998534096e6ffb710d7a07358" },
