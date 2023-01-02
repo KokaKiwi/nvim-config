@@ -2,7 +2,7 @@ local util = {}
 
 function util.require_lazy()
   local lazy_url = 'https://github.com/folke/lazy.nvim'
-  local lazy_install_dir = string.format('%s/lazy/lazy.nvim', vim.fn.stdpath('data'))
+  local lazy_install_dir = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 
   if not vim.loop.fs_stat(lazy_install_dir) then
     vim.fn.system({
@@ -15,16 +15,27 @@ function util.require_lazy()
 
   vim.opt.rtp:prepend(lazy_install_dir)
 
-  local lazy = require('lazy')
-  return lazy
+  return require('lazy')
 end
 
-function util.module(name, init_fn)
+function util.module(_, init_fn)
   local plugins = {}
 
   local function _use(spec)
     if type(spec) == 'string' then
       spec = { spec }
+    end
+
+    if spec.gitlab ~= nil then
+      local gitlab_host = spec.gitlab_host or 'gitlab.com'
+      spec.url = string.format('https://%s/%s', gitlab_host, spec.gitlab)
+      spec.gitlab = nil
+      spec.gitlab_host = nil
+    end
+
+    if spec['local'] ~= nil then
+      spec.dir = string.format('%s/local/%s', vim.fn.stdpath('config'), spec['local'])
+      spec['local'] = nil
     end
 
     table.insert(plugins, spec)

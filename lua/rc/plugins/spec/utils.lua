@@ -6,11 +6,11 @@ return util.module('utils', function(use)
   use { 'glts/vim-radical',
     dependencies = { 'glts/vim-magnum' },
     keys = {
-      { 'n', 'gA' },
-      { 'n', 'crd' },
-      { 'n', 'crx' },
-      { 'n', 'cro' },
-      { 'n', 'crb' },
+      { 'gA', mode = 'n' },
+      { 'crd', mode = 'n' },
+      { 'crx', mode = 'n' },
+      { 'cro', mode = 'n' },
+      { 'crb', mode = 'n' },
     },
   }
   use 'hynek/vim-python-pep8-indent'
