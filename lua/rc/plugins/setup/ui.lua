@@ -295,16 +295,7 @@ end
 function M.setup_telescope()
   local telescope = require('telescope')
 
-  telescope.setup {
-    extensions = {
-      lazy = {
-        mappings = {
-          open_in_find_files = '<C-f>',
-          open_plugins_picker = '<C-b>',
-        },
-      },
-    },
-  }
+  telescope.setup {}
 
   telescope.load_extension('aerial')
   telescope.load_extension('lazy')
