@@ -55,6 +55,7 @@ return util.module('helpers', function(use)
   use { 'jose-elias-alvarez/null-ls.nvim',
     dependencies = { 'plenary.nvim' },
     config = util.setup.rc('null_ls', 'helpers'),
+    lazy = true,
   }
   use { 'MrcJkb/haskell-tools.nvim',
     dependencies = { 'nvim-lspconfig', 'plenary.nvim', 'telescope.nvim' },
