@@ -39,7 +39,7 @@ function M.setup_crates()
   local crates = require('crates')
   crates.setup {
     null_ls = {
-      enabled = true,
+      enabled = false,
       name = "crates.nvim",
     },
   }
