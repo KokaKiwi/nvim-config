@@ -97,8 +97,6 @@ function M.setup_persisted()
 end
 
 function M.setup_rust_tools()
-  local kiwi = require('kiwi')
-
   local cargoFeaturesEnv = os.getenv('RUST_ANALYZER_FEATURES')
   local cargoAllFeaturesEnv = os.getenv('RUST_ANALYZER_ALL_FEATURES')
 
@@ -109,39 +107,6 @@ function M.setup_rust_tools()
     cargoFeatures = string.split(cargoFeaturesEnv, ',')
   end
 
-  local config = kiwi.config.run('rust-tools:config', {
-    cargo = {
-      features = cargoFeatures,
-      target = os.getenv('RUST_ANALYZER_TARGET'),
-    },
-    checkOnSave = {
-      command = 'clippy',
-    },
-    completion = {
-      addCallArgumentSnippets = false,
-      autoimport = { enable = false },
-    },
-    inlayHints = {
-      locationLinks = false,
-    },
-  })
-
-  local server = kiwi.config.run('rust-tools:server', {
-    cmd_env = kiwi.config.run('rust-tools:env'),
-    settings = {
-      ['rust-analyzer'] = config,
-    },
-  })
-
-  if vim.fn.executable('rustup') then
-    local channel = server.channel or os.getenv('RUST_ANALYZER_CHANNEL') or 'nightly'
-    server.channel = nil
-
-    local server_path = process.check_output({'rustup', 'which', '--toolchain', channel, 'rust-analyzer'})
-    server.cmd = { server_path }
-  end
-  server.cmd = { 'rust-analyzer' }
-
   require('rust-tools').setup {
     tools = {
       hover_with_actions = false,
@@ -150,8 +115,26 @@ function M.setup_rust_tools()
         highlight = 'NonText',
       },
     },
-
-    server = server,
+    server = {
+      settings = {
+        ['rust-analyzer'] = {
+          cargo = {
+            features = cargoFeatures,
+            target = os.getenv('RUST_ANALYZER_TARGET'),
+          },
+          checkOnSave = {
+            command = 'clippy',
+          },
+          completion = {
+            addCallArgumentSnippets = false,
+            autoimport = { enable = false },
+          },
+          inlayHints = {
+            locationLinks = false,
+          },
+        },
+      },
+    },
   }
 end
 
