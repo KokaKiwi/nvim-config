@@ -125,13 +125,13 @@ util.setup = {
     end
   end,
   mod_setup = function(name)
-    return function(plugin)
-      require(name).setup(plugin)
+    return function(plugin, opts)
+      require(name).setup(plugin, opts)
     end
   end,
   mod_call = function(name)
-    return function(plugin)
-      require(name)(plugin)
+    return function(plugin, opts)
+      require(name)(plugin, opts)
     end
   end,
 
