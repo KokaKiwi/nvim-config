@@ -129,9 +129,6 @@ function M.setup_rust_tools()
             addCallArgumentSnippets = false,
             autoimport = { enable = false },
           },
-          inlayHints = {
-            locationLinks = false,
-          },
         },
       },
     },
