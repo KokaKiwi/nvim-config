@@ -31,6 +31,9 @@ function M.setup_ccc()
   }
 end
 
+function M.setup_cellular_automaton()
+end
+
 function M.setup_colorful_winsep()
   require('colorful-winsep').setup {}
 end

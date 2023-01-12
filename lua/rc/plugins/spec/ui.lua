@@ -170,4 +170,9 @@ return util.module('ui', function(use)
   use { 'anuvyklack/hydra.nvim',
     config = util.setup.rc('hydra', 'ui'),
   }
+
+  use { 'eandrju/cellular-automaton.nvim',
+    config = util.setup.rc('cellular_automaton', 'ui'),
+    cmd = { 'CellularAutomaton' },
+  }
 end)
