@@ -72,8 +72,8 @@ return util.module('helpers', function(use)
     config = util.setup.mod_setup('kiwi.lsp'),
   }
   use { 'glepnir/lspsaga.nvim',
-    dependencies = { 'nvim-lspconfig' },
     config = util.setup.rc('lspsaga', 'helpers'),
+    event = { 'BufRead' },
   }
   use { 'williamboman/mason.nvim' }
   use { 'williamboman/mason-lspconfig.nvim' }
