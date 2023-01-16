@@ -187,15 +187,11 @@ end
 function M.setup_noice()
   require('noice').setup {
     cmdline = {
-      enabled = false,
       format = {
         cmdline = { icon = u'F16F' .. ' ' },
         search_down = { icon = u'F2A0' .. ' ' },
         search_up = { icon = u'F2A0' .. ' ' },
       },
-    },
-    messages = {
-      enabled = false,
     },
     lsp = {
       hover = { enabled = false },
@@ -206,6 +202,18 @@ function M.setup_noice()
     },
     presets = {
       bottom_search = true,
+    },
+    commands = {
+      messages = {
+        view = 'popup',
+        opts = { enter = true },
+        filter = {
+          any = {
+            { event = 'notify' },
+            { event = 'msg_show' },
+          },
+        },
+      },
     },
   }
 end
