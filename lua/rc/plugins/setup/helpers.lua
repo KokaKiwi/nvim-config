@@ -1,5 +1,8 @@
 local M = {}
 
+function M.setup_dap()
+end
+
 function M.setup_diffview()
   require('diffview').setup {}
 end

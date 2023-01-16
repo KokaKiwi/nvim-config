@@ -42,6 +42,10 @@ return util.module('helpers', function(use)
   end
   use(cmp)
 
+  use { 'mfussenegger/nvim-dap',
+    config = util.setup.rc('dap', 'helpers'),
+  }
+
   use { 'simrat39/rust-tools.nvim',
     dependencies = { 'nvim-lspconfig' },
     config = util.setup.rc('rust_tools', 'helpers'),
