@@ -187,6 +187,7 @@ end
 function M.setup_noice()
   require('noice').setup {
     cmdline = {
+      view = 'cmdline',
       format = {
         cmdline = { icon = u'F16F' .. ' ' },
         search_down = { icon = u'F2A0' .. ' ' },
