@@ -60,11 +60,20 @@ function M.setup_lspsaga()
 end
 
 function M.setup_neotest()
-  require('neotest').setup {
+  local neotest = require('neotest')
+
+  neotest.setup {
     adapters = {
+      require('neotest-python'),
       require('neotest-rust'),
     },
   }
+
+  vim.api.nvim_create_user_command('Neotest', function(opts)
+    neotest.run.run(opts.args)
+  end, {
+    desc = 'Run nearest test',
+  })
 end
 
 function M.setup_null_ls()

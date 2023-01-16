@@ -141,8 +141,10 @@ return util.module('helpers', function(use)
       'antoinemadec/FixCursorHold.nvim',
 
       -- Plugins
+      'nvim-neotest/neotest-python',
       'rouge8/neotest-rust',
     },
+    cmd = { 'Neotest' },
   }
 
   use { 'jiangmiao/auto-pairs' }

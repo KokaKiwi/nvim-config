@@ -79,6 +79,7 @@
   "neoformat": { "branch": "master", "commit": "ec601d38a2e9309109f405ce038c5a6ce774f1a9" },
   "neorg": { "branch": "main", "commit": "4a9a5fe13cd454692fc4db0b27783cd005e6be56" },
   "neotest": { "branch": "master", "commit": "fee5ce9bdc3dff4706a29b012e75025ab376becb" },
+  "neotest-python": { "branch": "master", "commit": "e53920d145d37783c8d8428365a0a230e0a18cb5" },
   "neotest-rust": { "branch": "main", "commit": "53db2f682e337c2188d81e8ecdf779bff869fb74" },
   "nnn.nvim": { "branch": "master", "commit": "440ddfd4b41315355b5ec7911b9559bc73165b8b" },
   "noctis.nvim": { "branch": "main", "commit": "0b9336e39c686a7e58de06e4dd38c2bd862a7b33" },
