@@ -175,4 +175,8 @@ return util.module('ui', function(use)
     config = util.setup.rc('cellular_automaton', 'ui'),
     cmd = { 'CellularAutomaton' },
   }
+  use { 'tamton-aquib/zone.nvim',
+    config = util.setup.rc('zone', 'ui'),
+    cmd = { 'Zone' },
+  }
 end)
