@@ -73,6 +73,7 @@
   "minimap.vim": { "branch": "master", "commit": "2b0151d7302f87f90c4664d119518dda73cc4633" },
   "mkdir.nvim": { "branch": "main", "commit": "c55d1dee4f099528a1853b28bb28caa802eba217" },
   "modes.nvim": { "branch": "main", "commit": "d65260b8b41fdaf6ceba8d569588ecd145e6a772" },
+  "modicator.nvim": { "branch": "main", "commit": "27c60a13836515a30700d59c530538fc63e5b3ed" },
   "navigator.lua": { "branch": "master", "commit": "ed53571834c0d8bad4c9293974326d399bda2892" },
   "neoconf.nvim": { "branch": "main", "commit": "3f1bdf88ba9d97a06a0060ecf5863ade593e8009" },
   "neodev.nvim": { "branch": "main", "commit": "8b14787044352eb264cd105f5b0762565e1779f5" },

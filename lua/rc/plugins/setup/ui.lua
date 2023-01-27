@@ -180,6 +180,10 @@ function M.setup_modes()
   }
 end
 
+function M.setup_modicator()
+  require('modicator').setup {}
+end
+
 function M.setup_nnn()
   require('nnn').setup {}
 end

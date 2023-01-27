@@ -105,6 +105,15 @@ return util.module('ui', function(use)
     dependencies = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' },
     config = util.setup.rc('noice', 'ui'),
   }
+  use { 'melkster/modicator.nvim',
+    dependencies = { 'catppuccin' },
+    init = function()
+      vim.o.cursorline = true
+      vim.o.number = true
+      vim.o.termguicolors = true
+    end,
+    config = util.setup.rc('modicator', 'ui'),
+  }
 
   use { 'mvllow/modes.nvim',
     config = util.setup.rc('modes', 'ui'),
