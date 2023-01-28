@@ -181,7 +181,9 @@ function M.setup_modes()
 end
 
 function M.setup_modicator()
-  require('modicator').setup {}
+  require('modicator').setup {
+    show_warnings = false,
+  }
 end
 
 function M.setup_nnn()
