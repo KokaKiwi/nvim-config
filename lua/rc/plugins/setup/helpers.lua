@@ -109,16 +109,6 @@ function M.setup_persisted()
 end
 
 function M.setup_rust_tools()
-  local cargoFeaturesEnv = os.getenv('RUST_ANALYZER_FEATURES')
-  local cargoAllFeaturesEnv = os.getenv('RUST_ANALYZER_ALL_FEATURES')
-
-  local cargoFeatures = nil
-  if cargoAllFeaturesEnv == '1' then
-    cargoFeatures = 'all'
-  elseif cargoFeaturesEnv ~= nil then
-    cargoFeatures = string.split(cargoFeaturesEnv, ',')
-  end
-
   require('rust-tools').setup {
     tools = {
       hover_with_actions = false,
@@ -130,10 +120,6 @@ function M.setup_rust_tools()
     server = {
       settings = {
         ['rust-analyzer'] = {
-          cargo = {
-            features = cargoFeatures,
-            target = os.getenv('RUST_ANALYZER_TARGET'),
-          },
           checkOnSave = {
             command = 'clippy',
           },
