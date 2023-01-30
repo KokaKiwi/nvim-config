@@ -236,7 +236,6 @@ end
 function M.setup_nvim_tree()
   require('nvim-tree').setup {
     hijack_cursor = true,
-    ignore_ft_on_setup = { 'alpha' },
     update_focused_file = {
       enable = true,
     },
