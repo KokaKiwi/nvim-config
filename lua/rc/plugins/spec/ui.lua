@@ -77,14 +77,13 @@ return util.module('ui', function(use)
   use {
     name = 'hook.nvim',
     url = 'https://gitlab.kokakiwi.net/contrib/neovim/hook.nvim.git',
-    dev = true,
   }
   use {
     name = 'nkey.nvim',
     url = 'https://gitlab.kokakiwi.net/contrib/neovim/nkey.nvim.git',
     dependencies = { 'folke/which-key.nvim', 'mrjones2014/legendary.nvim' },
     config = util.setup.rc('nkey', 'ui'),
-    dev = true,
+    priority = 100,
   }
   use { 'rcarriga/nvim-notify',
     dependencies = { 'nvim-bufferline.lua' },
