@@ -55,6 +55,7 @@
   "indent-blankline.nvim": { "branch": "master", "commit": "8299fe7703dfff4b1752aeed271c3b95281a952d" },
   "iptables-vim": { "branch": "master", "commit": "0447d4fa319a9228dbcf4d0f512a227be4c0b8ac" },
   "isort.nvim": { "branch": "master", "commit": "6e7d605a8834e26d7314ef7082a68d58fc5c0c2a" },
+  "keep-it-secret.nvim": { "branch": "main", "commit": "4397025232b979eb1aaf66e39c39591161128b12" },
   "kitty-runner.nvim": { "branch": "main", "commit": "c41158a16af49180540cb0085c82ba4be5b395d2" },
   "lazy.nvim": { "branch": "main", "commit": "3d2dcb2d5ef99106c5ff412da88c6f59a9f8a693" },
   "lean.nvim": { "branch": "main", "commit": "f69875f98317c11fd48c4c4a8166a408244b7fe8" },

@@ -44,6 +44,20 @@ function M.setup_gomove()
   require('gomove').setup {}
 end
 
+function M.setup_keep_it_secret()
+  local keep_it_secret = require('keep-it-secret')
+
+  keep_it_secret.setup {}
+
+  require('nkey').register {
+    { '<Leader>Ks', function()
+        keep_it_secret.toggle()
+      end,
+      help = 'Keep it Secret',
+    },
+  }
+end
+
 function M.setup_kitty_runner()
   require('kitty-runner').setup {}
 end

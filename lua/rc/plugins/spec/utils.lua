@@ -101,4 +101,7 @@ return util.module('utils', function(use)
     cmd = { 'Figban' },
     cond = util.cond.is_executable('figlet'),
   }
+  use { 'roberte777/keep-it-secret.nvim',
+    config = util.setup.rc('keep_it_secret', 'utils'),
+  }
 end)
