@@ -74,11 +74,17 @@ return util.module('ui', function(use)
     config = util.setup.rc('lsp_status'),
     lazy = true,
   }
-  use { 'folke/which-key.nvim',
-    lazy = true,
+  use {
+    name = 'hook.nvim',
+    url = 'https://gitlab.kokakiwi.net/contrib/neovim/hook.nvim.git',
+    dev = true,
   }
-  use { 'mrjones2014/legendary.nvim',
-    lazy = true,
+  use {
+    name = 'nkey.nvim',
+    url = 'https://gitlab.kokakiwi.net/contrib/neovim/nkey.nvim.git',
+    dependencies = { 'folke/which-key.nvim', 'mrjones2014/legendary.nvim' },
+    config = util.setup.rc('nkey', 'ui'),
+    dev = true,
   }
   use { 'rcarriga/nvim-notify',
     dependencies = { 'nvim-bufferline.lua' },

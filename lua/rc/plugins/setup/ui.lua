@@ -27,7 +27,8 @@ function M.setup_ccc()
     { 'ccc', function()
         require('ccc.ui'):open(false)
       end,
-      help = 'Pick color' },
+      help = 'Pick color',
+    },
   }
 end
 
@@ -183,6 +184,20 @@ end
 function M.setup_modicator()
   require('modicator').setup {
     show_warnings = false,
+  }
+end
+
+function M.setup_nkey()
+  require('nkey').setup {
+    integrations = { 'legendary', 'which_key' },
+  }
+
+  require('which-key').setup {
+    plugins = {
+      presets = {
+        operators = false,
+      },
+    },
   }
 end
 
