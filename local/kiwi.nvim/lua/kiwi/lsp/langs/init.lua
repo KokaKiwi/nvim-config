@@ -63,7 +63,7 @@ lsp.jsonls.setup {
 }
 lsp.lemminx.setup {}
 lsp.nimls.setup {}
-lsp.sumneko_lua.setup {
+lsp.lua_ls.setup {
   cmd = { 'lua-language-server' },
 }
 lsp.phpactor.setup {}
