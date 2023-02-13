@@ -26,7 +26,12 @@ local util = require('lspconfig.util')
 local lsp_status = require('lsp-status')
 local schemastore = require('schemastore')
 
-require('neodev').setup {}
+require('neodev').setup {
+  library = {
+    plugins = { 'nvim-dap-ui' },
+    types = true,
+  },
+}
 require('neoconf').setup {
   import = {
     coc = false,

@@ -22,6 +22,7 @@ function M.setup_headlines()
 end
 
 function M.setup_lspsaga()
+  local cat = require('catppuccin.groups.integrations.lsp_saga')
   local nkey = require('nkey')
 
   local saga_command = function(name)
@@ -42,6 +43,10 @@ function M.setup_lspsaga()
   require('lspsaga').setup {
     finder_action_keys = {
       open = { '<CR>', 'o' },
+    },
+    ui = {
+      colors = cat.custom_colors(),
+      kind = cat.custom_kind(),
     },
   }
 

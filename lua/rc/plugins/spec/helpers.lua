@@ -45,6 +45,9 @@ return util.module('helpers', function(use)
   use { 'mfussenegger/nvim-dap',
     config = util.setup.rc('dap', 'helpers'),
   }
+  use { 'rcarriga/nvim-dap-ui',
+    dependencies = { 'nvim-dap' },
+  }
 
   use { 'simrat39/rust-tools.nvim',
     dependencies = { 'nvim-lspconfig' },
@@ -53,6 +56,7 @@ return util.module('helpers', function(use)
   }
   use { 'b0o/SchemaStore.nvim' }
   use { 'folke/neodev.nvim',
+    dependencies = { 'nvim-dap-ui' },
     lazy = true,
   }
   use { 'folke/neoconf.nvim' }

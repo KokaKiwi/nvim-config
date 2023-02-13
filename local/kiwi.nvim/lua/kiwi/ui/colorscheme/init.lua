@@ -2,6 +2,7 @@ return function()
   local catppuccin = require('catppuccin')
 
   catppuccin.setup {
+    flavour = 'mocha',
     term_colors = true,
 
     styles = {
@@ -9,9 +10,20 @@ return function()
     },
 
     integrations = {
+      aerial = true,
+      dap = {
+        enabled = true,
+        enable_ui = true,
+      },
       lsp_trouble = true,
-      which_key = true,
+      mason = true,
+      neotest = true,
+      noice = true,
+      notify = true,
       overseer = true,
+      telescope = true,
+      treesitter_context = true,
+      which_key = true,
     },
 
     compile = {
