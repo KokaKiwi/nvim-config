@@ -46,7 +46,9 @@ nkey.register {
   { '<Leader>t', nkey.Cmd 'TroubleToggle' },
 
   -- nvim-tree
-  { '<C-e>', nkey.Cmd 'NvimTreeToggle', help = 'Open file tree' },
+  { '<C-e>', function()
+      require('nvim-tree').toggle { focus = true }
+    end, help = 'Toggle file tree' },
 
   -- telescope.nvim
   { '<Leader>f', {

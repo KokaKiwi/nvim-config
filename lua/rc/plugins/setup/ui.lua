@@ -280,6 +280,7 @@ function M.setup_nvim_tree()
     renderer = {
       add_trailing = true,
       group_empty = true,
+      highlight_opened_files = 'icon',
       icons = {
         show = {
           git = false,
