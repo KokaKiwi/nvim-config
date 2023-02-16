@@ -188,7 +188,7 @@ function M.setup_treesitter()
     ignore_install = { 'ocamllex' },
     highlight = {
       enable = true,
-      disable = { 'lua' },
+      disable = { 'lua', 'make' },
     },
     playground = {
       enable = true,
