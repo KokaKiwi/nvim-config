@@ -163,6 +163,10 @@ function M.setup_gitsigns()
   require('gitsigns').setup {}
 end
 
+function M.setup_hologram()
+  require('hologram').setup {}
+end
+
 function M.setup_hydra()
   local Hydra = require('hydra')
 end
@@ -318,6 +322,10 @@ function M.setup_nvim_tree()
       },
     },
   }
+end
+
+function M.setup_pets()
+  require('pets').setup {}
 end
 
 function M.setup_satellite()

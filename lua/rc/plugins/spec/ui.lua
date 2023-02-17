@@ -185,6 +185,15 @@ return util.module('ui', function(use)
     config = util.setup.rc('hydra', 'ui'),
   }
 
+  use { 'edluffy/hologram.nvim',
+    config = util.setup.rc('hologram', 'ui'),
+    lazy = true,
+  }
+  use { 'giusgad/pets.nvim',
+    dependencies = { 'nui.nvim', 'hologram.nvim' },
+    config = util.setup.rc('pets', 'ui'),
+  }
+
   use { 'eandrju/cellular-automaton.nvim',
     config = util.setup.rc('cellular_automaton', 'ui'),
     cmd = { 'CellularAutomaton' },
