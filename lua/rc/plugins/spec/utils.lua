@@ -57,7 +57,7 @@ return util.module('utils', function(use)
   }
   use { 'krivahtoo/silicon.nvim',
     config = util.setup.rc('silicon', 'utils'),
-    build = './install.sh',
+    build = './install.sh build',
     cmd = { 'Silicon' },
   }
 
