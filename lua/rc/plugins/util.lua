@@ -107,6 +107,10 @@ util.action = {
     end
   end,
   shell = {
+    cmd = function(...)
+      local args = {...}
+      return table.concat(args, ' ')
+    end,
     make = function(path)
       local command = { 'make' }
       if path ~= nil then

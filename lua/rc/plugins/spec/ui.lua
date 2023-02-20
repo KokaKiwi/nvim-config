@@ -123,6 +123,10 @@ return util.module('ui', function(use)
   use { 'mvllow/modes.nvim',
     config = util.setup.rc('modes', 'ui'),
   }
+  use { 'ray-x/guihua.lua',
+    build = util.action.shell.make('lua/fzy'),
+    lazy = true,
+  }
 
   use { 'xeluxee/competitest.nvim',
     dependencies = { 'MunifTanjim/nui.nvim' },
@@ -140,12 +144,7 @@ return util.module('ui', function(use)
   }
   use { 'ray-x/navigator.lua',
     config = util.setup.rc('navigator'),
-    dependencies = {
-      { 'ray-x/guihua.lua',
-        build = util.action.shell.make('lua/fzy'),
-      },
-      'neovim/nvim-lspconfig',
-    },
+    dependencies = { 'guihua.lua', 'nvim-lspconfig' },
   }
   use { 'stevearc/dressing.nvim',
     config = util.setup.rc('dressing', 'ui'),

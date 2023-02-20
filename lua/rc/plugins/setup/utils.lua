@@ -83,6 +83,10 @@ function M.setup_neorg()
   }
 end
 
+function M.setup_sad()
+  require('sad').setup {}
+end
+
 function M.setup_silicon()
   require('silicon').setup({
       _ = 'dummy',

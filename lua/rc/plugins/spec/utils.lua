@@ -57,8 +57,14 @@ return util.module('utils', function(use)
   }
   use { 'krivahtoo/silicon.nvim',
     config = util.setup.rc('silicon', 'utils'),
-    build = './install.sh build',
+    build = util.action.shell.cmd('./install.sh', 'build'),
     cmd = { 'Silicon' },
+  }
+  use { 'ray-x/sad.nvim',
+    dependencies = { 'guihua.lua' },
+    cond = util.cond.is_executable('sad'),
+    config = util.setup.rc('sad', 'utils'),
+    cmd = { 'Sad' },
   }
 
   use 'inkarkat/vim-ingo-library'

@@ -114,6 +114,7 @@
   "presence.nvim": { "branch": "main", "commit": "87c857a56b7703f976d3a5ef15967d80508df6e6" },
   "ron.vim": { "branch": "master", "commit": "f749e543975a82e8dd9a6e7df9600a1c098ae800" },
   "rust-tools.nvim": { "branch": "master", "commit": "bd1aa99ffb911a1cf99b3fcf3b44c0391c57e3ef" },
+  "sad.nvim": { "branch": "master", "commit": "4cd87acbe4d9106ff2a42c4cd850dc5313bdc696" },
   "satellite.nvim": { "branch": "main", "commit": "d522369aa50cf8c0116c952ddc55253c505e8bf7" },
   "silicon.nvim": { "branch": "main", "commit": "abaf0d83380b5fca381036ed1a413b3890ca5f1b" },
   "skim.vim": { "branch": "master", "commit": "83faea7f2581005d4adc9256ec76e0fe3f8a15e6" },
