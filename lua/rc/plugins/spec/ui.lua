@@ -66,8 +66,7 @@ return util.module('ui', function(use)
     config = util.setup.mod_call('kiwi.ui.tabline'),
     event = { 'VimEnter' },
   }
-  use { 'feline-nvim/feline.nvim',
-    dependencies = { 'kyazdani42/nvim-web-devicons' },
+  use { 'MunifTanjim/nougat.nvim',
     config = util.setup.mod_call('kiwi.ui.statusline'),
   }
   use { 'nvim-lua/lsp-status.nvim',
