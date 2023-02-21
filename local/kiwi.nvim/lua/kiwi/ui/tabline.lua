@@ -7,11 +7,6 @@ return function()
     options = {
       buffer_close_icon = '',
       diagnostics = 'nvim_lsp',
-      custom_filter = function(bufnr, bufnrs)
-        local current_tabpage = vim.api.nvim_get_current_tabpage()
-
-        return true
-      end,
       offsets = {
         {
           filetype = 'NvimTree',
