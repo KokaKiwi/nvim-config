@@ -9,7 +9,7 @@ return function()
       separator_style = 'slope',
       offsets = {
         {
-          filetype = 'NvimTree',
+          filetype = 'neo-tree',
           text = 'File explorer',
           highlight = 'Directory',
           text_align = 'center',

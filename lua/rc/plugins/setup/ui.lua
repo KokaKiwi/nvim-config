@@ -191,6 +191,44 @@ function M.setup_modicator()
   }
 end
 
+function M.setup_neo_tree()
+  vim.g.neo_tree_remove_legacy_commands = true
+
+  require('neo-tree').setup {
+    sources = { 'filesystem' },
+    default_component_configs = {
+      name = {
+        trailing_slash = true,
+      },
+    },
+    window = {
+      mappings = {},
+    },
+    filesystem = {
+      filtered_items = {
+        hide_dotfiles = false,
+        always_show = {
+          '.gitignore',
+          '.justfile',
+        },
+      },
+      follow_current_file = true,
+      group_empty_dirs = true,
+      use_libuv_file_watcher = true,
+    },
+    event_handlers = {
+      {
+        event = 'file_opened',
+        handler = function()
+          require('neo-tree.command').execute {
+            action = 'close',
+          }
+        end,
+      },
+    },
+  }
+end
+
 function M.setup_nkey()
   require('nkey').setup {
     integrations = { 'legendary', 'which_key' },
@@ -249,78 +287,6 @@ function M.setup_notify()
 
   notify.setup {
     stages = 'fade',
-  }
-end
-
-function M.setup_nvim_tree()
-  require('nvim-tree').setup {
-    hijack_cursor = true,
-    update_focused_file = {
-      enable = true,
-    },
-    diagnostics = {
-      enable = true,
-    },
-    filters = {
-      custom = {
-        '^\\.git$', '^\\.hg$', '^\\.svn$', '^\\.bzr$', '^\\.pijul$',
-        '\\.pyc$', '\\.pyd$', '\\.egg-info', '^__pycache__$',
-        '\\.class$',
-        '\\.swp$',
-      },
-    },
-    git = {
-      enable = false,
-    },
-    view = {
-      width = 40,
-      mappings = {
-        list = {
-          { key = '<C-e>', action = 'close' },
-        },
-      },
-      hide_root_folder = false,
-    },
-    renderer = {
-      add_trailing = true,
-      group_empty = true,
-      highlight_opened_files = 'icon',
-      icons = {
-        show = {
-          git = false,
-          folder = true,
-          file = true,
-          folder_arrow = true,
-        },
-        glyphs = {
-          default = u'F1B5',
-          symlink = u'F1C9',
-          folder = {
-            arrow_closed = u'F14E',
-            arrow_open = u'F149',
-            default = u'F1C1',
-            open = u'F1C3',
-            empty = u'F1BF',
-            empty_open = u'F1BF',
-            symlink = u'F1C9',
-            symlink_open = u'F1C9',
-          },
-        },
-      },
-      special_files = {
-        'README', 'README.md',
-        'Makefile', 'Justfile',
-        'LICENSE',
-      },
-    },
-    actions = {
-      open_file = {
-        quit_on_open = true,
-        window_picker = {
-          enable = false,
-        },
-      },
-    },
   }
 end
 

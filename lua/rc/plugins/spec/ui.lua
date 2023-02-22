@@ -38,9 +38,10 @@ return util.module('ui', function(use)
     cmd = { 'UndotreeToggle' },
   }
 
-  use { 'kyazdani42/nvim-tree.lua',
-    dependencies = { 'kyazdani42/nvim-web-devicons' },
-    config = util.setup.rc('nvim_tree', 'ui'),
+  use { 'nvim-neo-tree/neo-tree.nvim',
+    dependencies = { 'plenary.nvim', 'nui.nvim', 'nvim-web-devicons' },
+    config = util.setup.rc('neo_tree', 'ui'),
+    cmd = { 'Neotree' },
   }
   use { 'luukvbaal/nnn.nvim',
     config = util.setup.rc('nnn', 'ui'),
