@@ -214,6 +214,19 @@ function M.setup_neo_tree()
           '.justfile',
         },
       },
+      window = {
+        mappings = {
+          ['o'] = 'system_open',
+        },
+      },
+      commands = {
+        system_open = function(state)
+          local node = state.tree:get_node()
+          local path = node:get_id()
+
+          vim.fn.system({ 'xdg-open', path })
+        end,
+      },
       follow_current_file = true,
       group_empty_dirs = true,
       use_libuv_file_watcher = true,
