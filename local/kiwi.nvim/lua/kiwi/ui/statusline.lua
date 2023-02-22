@@ -69,6 +69,22 @@ local components = lazy.dict(function()
         },
       },
     },
+    lazy = nougat.Item {
+      content = function()
+        return require('lazy.status').updates()
+      end,
+      hidden = function()
+        return not require('lazy.status').has_updates()
+      end,
+      prefix = ' ', suffix = ' ',
+      hl = {
+        fg = cat.crust,
+        bg = cat.mauve,
+        bold = true,
+      },
+      sep_left = nougat.sep.left_upper_triangle_solid(true),
+      sep_right = nougat.sep.right_upper_triangle_solid(true),
+    },
     lsp = {
       client_names = nougat.Item {
         content = function(item, ctx)
@@ -171,6 +187,8 @@ local function make_statusline()
   statusline:add_item(nougat.nut.spacer())
 
   -- Right
+  statusline:add_item(components.lazy)
+  statusline:add_item(' ')
   statusline:add_item(components.buf.filepos)
 
   return statusline
