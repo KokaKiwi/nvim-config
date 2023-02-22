@@ -173,15 +173,15 @@ end
 
 function M.setup_minimap()
   prefixed(vim.g, 'minimap') {
-    block_filetypes = { 'NvimTree', 'aerial' },
-    close_filetypes = { 'alpha', 'packer' },
+    block_filetypes = { 'neo-tree', 'aerial' },
+    close_filetypes = { 'alpha', 'lazy' },
   }
 end
 
 function M.setup_modes()
   require('modes').setup {
     line_opacity = 0.25,
-    ignore_filetypes = { 'NvimTree', 'TelescopePrompt', 'aerial', 'packer' },
+    ignore_filetypes = { 'neo-tree', 'TelescopePrompt', 'aerial', 'lazy' },
   }
 end
 
@@ -298,7 +298,7 @@ function M.setup_satellite()
   require('satellite').setup {
     excluded_filetypes = {
       '', 'prompt', 'TelescopePrompt',
-      'alpha', 'NvimTree', 'packer',
+      'alpha', 'neo-tree', 'lazy',
     },
   }
 end

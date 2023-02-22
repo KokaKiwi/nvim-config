@@ -3,7 +3,7 @@ local M = {}
 function M.setup_better_whitespace()
   prefixed(vim.g, 'better_whitespace') {
     filetypes_blacklist = {
-      'dashboard', 'NvimTree', 'packer', 'alpha',
+      'dashboard', 'neo-tree', 'lazy', 'alpha',
       'diff', 'git', 'gitcommit', 'unite', 'qf', 'help', 'markdown', 'fugitive',
     },
   }
@@ -11,7 +11,7 @@ end
 
 function M.setup_blankline()
   require('indent_blankline').setup {
-    buftype_exclude = { 'terminal', 'alpha', 'help', 'packer' },
+    buftype_exclude = { 'terminal', 'alpha', 'help', 'lazy' },
     show_current_context = true,
   }
 end
@@ -72,7 +72,7 @@ end
 
 function M.setup_illuminate()
   prefixed(vim.g, 'Illuminate') {
-    ftblacklist = { 'NvimTree' },
+    ftblacklist = { 'neo-tree' },
   }
 end
 

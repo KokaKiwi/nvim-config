@@ -7,6 +7,7 @@ return function()
 
     styles = {
       functions = { 'bold', 'italic' },
+      keywords = { 'italic' },
     },
 
     integrations = {
@@ -18,6 +19,7 @@ return function()
       lsp_trouble = true,
       mason = true,
       neotest = true,
+      neotree = true,
       noice = true,
       notify = true,
       overseer = true,
