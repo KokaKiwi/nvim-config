@@ -1,5 +1,15 @@
 local M = {}
 
+function M.setup_autopairs()
+  local Rule = require('nvim-autopairs.rule')
+  local cond = require('nvim-autopairs.conds')
+  local ts_cond = require('nvim-autopairs.ts-conds')
+
+  local npairs = require('nvim-autopairs')
+
+  npairs.setup {}
+end
+
 function M.setup_Comment()
   require('Comment').setup {
     toggler = {

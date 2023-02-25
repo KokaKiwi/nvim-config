@@ -3,6 +3,10 @@ local util = require('rc.plugins.util')
 return util.module('utils', function(use)
   use 'editorconfig/editorconfig-vim'
 
+  use { 'windwp/nvim-autopairs',
+    config = util.setup.rc('autopairs', 'utils'),
+  }
+
   use { 'glts/vim-radical',
     dependencies = { 'glts/vim-magnum' },
     keys = {
