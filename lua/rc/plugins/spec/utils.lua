@@ -110,4 +110,8 @@ return util.module('utils', function(use)
   use { 'roberte777/keep-it-secret.nvim',
     config = util.setup.rc('keep_it_secret', 'utils'),
   }
+
+  use { 'echasnovski/mini.nvim',
+    lazy = true,
+  }
 end)
