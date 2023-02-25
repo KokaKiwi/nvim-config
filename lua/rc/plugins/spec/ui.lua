@@ -158,7 +158,7 @@ return util.module('ui', function(use)
 
   use { 'rhysd/committia.vim',
     config = util.setup.rc('committia'),
-    event = { 'BufReadPost COMMIT_EDITMSG,MERGE_MSG' },
+    ft = { 'gitcommit' },
   }
 
   use { 'goolord/alpha-nvim',
