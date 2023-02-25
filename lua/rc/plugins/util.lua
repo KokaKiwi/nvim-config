@@ -22,7 +22,7 @@ function util.require_lazy()
   return lazy
 end
 
-function util.module(_, init_fn)
+function util.module(group_name, init_fn)
   local plugins = {}
 
   local function _use(spec)
@@ -41,6 +41,8 @@ function util.module(_, init_fn)
       spec.dir = string.format('%s/local/%s', vim.fn.stdpath('config'), spec['local'])
       spec['local'] = nil
     end
+
+    spec.group_name = group_name
 
     table.insert(plugins, spec)
   end
