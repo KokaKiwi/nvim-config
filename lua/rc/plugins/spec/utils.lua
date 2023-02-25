@@ -30,12 +30,13 @@ return util.module('utils', function(use)
     lazy = true,
   }
 
-  use 'prabirshrestha/async.vim'
   use 'mg979/vim-visual-multi'
   use 'tpope/vim-repeat'
   use 'tpope/vim-sensible'
   use 'tpope/vim-surround'
-  use 'stsewd/isort.nvim'
+  use { 'stsewd/isort.nvim',
+    build = { ':UpdateRemotePlugins' },
+  }
 
   use { 'famiu/bufdelete.nvim',
     cmd = { 'Bdelete', 'Bwipeout' },

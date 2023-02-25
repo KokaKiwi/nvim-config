@@ -151,7 +151,6 @@ return util.module('helpers', function(use)
     cmd = { 'Neotest' },
   }
 
-  use { 'jiangmiao/auto-pairs' }
   use { 'junegunn/vim-easy-align',
     cmd = { 'EasyAlign' },
   }

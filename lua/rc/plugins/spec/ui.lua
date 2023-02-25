@@ -27,7 +27,6 @@ return util.module('ui', function(use)
       { '<C-p>', mode = 'n' },
     },
   }
-  use 'ripxorip/aerojump.nvim'
   use { 'numToStr/FTerm.nvim',
     config = util.setup.rc('fterm', 'ui'),
     cmd = { 'FTerm', 'Gitui', 'Top', 'Neofetch' },
@@ -101,7 +100,9 @@ return util.module('ui', function(use)
     config = util.setup.rc('aerial', 'ui'),
   }
   use { 'uga-rosa/ccc.nvim',
+    lazy = true,
     config = util.setup.rc('ccc', 'ui'),
+    cmd = { 'CccPick' },
   }
   use { 'nvim-zh/colorful-winsep.nvim',
     config = util.setup.rc('colorful_winsep', 'ui'),
@@ -129,7 +130,7 @@ return util.module('ui', function(use)
   }
 
   use { 'xeluxee/competitest.nvim',
-    dependencies = { 'MunifTanjim/nui.nvim' },
+    dependencies = { 'nui.nvim' },
     config = util.setup.rc('competitest', 'ui'),
   }
 
