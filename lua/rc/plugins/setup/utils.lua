@@ -88,9 +88,14 @@ function M.setup_sad()
 end
 
 function M.setup_silicon()
-  require('silicon').setup({
-      _ = 'dummy',
-    })
+  require('silicon').setup {
+    font = 'FiraCode Nerd Font Mono=20',
+    theme = 'Catppuccin-mocha',
+    line_number = true,
+    window_title = function()
+      return vim.fn.expand('%:t')
+    end,
+  }
 end
 
 function M.setup_sort()
