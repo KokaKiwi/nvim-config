@@ -101,7 +101,7 @@
   "nvim-luapad": { "branch": "master", "commit": "a5b3d6aa1fe5fe75e6124927392a9d3a60a0ecce" },
   "nvim-notify": { "branch": "master", "commit": "9c987081390753b625e2d94e749e80e9b4a3e082" },
   "nvim-snippy": { "branch": "master", "commit": "80104ebd1e77d019f736bee46de2f1dbfe36f8af" },
-  "nvim-treesitter": { "branch": "master", "commit": "ad8798795c71a00e796e1919c905a6bf815e9359" },
+  "nvim-treesitter": { "branch": "master", "commit": "8d2f9903f11542c3363353a65a8e08adfcca9d29" },
   "nvim-treesitter-context": { "branch": "master", "commit": "895ec44f5c89bc67ba5440aef3d1f2efa3d59a41" },
   "nvim-ts-context-commentstring": { "branch": "main", "commit": "a0f89563ba36b3bacd62cf967b46beb4c2c29e52" },
   "nvim-web-devicons": { "branch": "master", "commit": "4709a504d2cd2680fb511675e64ef2790d491d36" },
