@@ -112,6 +112,6 @@ return util.module('utils', function(use)
   }
 
   use { 'echasnovski/mini.nvim',
-    lazy = true,
+    config = util.setup.rc('mini', 'utils'),
   }
 end)

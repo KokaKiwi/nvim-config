@@ -62,6 +62,10 @@ function M.setup_kitty_runner()
   require('kitty-runner').setup {}
 end
 
+function M.setup_mini()
+  require('mini.misc').setup {}
+end
+
 function M.setup_neorg()
   require('neorg').setup {
     load = {
