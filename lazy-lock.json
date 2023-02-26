@@ -154,6 +154,7 @@
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "vim-visual-multi": { "branch": "master", "commit": "724bd53adfbaf32e129b001658b45d4c5c29ca1a" },
   "virt-column.nvim": { "branch": "master", "commit": "93b40ea038f676f5a72d7d1f2336fe7b051fc0ce" },
+  "wf.nvim": { "branch": "main", "commit": "9d222ccafe448429e8c86f19cf0d1cc79a1b6592" },
   "which-key.nvim": { "branch": "main", "commit": "5224c261825263f46f6771f1b644cae33cd06995" },
   "zone.nvim": { "branch": "main", "commit": "6f58a50576a987bb214eeed6f5f4de014e983531" }
 }

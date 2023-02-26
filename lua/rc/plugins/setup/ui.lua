@@ -248,14 +248,9 @@ end
 
 function M.setup_nkey()
   require('nkey').setup {
-    integrations = { 'legendary', 'which_key' },
-  }
-
-  require('which-key').setup {
-    plugins = {
-      presets = {
-        operators = false,
-      },
+    integrations = {
+      'legendary',
+      'which_key',
     },
   }
 end

@@ -80,7 +80,11 @@ return util.module('ui', function(use)
   use {
     name = 'nkey.nvim',
     url = 'https://gitlab.kokakiwi.net/contrib/neovim/nkey.nvim.git',
-    dependencies = { 'folke/which-key.nvim', 'mrjones2014/legendary.nvim' },
+    dependencies = {
+      'folke/which-key.nvim',
+      'Cassin01/wf.nvim',
+      'mrjones2014/legendary.nvim'
+    },
     config = util.setup.rc('nkey', 'ui'),
     priority = 100,
   }
