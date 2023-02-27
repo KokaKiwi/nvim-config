@@ -41,10 +41,6 @@ function M.setup_colorful_winsep()
   }
 end
 
-function M.setup_comment_box()
-  require('comment-box').setup {}
-end
-
 function M.setup_competitest()
   require('competitest').setup {}
 end

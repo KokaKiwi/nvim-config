@@ -24,7 +24,6 @@
   "cmp-treesitter": { "branch": "master", "commit": "b40178b780d547bcf131c684bc5fd41af17d05f2" },
   "codi.vim": { "branch": "master", "commit": "ab8c5faa867424c79a7d5d3a7f55d3a2528ee9b9" },
   "colorful-winsep.nvim": { "branch": "main", "commit": "956d65c9a31ce81b7873bef1682c72eb00d9affb" },
-  "comment-box.nvim": { "branch": "main", "commit": "8fb605162833dd39339b6c3bdfe9e7ad3486958e" },
   "committia.vim": { "branch": "master", "commit": "0b4df1a7f48ffbc23b009bd14d58ee1be541917c" },
   "competitest.nvim": { "branch": "master", "commit": "01f29ad4c72420032e2ef4f856682c489b2fecf0" },
   "cosmic-ui": { "branch": "main", "commit": "c0b14531999f2bfef3d927c4dcd57a1a8fed5ee9" },
