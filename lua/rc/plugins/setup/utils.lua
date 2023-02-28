@@ -102,6 +102,10 @@ function M.setup_neorg()
   }
 end
 
+function M.setup_netman()
+  require('netman')
+end
+
 function M.setup_sad()
   require('sad').setup {}
 end

@@ -115,6 +115,10 @@ return util.module('utils', function(use)
   use { 'roberte777/keep-it-secret.nvim',
     config = util.setup.rc('keep_it_secret', 'utils'),
   }
+  use { 'miversen33/netman.nvim',
+    config = util.setup.rc('netman', 'utils'),
+    lazy = true,
+  }
 
   use { 'echasnovski/mini.nvim',
     config = util.setup.rc('mini', 'utils'),

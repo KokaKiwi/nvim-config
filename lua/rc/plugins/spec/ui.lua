@@ -38,7 +38,6 @@ return util.module('ui', function(use)
   }
 
   use { 'nvim-neo-tree/neo-tree.nvim',
-    dependencies = { 'plenary.nvim', 'nui.nvim', 'nvim-web-devicons' },
     config = util.setup.rc('neo_tree', 'ui'),
     cmd = { 'Neotree' },
   }

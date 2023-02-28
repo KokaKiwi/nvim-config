@@ -193,13 +193,16 @@ function M.setup_neo_tree()
   vim.g.neo_tree_remove_legacy_commands = true
 
   require('neo-tree').setup {
+    sources = {
+      'filesystem',
+      'buffers',
+      'git_status',
+      'netman.ui.neo-tree',
+    },
     default_component_configs = {
       name = {
         trailing_slash = true,
       },
-    },
-    source_selector = {
-      winbar = true,
     },
     window = {
       mappings = {},
