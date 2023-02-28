@@ -38,6 +38,12 @@ require('neoconf').setup {
   },
 }
 
+require('mason-lspconfig').setup_handlers {
+  function(server_name)
+    lsp[server_name].setup {}
+  end,
+}
+
 lsp.bashls.setup {
   filetypes = { 'sh' },
 }
