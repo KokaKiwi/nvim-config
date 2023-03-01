@@ -1,3 +1,9 @@
+-- Teal support
+local has_tl, tl = pcall(require, 'tl')
+if has_tl then
+  tl.loader()
+end
+
 -- Load Lua helpers
 require('klib')
 
