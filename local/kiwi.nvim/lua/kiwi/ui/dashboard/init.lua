@@ -21,7 +21,7 @@ return function()
   ---@field patch integer
   ---@field api_level integer
   local nvim_version = vim.version()
-  nvim_version = string.format(
+  local nvim_version_str = string.format(
     'v%i.%i.%i (API level: %i)',
     nvim_version.major,
     nvim_version.minor,
@@ -29,7 +29,7 @@ return function()
     nvim_version.api_level
   )
 
-  local plugins_stats = require('lazy').stats()
+  local lazy = require('lazy')
 
   local header = {
     type = 'group',
@@ -61,18 +61,22 @@ return function()
       { type = 'padding', val = 4 },
       util.text {
         function()
-          return string.format('Started in %ims', plugins_stats.startuptime)
+          local stats = lazy.stats()
+
+          return string.format('Started in %ims', stats.startuptime)
         end,
         hl = 'NonText',
       },
       util.text {
         function()
-          return string.format('Plugins: %i loaded / %i total', plugins_stats.loaded, plugins_stats.count)
+          local stats = lazy.stats()
+
+          return string.format('Plugins: %i loaded / %i total', stats.loaded, stats.count)
         end,
         hl = 'NonText',
       },
       util.text {
-        string.format('neovim %s', nvim_version),
+        string.format('neovim %s', nvim_version_str),
         hl = 'NonText',
       }
     },
