@@ -9,6 +9,9 @@ local function tweak_setup(config)
   if config.capabilities ~= nil then
     capabilities = vim.tbl_deep_extend('force', capabilities, config.capabilities)
   end
+  capabilities.textDocument.colorProvider = {
+    dynamicRegistration = true,
+  }
   config.capabilities = capabilities
 
   local cmd = config.cmd[1]

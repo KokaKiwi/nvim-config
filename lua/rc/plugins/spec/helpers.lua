@@ -73,6 +73,7 @@ return util.module('helpers', function(use)
   }
   use { 'mrshmllow/document-color.nvim',
     config = util.setup.rc('document_color', 'helpers'),
+    lazy = true,
   }
 
   use { 'neovim/nvim-lspconfig',
