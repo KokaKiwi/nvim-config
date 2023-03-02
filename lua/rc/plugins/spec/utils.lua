@@ -119,6 +119,9 @@ return util.module('utils', function(use)
     config = util.setup.rc('netman', 'utils'),
     lazy = true,
   }
+  use { 'axieax/urlview.nvim',
+    cmd = { 'UrlView' },
+  }
 
   use { 'echasnovski/mini.nvim',
     config = util.setup.rc('mini', 'utils'),
