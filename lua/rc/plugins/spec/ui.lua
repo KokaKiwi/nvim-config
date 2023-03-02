@@ -192,7 +192,6 @@ return util.module('ui', function(use)
   use { 'giusgad/pets.nvim',
     dependencies = { 'nui.nvim', 'hologram.nvim' },
     config = util.setup.rc('pets', 'ui'),
-    enabled = false,
   }
 
   use { 'eandrju/cellular-automaton.nvim',

@@ -104,6 +104,7 @@
   "overseer.nvim": { "branch": "master", "commit": "9251b70ef3289ea1d43fbf588cc23d58441caa4c" },
   "package-info.nvim": { "branch": "master", "commit": "54337910c67946ffb8a2845a4e547dba925e0f37" },
   "persisted.nvim": { "branch": "main", "commit": "88f27dcab289b338eed5c3c8119481d9c9e7428f" },
+  "pets.nvim": { "branch": "main", "commit": "3c56dcab2173914e9e51a3f7824477c1b857deaa" },
   "playground": { "branch": "master", "commit": "4044b53c4d4fcd7a78eae20b8627f78ce7dc6f56" },
   "plenary.nvim": { "branch": "master", "commit": "253d34830709d690f013daf2853a9d21ad7accab" },
   "popup.nvim": { "branch": "master", "commit": "b7404d35d5d3548a82149238289fa71f7f6de4ac" },
