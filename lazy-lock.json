@@ -116,7 +116,6 @@
   "silicon.nvim": { "branch": "main", "commit": "5bc7424c36c58ce823506829f56777936e9dc198" },
   "skim.vim": { "branch": "master", "commit": "83faea7f2581005d4adc9256ec76e0fe3f8a15e6" },
   "sort.nvim": { "branch": "main", "commit": "9e4065625317128f6a1c826f4a36f9b47600417a" },
-  "tabular": { "branch": "master", "commit": "339091ac4dd1f17e225fe7d57b48aff55f99b23a" },
   "telescope-lazy.nvim": { "branch": "main", "commit": "62b325696f33e338a820abe623bebc92ebf1786b" },
   "telescope.nvim": { "branch": "master", "commit": "a3f17d3baf70df58b9d3544ea30abe52a7a832c2" },
   "todo-comments.nvim": { "branch": "main", "commit": "74c7d28cb50b0713c881ef69bcb6cdd77d8907d1" },

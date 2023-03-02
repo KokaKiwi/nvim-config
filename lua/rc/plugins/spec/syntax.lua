@@ -1,8 +1,6 @@
 local util = require('rc.plugins.util')
 
 return util.module('syntax', function(use)
-  use 'godlygeek/tabular'
-
   use { 'sheerun/vim-polyglot',
     init = util.setup.rc('polyglot'),
   }

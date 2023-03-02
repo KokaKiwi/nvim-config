@@ -109,6 +109,7 @@ return util.module('helpers', function(use)
   }
   use { 'nvim-treesitter/playground',
     dependencies = { 'nvim-treesitter' },
+    cmd = { 'TSPlaygroundToggle', 'TSHighlightCapturesUnderCursor', 'TSNodeUnderCursor' },
   }
   use { 'Julian/lean.nvim',
     ft = { 'lean', 'lean3', 'leaninfo' },
