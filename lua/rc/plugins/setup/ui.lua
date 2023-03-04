@@ -87,6 +87,11 @@ function M.setup_devicons()
   }
 
   for key, icon in pairs(OVERRIDES) do
+    if icons[key] == nil then
+      icons[key] = {
+        name = key,
+      }
+    end
     if type(icon) == 'table' then
       icons[key] = icon
     else
