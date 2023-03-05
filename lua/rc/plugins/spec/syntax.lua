@@ -26,4 +26,5 @@ return util.module('syntax', function(use)
   use { 'ron-rs/ron.vim', ft = 'ron' }
   use { 'thyrgle/vim-dyon', ft = 'dyon' }
   use { 'fladson/vim-kitty', ft = { 'kitty', 'kitty-session' } }
+  use { 'rescript-lang/vim-rescript', ft = { 'rescript' } }
 end)
