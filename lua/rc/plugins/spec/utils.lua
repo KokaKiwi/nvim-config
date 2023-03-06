@@ -122,6 +122,10 @@ return util.module('utils', function(use)
   use { 'axieax/urlview.nvim',
     cmd = { 'UrlView' },
   }
+  use { 'chrisgrieser/nvim-various-textobjs',
+    config = util.setup.rc('various_textobjs', 'utils'),
+    lazy = true,
+  }
 
   use { 'echasnovski/mini.nvim',
     config = util.setup.rc('mini', 'utils'),

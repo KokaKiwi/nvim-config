@@ -64,6 +64,13 @@ nkey.register {
   -- Aerial
   { '<S-t>', nkey.Cmd 'AerialToggle', help = 'Open symbols outline' },
 
+  -- nvim-various-textobjs
+  { 'gX', {
+    { '?', function()
+        require('various-textobjs').diagnostic()
+      end, help = 'Diagnostic TextObjects' },
+  }, help = '+textobjs' },
+
   -- doc
   { '<Leader>', {
     { 'k', help = 'Toggle variable highlight' },

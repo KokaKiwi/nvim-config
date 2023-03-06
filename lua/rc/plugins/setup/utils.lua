@@ -127,6 +127,10 @@ function M.setup_sort()
   }
 end
 
+function M.setup_various_textobjs()
+  require('various-textobjs').setup {}
+end
+
 function M.setup_viewdoc()
   require('viewdoc').setup {}
 end
