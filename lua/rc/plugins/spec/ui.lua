@@ -193,6 +193,9 @@ return util.module('ui', function(use)
     dependencies = { 'nui.nvim', 'hologram.nvim' },
     config = util.setup.rc('pets', 'ui'),
   }
+  use { 'utilyre/sentiment.nvim',
+    config = util.setup.rc('sentiment', 'ui'),
+  }
 
   use { 'eandrju/cellular-automaton.nvim',
     config = util.setup.rc('cellular_automaton', 'ui'),

@@ -319,6 +319,10 @@ function M.setup_satellite()
   }
 end
 
+function M.setup_sentiment()
+  require('sentiment').setup {}
+end
+
 function M.setup_telescope()
   local telescope = require('telescope')
 
