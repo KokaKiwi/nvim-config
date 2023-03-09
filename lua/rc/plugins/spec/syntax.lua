@@ -2,7 +2,7 @@ local util = require('rc.plugins.util')
 
 return util.module('syntax', function(use)
   use { 'sheerun/vim-polyglot',
-    init = util.setup.rc('polyglot'),
+    init = util.setup.rc('polyglot', 'syntax'),
   }
 
   use { 'PProvost/vim-ps1', ft = { 'ps1', 'ps1xml' } }

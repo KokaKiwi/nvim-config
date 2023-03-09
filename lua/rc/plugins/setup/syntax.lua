@@ -6,4 +6,11 @@ function M.setup_nu()
   }
 end
 
+function M.setup_polyglot()
+  print('prout')
+  prefixed(vim.g, 'polyglot') {
+    disabled = { 'fish', 'systemd', 'nftables', 'lifelines' },
+  }
+end
+
 return M

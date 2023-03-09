@@ -124,12 +124,6 @@ function M.setup_neoformat()
   }
 end
 
-function M.setup_polyglot()
-  prefixed(vim.g, 'polyglot') {
-    disabled = { 'fish', 'systemd', 'nftables' },
-  }
-end
-
 function M.setup_presence()
   require('presence'):setup {
     file_assets = {
