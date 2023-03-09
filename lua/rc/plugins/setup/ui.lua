@@ -223,6 +223,8 @@ function M.setup_neo_tree()
       window = {
         mappings = {
           ['o'] = 'system_open',
+          ['d'] = 'trash',
+          ['D'] = 'delete',
         },
       },
       commands = {
@@ -231,6 +233,23 @@ function M.setup_neo_tree()
           local path = node:get_id()
 
           vim.fn.system({ 'xdg-open', path })
+        end,
+        trash = function(state)
+          local ui_inputs = require('neo-tree.ui.inputs')
+          local manager = require('neo-tree.sources.manager')
+
+          local node = state.tree:get_node()
+          local path = node:get_id()
+
+          local msg = string.format('Are you sure you want to delete `%s', path)
+          ui_inputs.confirm(msg, function(res)
+            if not res then
+              return
+            end
+
+            vim.fn.system({ 'trash', vim.fn.fnameescape(path) })
+            manager.refresh(state.name)
+          end)
         end,
       },
       follow_current_file = true,
