@@ -15,17 +15,15 @@ for name, mod in pairs(LANGUAGES) do
   end
 end
 
--- Setup LSP installer
-require('mason-lspconfig').setup {}
-
 -- Setup Language Servers
-require('kiwi.lsp.langs.hook').register_hook()
 local lsp = require('lspconfig')
 local util = require('lspconfig.util')
 
 local lsp_status = require('lsp-status')
 local schemastore = require('schemastore')
 
+require('kiwi.lsp.langs.hook').register_hook()
+require('mason-lspconfig').setup {}
 require('neodev').setup {
   library = {
     plugins = { 'nvim-dap-ui' },
