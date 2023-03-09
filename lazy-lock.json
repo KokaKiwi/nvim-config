@@ -60,7 +60,7 @@
   "lh-vim-lib": { "branch": "master", "commit": "02764e0e87f85fa13e0d6a0e38ac6605f806d560" },
   "lsp-status.nvim": { "branch": "master", "commit": "54f48eb5017632d81d0fd40112065f1d062d0629" },
   "lspkind-nvim": { "branch": "master", "commit": "c68b3a003483cf382428a43035079f78474cd11e" },
-  "lspsaga.nvim": { "branch": "main", "commit": "aa3c370836f050422b738c3e64b98be59e6bf14a" },
+  "lspsaga.nvim": { "branch": "main", "commit": "8264841c5fb5064050b633805c151c9aca448611" },
   "lush.nvim": { "branch": "main", "commit": "b1e8eb1da3fee95ef31515a73c9eff9bf251088d" },
   "marks.nvim": { "branch": "master", "commit": "76aca5069c5ce5c0099e30168649e6393e494f26" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "a31e011135a79d63c71254c250c9158e1056a1cb" },
@@ -157,7 +157,7 @@
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "vim-visual-multi": { "branch": "master", "commit": "724bd53adfbaf32e129b001658b45d4c5c29ca1a" },
   "virt-column.nvim": { "branch": "master", "commit": "93b40ea038f676f5a72d7d1f2336fe7b051fc0ce" },
-  "wf.nvim": { "branch": "main", "commit": "463da8c7d55e16bd35d387f3d4e7444523b10121" },
+  "wf.nvim": { "branch": "main", "commit": "95a011c694b71102495e721752769bdbfaa63662" },
   "which-key.nvim": { "branch": "main", "commit": "fb027738340502b556c3f43051f113bcaa7e8e63" },
   "zone.nvim": { "branch": "main", "commit": "6f58a50576a987bb214eeed6f5f4de014e983531" }
 }
