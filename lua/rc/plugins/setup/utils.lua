@@ -135,4 +135,8 @@ function M.setup_viewdoc()
   require('viewdoc').setup {}
 end
 
+function M.setup_virt_notes()
+  require('virt-notes').setup {}
+end
+
 return M

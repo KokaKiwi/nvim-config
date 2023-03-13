@@ -126,6 +126,12 @@ return util.module('utils', function(use)
     config = util.setup.rc('various_textobjs', 'utils'),
     lazy = true,
   }
+  use { 'aaron-p1/virt-notes.nvim',
+    config = util.setup.rc('virt_notes',  'utils'),
+    keys = {
+      { '<Leader>v', mode = 'n' },
+    },
+  }
 
   use { 'echasnovski/mini.nvim',
     config = util.setup.rc('mini', 'utils'),
