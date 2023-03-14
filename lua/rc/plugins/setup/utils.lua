@@ -55,6 +55,10 @@ function M.setup_fcitx5()
   require('fcitx5').setup {}
 end
 
+function M.setup_glow()
+  require('glow').setup {}
+end
+
 function M.setup_gomove()
   require('gomove').setup {}
 end

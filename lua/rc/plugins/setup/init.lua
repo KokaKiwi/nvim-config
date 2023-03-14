@@ -60,12 +60,6 @@ function M.setup_ctrlp()
   }
 end
 
-function M.setup_glow()
-  prefixed(vim.g, 'glow') {
-    binary_path = '/usr/bin',
-  }
-end
-
 function M.setup_gnupg()
   vim.g.GPGDefaultRecipients = { 'kokakiwi@kokakiwi.net' }
 end

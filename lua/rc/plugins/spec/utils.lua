@@ -90,7 +90,7 @@ return util.module('utils', function(use)
   }
 
   use { 'ellisonleao/glow.nvim',
-    config = util.setup.rc('glow'),
+    config = util.setup.rc('glow', 'utils'),
     cmd = { 'Glow' },
     cond = util.cond.is_executable('glow'),
   }
