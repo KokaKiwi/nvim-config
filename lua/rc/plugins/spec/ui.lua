@@ -205,4 +205,7 @@ return util.module('ui', function(use)
     config = util.setup.rc('zone', 'ui'),
     cmd = { 'Zone' },
   }
+  use { 'cpea2506/relative-toggle.nvim',
+    config = util.setup.rc('relative_toggle', 'ui'),
+  }
 end)

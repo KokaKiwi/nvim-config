@@ -329,6 +329,10 @@ function M.setup_pets()
   require('pets').setup {}
 end
 
+function M.setup_relative_toggle()
+  require('relative-toggle').setup {}
+end
+
 function M.setup_satellite()
   require('satellite').setup {
     excluded_filetypes = {
