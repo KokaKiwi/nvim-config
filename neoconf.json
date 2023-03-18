@@ -2,6 +2,9 @@
   "lspconfig": {
     "elixirls": {
       "elixirLS.mixEnv": "dev"
+    },
+    "yamlls": {
+      "yaml.keyOrdering": false
     }
   }
 }

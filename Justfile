@@ -1,14 +1,18 @@
 _default:
 
-upgrade:
+sync:
   nvim --headless "+Lazy! sync" +qa
+
+commit:
   yadm add lazy-lock.json
   -yadm commit -m 'nvim: Update plugins'
 
-aupgrade:
-  nvim --headless "+Lazy! sync" +qa
+amend:
   yadm add lazy-lock.json
   yadm commit --amend --no-edit
+
+upgrade: sync commit
+aupgrade: sync amend
 
 update:
   nvim --headless +TSUpdateSync +qa

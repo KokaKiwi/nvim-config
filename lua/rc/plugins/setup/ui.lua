@@ -218,6 +218,7 @@ function M.setup_neo_tree()
         always_show = {
           '.gitignore',
           '.justfile',
+          '.envrc',
         },
       },
       window = {
