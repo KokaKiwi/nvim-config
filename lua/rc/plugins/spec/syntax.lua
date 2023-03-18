@@ -9,7 +9,6 @@ return util.module('syntax', function(use)
   use { 'bytecodealliance/cranelift.vim', ft = 'clif', branch = 'main' }
   use { 'cstrahan/vim-capnp', ft = 'capnp' }
   use { 'eiginn/iptables-vim', ft = 'iptables' }
-  use { 'ericvw/vim-fish', ft = { 'fish' } }
   use { 'gisphm/vim-gitignore', ft = 'gitignore'}
   use { 'gleam-lang/gleam.vim', ft = 'gleam' }
   use { 'hail2u/vim-css3-syntax', ft = 'css' }
