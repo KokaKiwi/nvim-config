@@ -84,6 +84,7 @@ lsp.solargraph.setup {}
 lsp.sqlls.setup {
   cmd = { 'sql-language-server', 'up', '--method', 'stdio' }
 }
+lsp.taplo.setup {}
 lsp.texlab.setup {}
 lsp.tsserver.setup {}
 lsp.vimls.setup {}
