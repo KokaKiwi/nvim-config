@@ -53,7 +53,7 @@
   "isort.nvim": { "branch": "master", "commit": "6e7d605a8834e26d7314ef7082a68d58fc5c0c2a" },
   "keep-it-secret.nvim": { "branch": "main", "commit": "4397025232b979eb1aaf66e39c39591161128b12" },
   "kitty-runner.nvim": { "branch": "main", "commit": "90da86e949e454469abcb72635907cd77d1bc776" },
-  "lazy.nvim": { "branch": "main", "commit": "983aad3e79e6f7e3a65e1869d4116d627a9eaf28" },
+  "lazy.nvim": { "branch": "main", "commit": "32d5f4af2fdc0c04d60e3d5b5da3fc19a2c3699e" },
   "lean.nvim": { "branch": "main", "commit": "f87c54ded50ae46dcc4687f139a5debc1f977a7e" },
   "lean.vim": { "branch": "master", "commit": "e4414d0f4221f9ad2c94cf799ac53c8dbcd30229" },
   "legendary.nvim": { "branch": "master", "commit": "11876b1d33dd916e00a651569b04e779d41dcd0b" },
