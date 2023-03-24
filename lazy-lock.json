@@ -56,7 +56,7 @@
   "lazy.nvim": { "branch": "main", "commit": "a80422f21750fcbf0e90b26da877d4024d76f116" },
   "lean.nvim": { "branch": "main", "commit": "f87c54ded50ae46dcc4687f139a5debc1f977a7e" },
   "lean.vim": { "branch": "master", "commit": "e4414d0f4221f9ad2c94cf799ac53c8dbcd30229" },
-  "legendary.nvim": { "branch": "master", "commit": "14e966f4518f5745eb24c6af14ef756f5453cbee" },
+  "legendary.nvim": { "branch": "master", "commit": "11876b1d33dd916e00a651569b04e779d41dcd0b" },
   "lh-vim-lib": { "branch": "master", "commit": "02764e0e87f85fa13e0d6a0e38ac6605f806d560" },
   "lsp-status.nvim": { "branch": "master", "commit": "54f48eb5017632d81d0fd40112065f1d062d0629" },
   "lspkind-nvim": { "branch": "master", "commit": "c68b3a003483cf382428a43035079f78474cd11e" },
