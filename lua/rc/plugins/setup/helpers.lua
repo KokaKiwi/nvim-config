@@ -45,8 +45,10 @@ function M.setup_lspsaga()
       open = { '<CR>', 'o' },
     },
     ui = {
-      colors = cat.custom_colors(),
       kind = cat.custom_kind(),
+    },
+    symbol_in_winbar = {
+      enable = false,
     },
   }
 

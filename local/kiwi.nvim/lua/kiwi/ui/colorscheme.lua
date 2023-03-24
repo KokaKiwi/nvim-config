@@ -19,6 +19,7 @@ return function()
       gitsigns = true,
       lsp_trouble = true,
       mason = true,
+      navic = true,
       neotest = true,
       neotree = true,
       noice = true,

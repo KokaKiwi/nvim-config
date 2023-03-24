@@ -95,6 +95,7 @@
   "nvim-lint": { "branch": "master", "commit": "b16e6e424ddfb12d4b3a699c1dc41ba0f3b503da" },
   "nvim-lspconfig": { "branch": "master", "commit": "f1392727d8ab6472b6463e875f553ebd32665d65" },
   "nvim-luapad": { "branch": "master", "commit": "a5b3d6aa1fe5fe75e6124927392a9d3a60a0ecce" },
+  "nvim-navic": { "branch": "master", "commit": "bef1eb33111e177cc765c3e97f563a6313320408" },
   "nvim-notify": { "branch": "master", "commit": "50d037041ada0895aeba4c0215cde6d11b7729c4" },
   "nvim-snippy": { "branch": "master", "commit": "ab38022c766e440c494e18f1e7e487d6be053c9c" },
   "nvim-treesitter": { "branch": "master", "commit": "cb568af5393241e5dbc9c19157c5df5e9ca9af2d" },
