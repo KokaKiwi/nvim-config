@@ -16,6 +16,7 @@ return function()
         enabled = true,
         enable_ui = true,
       },
+      gitsigns = true,
       lsp_trouble = true,
       mason = true,
       neotest = true,
