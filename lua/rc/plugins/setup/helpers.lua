@@ -50,6 +50,9 @@ function M.setup_lspsaga()
     symbol_in_winbar = {
       enable = false,
     },
+    lightbulb = {
+      enable_in_insert = false,
+    },
   }
 
   nkey.register {
