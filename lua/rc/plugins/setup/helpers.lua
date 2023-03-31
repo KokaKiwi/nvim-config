@@ -187,6 +187,14 @@ function M.setup_treesitter()
       files = { 'src/parser.c' }
     },
   }
+  configs.typst = {
+    install_info = {
+      url = 'https://github.com/SeniorMars/tree-sitter-typst.git',
+      branch = 'main',
+      files = { 'src/scanner.c', 'src/parser.c' },
+    },
+    filetype = 'typst',
+  }
 
   require('nvim-treesitter.configs').setup {
     ensure_installed = 'all',
