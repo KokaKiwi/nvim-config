@@ -19,6 +19,6 @@ update:
 
 push:
   yadm push -f origin main
-  env -C $HOME yadm subtree split -P .config/nvim -b split/nvim
+  yadm -C $HOME subtree split -P .config/nvim -b split/nvim
   yadm push -f nvim split/nvim:main
   yadm branch -D split/nvim
