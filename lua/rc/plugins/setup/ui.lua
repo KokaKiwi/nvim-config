@@ -49,6 +49,10 @@ function M.setup_cosmic()
   require('cosmic-ui').setup {}
 end
 
+function M.setup_deadcolumn()
+  require('deadcolumn').setup {}
+end
+
 function M.setup_devicons()
   local devicons = require('nvim-web-devicons')
 
@@ -389,10 +393,6 @@ function M.setup_telescope()
   telescope.load_extension('lazy')
   telescope.load_extension('noice')
   telescope.load_extension('notify')
-end
-
-function M.setup_virt_column()
-  require('virt-column').setup {}
 end
 
 function M.setup_zone()

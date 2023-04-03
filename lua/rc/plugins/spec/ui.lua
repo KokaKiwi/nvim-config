@@ -181,11 +181,11 @@ return util.module('ui', function(use)
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = util.setup.rc('treesitter_context'),
   }
-  use { 'lukas-reineke/virt-column.nvim',
-    config = util.setup.rc('virt_column', 'ui'),
-  }
   use { 'lewis6991/satellite.nvim',
     config = util.setup.rc('satellite', 'ui'),
+  }
+  use { 'Bekaboo/deadcolumn.nvim',
+    config = util.setup.rc('deadcolumn', 'ui'),
   }
   use { 'anuvyklack/hydra.nvim',
     config = util.setup.rc('hydra', 'ui'),
