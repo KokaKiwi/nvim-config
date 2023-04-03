@@ -2,4 +2,5 @@
 -- neovim won't destroy my eyes with its default colorscheme.
 vim.cmd.colorscheme('uwu')
 
+vim.loader.enable()
 require('rc')
