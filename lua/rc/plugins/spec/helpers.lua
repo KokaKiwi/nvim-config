@@ -88,7 +88,7 @@ return util.module('helpers', function(use)
   use { 'williamboman/mason-lspconfig.nvim' }
   use { 'folke/trouble.nvim',
     dependencies = { 'kyazdani42/nvim-web-devicons' },
-    config = util.setup.rc('trouble'),
+    config = util.setup.rc('trouble', 'helpers'),
     cmd = { 'Trouble', 'TroubleToggle' },
   }
   use { 'mfussenegger/nvim-lint',

@@ -215,4 +215,11 @@ function M.setup_treesitter()
   vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 end
 
+function M.setup_trouble()
+  require('trouble').setup {
+    mode = 'document_diagnostics',
+    use_diagnostic_signs = true,
+  }
+end
+
 return M

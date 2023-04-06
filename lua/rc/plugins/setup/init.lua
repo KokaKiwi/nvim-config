@@ -100,7 +100,7 @@ function M.setup_navigator()
     lsp = {
       disable_lsp = 'all',
       format_on_save = false,
-      disply_diagnostic_qf = false,
+      display_diagnostic_qf = false,
       diagnostic_scrollbar_sign = false,
       code_lens_action = {
         enable = false,
@@ -146,13 +146,6 @@ function M.setup_treesitter_context()
         'impl_item',
       },
     },
-  }
-end
-
-function M.setup_trouble()
-  require('trouble').setup {
-    mode = 'document_diagnostics',
-    use_diagnostic_signs = true,
   }
 end
 
