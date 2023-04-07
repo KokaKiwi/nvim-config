@@ -391,6 +391,7 @@ function M.setup_telescope()
 
   telescope.load_extension('aerial')
   telescope.load_extension('lazy')
+  telescope.load_extension('media_files')
   telescope.load_extension('noice')
   telescope.load_extension('notify')
 end
