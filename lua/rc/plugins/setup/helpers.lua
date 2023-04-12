@@ -209,6 +209,12 @@ function M.setup_treesitter()
     context_commentstring = {
       enable = true,
     },
+    yati = {
+      enable = true,
+    },
+    indent = {
+      enable = false,
+    },
   }
 
   vim.opt.foldmethod = 'expr'

@@ -106,7 +106,10 @@ return util.module('helpers', function(use)
       end
     end,
     config = util.setup.rc('treesitter', 'helpers'),
-    dependencies = { 'JoosepAlviste/nvim-ts-context-commentstring' },
+    dependencies = {
+      'JoosepAlviste/nvim-ts-context-commentstring',
+      'yioneko/nvim-yati',
+    },
   }
   use { 'nvim-treesitter/playground',
     dependencies = { 'nvim-treesitter' },

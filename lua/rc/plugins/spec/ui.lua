@@ -120,6 +120,9 @@ return util.module('ui', function(use)
     end,
     config = util.setup.rc('modicator', 'ui'),
   }
+  use { 'VidocqH/lsp-lens.nvim',
+    config = util.setup.rc('lsp_lens', 'ui'),
+  }
 
   use { 'mvllow/modes.nvim',
     config = util.setup.rc('modes', 'ui'),

@@ -178,6 +178,10 @@ function M.setup_hydra()
   local Hydra = require('hydra')
 end
 
+function M.setup_lsp_lens()
+  require('lsp-lens').setup {}
+end
+
 function M.setup_minimap()
   prefixed(vim.g, 'minimap') {
     block_filetypes = { 'neo-tree', 'aerial' },
