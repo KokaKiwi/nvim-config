@@ -13,16 +13,16 @@ nkey.register {
 
   -- LSP
   { 'g', {
-    { 'd',  vim.lsp.buf.definition, help = 'Go to definition [LSP]' },
-    { 'D',  vim.lsp.buf.declaration, help = 'Go to declaration [LSP]' },
-    { 'I',  vim.lsp.buf.implementation, help = 'Go to implementation [LSP]' },
-    { 'r',  vim.lsp.buf.references, help = 'Find references [LSP]'},
+    { 'd', vim.lsp.buf.definition,      help = 'Go to definition [LSP]' },
+    { 'D', vim.lsp.buf.declaration,     help = 'Go to declaration [LSP]' },
+    { 'I', vim.lsp.buf.implementation,  help = 'Go to implementation [LSP]' },
+    { 'r', vim.lsp.buf.references,      help = 'Find references [LSP]'},
   } },
 
   -- Tabs
   { '<C-', {
-      { 't>', nkey.Cmd 'tabnew', help = 'Open new tab' },
-      { 'x>', nkey.Cmd 'bwipe', help = 'Close tab' },
+      { 't>', nkey.Cmd 'tabnew',  help = 'Open new tab' },
+      { 'x>', nkey.Cmd 'bwipe',   help = 'Close tab' },
   } },
 
   -- neosnippet
@@ -52,6 +52,13 @@ nkey.register {
         toggle = true,
       }
     end, help = 'Toggle File Tree' },
+  { '<C-r>', function()
+      require('neo-tree.command').execute {
+        action = 'focus',
+        source = 'remote',
+        toggle = true,
+      }
+    end, help = 'Toggle Remote File Tree' },
 
   -- telescope.nvim
   { '<Leader>f', {

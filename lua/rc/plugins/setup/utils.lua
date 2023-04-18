@@ -107,7 +107,11 @@ function M.setup_neorg()
 end
 
 function M.setup_netman()
-  require('netman')
+  local netman = require('netman')
+
+  netman.setup {}
+
+  netman.api.load_provider('netman.providers.docker')
 end
 
 function M.setup_sad()
