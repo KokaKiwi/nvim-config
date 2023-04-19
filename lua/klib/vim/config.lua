@@ -1,11 +1,14 @@
 local configs = {
   colorscheme = {
+    get = function()
+      return vim.cmd.colorscheme()
+    end,
     set = function(name)
       vim.validate {
         name = { name, 'string' },
       }
 
-      vim.cmd(string.format('colorscheme %s', name))
+      vim.cmd.colorscheme(name)
     end,
   },
 }

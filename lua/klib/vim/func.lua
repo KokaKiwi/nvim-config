@@ -14,7 +14,7 @@ function MT:__newindex(name, value)
 
   if not already_exists then
     local func = string.format(function_template, name, name)
-    vim.api.nvim_exec(func, false)
+    vim.api.nvim_exec2(func)
   end
 end
 
