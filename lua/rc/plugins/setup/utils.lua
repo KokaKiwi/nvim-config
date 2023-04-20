@@ -51,6 +51,10 @@ function M.setup_Comment()
   }
 end
 
+function M.setup_debugprint()
+  require('debugprint').setup {}
+end
+
 function M.setup_fcitx5()
   require('fcitx5').setup {}
 end

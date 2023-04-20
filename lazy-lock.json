@@ -31,6 +31,7 @@
   "crates.nvim": { "branch": "main", "commit": "1d4bb1e7a0fe8bae3f97061be5fbf6f9081a27e2" },
   "ctrlp.vim": { "branch": "master", "commit": "8b4a9523632049b3b373de1233bef346073b8982" },
   "deadcolumn.nvim": { "branch": "master", "commit": "fef1b129779b223ddde9971fc852da20dfa6717d" },
+  "debugprint.nvim": { "branch": "main", "commit": "2568a1e7e266be0fdf30fbabbebb189c94389434" },
   "diffview.nvim": { "branch": "main", "commit": "63720aa5a70ce4aa386be407d0e612cd9e63861a" },
   "direnv.vim": { "branch": "master", "commit": "4c858b8cd8cbfac998534096e6ffb710d7a07358" },
   "document-color.nvim": { "branch": "main", "commit": "74c487f0e5accfaae033755451b9e367220693fd" },

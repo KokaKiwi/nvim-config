@@ -132,6 +132,9 @@ return util.module('utils', function(use)
       { '<Leader>v', mode = 'n' },
     },
   }
+  use { 'andrewferrier/debugprint.nvim',
+    config = util.setup.rc('debugprint', 'utils'),
+  }
 
   use { 'echasnovski/mini.nvim',
     config = util.setup.rc('mini', 'utils'),
