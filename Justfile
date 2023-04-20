@@ -24,5 +24,5 @@ push:
   yadm branch -D split/nvim
 
 gc:
-  yadm gc
+  yadm gc --aggressive
   yadm prune --verbose
