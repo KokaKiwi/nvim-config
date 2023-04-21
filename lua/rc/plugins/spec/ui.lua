@@ -57,7 +57,7 @@ return util.module('ui', function(use)
     config = util.setup.rc('git_blame_virt', 'ui'),
   }
 
-  use { 'akinsho/nvim-bufferline.lua',
+  use { 'akinsho/bufferline.nvim',
     dependencies = { 'kyazdani42/nvim-web-devicons' },
     config = util.setup.mod_call('kiwi.ui.tabline'),
     event = { 'VimEnter' },
@@ -85,7 +85,6 @@ return util.module('ui', function(use)
     priority = 100,
   }
   use { 'rcarriga/nvim-notify',
-    dependencies = { 'nvim-bufferline.lua' },
     config = util.setup.rc('notify', 'ui'),
   }
   use { 'chentoast/marks.nvim',
