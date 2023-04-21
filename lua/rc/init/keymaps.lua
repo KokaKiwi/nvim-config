@@ -78,6 +78,11 @@ nkey.register {
       end, help = 'Diagnostic TextObjects' },
   }, help = '+textobjs' },
 
+  -- overseer
+  { '<C-o>', function()
+      require('overseer').toggle()
+    end, help = 'Open Overseer tasks' },
+
   -- doc
   { '<Leader>', {
     { 'k', help = 'Toggle variable highlight' },

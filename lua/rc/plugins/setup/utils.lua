@@ -128,7 +128,7 @@ function M.setup_silicon()
     theme = 'Catppuccin-mocha',
     line_number = true,
     window_title = function()
-      return vim.fn.expand('%:t')
+      return vim.fn.fnamemodify(vim.fn.bufname(vim.fn.bufnr()), ':~:.')
     end,
   }
 end

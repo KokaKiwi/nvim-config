@@ -98,7 +98,9 @@ function M.setup_null_ls()
 end
 
 function M.setup_overseer()
-  require('overseer').setup {}
+  require('overseer').setup {
+    templates = { 'builtin' },
+  }
 end
 
 function M.setup_package_info()

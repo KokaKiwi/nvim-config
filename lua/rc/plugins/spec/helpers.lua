@@ -142,6 +142,15 @@ return util.module('helpers', function(use)
   }
   use { 'stevearc/overseer.nvim',
     config = util.setup.rc('overseer', 'helpers'),
+    lazy = true,
+    cmd = {
+      'OverseerInfo',
+      'OverseerOpen', 'OverseerClose', 'OverseerToggle',
+      'OverseerSaveBundle', 'OverseerLoadBundle', 'OverseerDeleteBundle',
+      'OverseerRunCmd', 'OverseerRun', 'OverseerBuild',
+      'OverseerQuickAction', 'OverseerTaskAction',
+      'OverseerClearCache',
+    },
   }
 
   use { 'nvim-neotest/neotest',
