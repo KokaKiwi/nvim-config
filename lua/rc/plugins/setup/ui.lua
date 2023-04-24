@@ -384,6 +384,10 @@ function M.setup_satellite()
   }
 end
 
+function M.setup_scope()
+  require('scope').setup()
+end
+
 function M.setup_sentiment()
   require('sentiment').setup {}
 end
@@ -398,6 +402,7 @@ function M.setup_telescope()
   telescope.load_extension('media_files')
   telescope.load_extension('noice')
   telescope.load_extension('notify')
+  telescope.load_extension('scope')
 end
 
 function M.setup_zone()

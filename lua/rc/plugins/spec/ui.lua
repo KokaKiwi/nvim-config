@@ -148,6 +148,7 @@ return util.module('ui', function(use)
       'tsakirist/telescope-lazy.nvim',
       'nvim-telescope/telescope-media-files.nvim',
       'aerial.nvim', 'nvim-notify', 'noice.nvim',
+      'scope.nvim',
     },
     cmd = { 'Telescope' },
     config = util.setup.rc('telescope', 'ui'),
@@ -164,6 +165,9 @@ return util.module('ui', function(use)
     config = util.setup.rc('cosmic', 'ui'),
     dependencies = { 'MunifTanjim/nui.nvim', 'nvim-lua/plenary.nvim', 'nvim-lspconfig' },
     lazy = true,
+  }
+  use { 'tiagovla/scope.nvim',
+    config = util.setup.rc('scope', 'ui'),
   }
 
   use { 'rhysd/committia.vim',
