@@ -158,7 +158,6 @@ end
 
 function M.setup_treesitter()
   local configs = require('nvim-treesitter.parsers').get_parser_configs()
-  local parsers = require('nvim-treesitter.parsers').filetype_to_parsername
 
   configs.nu = {
     install_info = {
