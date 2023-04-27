@@ -132,6 +132,8 @@
   "trouble.nvim": { "branch": "main", "commit": "d56bfc0c501ced4002a57cb60433362fb2ce9c4d" },
   "undotree": { "branch": "master", "commit": "485f01efde4e22cb1ce547b9e8c9238f36566f21" },
   "urlview.nvim": { "branch": "main", "commit": "cef8de1ea2f2faf3964f2d017cd88a35e93c9fe3" },
+  "vfiler-column-devicons": { "branch": "main", "commit": "bb55ffec586335944a23ca38ec39324ddcf3f32c" },
+  "vfiler.vim": { "branch": "main", "commit": "5453682bc596433d23c602a1925bf83cec0f2c7c" },
   "viewdoc.nvim": { "branch": "master", "commit": "1521a0a7e486af6e6cb8e9b3bdd137c5f838c094" },
   "vim-better-whitespace": { "branch": "master", "commit": "1b22dc57a2751c7afbc6025a7da39b7c22db635d" },
   "vim-capnp": { "branch": "master", "commit": "954202e2c6c1cb9185082de8ddb7f2823a9d1206" },

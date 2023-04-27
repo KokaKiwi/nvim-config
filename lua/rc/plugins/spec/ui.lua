@@ -46,6 +46,11 @@ return util.module('ui', function(use)
     cond = util.cond.is_executable('nnn'),
     cmd = { 'NnnExplorer', 'NnnPicker' },
   }
+  use { 'obaland/vfiler.vim',
+    config = util.setup.rc('vfiler', 'ui'),
+    dependencies = { 'obaland/vfiler-column-devicons' },
+    cmd = { 'VFiler' },
+  }
 
   use 'tpope/vim-fugitive'
   use { 'kyazdani42/nvim-web-devicons',

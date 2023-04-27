@@ -405,6 +405,14 @@ function M.setup_telescope()
   telescope.load_extension('scope')
 end
 
+function M.setup_vfiler()
+  require('vfiler/config').setup {
+    options = {
+      columns = 'indent,devicons,name,mode,size,time',
+    },
+  }
+end
+
 function M.setup_zone()
   require('zone').setup {}
 end
