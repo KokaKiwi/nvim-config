@@ -1,7 +1,7 @@
 ---@diagnostic disable: unused-local
 local lsp = {}
 
-local AUTO_FORMAT_PATTERNS = { '*.rs', '*.ex', '*.exs', '*.hs', '*.toml' }
+local AUTO_FORMAT_PATTERNS = { '*.rs', '*.ex', '*.exs', '*.hs', '*.toml', '*.go' }
 
 function lsp.setup()
   require('mason').setup {}
