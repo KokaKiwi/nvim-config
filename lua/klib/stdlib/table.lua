@@ -126,6 +126,13 @@ end
 ---@return table
 function table.join(...)
   local tables = {...}
+  return table.fjoin(tables)
+end
+
+---table.fjoin
+---@param tables any[]
+---@return table
+function table.fjoin(tables)
   local result = {}
 
   for _, t in ipairs(tables) do
@@ -168,6 +175,22 @@ function table.extends(t, items)
   end
 
   for _, item in ipairs(items) do
+    table.insert(t, item)
+  end
+
+  return t
+end
+
+---table.dextends
+---@param t table
+---@param items any[] | nil
+---@return table | function
+function table.dextends(t, items)
+  if items == nil then
+    return func.partial(table.extends, t)
+  end
+
+  for _, item in pairs(items) do
     table.insert(t, item)
   end
 

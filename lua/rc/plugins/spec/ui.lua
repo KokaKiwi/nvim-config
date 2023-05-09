@@ -178,6 +178,11 @@ return util.module('ui', function(use)
   }
 
   use { 'goolord/alpha-nvim',
+    dependencies = {
+      { 'MaximilianLloyd/ascii.nvim',
+        dependencies = { 'nui.nvim' },
+      },
+    },
     config = util.setup.mod_call('kiwi.ui.dashboard'),
     event = { 'VimEnter' },
   }
