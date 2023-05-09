@@ -40,6 +40,13 @@ require('mason-lspconfig').setup_handlers {
   function(server_name)
     lsp[server_name].setup {}
   end,
+  ['elixirls'] = function()
+    lsp.elixirls.setup {
+      root_dir = function(fname)
+        return util.root_pattern('.git')(fname) or util.root_pattern('mix.exs')(fname) or vim.loop.os_homedir()
+      end,
+    }
+  end,
 }
 
 lsp.bashls.setup {
@@ -54,12 +61,6 @@ lsp.cssls.setup {
 }
 lsp.dhall_lsp_server.setup {}
 lsp.dockerls.setup {}
-lsp.elixirls.setup {
-  cmd = { 'elixir-ls' },
-  root_dir = function(fname)
-    return util.root_pattern('.git')(fname) or util.root_pattern('mix.exs')(fname) or vim.loop.os_homedir()
-  end,
-}
 lsp.gleam.setup {}
 lsp.gopls.setup {}
 lsp.jsonls.setup {

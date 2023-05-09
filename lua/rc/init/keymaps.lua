@@ -46,7 +46,7 @@ nkey.register {
   { '<Leader>t', nkey.Cmd 'TroubleToggle' },
 
   -- neo-tree
-  { '<C-e>', function()
+  { '<C-d>', function()
       require('neo-tree.command').execute {
         action = 'focus',
         toggle = true,
