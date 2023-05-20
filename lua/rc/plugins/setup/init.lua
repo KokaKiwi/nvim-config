@@ -31,8 +31,6 @@ function M.setup_committia()
     open_only_vim_starting = 0,
     edit_window_width = 120,
   }
-
-  vim.fn['committia#open']('git')
 end
 
 function M.setup_crates()

@@ -99,9 +99,9 @@ function M.setup_neorg()
           neorg_leader = '<Leader>o',
         },
       },
-      ['core.norg.concealer'] = {},
-      ['core.norg.dirman'] = {},
-      ['core.norg.completion'] = {
+      ['core.concealer'] = {},
+      ['core.dirman'] = {},
+      ['core.completion'] = {
         config = {
           engine = 'nvim-cmp',
         },
