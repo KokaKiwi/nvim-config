@@ -260,6 +260,8 @@ function M.setup_neo_tree()
           '.gitignore',
           '.justfile',
           '.envrc',
+          '.rtx.toml',
+          '.tool-versions',
         },
       },
       window = {
@@ -361,6 +363,8 @@ end
 
 function M.setup_notify()
   local notify = require('notify')
+
+  vim.notify = notify
 
   notify.setup {
     stages = 'fade',

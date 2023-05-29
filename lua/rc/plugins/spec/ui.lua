@@ -89,8 +89,13 @@ return util.module('ui', function(use)
     config = util.setup.rc('nkey', 'ui'),
     priority = 100,
   }
+  use {
+    name = 'committia.nvim',
+    url = 'https://gitlab.kokakiwi.net/contrib/neovim/committia.nvim.git',
+  }
   use { 'rcarriga/nvim-notify',
     config = util.setup.rc('notify', 'ui'),
+    priority = 100,
   }
   use { 'chentoast/marks.nvim',
     config = util.setup.rc('marks'),
@@ -170,10 +175,6 @@ return util.module('ui', function(use)
   }
   use { 'tiagovla/scope.nvim',
     config = util.setup.rc('scope', 'ui'),
-  }
-
-  use { 'rhysd/committia.vim',
-    config = util.setup.rc('committia'),
   }
 
   use { 'goolord/alpha-nvim',
