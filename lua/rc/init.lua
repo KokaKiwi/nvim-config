@@ -9,7 +9,7 @@ require('klib')
 
 -- Load plugins
 vim.g.mapleader = ','
-require('rc.plugins')
+require('rc.plugins').setup()
 
 -- Basic init
 vim.opt.shell = '/bin/bash'

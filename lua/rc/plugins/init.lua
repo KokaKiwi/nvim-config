@@ -1,8 +1,10 @@
----@diagnostic disable: redefined-local
-local util = require('rc.plugins.util')
+local M = {}
 
-local lazy = util.require_lazy()
-lazy.setup('rc.plugins.spec', {
+function M.setup()
+  local util = require('rc.plugins.util')
+
+  local lazy = util.require_lazy()
+  lazy.setup('rc.plugins.spec', {
     checker = {
       notify = false,
     },
@@ -31,4 +33,7 @@ lazy.setup('rc.plugins.spec', {
         lazy = '💤 ',
       },
     },
-})
+  })
+end
+
+return M

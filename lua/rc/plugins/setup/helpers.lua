@@ -122,6 +122,7 @@ end
 
 function M.setup_rust_tools()
   require('rust-tools').setup {
+    reload_workspace_from_cargo_toml = false,
     tools = {
       hover_with_actions = false,
       inlay_hints = {
@@ -132,6 +133,9 @@ function M.setup_rust_tools()
     server = {
       settings = {
         ['rust-analyzer'] = {
+          assist = {
+            emitMustUse = true,
+          },
           checkOnSave = {
             command = 'clippy',
           },
