@@ -68,6 +68,7 @@ return util.module('ui', function(use)
     event = { 'VimEnter' },
   }
   use { 'MunifTanjim/nougat.nvim',
+    dependencies = { 'Bekaboo/dropbar.nvim' },
     config = util.setup.mod_call('kiwi.ui.bars'),
   }
   use { 'nvim-lua/lsp-status.nvim',
@@ -136,12 +137,6 @@ return util.module('ui', function(use)
   use { 'ray-x/guihua.lua',
     build = util.action.shell.make('lua/fzy'),
     lazy = true,
-  }
-
-  use { 'SmiteshP/nvim-navic',
-    dependencies = { 'nvim-lspconfig' },
-    lazy = true,
-    config = util.setup.rc('navic', 'ui'),
   }
 
   use { 'xeluxee/competitest.nvim',

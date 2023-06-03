@@ -202,39 +202,6 @@ function M.setup_modicator()
   }
 end
 
-function M.setup_navic()
-  require('nvim-navic').setup {
-    icons = {
-      File = ' ',
-      Module = ' ',
-      Namespace = ' ',
-      Package = ' ',
-      Class = ' ',
-      Method = ' ',
-      Property = ' ',
-      Field = ' ',
-      Constructor = ' ',
-      Enum = ' ',
-      Interface = ' ',
-      Function = ' ',
-      Variable = ' ',
-      Constant = ' ',
-      String = ' ',
-      Number = ' ',
-      Boolean = ' ',
-      Array = ' ',
-      Object = ' ',
-      Key = ' ',
-      Null = ' ',
-      EnumMember = ' ',
-      Struct = ' ',
-      Event = ' ',
-      Operator = ' ',
-      TypeParameter = ' '
-    }
-  }
-end
-
 function M.setup_neo_tree()
   vim.g.neo_tree_remove_legacy_commands = true
 

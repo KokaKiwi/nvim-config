@@ -14,6 +14,7 @@ return util.module('syntax', function(use)
   use { 'hail2u/vim-css3-syntax', ft = 'css' }
   use { 'hjson/vim-hjson', ft = 'hjson'}
   use { 'jceb/vim-orgmode', ft = 'orgmode'}
+  use { 'kaarmu/typst.vim', ft = 'typst' }
   use { 'justinj/vim-pico8-syntax', ft = 'pico8' }
   use { 'kelwin/vim-smali', ft = 'smali' }
   use { 'killphi/vim-ebnf', ft = 'ebnf' }

@@ -108,14 +108,6 @@ local components = lazy.dict(function()
           bold = true,
         },
       },
-      context = nougat.Item {
-        content = function(item, ctx)
-          return require('nvim-navic').get_location()
-        end,
-        hidden = function(item, ctx)
-          return not require('nvim-navic').is_available()
-        end,
-      },
     },
     buf = {
       filestatus = nougat.Item {
@@ -215,14 +207,6 @@ local function make_inactive_statusline()
   return statusline
 end
 
-local function make_winbar()
-  local winbar = nougat.Bar('winbar')
-
-  winbar:add_item(components.lsp.context)
-
-  return winbar
-end
-
 local CONFIG = {
   force_inactive = {
     filetypes = { 'help' },
@@ -240,11 +224,9 @@ return function()
   local statusline = make_statusline()
   local inactive_statusline = make_inactive_statusline()
 
-  local winbar = make_winbar()
-
   nougat.bar_util.set_statusline(function(ctx)
-    local filetype = vim.api.nvim_buf_get_option(ctx.bufnr, 'filetype')
-    local buftype = vim.api.nvim_buf_get_option(ctx.bufnr, 'buftype')
+    local filetype = vim.bo[ctx.bufnr].filetype
+    local buftype = vim.bo[ctx.bufnr].buftype
 
     local disable = table.contains(CONFIG.disable.filetypes, filetype) or
       table.contains(CONFIG.disable.buftypes, buftype)
@@ -261,5 +243,5 @@ return function()
     end
   end)
 
-  nougat.bar_util.set_winbar(winbar)
+  require('dropbar').setup {}
 end
