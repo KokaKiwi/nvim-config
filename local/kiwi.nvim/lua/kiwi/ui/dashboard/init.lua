@@ -37,7 +37,7 @@ return function()
     type = 'group',
     val = {
       util.text { logo(),
-        hl = 'DashboardHeader',
+        hl = 'AlphaHeader',
       },
       { type = 'padding', val = 1 },
       infos(),
@@ -58,7 +58,7 @@ return function()
     type = 'group',
     val = {
       util.button { 'q', 'Quit', util.action.cmd('quitall'),
-        hl = 'DashboardFooter',
+        hl = 'AlphaFooter',
       },
       { type = 'padding', val = 4 },
       util.text {

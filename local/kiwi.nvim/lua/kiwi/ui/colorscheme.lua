@@ -12,6 +12,7 @@ return function()
 
     integrations = {
       aerial = true,
+      alpha = true,
       dap = {
         enabled = true,
         enable_ui = true,
