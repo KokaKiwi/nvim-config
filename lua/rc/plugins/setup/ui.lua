@@ -313,6 +313,11 @@ function M.setup_noice()
     presets = {
       bottom_search = true,
     },
+    format = {
+      spinner = {
+        name = 'dots13',
+      },
+    },
     commands = {
       messages = {
         view = 'popup',
