@@ -68,7 +68,15 @@ return util.module('ui', function(use)
     event = { 'VimEnter' },
   }
   use { 'MunifTanjim/nougat.nvim',
-    dependencies = { 'Bekaboo/dropbar.nvim' },
+    dependencies = {
+      { 'Bekaboo/dropbar.nvim',
+        enabled = false
+      },
+      { 'SmiteshP/nvim-navic',
+        dependencies = { 'nvim-lspconfig' },
+      },
+      'Pheon-Dev/pigeon',
+    },
     config = util.setup.mod_call('kiwi.ui.bars'),
   }
   use { 'nvim-lua/lsp-status.nvim',

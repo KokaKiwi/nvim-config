@@ -25,6 +25,9 @@ return function()
       lsp_saga = true,
       lsp_trouble = true,
       mason = true,
+      navic = {
+        enabled = true,
+      },
       neotest = true,
       neotree = true,
       noice = true,
