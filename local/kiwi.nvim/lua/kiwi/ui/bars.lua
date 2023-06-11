@@ -108,19 +108,6 @@ local components = lazy.dict(function()
           bold = true,
         },
       },
-      navic = nougat.Item {
-        prefix = ' ',
-        content = function(item, ctx)
-          return require('nvim-navic').get_location({
-            highlight = true,
-            click = true,
-          }, ctx.bufnr)
-        end,
-        hidden = function(item, ctx)
-          local is_available = require('nvim-navic').is_available()
-          return not is_available
-        end,
-      },
     },
     buf = {
       filestatus = nougat.Item {
@@ -220,14 +207,6 @@ local function make_inactive_statusline()
   return statusline
 end
 
-local function make_winbar()
-  local winbar = nougat.Bar('winbar')
-
-  winbar:add_item(components.lsp.navic)
-
-  return winbar
-end
-
 local CONFIG = {
   force_inactive = {
     filetypes = { 'help' },
@@ -244,8 +223,6 @@ return function()
 
   local statusline = make_statusline()
   local inactive_statusline = make_inactive_statusline()
-
-  local winbar = make_winbar()
 
   nougat.bar_util.set_statusline(function(ctx)
     local filetype = vim.bo[ctx.bufnr].filetype
@@ -266,8 +243,5 @@ return function()
     end
   end)
 
-  nougat.bar_util.set_winbar(function(ctx)
-    return winbar
-  end)
-  -- require('dropbar').setup {}
+  require('dropbar').setup {}
 end

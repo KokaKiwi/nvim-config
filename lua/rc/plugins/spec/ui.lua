@@ -69,12 +69,7 @@ return util.module('ui', function(use)
   }
   use { 'MunifTanjim/nougat.nvim',
     dependencies = {
-      { 'Bekaboo/dropbar.nvim',
-        enabled = false
-      },
-      { 'SmiteshP/nvim-navic',
-        dependencies = { 'nvim-lspconfig' },
-      },
+      { 'Bekaboo/dropbar.nvim' },
       'Pheon-Dev/pigeon',
     },
     config = util.setup.mod_call('kiwi.ui.bars'),
