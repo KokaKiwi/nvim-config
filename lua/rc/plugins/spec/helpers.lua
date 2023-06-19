@@ -49,11 +49,6 @@ return util.module('helpers', function(use)
     dependencies = { 'nvim-dap' },
   }
 
-  use { 'simrat39/rust-tools.nvim',
-    dependencies = { 'nvim-lspconfig' },
-    config = util.setup.rc('rust_tools', 'helpers'),
-    ft = { 'rust' },
-  }
   use { 'b0o/SchemaStore.nvim' }
   use { 'folke/neodev.nvim',
     dependencies = { 'nvim-dap-ui' },

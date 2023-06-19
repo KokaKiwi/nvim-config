@@ -178,6 +178,10 @@ function M.setup_hydra()
   local Hydra = require('hydra')
 end
 
+function M.setup_lsp_inlayhints()
+  require('lsp-inlayhints').setup {}
+end
+
 function M.setup_lsp_lens()
   require('lsp-lens').setup {}
 end

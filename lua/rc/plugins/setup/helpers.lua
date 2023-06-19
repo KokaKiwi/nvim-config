@@ -120,35 +120,6 @@ function M.setup_persisted()
   require('telescope').load_extension('persisted')
 end
 
-function M.setup_rust_tools()
-  require('rust-tools').setup {
-    reload_workspace_from_cargo_toml = false,
-    tools = {
-      hover_with_actions = false,
-      inlay_hints = {
-        other_hints_prefix = '» ',
-        highlight = 'NonText',
-      },
-    },
-    server = {
-      settings = {
-        ['rust-analyzer'] = {
-          assist = {
-            emitMustUse = true,
-          },
-          checkOnSave = {
-            command = 'clippy',
-          },
-          completion = {
-            addCallArgumentSnippets = false,
-            autoimport = { enable = false },
-          },
-        },
-      },
-    },
-  }
-end
-
 function M.setup_snippy()
   require('snippy').setup {
     mappings = {

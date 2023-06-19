@@ -1,6 +1,9 @@
 local util = require('lspconfig.util')
 
 local BASE_CAPABILITIES = {
+  experimental = {
+    serverStatusNotification = true,
+  },
   textDocument = {
     colorProvider = {
       dynamicRegistration = true,
@@ -19,7 +22,13 @@ local function on_attach(client, bufnr)
   require('illuminate').on_attach(client)
   require('lsp-status').on_attach(client)
   require('navigator.lspclient.attach').on_attach(client, bufnr)
-  require('nvim-navic').attach(client, bufnr)
+
+  local ok, navic = pcall(require, 'nvim-navic')
+  if ok then
+    navic.attach(client, bufnr)
+  end
+
+  require('lsp-inlayhints').on_attach(client, bufnr)
 
   if client.server_capabilities.colorProvider then
     require('document-color').buf_attach(bufnr)

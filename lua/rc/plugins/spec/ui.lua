@@ -69,13 +69,17 @@ return util.module('ui', function(use)
   }
   use { 'MunifTanjim/nougat.nvim',
     dependencies = {
-      { 'Bekaboo/dropbar.nvim' },
+      { 'Bekaboo/dropbar.nvim', enabled = false },
       'Pheon-Dev/pigeon',
     },
     config = util.setup.mod_call('kiwi.ui.bars'),
   }
   use { 'nvim-lua/lsp-status.nvim',
     config = util.setup.rc('lsp_status'),
+    lazy = true,
+  }
+  use { 'lvimuser/lsp-inlayhints.nvim',
+    config = util.setup.rc('lsp_inlayhints', 'ui'),
     lazy = true,
   }
   use {

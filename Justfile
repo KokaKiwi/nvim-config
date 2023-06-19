@@ -25,4 +25,3 @@ push:
 
 gc:
   yadm gc --aggressive
-  yadm prune --verbose

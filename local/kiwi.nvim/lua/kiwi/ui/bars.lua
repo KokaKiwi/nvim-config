@@ -243,5 +243,8 @@ return function()
     end
   end)
 
-  require('dropbar').setup {}
+  local ok, dropbar = pcall(require, 'dropbar')
+  if ok then
+    dropbar.setup {}
+  end
 end

@@ -80,6 +80,22 @@ lsp.phpactor.setup {}
 lsp.pyright.setup {}
 lsp.rhai_lsp.setup {}
 lsp.rnix.setup {}
+lsp.rust_analyzer.setup {
+  settings = {
+    ['rust-analyzer'] = {
+      assist = {
+        emitMustUse = true,
+      },
+      checkOnSave = {
+        command = 'clippy',
+      },
+      completion = {
+        addCallArgumentsSnippets = false,
+        autoimport = { enable = false },
+      },
+    },
+  },
+}
 lsp.scry.setup {}
 lsp.solargraph.setup {}
 lsp.sqlls.setup {
