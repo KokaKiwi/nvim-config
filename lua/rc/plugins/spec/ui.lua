@@ -70,6 +70,9 @@ return util.module('ui', function(use)
   use { 'MunifTanjim/nougat.nvim',
     dependencies = {
       { 'Bekaboo/dropbar.nvim', enabled = false },
+      { 'SmiteshP/nvim-navic', enabled = true,
+        dependencies = { 'nvim-lspconfig' },
+      },
       'Pheon-Dev/pigeon',
     },
     config = util.setup.mod_call('kiwi.ui.bars'),
@@ -127,6 +130,7 @@ return util.module('ui', function(use)
   use { 'folke/noice.nvim',
     dependencies = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' },
     config = util.setup.rc('noice', 'ui'),
+    event = { 'VeryLazy' },
   }
   use { 'melkster/modicator.nvim',
     dependencies = { 'catppuccin' },
