@@ -5,6 +5,7 @@ return util.module('utils', function(use)
 
   use { 'windwp/nvim-autopairs',
     config = util.setup.rc('autopairs', 'utils'),
+    event = { 'InsertEnter' },
   }
 
   use { 'glts/vim-radical',

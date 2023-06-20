@@ -31,7 +31,7 @@ return function()
 
   local alpha = require('alpha')
   local lazy = require('lazy')
-  local lazy_stats = lazy.stats()
+  local startuptime = 0
 
   local header = {
     type = 'group',
@@ -63,15 +63,16 @@ return function()
       { type = 'padding', val = 4 },
       util.text {
         function()
-          if lazy_stats.startuptime == 0 then
+          if startuptime == 0 then
             return ''
           end
-          return string.format('Started in %ims', lazy_stats.startuptime)
+          return string.format('Started in %ims', startuptime)
         end,
         hl = 'NonText',
       },
       util.text {
         function()
+          local lazy_stats = lazy.stats()
           return string.format('Plugins: %i loaded / %i total', lazy_stats.loaded, lazy_stats.count)
         end,
         hl = 'NonText',
@@ -86,7 +87,9 @@ return function()
   vim.api.nvim_create_autocmd('User', {
     pattern = 'LazyVimStarted',
     callback = function()
-      lazy_stats = lazy.stats()
+      local lazy_stats = lazy.stats()
+      startuptime = lazy_stats.startuptime
+
       alpha.redraw()
     end,
   })
