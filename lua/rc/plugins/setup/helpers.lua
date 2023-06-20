@@ -116,8 +116,6 @@ function M.setup_persisted()
     autosave = false,
     branch_separator = '@@',
   }
-
-  require('telescope').load_extension('persisted')
 end
 
 function M.setup_snippy()

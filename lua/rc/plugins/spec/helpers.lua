@@ -111,14 +111,14 @@ return util.module('helpers', function(use)
     dependencies = {
       'JoosepAlviste/nvim-ts-context-commentstring',
       'yioneko/nvim-yati',
+      'nkrkv/nvim-treesitter-rescript',
+      'vim-illuminate',
     },
+    event = { 'VeryLazy' },
   }
   use { 'nvim-treesitter/playground',
     dependencies = { 'nvim-treesitter' },
     cmd = { 'TSPlaygroundToggle', 'TSHighlightCapturesUnderCursor', 'TSNodeUnderCursor' },
-  }
-  use { 'nkrkv/nvim-treesitter-rescript',
-    dependencies = { 'nvim-treesitter' },
   }
   use { 'Julian/lean.nvim',
     ft = { 'lean', 'lean3', 'leaninfo' },
@@ -135,7 +135,6 @@ return util.module('helpers', function(use)
   }
   use { 'olimorris/persisted.nvim',
     config = util.setup.rc('persisted', 'helpers'),
-    dependencies = { 'telescope.nvim' },
   }
 
   use { 'sbdchd/neoformat',

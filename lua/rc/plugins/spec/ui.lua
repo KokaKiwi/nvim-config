@@ -3,6 +3,7 @@ local util = require('rc.plugins.util')
 return util.module('ui', function(use)
   use { 'RRethy/vim-illuminate',
     config = util.setup.rc('illuminate'),
+    lazy = true,
   }
   use { 'norcalli/nvim-colorizer.lua',
     config = util.setup.rc('colorizer'),
@@ -58,7 +59,7 @@ return util.module('ui', function(use)
     lazy = true,
   }
   use { 'robert-oleynik/git-blame-virt.nvim',
-    dependencies = { 'nvim-treesitter' },
+    dependencies = { 'plenary.nvim' },
     config = util.setup.rc('git_blame_virt', 'ui'),
   }
 
@@ -157,7 +158,7 @@ return util.module('ui', function(use)
       'tsakirist/telescope-lazy.nvim',
       'nvim-telescope/telescope-media-files.nvim',
       'aerial.nvim', 'nvim-notify', 'noice.nvim',
-      'scope.nvim',
+      'scope.nvim', 'persisted.nvim',
     },
     cmd = { 'Telescope' },
     config = util.setup.rc('telescope', 'ui'),

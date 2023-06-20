@@ -378,6 +378,7 @@ function M.setup_telescope()
   telescope.load_extension('media_files')
   telescope.load_extension('noice')
   telescope.load_extension('notify')
+  telescope.load_extension('persisted')
   telescope.load_extension('scope')
 end
 
