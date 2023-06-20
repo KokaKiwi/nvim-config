@@ -81,10 +81,6 @@ return util.module('ui', function(use)
     config = util.setup.rc('lsp_status'),
     lazy = true,
   }
-  use { 'lvimuser/lsp-inlayhints.nvim',
-    config = util.setup.rc('lsp_inlayhints', 'ui'),
-    lazy = true,
-  }
   use {
     name = 'hook.nvim',
     url = 'https://gitlab.kokakiwi.net/contrib/neovim/hook.nvim.git',

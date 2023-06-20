@@ -61,7 +61,6 @@
   "lean.vim": { "branch": "master", "commit": "e4414d0f4221f9ad2c94cf799ac53c8dbcd30229" },
   "legendary.nvim": { "branch": "master", "commit": "6a3b2411146432f83ef44c7980d7a2b20f7a39ce" },
   "lh-vim-lib": { "branch": "master", "commit": "1f6d455be8181ca047cc1c4a980815f2d3c98fc4" },
-  "lsp-inlayhints.nvim": { "branch": "main", "commit": "d981f65c9ae0b6062176f0accb9c151daeda6f16" },
   "lsp-status.nvim": { "branch": "master", "commit": "54f48eb5017632d81d0fd40112065f1d062d0629" },
   "lspkind-nvim": { "branch": "master", "commit": "57610d5ab560c073c465d6faf0c19f200cb67e6e" },
   "lspsaga.nvim": { "branch": "main", "commit": "4f075452c466df263e69ae142f6659dcf9324bf6" },

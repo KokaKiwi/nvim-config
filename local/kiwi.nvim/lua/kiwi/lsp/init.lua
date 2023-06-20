@@ -33,6 +33,10 @@ function lsp.setup()
     complete = { 'trace', 'debug', 'info', 'warn', 'error', 'off' },
   })
 
+  vim.command('LspToggleInlayHints', function()
+    vim.lsp.buf.inlay_hint(0)
+  end)
+
   vim.augroup('KiwiLsp', function()
     vim.autocmd('BufWritePre', AUTO_FORMAT_PATTERNS, function()
       vim.lsp.buf.format { async = true }
