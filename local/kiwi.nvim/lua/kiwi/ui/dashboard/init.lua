@@ -14,21 +14,13 @@ local function infos()
   }
 end
 
-return function()
-  ---@class _NvimVersion
-  ---@field major integer
-  ---@field minor integer
-  ---@field patch integer
-  ---@field api_level integer
-  local nvim_version = vim.version()
-  local nvim_version_str = string.format(
-    'v%i.%i.%i (API level: %i)',
-    nvim_version.major,
-    nvim_version.minor,
-    nvim_version.patch,
-    nvim_version.api_level
-  )
+---@class _NvimVersion
+---@field major integer
+---@field minor integer
+---@field patch integer
+---@field api_level integer
 
+return function()
   local alpha = require('alpha')
   local lazy = require('lazy')
   local startuptime = 0
@@ -78,7 +70,12 @@ return function()
         hl = 'NonText',
       },
       util.text {
-        string.format('neovim %s', nvim_version_str),
+        function()
+          ---@class _NvimVersion
+          local nvim_version = vim.version()
+
+          return string.format('Neovim %s (API level: %i)', tostring(nvim_version), nvim_version.api_level)
+        end,
         hl = 'NonText',
       }
     },

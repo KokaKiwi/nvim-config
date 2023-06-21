@@ -81,7 +81,6 @@ return util.module('helpers', function(use)
       'nvim-web-devicons',
       'nvim-treesitter',
       'nvim-lspconfig',
-      'catppuccin',
     },
     config = util.setup.rc('lspsaga', 'helpers'),
     event = { 'LspAttach' },
