@@ -55,9 +55,6 @@ return util.module('utils', function(use)
   use { 'andweeb/presence.nvim',
     config = util.setup.rc('presence'),
   }
-  use { 'direnv/direnv.vim',
-    cond = util.cond.is_executable('direnv'),
-  }
   use { 'lkemitchll/kitty-runner.nvim',
     config = util.setup.rc('kitty_runner', 'utils'),
   }
