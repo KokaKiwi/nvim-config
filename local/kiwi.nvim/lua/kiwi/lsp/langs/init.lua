@@ -91,7 +91,6 @@ lsp.rust_analyzer.setup {
       },
       completion = {
         addCallArgumentsSnippets = false,
-        autoimport = { enable = false },
       },
     },
   },

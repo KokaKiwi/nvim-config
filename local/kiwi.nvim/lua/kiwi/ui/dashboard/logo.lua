@@ -12,8 +12,10 @@ local function logos()
     return ascii.art.animals.cats[name]
   end))
   table.dextends(logo_texts, ascii.art.animals.pandas)
-  table.dextends(logo_texts, ascii.art.gaming.pacman)
-  table.dextends(logo_texts, ascii.art.gaming.undertale)
+  table.extends(logo_texts, table.map({'doom', 'pacman', 'undertale'}, function(name)
+    return ascii.art.gaming[name]
+  end))
+  table.dextends(logo_texts, ascii.art.misc.hydra)
   table.dextends(logo_texts, ascii.art.misc.skulls)
   table.dextends(logo_texts, ascii.art.text.neovim)
 
