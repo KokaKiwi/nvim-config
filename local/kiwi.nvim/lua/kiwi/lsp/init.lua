@@ -34,7 +34,7 @@ function lsp.setup()
   })
 
   vim.command('LspToggleInlayHints', function()
-    vim.lsp.buf.inlay_hint(0)
+    vim.lsp.inlay_hint(0)
   end)
 
   vim.augroup('KiwiLsp', function()

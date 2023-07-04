@@ -90,7 +90,9 @@ lsp.rust_analyzer.setup {
         command = 'clippy',
       },
       completion = {
-        addCallArgumentsSnippets = false,
+        callable = {
+          snippets = 'add_parentheses',
+        },
       },
     },
   },

@@ -1,6 +1,6 @@
 local logos_basedir = string.format('%s/local/kiwi.nvim/assets/dashboard/logos', vim.fn.stdpath('config'))
 
-local function logos()
+local function get_logos()
   local ascii = require('ascii')
 
   local logo_files = table.map(fs.readdir(logos_basedir), function(entry)
@@ -8,13 +8,16 @@ local function logos()
   end)
 
   local logo_texts = {}
-  table.extends(logo_texts, table.map({'mittens', 'kitkat', 'cookie', 'pouncy'}, function(name)
-    return ascii.art.animals.cats[name]
-  end))
+  table.extends(logo_texts, {
+    ascii.art.animals.cats.cookie,
+    ascii.art.animals.cats.kitkat,
+    ascii.art.animals.cats.mittens,
+    ascii.art.animals.cats.pouncy,
+  })
   table.dextends(logo_texts, ascii.art.animals.pandas)
-  table.extends(logo_texts, table.map({'doom', 'pacman', 'undertale'}, function(name)
-    return ascii.art.gaming[name]
-  end))
+  table.dextends(logo_texts, ascii.art.gaming.doom)
+  table.dextends(logo_texts, ascii.art.gaming.pacman)
+  table.dextends(logo_texts, ascii.art.gaming.undertale)
   table.dextends(logo_texts, ascii.art.misc.hydra)
   table.dextends(logo_texts, ascii.art.misc.skulls)
   table.dextends(logo_texts, ascii.art.text.neovim)
@@ -24,7 +27,7 @@ local function logos()
   end)
 
   return table.fjoin({
-    logo_files,
+    -- logo_files,
     logo_texts,
   })
 end
@@ -33,7 +36,8 @@ end
 return function()
   local logo_text = nil
 
-  local logo = math.randomchoice(logos())
+  local logos = get_logos()
+  local logo = math.randomchoice(logos)
   if logo[1] == 'file' then
     local logo_file = string.format('%s/%s', logos_basedir, logo[2])
     logo_text = fs.readfile(logo_file, {})

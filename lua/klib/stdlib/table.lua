@@ -238,3 +238,27 @@ function table.keys(t)
 
   return keys
 end
+
+function table.resolve(t, path)
+  local cur = t
+
+  for _, name in ipairs(path) do
+    cur = cur[name]
+  end
+
+  return cur
+end
+
+function table.resolve_rec(t, paths, prefix)
+  local items = {}
+
+  local path = {}
+  if prefix ~= nil then
+    table.insert(path, prefix)
+  end
+
+  for _, name in ipairs(t) do
+  end
+
+  return items
+end
