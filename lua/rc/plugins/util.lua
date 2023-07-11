@@ -57,7 +57,10 @@ util.cond = {
     return vim.fn.executable(name) == 1
   end,
   has_module = function(name)
-    local has_module, _ = pcall(require, name)
+    local has_module, err = pcall(require, name)
+    if not has_module and os.getenv('DEBUG') then
+      print(err)
+    end
     return has_module
   end,
 

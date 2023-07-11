@@ -1,30 +1,22 @@
-_G.cond = {}
-
----@param value boolean
----@param then_value any
----@param else_value any
----@return any
-function cond.if_else(value, then_value, else_value)
+-- [nfnl] Compiled from fnl/klib/stdlib/cond.fnl by https://github.com/Olical/nfnl, do not edit.
+local function if_else(value, _then, _else)
   if value then
-    return then_value
+    return _then
   else
-    return else_value
+    return _else
   end
 end
-
----@param value boolean
----@param else_value any
----@return function(then_value:any):any
-function cond.prefixed(value, else_value)
-  return function(then_value)
-    return cond.if_else(value, then_value, else_value)
+local function prefixed(value, _else)
+  local function _2_(_then)
+    return if_else(value, _then, _else)
   end
+  return _2_
 end
-
----@param name string
----@return boolean
-function cond.has_package(name)
-  local result, _ = pcall(require, name)
-
+local function has_package(name)
+  local _let_3_ = pcall(require, name)
+  local result = _let_3_[1]
+  local _ = _let_3_[2]
   return result
 end
+_G.cond = {if_else = if_else, prefixed = prefixed, has_package = has_package}
+return nil

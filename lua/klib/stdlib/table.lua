@@ -1,264 +1,189 @@
--- table.map
-function table.map(t, fn, to_map)
+-- [nfnl] Compiled from fnl/klib/stdlib/new/table.fnl by https://github.com/Olical/nfnl, do not edit.
+table.map = function(t, f, _3fto_map)
   local result = {}
-
   for _, item in ipairs(t) do
-    local left, right = fn(item)
-
-    if to_map then
-      if left ~= nil then
+    if _3fto_map then
+      local _let_1_ = f(item)
+      local left = _let_1_[1]
+      local right = _let_1_[2]
+      if (left ~= nil) then
         result[left] = right
+      else
       end
     else
-      local res = fn(item)
+      local res = f(item)
       table.insert(result, res)
     end
-
   end
-
   return result
 end
-
----table.dmap
----@param t table
----@param fn function
----@return table
-function table.dmap(t, fn, to_list)
-  if to_list == nil then
-    to_list = false
-  end
-
+table.dmap = function(t, f, _3fto_list)
   local result = {}
-
   for key, value in pairs(t) do
-    local a, b = fn(key, value)
-
-    if b ~= nil then
+    local _let_4_ = f(key, value)
+    local a = _let_4_[1]
+    local b = _let_4_[2]
+    if (b ~= nil) then
       result[a] = b
     else
-      if to_list then
+      if _3fto_list then
         table.insert(result, a)
       else
         result[key] = a
       end
     end
   end
-
   return result
 end
-
----table.filter
----@param t table
----@param fn function
----@return any[]
-function table.filter(t, fn)
-  local result = {}
-
+table.any = function(t, f)
+  local result = false
   for _, item in ipairs(t) do
-    if fn(item) then
+    if result then break end
+    if f(item) then
+      result = true
+    else
+    end
+  end
+  return result
+end
+table.contains = function(t, value)
+  local function _8_(item)
+    return (item == value)
+  end
+  return table.any(t, _8_)
+end
+table.filter = function(t, f)
+  local result = {}
+  for _, item in ipairs(t) do
+    if f(item) then
       table.insert(result, item)
+    else
     end
   end
-
   return result
 end
-
----table.dfilter
----@param t table
----@param fn function
----@return table
-function table.dfilter(t, fn)
+table.dfilter = function(t, f)
   local result = {}
-
   for key, value in pairs(t) do
-    if fn(key, value) then
+    if f(key, value) then
       result[key] = value
+    else
     end
   end
-
   return result
 end
-
----table.filterkeys
----@param t table
----@param keys string[]
----@return table
-function table.filterkeys(t, keys)
-  return table.dfilter(t, function(key, _)
+table.filterkeys = function(t, keys)
+  local function _11_(key, _)
     return table.contains(keys, key)
-  end)
+  end
+  return table.dfilter(t, _11_)
 end
-
----table.filtermap
----@param t table
----@param fn function
----@return table
-function table.filtermap(t, fn)
+table.filtermap = function(t, f)
   local result = {}
-
   for _, item in ipairs(t) do
-    local res, value = fn(item)
+    local _let_12_ = f(item)
+    local res = _let_12_[1]
+    local value = _let_12_[2]
     if res then
       table.insert(result, value)
+    else
     end
   end
-
   return result
 end
-
--- table.any
-function table.any(t, fn)
-  for _, item in ipairs(t) do
-    if fn(item) then
-      return true
-    end
-  end
-
-  return false
-end
-
--- table.contains
-function table.contains(t, value)
-  return table.any(t, function(item) return item == value end)
-end
-
----table.join
----@return table
-function table.join(...)
-  local tables = {...}
-  return table.fjoin(tables)
-end
-
----table.fjoin
----@param tables any[]
----@return table
-function table.fjoin(tables)
+table.fjoin = function(tables)
   local result = {}
-
   for _, t in ipairs(tables) do
-    for _, item in ipairs(t) do
+    for _0, item in ipairs(t) do
       table.insert(result, item)
     end
   end
-
   return result
 end
-
-function table.djoin(...)
-  local tables = {...}
+table.fdjoin = function(tables)
   local result = {}
-
   for _, t in ipairs(tables) do
     for key, value in pairs(t) do
       result[key] = value
     end
   end
-
   return result
 end
-
----table.append
----@param t table
----@return table
-function table.append(t, ...)
-  local items = {...}
-  return table.extends(t, items)
+table.djoin = function(...)
+  return table.fdjoin({...})
 end
-
----table.extends
----@param t table
----@param items any[] | nil
----@return table | function
-function table.extends(t, items)
-  if items == nil then
-    return func.partial(table.extends, t)
-  end
-
-  for _, item in ipairs(items) do
-    table.insert(t, item)
-  end
-
-  return t
+table.join = function(...)
+  return table.fjoin({...})
 end
-
----table.dextends
----@param t table
----@param items any[] | nil
----@return table | function
-function table.dextends(t, items)
-  if items == nil then
-    return func.partial(table.extends, t)
-  end
-
-  for _, item in pairs(items) do
-    table.insert(t, item)
-  end
-
-  return t
-end
-
----@param t table
----@param deep boolean | nil
----@return table
-function table.copy(t, deep)
-  if deep == nil then
-    deep = true
-  end
-
-  local seen = {}
-  local function _copy(tbl)
-    if seen[tbl] ~= nil then
-      return seen[tbl]
-    else
-      local copy = {}
-      seen[tbl] = copy
-
-      for k, v in pairs(tbl) do
-        if type(v) == 'table' then
-          v = _copy(v)
-        end
-        copy[k] = v
-      end
-
-      return setmetatable(copy, getmetatable(tbl))
+table.extends = function(t, items)
+  if (items == nil) then
+    local function _14_(...)
+      return table.extends(t, ...)
     end
+    return _14_
+  else
+    for _, item in ipairs(items) do
+      table.insert(t, item)
+    end
+    return t
   end
-
-  return _copy(t)
 end
-
----@param t table
----@return string[]
-function table.keys(t)
+table.dextends = function(t, items)
+  if (items == nil) then
+    local function _16_(...)
+      return table.dextends(t, ...)
+    end
+    return _16_
+  else
+    for _, item in pairs(items) do
+      table.insert(t, item)
+    end
+    return t
+  end
+end
+table.append = function(t, ...)
+  return table.extends(t, {...})
+end
+table.keys = function(t)
   local keys = {}
-
   for key, _ in pairs(t) do
     table.insert(keys, key)
   end
-
   return keys
 end
-
-function table.resolve(t, path)
+table.resolve = function(t, path)
   local cur = t
-
-  for _, name in ipairs(path) do
-    cur = cur[name]
+  for _, key in ipairs(path) do
+    cur = cur[key]
   end
-
   return cur
 end
-
-function table.resolve_rec(t, paths, prefix)
-  local items = {}
-
-  local path = {}
-  if prefix ~= nil then
-    table.insert(path, prefix)
+table.copy = function(t, deep_3f)
+  local deep_3f0
+  if (deep_3f ~= nil) then
+    deep_3f0 = deep_3f
+  else
+    deep_3f0 = true
   end
-
-  for _, name in ipairs(t) do
+  local seen = {}
+  local function do_copy(t0)
+    if (seen[t0] ~= nil) then
+      return seen[t0]
+    else
+      local copy = {}
+      seen[t0] = copy
+      for k, v in pairs(t0) do
+        local _19_
+        if (deep_3f0 and (type(v) == "table")) then
+          _19_ = do_copy(v)
+        else
+          _19_ = v
+        end
+        copy[k] = _19_
+      end
+      return setmetatable(copy, getmetatable(t0))
+    end
   end
-
-  return items
+  return do_copy(t)
 end
+return table.copy

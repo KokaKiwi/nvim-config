@@ -1,14 +1,11 @@
-_G.func = {}
-
----func.partial
----@param fn function
----@return function
-function func.partial(fn, ...)
+-- [nfnl] Compiled from fnl/klib/stdlib/func.fnl by https://github.com/Olical/nfnl, do not edit.
+local function lua_partial(f, ...)
   local pargs = {...}
-
-  return function(...)
+  local function _1_(...)
     local args = {...}
-
-    return fn(unpack(table.join(pargs, args)))
+    return f(unpack(table.join(pargs, args)))
   end
+  return _1_
 end
+_G.func = {partial = lua_partial}
+return nil
