@@ -86,6 +86,15 @@ function M.setup_neotest()
   })
 end
 
+function M.setup_nkey()
+  require('nkey').setup {
+    integrations = {
+      'legendary',
+      'which_key',
+    },
+  }
+end
+
 function M.setup_null_ls()
   local null_ls = require('null-ls')
 

@@ -86,6 +86,21 @@ return util.module('helpers', function(use)
     config = util.setup.rc('lspsaga', 'helpers'),
     event = { 'LspAttach' },
   }
+  use {
+    name = 'hook.nvim',
+    url = 'https://gitlab.kokakiwi.net/contrib/neovim/hook.nvim.git',
+  }
+  use {
+    name = 'nkey.nvim',
+    url = 'https://gitlab.kokakiwi.net/contrib/neovim/nkey.nvim.git',
+    dependencies = {
+      'folke/which-key.nvim',
+      'Cassin01/wf.nvim',
+      'mrjones2014/legendary.nvim'
+    },
+    config = util.setup.rc('nkey', 'helpers'),
+    priority = 100,
+  }
   use { 'williamboman/mason.nvim' }
   use { 'williamboman/mason-lspconfig.nvim' }
   use { 'folke/trouble.nvim',

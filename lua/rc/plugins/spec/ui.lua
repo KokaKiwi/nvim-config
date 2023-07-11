@@ -83,21 +83,6 @@ return util.module('ui', function(use)
     lazy = true,
   }
   use {
-    name = 'hook.nvim',
-    url = 'https://gitlab.kokakiwi.net/contrib/neovim/hook.nvim.git',
-  }
-  use {
-    name = 'nkey.nvim',
-    url = 'https://gitlab.kokakiwi.net/contrib/neovim/nkey.nvim.git',
-    dependencies = {
-      'folke/which-key.nvim',
-      'Cassin01/wf.nvim',
-      'mrjones2014/legendary.nvim'
-    },
-    config = util.setup.rc('nkey', 'ui'),
-    priority = 100,
-  }
-  use {
     name = 'committia.nvim',
     url = 'https://gitlab.kokakiwi.net/contrib/neovim/committia.nvim.git',
   }
@@ -137,6 +122,9 @@ return util.module('ui', function(use)
       vim.o.termguicolors = true
     end,
     config = util.setup.rc('modicator', 'ui'),
+  }
+  use { '3rd/image.nvim',
+    config = util.setup.rc('image', 'ui'),
   }
 
   use { 'mvllow/modes.nvim',

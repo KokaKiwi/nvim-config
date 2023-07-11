@@ -178,6 +178,12 @@ function M.setup_hydra()
   local Hydra = require('hydra')
 end
 
+function M.setup_image()
+  require('image').setup {
+    backend = 'kitty',
+  }
+end
+
 function M.setup_lsp_lens()
   require('lsp-lens').setup {}
 end
@@ -276,15 +282,6 @@ function M.setup_neo_tree()
           }
         end,
       },
-    },
-  }
-end
-
-function M.setup_nkey()
-  require('nkey').setup {
-    integrations = {
-      'legendary',
-      'which_key',
     },
   }
 end
