@@ -3,6 +3,13 @@ local M = {}
 function M.setup()
   local util = require('rc.plugins.util')
 
+  local home = os.getenv('HOME')
+  package.path = string.format(
+    '%s;%s/.luarocks/share/lua/5.1/?/init.lua;%s/.luarocks/share/lua/5.1/?.lua',
+    package.path,
+    home, home
+  )
+
   local lazy = util.require_lazy()
   lazy.setup('rc.plugins.spec', {
     checker = {

@@ -124,6 +124,7 @@ return util.module('ui', function(use)
     config = util.setup.rc('modicator', 'ui'),
   }
   use { '3rd/image.nvim',
+    cond = util.cond.has_module('magick'),
     config = util.setup.rc('image', 'ui'),
   }
 
