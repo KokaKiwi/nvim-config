@@ -27,4 +27,5 @@ return util.module('syntax', function(use)
   use { 'thyrgle/vim-dyon', ft = 'dyon' }
   use { 'fladson/vim-kitty', ft = { 'kitty', 'kitty-session' } }
   use { 'rescript-lang/vim-rescript', ft = { 'rescript' } }
+  use { 'Olical/nfnl', ft = { 'fennel' }, config = true }
 end)
