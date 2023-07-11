@@ -76,7 +76,8 @@ return util.module('helpers', function(use)
     dependencies = { 'SchemaStore.nvim', 'neodev.nvim' },
     config = util.setup.mod_setup('kiwi.lsp'),
   }
-  use { 'glepnir/lspsaga.nvim',
+  use { 'nvimdev/lspsaga.nvim',
+    commit = '4f075452c466df263e69ae142f6659dcf9324bf6',
     dependencies = {
       'nvim-web-devicons',
       'nvim-treesitter',
