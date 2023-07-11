@@ -266,13 +266,20 @@ return function()
     end
   end)
 
+  local use_dropbar = false
+  local use_navic = true
+
   local has_dropbar, dropbar = pcall(require, 'dropbar')
   if has_dropbar then
-    dropbar.setup {}
+    dropbar.setup {
+      general = {
+        enable = use_dropbar,
+      },
+    }
   end
 
   local has_navic, _ = pcall(require, 'nvim-navic')
-  if has_navic then
+  if has_navic and use_navic then
     nougat.bar_util.set_winbar(winbar)
   end
 end

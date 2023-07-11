@@ -70,8 +70,8 @@ return util.module('ui', function(use)
   }
   use { 'MunifTanjim/nougat.nvim',
     dependencies = {
-      { 'Bekaboo/dropbar.nvim', enabled = false },
-      { 'SmiteshP/nvim-navic', enabled = true,
+      { 'Bekaboo/dropbar.nvim' },
+      { 'SmiteshP/nvim-navic',
         dependencies = { 'nvim-lspconfig' },
       },
       'Pheon-Dev/pigeon',
