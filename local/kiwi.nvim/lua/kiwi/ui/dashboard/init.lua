@@ -82,7 +82,7 @@ return function()
   }
 
   vim.api.nvim_create_autocmd('User', {
-    pattern = 'LazyVimStarted',
+    pattern = { 'LazyVimStarted', 'LazyLoad' },
     callback = function()
       local lazy_stats = lazy.stats()
       startuptime = lazy_stats.startuptime
