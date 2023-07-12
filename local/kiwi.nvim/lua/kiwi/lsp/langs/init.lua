@@ -72,10 +72,10 @@ lsp.jsonls.setup {
   },
 }
 lsp.lemminx.setup {}
-lsp.nimls.setup {}
 lsp.lua_ls.setup {
   cmd = { 'lua-language-server' },
 }
+lsp.nim_langserver.setup {}
 lsp.phpactor.setup {}
 lsp.pyright.setup {}
 lsp.rhai_lsp.setup {}
