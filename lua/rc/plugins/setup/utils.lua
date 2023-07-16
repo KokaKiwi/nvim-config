@@ -55,7 +55,7 @@ function M.setup_debugprint()
         left = 'puts "',
         right = '"',
         mid_var = '#{',
-        right_var = '}',
+        right_var = '}"',
       },
     },
   }
