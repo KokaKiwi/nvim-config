@@ -72,7 +72,7 @@
   "modes.nvim": { "branch": "main", "commit": "4d97a51ebbdb649b85f6d79da0009fddd7081a6b" },
   "modicator.nvim": { "branch": "main", "commit": "2c19ec450532159fa4cf8f89a01d3de07d929c59" },
   "navigator.lua": { "branch": "master", "commit": "f936d926b9d7a1656f634bed6a4e12e2e82c86e5" },
-  "neo-tree.nvim": { "branch": "v2.x", "commit": "b529fb2ae9206ca1d84ee72b596deecbc088ac59" },
+  "neo-tree.nvim": { "branch": "v3.x", "commit": "981a43adcca25e7ccc3c589902d49f25e4d48ebc" },
   "neoconf.nvim": { "branch": "main", "commit": "08f146d53e075055500dca35e93281faff95716b" },
   "neodev.nvim": { "branch": "main", "commit": "d89c108a091172fa46dbdcb8486c6645127aabe1" },
   "neoformat": { "branch": "master", "commit": "b35ae45f9425c817126be4cc946a950c1cffe6fa" },
