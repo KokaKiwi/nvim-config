@@ -46,7 +46,7 @@
   "gleam.vim": { "branch": "master", "commit": "847a5ef57c2faef2774242c87f711d1131b89fe6" },
   "glow.nvim": { "branch": "main", "commit": "bbd0473d72a45094495ee5600b5577823543eefe" },
   "guihua.lua": { "branch": "master", "commit": "ab8b1f09603cc268770efd057115035dc6cfa83d" },
-  "haskell-tools.nvim": { "branch": "master", "commit": "738857f11aa545152fc7bf489ccef740097105d9" },
+  "haskell-tools.nvim": { "branch": "master", "commit": "44dca47ca7f054790fca741083b928a894546ee5" },
   "headlines.nvim": { "branch": "master", "commit": "ddef41b2664f0ce25fe76520d708e2dc9dfebd70" },
   "hologram.nvim": { "branch": "main", "commit": "c91aa77121162d8ff554b18a487a3f60677447f2" },
   "hydra.nvim": { "branch": "master", "commit": "3ced42c0b6a6c85583ff0f221635a7f4c1ab0dd0" },
