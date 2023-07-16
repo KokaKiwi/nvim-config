@@ -49,7 +49,16 @@ function M.setup_Comment()
 end
 
 function M.setup_debugprint()
-  require('debugprint').setup {}
+  require('debugprint').setup {
+    filetypes = {
+      crystal = {
+        left = 'puts "',
+        right = '"',
+        mid_var = '#{',
+        right_var = '}',
+      },
+    },
+  }
 end
 
 function M.setup_fcitx5()
