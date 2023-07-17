@@ -25,19 +25,24 @@ end
 function util.module(group_name, init_fn)
   local plugins = {}
 
-  local function _use(spec)
+  local function use(spec)
     if type(spec) == 'string' then
       spec = { spec }
     end
 
-    if spec.gitlab ~= nil then
-      local gitlab_host = spec.gitlab_host or 'gitlab.com'
+    if spec.gitlab ~= nil and spec.gitlab ~= false then
+      local gitlab_host = 'gitlab.com'
+      if type(spec.gitlab) == 'string' then
+        gitlab_host = spec.gitlab
+      elseif spec.gitlab_host ~= nil then
+        gitlab_host = spec.gitlab_host
+      end
       spec.url = string.format('https://%s/%s', gitlab_host, spec.gitlab)
       spec.gitlab = nil
       spec.gitlab_host = nil
     end
 
-    if spec['local'] ~= nil then
+    if spec['local'] ~= nil and spec['local'] ~= false then
       spec.dir = string.format('%s/local/%s', vim.fn.stdpath('config'), spec['local'])
       spec['local'] = nil
     end
@@ -47,7 +52,7 @@ function util.module(group_name, init_fn)
     table.insert(plugins, spec)
   end
 
-  init_fn(_use)
+  init_fn(use)
 
   return plugins
 end

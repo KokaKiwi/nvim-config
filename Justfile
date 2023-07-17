@@ -10,9 +10,8 @@ amend:
 
 push:
   yadm push -f origin main
-  yadm -C $HOME subtree split -P .config/nvim -b split/nvim
-  yadm push -f nvim split/nvim:main
-  yadm branch -D split/nvim
+  -yadm -C $HOME subtree split -P .config/nvim -b split/nvim && yadm push -f nvim split/nvim:main
+  -yadm branch -D split/nvim
 
 gc:
   yadm gc --aggressive

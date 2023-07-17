@@ -3,8 +3,9 @@ local M = {}
 function M.setup_dap()
 end
 
-function M.setup_diffview()
-  require('diffview').setup {}
+function M.setup_diffview(_plugin, opts)
+  local config = vim.tbl_deep_extend('force', opts, {})
+  require('diffview').setup(config)
 end
 
 function M.setup_document_color()
