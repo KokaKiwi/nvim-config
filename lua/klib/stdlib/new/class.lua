@@ -16,4 +16,4 @@ local function new(init, base, mt)
   return _2_
 end
 _G.class = {new = new}
-return nil
+return _G.class

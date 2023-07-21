@@ -9,3 +9,4 @@
           obj)))))
 
 (set _G.class {: new})
+_G.class
