@@ -9,3 +9,4 @@ secret.*
 !.assets
 !.editorconfig
 !.gitignore
+!.nfnl.fnl

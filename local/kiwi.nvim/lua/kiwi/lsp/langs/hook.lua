@@ -23,9 +23,8 @@ local function on_attach(client, bufnr)
   require('lsp-status').on_attach(client)
   require('navigator.lspclient.attach').on_attach(client, bufnr)
 
-  local ok, navic = pcall(require, 'nvim-navic')
-  if ok then
-    navic.attach(client, bufnr)
+  if client.server_capabilities.documentSymbolProvider then
+    require('nvim-navic').attach(client, bufnr)
   end
 
   if client.server_capabilities.colorProvider then

@@ -1,7 +1,6 @@
 local color = require('klib.util.colors')
-local lazy = require('klib.util.lazy')
 
-local nougat = lazy.dict(function()
+local nougat = lazy.Lazy(function()
   return {
     core = require('nougat.core'),
     bar_util = require('nougat.bar.util'),
@@ -30,11 +29,11 @@ local nougat = lazy.dict(function()
   }
 end)
 
-local cat = lazy.dict(function()
+local cat = lazy.Lazy(function()
   return require('catppuccin.palettes').get_palette()
-end, false)
+end, true)
 
-local components = lazy.dict(function()
+local components = lazy.Lazy(function()
   local mode_colors = {
     normal = color.get_bg('ModesNormal', cat.green),
     visual = color.get_bg('ModesVisual', '#9745be'),
@@ -90,14 +89,14 @@ local components = lazy.dict(function()
         content = function(item, ctx)
           local clients = {}
 
-          for _, client in pairs(vim.lsp.get_active_clients { bufnr = ctx.bufnr }) do
+          for _, client in pairs(vim.lsp.get_clients { bufnr = ctx.bufnr }) do
             table.insert(clients, client.name)
           end
 
           return table.concat(clients, ' ')
         end,
         hidden = function(item, ctx)
-          return #vim.lsp.get_active_clients({ bufnr = ctx.bufnr }) == 0
+          return #vim.lsp.get_clients({ bufnr = ctx.bufnr }) == 0
         end,
         prefix = ' ',
         suffix = ' ',
@@ -109,12 +108,12 @@ local components = lazy.dict(function()
         },
       },
       navic = nougat.Item {
-        hidden = function(item, ctx)
+        hidden = function(_, ctx)
           local has_navic, navic = pcall(require, 'nvim-navic')
           return has_navic and not navic.is_available(ctx.bufnr)
         end,
         prefix = ' ',
-        content = function(item, ctx)
+        content = function(_, ctx)
           return require('nvim-navic').get_location({
             highlight = true,
             click = true,

@@ -1,4 +1,4 @@
--- [nfnl] Compiled from fnl/klib/stdlib/new/table.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] Compiled from fnl/klib/stdlib/table.fnl by https://github.com/Olical/nfnl, do not edit.
 table.map = function(t, f, _3fto_map)
   local result = {}
   for _, item in ipairs(t) do
