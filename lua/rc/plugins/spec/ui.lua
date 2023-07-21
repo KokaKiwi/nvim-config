@@ -72,7 +72,6 @@ return util.module('ui', function(use)
   }
   use { 'MunifTanjim/nougat.nvim',
     dependencies = {
-      { 'Bekaboo/dropbar.nvim' },
       { 'SmiteshP/nvim-navic',
         dependencies = { 'nvim-lspconfig' },
       },
