@@ -93,20 +93,6 @@ function M.setup_meadow()
   require('meadow').setup {}
 end
 
-function M.setup_navigator()
-  require('navigator').setup {
-    lsp = {
-      disable_lsp = 'all',
-      format_on_save = false,
-      display_diagnostic_qf = false,
-      diagnostic_scrollbar_sign = false,
-      code_lens_action = {
-        enable = false,
-      },
-    },
-  }
-end
-
 function M.setup_neoformat()
   prefixed(vim.g, 'neoformat') {
     enabled_c = { 'clang-format' },

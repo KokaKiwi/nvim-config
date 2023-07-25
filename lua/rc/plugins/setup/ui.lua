@@ -208,6 +208,30 @@ function M.setup_modicator()
   }
 end
 
+function M.setup_navigator()
+  local nkey = require('nkey')
+
+  require('navigator').setup {
+    debug = true,
+    mason = true,
+    lsp = {
+      disable_lsp = 'all',
+      format_on_save = false,
+      diagnostic_scrollbar_sign = false,
+    },
+  }
+
+  nkey.register {
+    { '<Leader>', {
+      { 'ca', require('navigator.codeAction').code_action, help = 'Code Action [LSP]' },
+      { 'ca', require('navigator.codeAction').range_code_action, help = 'Code Action [LSP]', mode = 'v' },
+    } },
+    { 'g', {
+      { 'R', require('navigator.rename').rename, help = 'Rename symbol [LSP]' },
+    } },
+  }
+end
+
 function M.setup_neo_tree()
   vim.g.neo_tree_remove_legacy_commands = true
 

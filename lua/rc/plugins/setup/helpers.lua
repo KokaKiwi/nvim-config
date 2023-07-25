@@ -22,54 +22,6 @@ function M.setup_headlines()
   require('headlines').setup {}
 end
 
-function M.setup_lspsaga()
-  local cat = require('catppuccin.groups.integrations.lsp_saga')
-  local nkey = require('nkey')
-
-  local saga_command = function(name)
-    return function()
-      require('lspsaga.command').load_command(name)
-    end
-  end
-
-  local lspsaga = {
-    code_action = saga_command('code_action'),
-    show_line_diagnostics = saga_command('show_line_diagnostics'),
-    lsp_finder = saga_command('lsp_finder'),
-    hover_doc = saga_command('hover_doc'),
-    rename = saga_command('rename'),
-    preview_definition = saga_command('preview_definition'),
-  }
-
-  require('lspsaga').setup {
-    finder_action_keys = {
-      open = { '<CR>', 'o' },
-    },
-    ui = {
-      kind = cat.custom_kind(),
-    },
-    symbol_in_winbar = {
-      enable = false,
-    },
-    lightbulb = {
-      enable_in_insert = false,
-    },
-  }
-
-  nkey.register {
-    { '<Leader>', {
-      { 'ca', lspsaga.code_action, help = 'Code Action [LSP]' },
-      { 'cd', lspsaga.show_line_diagnostics, help = 'Show diagnostics [LSP]' },
-      { 'cD', lspsaga.preview_definition, help = 'Preview definition [LSP]' },
-    } },
-    { 'g', {
-      { 'h', lspsaga.lsp_finder, help = 'Find references and definitions [LSP]' },
-      { 'K', lspsaga.hover_doc, help = 'Display doc [LSP]' },
-      { 'R', lspsaga.rename, help = 'Rename symbol [LSP]' },
-    } },
-  }
-end
-
 function M.setup_neotest()
   local neotest = require('neotest')
 

@@ -154,8 +154,9 @@ return util.module('ui', function(use)
     config = util.setup.rc('telescope', 'ui'),
   }
   use { 'ray-x/navigator.lua',
-    config = util.setup.rc('navigator'),
+    config = util.setup.rc('navigator', 'ui'),
     dependencies = { 'guihua.lua', 'nvim-lspconfig' },
+    event = { 'LspAttach' },
   }
   use { 'stevearc/dressing.nvim',
     config = util.setup.rc('dressing', 'ui'),

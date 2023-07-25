@@ -22,7 +22,6 @@ return function()
         enabled = true,
       },
       gitsigns = true,
-      lsp_saga = true,
       lsp_trouble = true,
       mason = true,
       navic = {
