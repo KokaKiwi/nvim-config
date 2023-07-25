@@ -214,10 +214,15 @@ function M.setup_navigator()
   require('navigator').setup {
     debug = true,
     mason = true,
+    neodev = true,
     lsp = {
       disable_lsp = 'all',
       format_on_save = false,
       diagnostic_scrollbar_sign = false,
+      display_diagnostic_qf = false,
+      diagnostic = {
+        enable = false,
+      },
     },
   }
 

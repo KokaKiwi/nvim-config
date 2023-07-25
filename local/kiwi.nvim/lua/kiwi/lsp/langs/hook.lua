@@ -35,23 +35,7 @@ local function on_attach(client, bufnr)
     vim.lsp.inlay_hint(bufnr, true)
   end
 
-  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text = {
-      spacing = 4,
-      prefix = '~',
-    },
-    signs = function(bufnr, client_id)
-      local ok, result = pcall(vim.api.nvim_buf_get_var, bufnr, 'show_signs')
-      if not ok then
-        result = true
-      end
-      return result
-    end,
-    update_in_insert = false,
-  })
-
   require('kiwi.lsp.fixups').on_attach(client, bufnr)
-
 end
 
 local function on_setup(config)
