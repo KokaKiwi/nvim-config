@@ -214,7 +214,6 @@ function M.setup_navigator()
   require('navigator').setup {
     debug = true,
     mason = true,
-    neodev = true,
     lsp = {
       disable_lsp = 'all',
       format_on_save = false,
