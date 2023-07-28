@@ -116,13 +116,6 @@ function M.setup_treesitter()
       files = { 'src/parser.c' },
     },
   }
-  configs.prql = {
-    install_info = {
-      url = 'https://github.com/PRQL/tree-sitter-prql.git',
-      branch = 'main',
-      files = { 'src/parser.c' },
-    },
-  }
   configs.witx = {
     install_info = {
       url = 'https://gitlab.kokakiwi.net/kokakiwi/tree-sitter-witx.git',
