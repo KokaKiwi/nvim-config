@@ -39,8 +39,13 @@ return util.module('helpers', function(use)
       spec[1] = 'hrsh7th/cmp-' .. spec[1]
     end
 
-    table.insert(cmp.dependencies, spec)
+    if spec.lazy then
+      use(spec)
+    else
+      table.insert(cmp.dependencies, spec)
+    end
   end
+
   use(cmp)
 
   use { 'mfussenegger/nvim-dap',
