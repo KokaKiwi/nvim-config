@@ -34,6 +34,10 @@
  "def"
  "def-env"
  "export"
+ "true"
+ "false"
+ "and"
+ "or"
 ] @keyword
 
 [
@@ -45,13 +49,13 @@
   "*"
   "="
   "!="
-  "&&"
-  "||"
+  "and"
+  "or"
   "=="
   ">"
 ] @operator
 
 ["."
- "," 
- ";" 
+ ","
+ ";"
 ] @delimiter
