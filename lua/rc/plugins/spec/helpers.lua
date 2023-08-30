@@ -147,6 +147,9 @@ return util.module('helpers', function(use)
     config = util.setup.rc('persisted', 'helpers'),
   }
 
+  use { 'stevearc/conform.nvim',
+    config = util.setup.rc('conform', 'helpers'),
+  }
   use { 'stevearc/overseer.nvim',
     config = util.setup.rc('overseer', 'helpers'),
     lazy = true,
