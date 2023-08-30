@@ -147,10 +147,6 @@ return util.module('helpers', function(use)
     config = util.setup.rc('persisted', 'helpers'),
   }
 
-  use { 'sbdchd/neoformat',
-    config = util.setup.rc('neoformat'),
-    cmd = { 'Neoformat' },
-  }
   use { 'stevearc/overseer.nvim',
     config = util.setup.rc('overseer', 'helpers'),
     lazy = true,

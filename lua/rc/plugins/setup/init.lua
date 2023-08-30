@@ -93,15 +93,6 @@ function M.setup_meadow()
   require('meadow').setup {}
 end
 
-function M.setup_neoformat()
-  prefixed(vim.g, 'neoformat') {
-    enabled_c = { 'clang-format' },
-    enabled_cpp = { 'clang-format' },
-    enabled_python = { 'yapf', 'isort' },
-    enabled_lua = { 'stylua' },
-  }
-end
-
 function M.setup_presence()
   require('presence'):setup {
     file_assets = {
