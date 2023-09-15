@@ -260,6 +260,7 @@ function M.setup_neo_tree()
         always_show = {
           '.gitignore',
           '.justfile',
+          '.env',
           '.envrc',
           '.rtx.toml',
           '.tool-versions',
@@ -367,6 +368,7 @@ function M.setup_notify()
 
   notify.setup {
     stages = 'fade',
+    background_colour = '#000000',
   }
 end
 

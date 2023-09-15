@@ -4,6 +4,7 @@ return function()
   catppuccin.setup {
     flavour = 'mocha',
     term_colors = true,
+    kitty = false,
 
     styles = {
       functions = { 'bold', 'italic' },
