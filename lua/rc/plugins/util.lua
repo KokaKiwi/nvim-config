@@ -59,7 +59,7 @@ end
 
 util.cond = {
   is_executable = function(name)
-    return vim.fn.executable(name) == 1
+    return vim.is_executable(name)
   end,
   has_module = function(name)
     local has_module, err = pcall(require, name)
