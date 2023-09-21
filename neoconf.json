@@ -5,6 +5,9 @@
     },
     "yamlls": {
       "yaml.keyOrdering": false
+    },
+    "lua_ls": {
+      "Lua.workspace.checkThirdParty": false
     }
   }
 }
