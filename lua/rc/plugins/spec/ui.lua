@@ -63,6 +63,7 @@ return util.module('ui', function(use)
   use { 'robert-oleynik/git-blame-virt.nvim',
     dependencies = { 'plenary.nvim' },
     config = util.setup.rc('git_blame_virt', 'ui'),
+    event = { 'VeryLazy' },
   }
 
   use { 'akinsho/bufferline.nvim',
@@ -78,6 +79,7 @@ return util.module('ui', function(use)
       'Pheon-Dev/pigeon',
     },
     config = util.setup.mod_call('kiwi.ui.bars'),
+    event = { 'VimEnter' },
   }
   use { 'nvim-lua/lsp-status.nvim',
     config = util.setup.rc('lsp_status'),

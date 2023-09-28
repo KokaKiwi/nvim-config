@@ -10,7 +10,7 @@ function M.setup_better_whitespace()
 end
 
 function M.setup_blankline()
-  require('indent_blankline').setup {
+  require('ibl').setup {
     buftype_exclude = { 'terminal', 'alpha', 'help', 'lazy' },
     show_current_context = true,
   }
