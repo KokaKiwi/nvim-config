@@ -9,13 +9,6 @@ function M.setup_better_whitespace()
   }
 end
 
-function M.setup_blankline()
-  require('ibl').setup {
-    buftype_exclude = { 'terminal', 'alpha', 'help', 'lazy' },
-    show_current_context = true,
-  }
-end
-
 function M.setup_colorizer()
   require('colorizer').setup({
     'css', 'lua', 'vim',

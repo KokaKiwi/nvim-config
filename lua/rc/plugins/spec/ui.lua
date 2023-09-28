@@ -10,7 +10,7 @@ return util.module('ui', function(use)
   }
   use { 'lukas-reineke/indent-blankline.nvim',
     event = { 'BufReadPre' },
-    config = util.setup.rc('blankline'),
+    config = util.setup.rc('blankline', 'ui'),
   }
   use { 'folke/todo-comments.nvim',
     dependencies = { 'plenary.nvim' },
