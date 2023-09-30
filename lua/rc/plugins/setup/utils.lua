@@ -145,6 +145,10 @@ function M.setup_sort()
   }
 end
 
+function M.setup_surround()
+  require('nvim-surround').setup {}
+end
+
 function M.setup_various_textobjs()
   require('various-textobjs').setup {}
 end

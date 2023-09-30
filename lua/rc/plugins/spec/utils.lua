@@ -38,7 +38,10 @@ return util.module('utils', function(use)
   use 'mg979/vim-visual-multi'
   use 'tpope/vim-repeat'
   use 'tpope/vim-sensible'
-  use 'tpope/vim-surround'
+  use { 'kylechui/nvim-surround',
+    config = util.setup.rc('surround', 'utils'),
+    event = { 'VeryLazy' },
+  }
   use { 'stsewd/isort.nvim',
     build = { ':UpdateRemotePlugins' },
   }
