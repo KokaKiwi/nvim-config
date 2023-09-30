@@ -23,6 +23,11 @@ return function()
         enabled = true,
       },
       gitsigns = true,
+      indent_blankline = {
+        enabled = true,
+        scope_color = 'green',
+        colored_indent_levels = true,
+      },
       lsp_trouble = true,
       mason = true,
       navic = {

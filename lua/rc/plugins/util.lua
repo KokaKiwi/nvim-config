@@ -63,8 +63,8 @@ util.cond = {
   end,
   has_module = function(name)
     local has_module, err = pcall(require, name)
-    if not has_module and os.getenv('DEBUG') then
-      print(err)
+    if not has_module then
+      vim.log.debug(err)
     end
     return has_module
   end,

@@ -36,7 +36,9 @@ return util.module('utils', function(use)
   }
 
   use 'mg979/vim-visual-multi'
-  use 'tpope/vim-repeat'
+  use { 'tpope/vim-repeat',
+    event = { 'VeryLazy' },
+  }
   use 'tpope/vim-sensible'
   use { 'kylechui/nvim-surround',
     config = util.setup.rc('surround', 'utils'),
