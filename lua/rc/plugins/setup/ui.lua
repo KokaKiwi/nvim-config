@@ -23,8 +23,9 @@ function M.setup_blankline()
   }
 
   require('ibl').setup {
-    buftype_exclude = { 'terminal', 'alpha', 'help', 'lazy' },
-    show_current_context = true,
+    exclude = {
+      buftypes = { 'terminal', 'alpha', 'help', 'lazy' },
+    },
     indent = {
       highlight = highlight,
     },
