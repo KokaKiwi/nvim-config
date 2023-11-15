@@ -32,7 +32,11 @@ local function on_attach(client, bufnr)
   end
 
   if client.server_capabilities.inlayHintProvider then
-    vim.lsp.inlay_hint(bufnr, true)
+    if type(vim.lsp.inlay_hint) == 'function' then
+      vim.lsp.inlay_hint(bufnr, true)
+    elseif type(vim.lsp.inlay_hint) == 'table' then
+      vim.lsp.inlay_hint.enable(bufnr, true)
+    end
   end
 
   require('kiwi.lsp.fixups').on_attach(client, bufnr)
