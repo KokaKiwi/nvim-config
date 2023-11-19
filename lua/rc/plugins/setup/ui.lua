@@ -354,6 +354,9 @@ function M.setup_noice()
         search_up = { icon = u'F2A0' .. ' ' },
       },
     },
+    messages = {
+      enabled = false,
+    },
     lsp = {
       hover = { enabled = false },
       override = {

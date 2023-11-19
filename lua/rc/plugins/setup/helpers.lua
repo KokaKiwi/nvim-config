@@ -143,6 +143,9 @@ function M.setup_treesitter()
     filetype = 'typst',
   }
 
+  require('ts_context_commentstring').setup {}
+  vim.g.skip_ts_context_commentstring_module = true
+
   require('nvim-treesitter.configs').setup {
     ensure_installed = 'all',
     ignore_install = { 'ocamllex' },
@@ -151,9 +154,6 @@ function M.setup_treesitter()
       disable = { 'lua', 'make' },
     },
     playground = {
-      enable = true,
-    },
-    context_commentstring = {
       enable = true,
     },
     yati = {
