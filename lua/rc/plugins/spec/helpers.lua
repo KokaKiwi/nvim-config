@@ -61,8 +61,7 @@ return util.module('helpers', function(use)
     lazy = true,
   }
   use { 'folke/neoconf.nvim' }
-  use { 'jose-elias-alvarez/null-ls.nvim',
-    enabled = false,
+  use { 'nvimtools/none-ls.nvim',
     dependencies = { 'plenary.nvim' },
     config = util.setup.rc('null_ls', 'helpers'),
     lazy = true,
