@@ -2,8 +2,8 @@ local color = require('klib.util.colors')
 
 local nougat = lazy.Lazy(function()
   return {
+    base = require('nougat'),
     core = require('nougat.core'),
-    bar_util = require('nougat.bar.util'),
     sep = require('nougat.separator'),
 
     nut = {
@@ -246,7 +246,7 @@ return function()
 
   local winbar = make_winbar()
 
-  nougat.bar_util.set_statusline(function(ctx)
+  nougat.base.set_statusline(function(ctx)
     local filetype = vim.bo[ctx.bufnr].filetype
     local buftype = vim.bo[ctx.bufnr].buftype
 
@@ -265,5 +265,5 @@ return function()
     end
   end)
 
-  nougat.bar_util.set_winbar(winbar)
+  nougat.base.set_winbar(winbar)
 end
