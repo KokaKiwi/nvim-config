@@ -147,7 +147,7 @@ function M.setup_treesitter()
   vim.g.skip_ts_context_commentstring_module = true
 
   require('nvim-treesitter.configs').setup {
-    ensure_installed = 'all',
+    auto_install = true,
     ignore_install = { 'ocamllex' },
     highlight = {
       enable = true,
