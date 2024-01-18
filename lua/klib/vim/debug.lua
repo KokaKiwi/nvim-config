@@ -10,3 +10,7 @@ function vim.debug.instrument(name, fun, opts)
     return fun(...)
   end
 end
+
+function vim.debug.info(value)
+  vim.debug.print(debug.getinfo(value))
+end
