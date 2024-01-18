@@ -120,6 +120,11 @@ local components = lazy.Lazy(function()
           }, ctx.bufnr)
         end,
       },
+      progress = nougat.Item {
+        content = function(item, ctx)
+          return require('lsp-progress').progress {}
+        end,
+      },
     },
     buf = {
       filestatus = nougat.Item {
@@ -190,6 +195,7 @@ local function make_statusline()
   -- Left
   statusline:add_item(components.mode)
   statusline:add_item(components.lsp.client_names)
+  -- statusline:add_item(components.lsp.progress)
 
   statusline:add_item(nougat.nut.spacer())
 

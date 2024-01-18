@@ -1,5 +1,7 @@
 ---@diagnostic disable: unused-local
-local lsp = {}
+local lsp = {
+  methods = require('vim.lsp.protocol').Methods,
+}
 
 local AUTO_FORMAT_PATTERNS = { '*.rs', '*.ex', '*.exs', '*.hs', '*.toml', '*.go' }
 
@@ -8,7 +10,7 @@ function lsp.setup()
 
   require('kiwi.lsp.langs')
 
-  vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+  vim.lsp.handlers[lsp.methods.textDocument_publishDiagnostics] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
     virtual_text = {
       spacing = 4,
       prefix = '~',

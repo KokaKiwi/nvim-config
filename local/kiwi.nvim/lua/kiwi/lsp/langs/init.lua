@@ -19,7 +19,6 @@ end
 local lsp = require('lspconfig')
 local util = require('lspconfig.util')
 
-local lsp_status = require('lsp-status')
 local schemastore = require('schemastore')
 
 require('kiwi.lsp.langs.hook').register_hook()
@@ -52,9 +51,7 @@ require('mason-lspconfig').setup_handlers {
 lsp.bashls.setup {
   filetypes = { 'sh' },
 }
-lsp.clangd.setup {
-  handlers = lsp_status.extensions.clangd.setup(),
-}
+lsp.clangd.setup {}
 lsp.cmake.setup {}
 lsp.cssls.setup {
   cmd = { 'vscode-css-languageserver', '--stdio' },

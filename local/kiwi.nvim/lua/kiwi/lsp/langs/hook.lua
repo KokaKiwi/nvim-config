@@ -20,7 +20,6 @@ local M = {}
 
 local function on_attach(client, bufnr)
   require('illuminate').on_attach(client)
-  require('lsp-status').on_attach(client)
   require('navigator.lspclient.attach').on_attach(client, bufnr)
 
   if client.server_capabilities.documentSymbolProvider then
@@ -49,7 +48,6 @@ local function on_setup(config)
     capabilities = vim.tbl_deep_extend('force', capabilities, config.capabilities)
   end
 
-  capabilities = vim.tbl_deep_extend('force', capabilities, require('lsp-status').capabilities)
   capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
   capabilities = vim.tbl_deep_extend('force', capabilities, BASE_CAPABILITIES)
 

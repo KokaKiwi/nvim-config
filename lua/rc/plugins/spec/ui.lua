@@ -81,10 +81,6 @@ return util.module('ui', function(use)
     config = util.setup.mod_call('kiwi.ui.bars'),
     event = { 'VimEnter' },
   }
-  use { 'nvim-lua/lsp-status.nvim',
-    config = util.setup.rc('lsp_status'),
-    lazy = true,
-  }
   use {
     name = 'committia.nvim',
     url = 'https://gitlab.kokakiwi.net/contrib/neovim/committia.nvim.git',
@@ -116,6 +112,9 @@ return util.module('ui', function(use)
     dependencies = { 'MunifTanjim/nui.nvim', 'rcarriga/nvim-notify' },
     config = util.setup.rc('noice', 'ui'),
     event = { 'VeryLazy' },
+  }
+  use { 'linrongbin16/lsp-progress.nvim',
+    config = util.setup.rc('lsp_progress', 'ui'),
   }
   use { 'melkster/modicator.nvim',
     dependencies = { 'catppuccin' },

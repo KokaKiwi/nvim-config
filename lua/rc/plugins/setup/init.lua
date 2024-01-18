@@ -68,16 +68,6 @@ end
 function M.setup_lint()
 end
 
-function M.setup_lsp_status()
-  local lsp_status = require('lsp-status')
-
-  lsp_status.config {
-    status_symbol = '',
-  }
-
-  lsp_status.register_progress()
-end
-
 function M.setup_marks()
   require('marks').setup {}
 end
