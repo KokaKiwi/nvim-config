@@ -12,6 +12,12 @@ function M.setup_autopairs()
   }
 end
 
+function M.setup_coerce()
+  require('coerce').setup {
+    coerce_prefix = 'cc',
+  }
+end
+
 function M.setup_Comment()
   require('Comment').setup {
     toggler = {

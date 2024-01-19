@@ -20,6 +20,12 @@ return util.module('utils', function(use)
   }
   use 'hynek/vim-python-pep8-indent'
 
+  use { 'gregorias/coerce.nvim',
+    config = util.setup.rc('coerce', 'utils'),
+    keys = {
+      { 'cc', mode = 'n' },
+    },
+  }
   use { 'jamessan/vim-gnupg',
     config = util.setup.rc('gnupg'),
   }
