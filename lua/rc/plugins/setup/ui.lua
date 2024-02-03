@@ -215,6 +215,22 @@ function M.setup_lsp_progress()
   require('lsp-progress').setup()
 end
 
+function M.setup_lsp_ui()
+  local nkey = require('nkey')
+  local lspui = require('LspUI')
+
+  -- Fixup
+  lspui.api.rename = require('LspUI.modules').rename.run
+
+  lspui.setup {}
+
+  nkey.register {
+    { 'g', {
+      { 'R', lspui.api.rename, help = 'Rename symbol [LSP]' },
+    } },
+  }
+end
+
 function M.setup_minimap()
   prefixed(vim.g, 'minimap') {
     block_filetypes = { 'neo-tree', 'aerial' },
@@ -256,9 +272,6 @@ function M.setup_navigator()
     { '<Leader>', {
       { 'ca', require('navigator.codeAction').code_action, help = 'Code Action [LSP]' },
       { 'ca', require('navigator.codeAction').range_code_action, help = 'Code Action [LSP]', mode = 'v' },
-    } },
-    { 'g', {
-      { 'R', require('navigator.rename').rename, help = 'Rename symbol [LSP]' },
     } },
   }
 end

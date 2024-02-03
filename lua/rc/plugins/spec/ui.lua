@@ -100,6 +100,9 @@ return util.module('ui', function(use)
   use { 'stevearc/aerial.nvim',
     config = util.setup.rc('aerial', 'ui'),
   }
+  use { 'jinzhongjia/LspUI.nvim',
+    config = util.setup.rc('lsp_ui', 'ui'),
+  }
   use { 'uga-rosa/ccc.nvim',
     lazy = true,
     config = util.setup.rc('ccc', 'ui'),
