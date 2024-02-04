@@ -222,7 +222,11 @@ function M.setup_lsp_ui()
   -- Fixup
   lspui.api.rename = require('LspUI.modules').rename.run
 
-  lspui.setup {}
+  lspui.setup {
+    lightbulb = {
+      enable = false,
+    },
+  }
 
   nkey.register {
     { 'g', {
