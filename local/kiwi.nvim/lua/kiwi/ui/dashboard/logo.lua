@@ -27,7 +27,7 @@ local function get_logos()
   end)
 
   return table.fjoin({
-    -- logo_files,
+    logo_files,
     logo_texts,
   })
 end

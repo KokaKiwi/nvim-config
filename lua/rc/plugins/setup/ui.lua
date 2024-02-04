@@ -226,6 +226,8 @@ function M.setup_lsp_ui()
 
   nkey.register {
     { 'g', {
+      { 'a', lspui.api.code_action, help = 'Show Code Actions [LSP]' },
+      { 'A', function() lspui.api.diagnostic('next') end, help = 'Show next diagnostic [LSP]' },
       { 'R', lspui.api.rename, help = 'Rename symbol [LSP]' },
     } },
   }
