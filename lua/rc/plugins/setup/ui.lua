@@ -10,8 +10,6 @@ function M.setup_aerial()
 end
 
 function M.setup_blankline()
-  local hooks = require('ibl.hooks')
-
   local highlight = {
     'RainbowRed',
     'RainbowYellow',
@@ -136,14 +134,9 @@ function M.setup_fidget()
     notification = {
       override_vim_notify = true,
     },
-    progress = {
-      poll_rate = 10,
-      lsp = {
-        log_handler = true,
-      },
-    },
-    logger = {
-      level = vim.log.levels.TRACE,
+    integration = {
+      ['nvim-tree'] = { enable = false },
+      ['xcodebuild-nvim'] = { enable = false },
     },
   }
 end
