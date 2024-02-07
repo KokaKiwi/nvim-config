@@ -131,6 +131,23 @@ function M.setup_dressing()
   require('dressing').setup {}
 end
 
+function M.setup_fidget()
+  require('fidget').setup {
+    notification = {
+      override_vim_notify = true,
+    },
+    progress = {
+      poll_rate = 10,
+      lsp = {
+        log_handler = true,
+      },
+    },
+    logger = {
+      level = vim.log.levels.TRACE,
+    },
+  }
+end
+
 function M.setup_fterm()
   local FTerm = require('FTerm')
 
@@ -209,10 +226,6 @@ end
 
 function M.setup_lsp_lens()
   require('lsp-lens').setup {}
-end
-
-function M.setup_lsp_progress()
-  require('lsp-progress').setup()
 end
 
 function M.setup_lsp_ui()
@@ -380,7 +393,11 @@ function M.setup_noice()
     messages = {
       enabled = false,
     },
+    notify = {
+      enabled = false,
+    },
     lsp = {
+      progress = { enabled = false },
       hover = { enabled = false },
       override = {
         ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
@@ -411,11 +428,7 @@ function M.setup_noice()
 end
 
 function M.setup_notify()
-  local notify = require('notify')
-
-  vim.notify = notify
-
-  notify.setup {
+  require('notify').setup {
     stages = 'fade',
     background_colour = '#000000',
   }
