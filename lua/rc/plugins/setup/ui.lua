@@ -133,6 +133,9 @@ function M.setup_fidget()
   require('fidget').setup {
     notification = {
       override_vim_notify = true,
+      window = {
+        winblend = 0,
+      },
     },
     integration = {
       ['nvim-tree'] = { enable = false },

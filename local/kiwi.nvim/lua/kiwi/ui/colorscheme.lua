@@ -22,6 +22,7 @@ return function()
       dropbar = {
         enabled = true,
       },
+      fidget = true,
       gitsigns = true,
       indent_blankline = {
         enabled = true,
