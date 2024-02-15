@@ -74,7 +74,8 @@ lsp.lua_ls.setup {
 }
 lsp.nim_langserver.setup {}
 lsp.phpactor.setup {}
-lsp.pyright.setup {}
+-- lsp.pyright.setup {}
+lsp.pylsp.setup {}
 lsp.rhai_lsp.setup {}
 lsp.rnix.setup {}
 lsp.rust_analyzer.setup {
