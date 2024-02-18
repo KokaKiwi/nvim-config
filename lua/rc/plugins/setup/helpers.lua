@@ -105,14 +105,6 @@ end
 function M.setup_treesitter()
   local configs = require('nvim-treesitter.parsers').get_parser_configs()
 
-  configs.nu = {
-    install_info = {
-      url = 'https://github.com/LhKipp/tree-sitter-nu',
-      branch = 'main',
-      files = { 'src/scanner.c', 'src/parser.c' },
-    },
-    filetype = 'nu',
-  }
   configs.just = {
     install_info = {
       url = 'https://gitlab.kokakiwi.net/contrib/neovim/tree-sitter-just',
