@@ -126,14 +126,6 @@ function M.setup_treesitter()
       files = { 'src/parser.c' }
     },
   }
-  configs.typst = {
-    install_info = {
-      url = 'https://github.com/SeniorMars/tree-sitter-typst.git',
-      branch = 'main',
-      files = { 'src/scanner.c', 'src/parser.c' },
-    },
-    filetype = 'typst',
-  }
 
   require('ts_context_commentstring').setup {}
   vim.g.skip_ts_context_commentstring_module = true
