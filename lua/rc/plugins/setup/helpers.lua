@@ -105,13 +105,6 @@ end
 function M.setup_treesitter()
   local configs = require('nvim-treesitter.parsers').get_parser_configs()
 
-  configs.just = {
-    install_info = {
-      url = 'https://gitlab.kokakiwi.net/contrib/neovim/tree-sitter-just',
-      branch = 'main',
-      files = { 'src/scanner.cc', 'src/parser.c' },
-    },
-  }
   configs.kwconfig = {
     install_info = {
       url = 'https://gitlab.kokakiwi.net/grape/tree-sitter-kwconfig.git',

@@ -10,7 +10,7 @@ function M.setup_polyglot()
   prefixed(vim.g, 'polyglot') {
     disabled = {
       'fish', 'systemd', 'nftables', 'lifelines',
-      'php', 'graphql',
+      'php', 'graphql', 'just',
     },
   }
 end

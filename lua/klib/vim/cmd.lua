@@ -1,3 +1,5 @@
+local current_group = nil
+
 ---@param events string | string[]
 ---@param pattern string | string[]
 ---@param cmd string | function
@@ -8,7 +10,7 @@ function vim.autocmd(events, pattern, cmd, opts)
   local options = {
     pattern = pattern,
 
-    group = opts.group,
+    group = opts.group or current_group,
     once = opts.once,
     nested = opts.nested,
     desc = opts.desc,
@@ -87,11 +89,13 @@ function vim.command(name, repl, opts)
 end
 
 -- vim.augroup
-function vim.augroup(name, fn)
-  vim.cmd(string.format('augroup %s', name))
-  vim.cmd('autocmd!')
+function vim.augroup(name, fn, options)
+  options = options or {}
 
-  pcall(fn)
+  local group = vim.api.nvim_create_augroup(name, options)
+  current_group = group
 
-  vim.cmd('augroup end')
+  pcall(fn, group)
+
+  current_group = nil
 end

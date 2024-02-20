@@ -28,5 +28,6 @@ return util.module('syntax', function(use)
   use { 'fladson/vim-kitty', ft = { 'kitty', 'kitty-session' } }
   use { 'rescript-lang/vim-rescript', ft = { 'rescript' } }
   use { 'Olical/nfnl', ft = { 'fennel' }, config = true }
-  use { 'LhKipp/nvim-nu', ft = { 'nu' }, config = true }
+  use { 'LhKipp/nvim-nu', config = true }
+  use { 'IndianBoy42/tree-sitter-just', config = true }
 end)

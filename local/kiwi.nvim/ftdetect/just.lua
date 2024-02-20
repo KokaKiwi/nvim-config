@@ -1,7 +1,7 @@
 vim.augroup('kiwiJust', function()
   local patterns = {
     'Justfile', 'justfile',
-    '.Justfile', '.justfile',
+    '.justfile',
     '*.just',
   }
 
