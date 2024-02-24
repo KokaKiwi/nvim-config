@@ -64,6 +64,7 @@ return util.module('utils', function(use)
     config = util.setup.rc('Comment', 'utils'),
   }
   use { 'IogaMaster/neocord',
+    enabled = false,
     config = util.setup.rc('neocord', 'utils'),
     event = { 'VeryLazy' },
   }

@@ -77,7 +77,6 @@
   "navigator.lua": { "branch": "master", "commit": "d02d4c1c5289a944d348bf060d3f50cd2d4ec268" },
   "neo-tree.nvim": { "branch": "v3.x", "commit": "f3941c57ec85d7bdb44fa53fd858fd80f159018f" },
   "neoconf.nvim": { "branch": "main", "commit": "faab415b0ba57f0a15a82210f346f662e6551e1a" },
-  "neocord": { "branch": "main", "commit": "387854d81a2c55207b7223ab5221f9d0afc6b273" },
   "neodev.nvim": { "branch": "main", "commit": "f7f249b361e9fb245eea24cbcd9f5502e796c6ea" },
   "neorg": { "branch": "main", "commit": "a157ab3ee86a125a6f83ea9fa6e1f8f1c7ac6da2" },
   "neotest": { "branch": "master", "commit": "f6048f32be831907fb15018af2688ff6633704fc" },
