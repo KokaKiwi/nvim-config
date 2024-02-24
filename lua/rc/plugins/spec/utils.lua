@@ -63,8 +63,9 @@ return util.module('utils', function(use)
   use { 'numToStr/Comment.nvim',
     config = util.setup.rc('Comment', 'utils'),
   }
-  use { 'andweeb/presence.nvim',
-    config = util.setup.rc('presence'),
+  use { 'IogaMaster/neocord',
+    config = util.setup.rc('neocord', 'utils'),
+    event = { 'VeryLazy' },
   }
   use { 'lkemitchll/kitty-runner.nvim',
     config = util.setup.rc('kitty_runner', 'utils'),

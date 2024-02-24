@@ -101,6 +101,13 @@ function M.setup_mini()
   require('mini.misc').setup {}
 end
 
+function M.setup_neocord()
+  local neocord = require('neocord')
+
+  neocord.setup {}
+
+end
+
 function M.setup_neorg()
   require('neorg').setup {
     load = {

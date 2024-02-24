@@ -76,14 +76,6 @@ function M.setup_meadow()
   require('meadow').setup {}
 end
 
-function M.setup_presence()
-  require('presence'):setup {
-    file_assets = {
-      ['Justfile'] = { 'Justfile', 'code' },
-    },
-  }
-end
-
 function M.setup_shade()
   require('shade').setup {}
 end
