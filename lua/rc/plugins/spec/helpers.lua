@@ -71,6 +71,13 @@ return util.module('helpers', function(use)
     config = util.setup.rc('haskell_tools', 'helpers'),
     ft = { 'haskell' },
   }
+  use { 'elixir-tools/elixir-tools.nvim',
+    dependencies = { 'plenary.nvim' },
+    version = '*',
+    config = util.setup.rc('elixir', 'helpers'),
+    event = { 'BufReadPre', 'BufNewFile' },
+    cmd = { 'Elixir' },
+  }
   use { 'mrshmllow/document-color.nvim',
     config = util.setup.rc('document_color', 'helpers'),
     lazy = true,

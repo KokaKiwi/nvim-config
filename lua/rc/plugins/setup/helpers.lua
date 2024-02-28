@@ -23,6 +23,21 @@ function M.setup_document_color()
   require('document-color').setup {}
 end
 
+function M.setup_elixir()
+  require('elixir').setup {
+    nextls = {
+      enable = false,
+    },
+    credo = {
+      enable = false,
+    },
+    elixirls = {
+      enable = false,
+      cmd = '/usr/bin/elixir-ls',
+    },
+  }
+end
+
 function M.setup_haskell_tools()
   local ht = require('haskell-tools')
 
