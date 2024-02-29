@@ -102,7 +102,7 @@ function M.setup_persisted()
   require('persisted').setup {
     save_dir = vim.fn.stdpath('state') .. '/sessions/',
     autosave = false,
-    branch_separator = '@@',
+    use_git_branch = true,
   }
 end
 

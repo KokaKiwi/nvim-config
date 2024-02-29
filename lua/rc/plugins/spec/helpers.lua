@@ -151,6 +151,7 @@ return util.module('helpers', function(use)
   }
   use { 'olimorris/persisted.nvim',
     config = util.setup.rc('persisted', 'helpers'),
+    event = { 'VeryLazy' },
   }
 
   use { 'stevearc/conform.nvim',
