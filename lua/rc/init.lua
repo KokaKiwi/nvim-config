@@ -9,6 +9,7 @@ require('klib')
 
 -- Load plugins
 vim.g.mapleader = ','
+vim.g.maplocalleader = ';'
 require('rc.plugins').setup()
 
 -- Basic init
