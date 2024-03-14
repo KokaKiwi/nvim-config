@@ -87,6 +87,9 @@ return util.module('helpers', function(use)
     dependencies = { 'SchemaStore.nvim', 'neodev.nvim' },
     config = util.setup.mod_setup('kiwi.lsp'),
   }
+  use { 'icholy/lsplinks.nvim',
+    config = util.setup.rc('lsplinks', 'helpers'),
+  }
   use {
     name = 'hook.nvim',
     url = 'https://gitlab.kokakiwi.net/contrib/neovim/hook.nvim.git',

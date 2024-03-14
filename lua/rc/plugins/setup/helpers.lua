@@ -48,6 +48,15 @@ function M.setup_headlines()
   require('headlines').setup {}
 end
 
+function M.setup_lsplinks()
+  local lsplinks = require('lsplinks')
+  lsplinks.setup()
+
+  require('nkey').register {
+    { 'gx', lsplinks.gx },
+  }
+end
+
 function M.setup_neotest()
   local neotest = require('neotest')
 
