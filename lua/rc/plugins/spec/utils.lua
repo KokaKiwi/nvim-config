@@ -114,11 +114,6 @@ return util.module('utils', function(use)
       util.cond.is_executable('glow')
     ),
   }
-  use { 'nvim-neorg/neorg',
-    config = util.setup.rc('neorg', 'utils'),
-    dependencies = { 'plenary.nvim' },
-    ft = { 'norg' },
-  }
   use { 'thazelart/figban.nvim',
     cmd = { 'Figban' },
     cond = util.cond.is_executable('figlet'),

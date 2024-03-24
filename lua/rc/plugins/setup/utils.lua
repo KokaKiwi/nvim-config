@@ -108,27 +108,6 @@ function M.setup_neocord()
 
 end
 
-function M.setup_neorg()
-  require('neorg').setup {
-    load = {
-      ['core.defaults'] = {},
-      ['core.keybinds'] = {
-        config = {
-          default_keybinds = true,
-          neorg_leader = '<Leader>o',
-        },
-      },
-      ['core.concealer'] = {},
-      ['core.dirman'] = {},
-      ['core.completion'] = {
-        config = {
-          engine = 'nvim-cmp',
-        },
-      },
-    },
-  }
-end
-
 function M.setup_netman()
   local netman = require('netman')
 
