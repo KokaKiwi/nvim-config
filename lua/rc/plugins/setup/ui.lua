@@ -469,6 +469,22 @@ function M.setup_telescope()
   telescope.load_extension('scope')
 end
 
+function M.setup_treesitter_context()
+  require('treesitter-context').setup {
+    max_lines = 5,
+    patterns = {
+      default = {
+        'class',
+        'function',
+        'method',
+      },
+      rust = {
+        'impl_item',
+      },
+    },
+  }
+end
+
 function M.setup_vfiler()
   require('vfiler/config').setup {
     options = {

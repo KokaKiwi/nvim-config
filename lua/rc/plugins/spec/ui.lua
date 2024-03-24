@@ -192,7 +192,7 @@ return util.module('ui', function(use)
   }
   use { 'nvim-treesitter/nvim-treesitter-context',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    config = util.setup.rc('treesitter_context'),
+    config = util.setup.rc('treesitter_context', 'ui'),
     event = { 'WinScrolled' },
   }
   use { 'lewis6991/satellite.nvim',

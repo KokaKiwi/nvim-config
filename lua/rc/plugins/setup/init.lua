@@ -84,21 +84,6 @@ function M.setup_todo_comments()
   require('todo-comments').setup {}
 end
 
-function M.setup_treesitter_context()
-  require('treesitter-context').setup {
-    patterns = {
-      default = {
-        'class',
-        'function',
-        'method',
-      },
-      rust = {
-        'impl_item',
-      },
-    },
-  }
-end
-
 function M.setup_undotree()
   prefixed(vim.g, 'undotree') {
     SetFocusWhenToggle = true,
