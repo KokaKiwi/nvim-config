@@ -66,6 +66,7 @@ lsp.lua_ls.setup {
   cmd = { 'lua-language-server' },
 }
 lsp.nim_langserver.setup {}
+-- lsp.nixd.setup {}
 lsp.nil_ls.setup {}
 lsp.phpactor.setup {}
 -- lsp.pyright.setup {}
