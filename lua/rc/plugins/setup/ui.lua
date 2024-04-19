@@ -93,22 +93,6 @@ function M.setup_devicons()
   end
 
   local OVERRIDES = {
-    ['.gitignore']      = u'E7A8',
-    ['COMMIT_EDITMSG']  = u'E7A8',
-    ['cjs']             = copy('js', u'E64E', 'CommonJS'),
-    ['css']             = u'E649',
-    ['ex']              = u'E997',
-    ['exs']             = u'E997',
-    ['hs']              = u'E95F',
-    ['js']              = u'E64E',
-    ['lua']             = u'E9A7',
-    ['nix']             = u'E9B2',
-    ['py']              = u'E63C',
-    ['rs']              = u'E959',
-    ['toml']            = u'E699',
-    ['vim']             = u'E6C5',
-    ['yaml']            = u'E699',
-    ['yml']             = u'E699',
   }
 
   for key, icon in pairs(OVERRIDES) do
@@ -380,11 +364,6 @@ function M.setup_noice()
   require('noice').setup {
     cmdline = {
       view = 'cmdline',
-      format = {
-        cmdline = { icon = u'F16F' .. ' ' },
-        search_down = { icon = u'F2A0' .. ' ' },
-        search_up = { icon = u'F2A0' .. ' ' },
-      },
     },
     messages = {
       enabled = false,

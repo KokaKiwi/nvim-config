@@ -34,7 +34,7 @@ local function on_attach(client, bufnr)
     if type(vim.lsp.inlay_hint) == 'function' then
       vim.lsp.inlay_hint(bufnr, true)
     elseif type(vim.lsp.inlay_hint) == 'table' then
-      vim.lsp.inlay_hint.enable(bufnr, true)
+      vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
     end
   end
 
