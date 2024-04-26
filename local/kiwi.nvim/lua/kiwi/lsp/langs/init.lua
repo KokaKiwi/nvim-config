@@ -16,9 +16,6 @@ for name, mod in pairs(LANGUAGES) do
 end
 
 -- Setup Language Servers
-local lsp = require('lspconfig')
-local util = require('lspconfig.util')
-
 local schemastore = require('schemastore')
 
 require('kiwi.lsp.langs.hook').register_hook()
@@ -34,6 +31,8 @@ require('neoconf').setup {
     coc = false,
   },
 }
+
+local lsp = require('lspconfig')
 
 require('mason-lspconfig').setup_handlers {
   function(server_name)
@@ -66,8 +65,12 @@ lsp.lua_ls.setup {
   cmd = { 'lua-language-server' },
 }
 lsp.nim_langserver.setup {}
--- lsp.nixd.setup {}
-lsp.nil_ls.setup {}
+lsp.nixd.setup {
+  cmd = {
+    'nixd',
+    '--inlay-hints',
+  },
+}
 lsp.phpactor.setup {}
 -- lsp.pyright.setup {}
 lsp.pylsp.setup {}
