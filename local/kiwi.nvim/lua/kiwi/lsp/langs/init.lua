@@ -68,7 +68,8 @@ lsp.nim_langserver.setup {}
 lsp.nixd.setup {
   cmd = {
     'nixd',
-    '--inlay-hints',
+    '--inlay-hints=true',
+    '--semantic-tokens=true',
   },
 }
 lsp.phpactor.setup {}
