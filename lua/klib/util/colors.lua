@@ -8,7 +8,7 @@ local colors = {}
 local get_color = function(name)
 	local color = vim.api.nvim_get_color_by_name(name)
 	if color == -1 then
-		color = vim.opt.background:get() == 'dark' and 000 or 255255255
+		color = vim.o.background == 'dark' and 000 or 255255255
 	end
 
 	---Convert colour to hex

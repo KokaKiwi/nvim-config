@@ -39,9 +39,6 @@ function M.setup_elixir()
 end
 
 function M.setup_haskell_tools()
-  local ht = require('haskell-tools')
-
-  ht.setup {}
 end
 
 function M.setup_headlines()
@@ -165,8 +162,8 @@ function M.setup_treesitter()
     },
   }
 
-  vim.opt.foldmethod = 'expr'
-  vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+  vim.o.foldmethod = 'expr'
+  vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 end
 
 function M.setup_trouble()

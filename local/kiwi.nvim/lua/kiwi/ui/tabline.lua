@@ -1,7 +1,7 @@
 return function()
   local nkey = require('nkey')
 
-  vim.opt.termguicolors = true
+  vim.o.termguicolors = true
 
   require('bufferline').setup {
     options = {

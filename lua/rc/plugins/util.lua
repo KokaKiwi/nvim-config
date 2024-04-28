@@ -15,7 +15,7 @@ function util.require_lazy()
     })
   end
 
-  vim.opt.rtp:prepend(lazy_install_dir)
+  vim.o.rtp = lazy_install_dir .. ',' .. vim.o.rtp
 
   local lazy = require('lazy')
   hack.hack_lazy()

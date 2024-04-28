@@ -13,20 +13,20 @@ vim.g.maplocalleader = ';'
 require('rc.plugins').setup()
 
 -- Basic init
-vim.opt.shell = '/bin/bash'
+vim.o.shell = '/bin/bash'
 
-vim.opt.mouse = 'a'
+vim.o.mouse = 'a'
 
-vim.opt.exrc = true
-vim.opt.secure = true
-vim.opt.hidden = true
+vim.o.exrc = true
+vim.o.secure = true
+vim.o.hidden = true
 
-vim.opt.backup = false
-vim.opt.writebackup = false
-vim.opt.modeline = true
+vim.o.backup = false
+vim.o.writebackup = false
+vim.o.modeline = true
 
-vim.opt.updatetime = 300
-vim.opt.timeoutlen = 500
+vim.o.updatetime = 300
+vim.o.timeoutlen = 500
 
 vim.o.exrc = true
 

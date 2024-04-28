@@ -81,7 +81,7 @@ return function()
     },
   })
 
-  vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'noselect', 'preview' }
+  vim.o.completeopt = string.join(',', { 'menu', 'menuone', 'noinsert', 'noselect', 'preview' })
 
   vim.aufiletype('lua', function()
     cmp.setup.buffer {

@@ -1,29 +1,29 @@
-vim.opt.background = 'dark'
+vim.o.background = 'dark'
 
-vim.opt.tabpagemax = 15
-vim.opt.showmode = false
-vim.opt.cursorline = false
-vim.opt.termguicolors = true
+vim.o.tabpagemax = 15
+vim.o.showmode = false
+vim.o.cursorline = false
+vim.o.termguicolors = true
 
-vim.opt.backspace = { 'indent', 'eol', 'start' }
-vim.opt.linespace = 0
-vim.opt.number = true
-vim.opt.showmatch = true
-vim.opt.incsearch = true
-vim.opt.hlsearch = true
-vim.opt.winminheight = 0
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.wildmenu = true
-vim.opt.wildmode = { list = 'longest', 'full' }
-vim.opt.whichwrap = string.join(',', { 'b', 's', 'h', 'l', '<', '>', '[', ']' })
-vim.opt.virtualedit = 'onemore'
-vim.opt.scrolljump = 5
-vim.opt.scrolloff = 3
-vim.opt.foldenable = false
-vim.opt.shortmess:append('c')
-vim.opt.signcolumn = 'yes:1'
-vim.opt.redrawtime = 10000
+vim.o.backspace = string.join(',', { 'indent', 'eol', 'start' })
+vim.o.linespace = 0
+vim.o.number = true
+vim.o.showmatch = true
+vim.o.incsearch = true
+vim.o.hlsearch = true
+vim.o.winminheight = 0
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.wildmenu = true
+vim.o.wildmode = 'list:longest,full'
+vim.o.whichwrap = string.join(',', { 'b', 's', 'h', 'l', '<', '>', '[', ']' })
+vim.o.virtualedit = 'onemore'
+vim.o.scrolljump = 5
+vim.o.scrolloff = 3
+vim.o.foldenable = false
+vim.o.shortmess = vim.o.shortmess .. 'c'
+vim.o.signcolumn = 'yes:1'
+vim.o.redrawtime = 10000
 
 vim.g.tex_flavor = 'latex'
 
