@@ -122,8 +122,6 @@ end
 
 function M.setup_silicon()
   require('silicon').setup {
-    font = 'FiraCode Nerd Font Mono=20',
-    theme = 'Catppuccin-mocha',
     line_number = true,
     window_title = function()
       return vim.fn.fnamemodify(vim.fn.bufname(vim.fn.bufnr()), ':~:.')
