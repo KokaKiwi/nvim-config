@@ -13,8 +13,6 @@ vim.g.maplocalleader = ';'
 require('rc.plugins').setup()
 
 -- Basic init
-vim.o.shell = '/bin/bash'
-
 vim.o.mouse = 'a'
 
 vim.o.exrc = true
