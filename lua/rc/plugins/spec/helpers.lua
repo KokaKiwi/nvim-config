@@ -130,7 +130,6 @@ return util.module('helpers', function(use)
     dependencies = {
       'JoosepAlviste/nvim-ts-context-commentstring',
       'yioneko/nvim-yati',
-      'nkrkv/nvim-treesitter-rescript',
       'vim-illuminate',
     },
     event = { 'VeryLazy' },
