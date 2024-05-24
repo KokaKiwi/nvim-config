@@ -417,15 +417,6 @@ function M.setup_relative_toggle()
   require('relative-toggle').setup {}
 end
 
-function M.setup_satellite()
-  require('satellite').setup {
-    excluded_filetypes = {
-      '', 'prompt', 'TelescopePrompt',
-      'alpha', 'neo-tree', 'lazy',
-    },
-  }
-end
-
 function M.setup_scope()
   require('scope').setup()
 end

@@ -195,9 +195,6 @@ return util.module('ui', function(use)
     config = util.setup.rc('treesitter_context', 'ui'),
     event = { 'WinScrolled' },
   }
-  use { 'lewis6991/satellite.nvim',
-    config = util.setup.rc('satellite', 'ui'),
-  }
   use { 'Bekaboo/deadcolumn.nvim',
     config = util.setup.rc('deadcolumn', 'ui'),
   }

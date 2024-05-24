@@ -125,7 +125,6 @@
   "relative-toggle.nvim": { "branch": "main", "commit": "fabe2f60f5f148f2bf1fb76e8a542f5adf8d996a" },
   "ron.vim": { "branch": "master", "commit": "f749e543975a82e8dd9a6e7df9600a1c098ae800" },
   "sad.nvim": { "branch": "master", "commit": "869c7f3ca3dcd28fd78023db6a7e1bf8af0f4714" },
-  "satellite.nvim": { "branch": "main", "commit": "40eb89743e3439c66192abfc31eb3280622a5d3c" },
   "scope.nvim": { "branch": "main", "commit": "86a0f5b594b08b2ad65f470ffdee81654942b6ac" },
   "sentiment.nvim": { "branch": "main", "commit": "ecde8d877881bb78fdb90060c0991e76770dbdbc" },
   "silicon.nvim": { "branch": "main", "commit": "0951e30af7f352ca35444b4c38b96c8d7f6905ec" },
