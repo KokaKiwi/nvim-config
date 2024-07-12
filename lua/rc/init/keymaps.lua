@@ -1,8 +1,13 @@
 local nkey = require('nkey')
+local wk = require('which-key')
 
 local function Telescope(name)
   return nkey.Cmd('Telescope', name)
 end
+
+wk.setup {
+  notify = false,
+}
 
 nkey.register {
   -- Utils

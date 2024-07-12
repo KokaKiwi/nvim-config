@@ -72,6 +72,10 @@ function M.setup_neotest()
 end
 
 function M.setup_nkey()
+  require('which-key').setup {
+    notify = false,
+  }
+
   require('nkey').setup {
     integrations = {
       'legendary',
