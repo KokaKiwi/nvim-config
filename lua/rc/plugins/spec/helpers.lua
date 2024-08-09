@@ -110,7 +110,7 @@ return util.module('helpers', function(use)
   use { 'folke/trouble.nvim',
     dependencies = { 'kyazdani42/nvim-web-devicons' },
     config = util.setup.rc('trouble', 'helpers'),
-    cmd = { 'Trouble', 'TroubleToggle' },
+    cmd = { 'Trouble' },
   }
   use { 'mfussenegger/nvim-lint',
     config = util.setup.rc('lint'),

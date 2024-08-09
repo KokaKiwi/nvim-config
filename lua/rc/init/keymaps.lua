@@ -48,7 +48,7 @@ nkey.register {
   } },
 
   -- Trouble
-  { '<Leader>t', nkey.Cmd 'TroubleToggle' },
+  { '<Leader>t', nkey.Cmd('Trouble', 'diagnostics', 'toggle') },
 
   -- neo-tree
   { '<C-d>', function()

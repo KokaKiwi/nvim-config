@@ -18,11 +18,9 @@ return function()
         enable_ui = true,
       },
       dashboard = false,
-      dropbar = {
-        enabled = true,
-      },
       fidget = true,
       gitsigns = true,
+      headlines = true,
       indent_blankline = {
         enabled = true,
         scope_color = 'green',
