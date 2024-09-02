@@ -47,7 +47,6 @@
   "fidget.nvim": { "branch": "main", "commit": "d855eed8a06531a7e8fd0684889b2943f373c469" },
   "figban.nvim": { "branch": "main", "commit": "7ac4d9de57bfdea57593cf33d4bef0a739f95cdb" },
   "fluent.vim": { "branch": "master", "commit": "86f60ebc5dc6ee52c1b7676aa2c950eb4b9af06a" },
-  "git-blame-virt.nvim": { "branch": "main", "commit": "07ae789dcfc9dd3798282194e6f587ec28e238c6" },
   "gitsigns.nvim": { "branch": "main", "commit": "899e993850084ea33d001ec229d237bc020c19ae" },
   "gleam.vim": { "branch": "master", "commit": "6739d8b656adb5d2807675b7652afb6e257b2b1c" },
   "glow.nvim": { "branch": "main", "commit": "238070a686c1da3bccccf1079700eb4b5e19aea4" },

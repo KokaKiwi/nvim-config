@@ -60,11 +60,6 @@ return util.module('ui', function(use)
     config = util.setup.rc('devicons', 'ui'),
     lazy = true,
   }
-  use { 'robert-oleynik/git-blame-virt.nvim',
-    dependencies = { 'plenary.nvim' },
-    config = util.setup.rc('git_blame_virt', 'ui'),
-    event = { 'VeryLazy' },
-  }
 
   use { 'akinsho/bufferline.nvim',
     dependencies = { 'kyazdani42/nvim-web-devicons' },
