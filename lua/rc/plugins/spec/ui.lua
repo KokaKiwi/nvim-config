@@ -90,6 +90,7 @@ return util.module('ui', function(use)
   }
   use { 'chentoast/marks.nvim',
     config = util.setup.rc('marks'),
+    event = 'VeryLazy',
   }
   use { 'wfxr/minimap.vim',
     config = util.setup.rc('minimap', 'ui'),

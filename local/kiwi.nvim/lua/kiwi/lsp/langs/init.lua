@@ -100,7 +100,7 @@ lsp.sqlls.setup {
 }
 lsp.taplo.setup {}
 lsp.texlab.setup {}
-lsp.tsserver.setup {}
+lsp.ts_ls.setup {}
 lsp.vimls.setup {}
 lsp.vuels.setup {}
 lsp.yamlls.setup {}
