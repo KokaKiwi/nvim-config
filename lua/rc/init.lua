@@ -30,6 +30,6 @@ vim.o.exrc = true
 
 require_prefix('rc.init') {
   'format', 'input', 'ui',
-  'keymaps',
+  'keymaps', 'filetypes',
 }
 pcall(require, 'rc.secret')
