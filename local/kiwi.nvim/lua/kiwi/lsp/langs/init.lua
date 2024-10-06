@@ -104,4 +104,6 @@ lsp.ts_ls.setup {}
 lsp.vimls.setup {}
 lsp.vuels.setup {}
 lsp.yamlls.setup {}
+lsp.ziggy.setup {}
+lsp.ziggy_schema.setup {}
 lsp.zls.setup {}
