@@ -137,6 +137,9 @@ return util.module('ui', function(use)
     build = util.action.shell.make('lua/fzy'),
     lazy = true,
   }
+  use { 'dstein64/nvim-scrollview',
+    config = util.setup.rc('scrollview', 'ui'),
+  }
 
   use { 'xeluxee/competitest.nvim',
     dependencies = { 'nui.nvim' },

@@ -421,6 +421,17 @@ function M.setup_scope()
   require('scope').setup()
 end
 
+function M.setup_scrollview()
+  require('scrollview').setup {
+    always_show = true,
+    current_only = true,
+    excluded_filetypes = {
+      'prompt', 'TelescopePrompt',
+      'alpha', 'neo-tree', 'lazy',
+    },
+  }
+end
+
 function M.setup_sentiment()
   require('sentiment').setup {}
 end
