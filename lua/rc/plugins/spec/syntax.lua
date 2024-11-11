@@ -27,6 +27,5 @@ return util.module('syntax', function(use)
   use { 'thyrgle/vim-dyon', ft = 'dyon' }
   use { 'fladson/vim-kitty', ft = { 'kitty', 'kitty-session' } }
   use { 'Olical/nfnl', ft = { 'fennel' }, config = true }
-  use { 'LhKipp/nvim-nu', config = true }
   use { 'IndianBoy42/tree-sitter-just', config = true }
 end)
