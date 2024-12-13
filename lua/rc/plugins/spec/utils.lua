@@ -84,7 +84,6 @@ return util.module('utils', function(use)
   }
 
   use 'inkarkat/vim-ingo-library'
-  use 'LucHermitte/lh-vim-lib'
 
   use { 'rafcamlet/nvim-luapad',
     cmd = { 'Luapad', 'Luarun' },
