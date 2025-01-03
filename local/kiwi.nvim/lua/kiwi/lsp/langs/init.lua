@@ -95,9 +95,7 @@ lsp.rust_analyzer.setup {
 }
 lsp.scry.setup {}
 lsp.solargraph.setup {}
-lsp.sqlls.setup {
-  cmd = { 'sql-language-server', 'up', '--method', 'stdio' }
-}
+lsp.sqls.setup {}
 lsp.taplo.setup {}
 lsp.texlab.setup {}
 lsp.ts_ls.setup {}
