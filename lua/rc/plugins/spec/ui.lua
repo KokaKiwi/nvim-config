@@ -174,6 +174,10 @@ return util.module('ui', function(use)
   use { 'tiagovla/scope.nvim',
     config = util.setup.rc('scope', 'ui'),
   }
+  use { 'mhanberg/output-panel.nvim',
+    event = 'VeryLazy',
+    config = true,
+  }
 
   use { 'goolord/alpha-nvim',
     dependencies = {
