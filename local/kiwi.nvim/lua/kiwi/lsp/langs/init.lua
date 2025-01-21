@@ -1,4 +1,6 @@
 local configs = require('lspconfig.configs')
+local util = require('lspconfig.util')
+util.available_servers = util._available_servers
 
 -- Import custom LSP clients
 local LANGUAGES = {
