@@ -15,7 +15,7 @@ return util.module('helpers', function(use)
   }
 
   local cmp = { 'hrsh7th/nvim-cmp',
-    dependencies = { 'onsails/lspkind-nvim' },
+    dependencies = { 'xzbdmw/colorful-menu.nvim' },
     config = util.setup.rc_mod_call('cmp'),
     event = { 'InsertEnter', 'CmdlineEnter' },
   }

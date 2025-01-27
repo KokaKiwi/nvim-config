@@ -54,6 +54,9 @@ return util.module('ui', function(use)
     dependencies = { 'obaland/vfiler-column-devicons' },
     cmd = { 'VFiler' },
   }
+  use { 'xzbdmw/colorful-menu.nvim',
+    config = util.setup.rc('colorful_menu', 'ui'),
+  }
 
   use 'tpope/vim-fugitive'
   use { 'kyazdani42/nvim-web-devicons',

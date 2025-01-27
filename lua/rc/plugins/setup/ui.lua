@@ -56,6 +56,10 @@ end
 function M.setup_cellular_automaton()
 end
 
+function M.setup_colorful_menu()
+  require('colorful-menu').setup {}
+end
+
 function M.setup_colorful_winsep()
   require('colorful-winsep').setup {
     no_exec_files = { "lazy", "TelescopePrompt", "mason", "neo-tree" },
