@@ -36,6 +36,10 @@ return function()
       noice = true,
       notify = true,
       overseer = true,
+      snacks = {
+        enabled = true,
+        indent_scope_color = 'lavender',
+      },
       telescope = true,
       treesitter_context = true,
       which_key = true,

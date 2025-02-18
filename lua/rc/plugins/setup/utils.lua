@@ -129,6 +129,10 @@ function M.setup_silicon()
   }
 end
 
+function M.setup_snacks()
+  require('snacks').setup {}
+end
+
 function M.setup_sort()
   require('sort').setup {
     debug = false,

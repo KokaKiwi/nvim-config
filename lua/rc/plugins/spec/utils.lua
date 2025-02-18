@@ -144,4 +144,9 @@ return util.module('utils', function(use)
   use { 'echasnovski/mini.nvim',
     config = util.setup.rc('mini', 'utils'),
   }
+  use { 'folke/snacks.nvim',
+    priority = 1000,
+    lazy = false,
+    config = util.setup.rc('snacks', 'utils'),
+  }
 end)
