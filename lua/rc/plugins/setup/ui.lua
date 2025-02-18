@@ -470,6 +470,27 @@ function M.setup_treesitter_context()
   }
 end
 
+function M.setup_undo_glow()
+  local undo_glow = require('undo-glow')
+
+  local _, catppuccin = pcall(require, 'catppuccin.palettes')
+  local colors = catppuccin.get_palette()
+
+  undo_glow.setup {
+    undo_hl_color = {
+      bg = colors.red,
+      fg = colors.base,
+    },
+    redo_hl_color = {
+      bg = colors.flamingo,
+      fg = colors.base,
+    },
+  }
+
+  vim.keymap.set("n", "u", undo_glow.undo, { noremap = true, silent = true })
+  vim.keymap.set("n", "U", undo_glow.redo, { noremap = true, silent = true })
+end
+
 function M.setup_vfiler()
   require('vfiler/config').setup {
     options = {

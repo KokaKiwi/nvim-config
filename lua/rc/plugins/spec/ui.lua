@@ -37,6 +37,10 @@ return util.module('ui', function(use)
     config = util.setup.rc('undotree'),
     cmd = { 'UndotreeToggle' },
   }
+  use { 'y3owk1n/undo-glow.nvim',
+    config = util.setup.rc('undo_glow', 'ui'),
+    event = { 'VeryLazy' },
+  }
 
   use { 'nvim-neo-tree/neo-tree.nvim',
     branch = 'v3.x',
