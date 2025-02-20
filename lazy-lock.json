@@ -124,6 +124,7 @@
   "popup.nvim": { "branch": "master", "commit": "b7404d35d5d3548a82149238289fa71f7f6de4ac" },
   "relative-toggle.nvim": { "branch": "main", "commit": "fabe2f60f5f148f2bf1fb76e8a542f5adf8d996a" },
   "ron.vim": { "branch": "master", "commit": "f749e543975a82e8dd9a6e7df9600a1c098ae800" },
+  "rustowl": { "branch": "main", "commit": "842bd37a8bd2d977873f9087e2c714f5fb6d75ae" },
   "sad.nvim": { "branch": "master", "commit": "d5bb4e98b42ae0084ae6ec03aa285d1b2fa1ba8e" },
   "scope.nvim": { "branch": "main", "commit": "e1799fa37178382fc228245c41af5547e3f95182" },
   "sentiment.nvim": { "branch": "main", "commit": "ecde8d877881bb78fdb90060c0991e76770dbdbc" },

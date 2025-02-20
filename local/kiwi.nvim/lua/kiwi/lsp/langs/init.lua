@@ -19,6 +19,7 @@ end
 
 -- Setup Language Servers
 local schemastore = require('schemastore')
+local rustowl = require('rustowl')
 
 require('kiwi.lsp.langs.hook').register_hook()
 require('mason-lspconfig').setup {}
@@ -93,6 +94,11 @@ lsp.rust_analyzer.setup {
         },
       },
     },
+  },
+}
+lsp.rustowl.setup {
+  trigger = {
+    hover = false,
   },
 }
 lsp.scry.setup {}

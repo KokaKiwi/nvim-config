@@ -116,6 +116,14 @@ function M.setup_persisted()
   }
 end
 
+function M.setup_rustowl()
+  local rustowl = require('rustowl')
+
+  require('nkey').register {
+    { '<c-O>', rustowl.rustowl_cursor },
+  }
+end
+
 function M.setup_snippy()
   require('snippy').setup {
     mappings = {

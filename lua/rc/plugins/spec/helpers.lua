@@ -84,11 +84,15 @@ return util.module('helpers', function(use)
   }
 
   use { 'neovim/nvim-lspconfig',
-    dependencies = { 'SchemaStore.nvim', 'neodev.nvim' },
+    dependencies = { 'SchemaStore.nvim', 'neodev.nvim', 'rustowl' },
     config = util.setup.mod_setup('kiwi.lsp'),
   }
   use { 'icholy/lsplinks.nvim',
     config = util.setup.rc('lsplinks', 'helpers'),
+  }
+  use { 'cordx56/rustowl',
+    lazy = true,
+    config = util.setup.rc('rustowl', 'helpers'),
   }
   use {
     name = 'hook.nvim',
