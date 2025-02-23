@@ -119,8 +119,15 @@ end
 function M.setup_rustowl()
   local rustowl = require('rustowl')
 
+  vim.api.nvim_create_user_command('RustOwl', function()
+    rustowl.rustowl_cursor()
+  end, {})
+
   require('nkey').register {
-    { '<c-O>', rustowl.rustowl_cursor },
+    { '<c-O>', function()
+      print('hello')
+      rustowl.rustowl_cursor()
+    end},
   }
 end
 

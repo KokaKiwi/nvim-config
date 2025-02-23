@@ -97,9 +97,9 @@ lsp.rust_analyzer.setup {
   },
 }
 lsp.rustowl.setup {
-  trigger = {
-    hover = false,
-  },
+  -- trigger = {
+  --   hover = false,
+  -- },
 }
 lsp.scry.setup {}
 lsp.solargraph.setup {}
